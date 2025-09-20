@@ -1,0 +1,67 @@
+/* RESET BASE */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #fff; background: #0d0d0d; }
+img { max-width: 100%; display: block; border-radius: 12px; }
+a { text-decoration: none; color: inherit; }
+
+/* NAVBAR */
+nav {
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+nav .logo { font-size: 1.3rem; font-weight: bold; color:#00ffcc; }
+nav ul { display: flex; list-style: none; }
+nav ul li { margin: 0 10px; }
+nav ul li a { padding: 5px 10px; transition: 0.3s; }
+nav ul li a:hover, nav ul li a.active { color: #00ffcc; }
+
+/* HERO */
+header.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://source.unsplash.com/1600x900/?night,club') center/cover no-repeat;
+}
+header.hero h1 { font-size: 3rem; margin-bottom: 10px; text-shadow: 0 0 20px #00ffcc; }
+header.hero p { font-size: 1.3rem; margin: 20px 0; text-shadow: 0 0 10px #fff; }
+header.hero .btn { padding: 12px 30px; background: #00ffcc; color: #000; font-weight: bold; border-radius: 10px; transition: 0.3s; }
+header.hero .btn:hover { background: #00cca3; }
+
+/* SEZIONI */
+section { padding: 80px 20px; max-width: 1200px; margin: auto; }
+section h1, section h2 { margin-bottom: 20px; color: #fff; }
+
+/* ABOUT */
+.about { display: flex; flex-wrap: wrap; gap: 30px; align-items: center; }
+.about img { flex: 1 1 400px; border-radius: 20px; box-shadow: 0 0 20px #00ffcc; }
+.about div { flex: 1 1 500px; }
+.about ul { list-style: none; margin-top: 15px; }
+
+/* SERVICES */
+.services { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 25px; }
+.service { background: #111; padding: 25px; border-radius: 15px; text-align: center; box-shadow: 0 0 15px #00ffcc; transition: 0.3s; }
+.service:hover { transform: translateY(-5px); }
+
+/* SOCIAL */
+.social { text-align: center; }
+.social-icons { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-top: 40px; }
+.social-icons a { display: flex; align-items: center; justify-content: center; width: 90px; height: 90px; background: #111; border-radius: 15px; box-shadow: 0 0 20px #00ffcc; font-size: 2rem; color: #fff; transition: 0.3s; }
+.social-icons a:hover { transform: translateY(-5px); box-shadow: 0 0 30px #00ffcc; }
+
+/* CONTACT */
+.contact form { display: grid; gap: 20px; max-width: 600px; margin: auto; }
+.contact input, .contact textarea { padding: 12px; border-radius: 10px; border: none; background: #111; color: #fff; box-shadow: 0 0 10px #00ffcc; }
+.contact button { padding: 15px; border-radius: 10px; border: none; background: #00ffcc; color: #000; font-weight: bold; cursor: pointer; transition: 0.3s; }
+.contact button:hover { background: #00cca3; }
+
+/* FOOTER */
+footer { text-align: center; padding: 30px; background: #111; margin-top: 50px; }
+footer a { color: #00ffcc; margin: 0 10px; text-decoration: none; }
