@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GOAT Website</title>
   <style>
-    /* RESET */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #fff; background: #0d0d0d; }
     img { max-width: 100%; display: block; border-radius: 12px; }
@@ -35,15 +34,11 @@
     .service { background: #1a1a1a; padding: 20px; border-radius: 15px; text-align: center; transition: 0.3s; }
     .service:hover { transform: translateY(-5px); background: #222; }
 
-    /* PORTFOLIO */
-    .portfolio { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 15px; }
-    .portfolio img { transition: 0.4s; }
-    .portfolio img:hover { transform: scale(1.05); }
-
-    /* TESTIMONIALS */
-    .testimonials { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 20px; }
-    .testimonial { background: #1a1a1a; padding: 20px; border-radius: 15px; }
-    .testimonial img { width: 60px; height: 60px; border-radius: 50%; margin-bottom: 10px; }
+    /* SOCIAL */
+    .social { text-align: center; }
+    .social-icons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
+    .social-icons a { display: inline-block; width: 80px; height: 80px; background: #1a1a1a; border-radius: 15px; display: flex; justify-content: center; align-items: center; text-decoration: none; color: #fff; font-size: 1.5rem; transition: 0.3s; }
+    .social-icons a:hover { background: #00ffcc; color: #000; transform: translateY(-5px); }
 
     /* CONTACT */
     .contact form { display: grid; gap: 15px; }
@@ -54,6 +49,8 @@
     footer { text-align: center; padding: 30px; background: #111; margin-top: 50px; }
     footer a { color: #00ffcc; margin: 0 10px; text-decoration: none; }
   </style>
+  <!-- ICONS -->
+  <script src="https://kit.fontawesome.com/4ad8d6d2d4.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -63,8 +60,7 @@
     <nav>
       <a href="#about">About</a>
       <a href="#services">Servizi</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#testimonials">Testimonianze</a>
+      <a href="#social">Social</a>
       <a href="#contact">Contatti</a>
     </nav>
   </header>
@@ -108,38 +104,15 @@
     </div>
   </section>
 
-  <!-- PORTFOLIO -->
-  <section id="portfolio">
-    <h2>Portfolio</h2>
-    <div class="portfolio">
-      <img src="https://source.unsplash.com/400x400/?concert,lights" alt="">
-      <img src="https://source.unsplash.com/400x400/?vinyl,dj" alt="">
-      <img src="https://source.unsplash.com/400x400/?club,party" alt="">
-      <img src="https://source.unsplash.com/400x400/?music,festival" alt="">
-      <img src="https://source.unsplash.com/400x400/?mixing,console" alt="">
-      <img src="https://source.unsplash.com/400x400/?crowd,dance" alt="">
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section id="testimonials">
-    <h2>Testimonianze</h2>
-    <div class="testimonials">
-      <div class="testimonial">
-        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="">
-        <p>"Un artista pazzesco, ha fatto ballare tutta la notte 🔥"</p>
-        <strong>- Giulia</strong>
-      </div>
-      <div class="testimonial">
-        <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="">
-        <p>"La sua musica ha un'energia unica. TOP DJ!"</p>
-        <strong>- Marco</strong>
-      </div>
-      <div class="testimonial">
-        <img src="https://randomuser.me/api/portraits/women/20.jpg" alt="">
-        <p>"Esperienza incredibile, vibes assurde 🎶"</p>
-        <strong>- Sara</strong>
-      </div>
+  <!-- SOCIAL -->
+  <section id="social" class="social">
+    <h2>Seguimi sui Social 🚀</h2>
+    <div class="social-icons">
+      <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+      <a href="https://youtube.com/" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+      <a href="https://twitch.tv/" target="_blank"><i class="fab fa-twitch fa-2x"></i></a>
+      <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+      <a href="https://spotify.com/" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
     </div>
   </section>
 
@@ -158,243 +131,11 @@
   <footer>
     <p>© 2025 GOAT - Tutti i diritti riservati</p>
     <p>
-      <a href="#">Instagram</a> |
-      <a href="#">YouTube</a> |
-      <a href="#">Twitch</a>
+      <a href="https://instagram.com/">Instagram</a> |
+      <a href="https://youtube.com/">YouTube</a> |
+      <a href="https://twitch.tv/">Twitch</a>
     </p>
   </footer>
 
 </body>
 </html>
-="btn" id="previewBtn">Live preview</button>
-        </div>
-
-        <div class="stat-grid fade-in" style="transition-delay:.25s">
-          <div class="stat">✨ 120+ progetti</div>
-          <div class="stat">🚀 Deployment rapido</div>
-          <div class="stat">🔁 Fully responsive</div>
-        </div>
-      </div>
-
-      <aside class="card-hero fade-in" style="transition-delay:.28s" aria-hidden="false">
-        <div style="display:flex;align-items:center;gap:12px">
-          <div style="width:56px;height:56px;border-radius:10px;background:linear-gradient(90deg,var(--primary),var(--accent));display:grid;place-items:center;font-weight:800">UI</div>
-          <div>
-            <div style="font-weight:800">Design & Frontend</div>
-            <div style="color:var(--muted);font-size:13px;margin-top:4px">Pixel-perfect, accessible, and fast.</div>
-          </div>
-        </div>
-
-        <div style="margin-top:14px;display:flex;gap:10px;align-items:center">
-          <div style="flex:1">
-            <div style="height:10px;background:rgba(255,255,255,0.04);border-radius:999px;overflow:hidden">
-              <div style="width:72%;height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));transition:width .9s ease"></div>
-            </div>
-            <div style="font-size:12px;color:var(--muted);margin-top:8px">Latest project progress</div>
-          </div>
-          <div style="font-weight:800">72%</div>
-        </div>
-      </aside>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="fade-in" style="transition-delay:.35s">
-      <div class="section-title">
-        <h2>About</h2>
-        <div class="section-sub">Who we are & what we do</div>
-      </div>
-
-      <div class="about-grid" aria-hidden="false">
-        <div class="card">
-          <h3>Branding</h3>
-          <p>Identità visiva, logo, e tutto il mood per far riconoscere il tuo progetto in 0.3s.</p>
-        </div>
-        <div class="card">
-          <h3>Web Development</h3>
-          <p>HTML/CSS/JS puliti, accessibili e facili da scalare. No bloat, solo vibes.</p>
-        </div>
-        <div class="card">
-          <h3>Music & Sound</h3>
-          <p>Produzione audio, jingles e sound design per dare carattere ai video e ai brand.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PORTFOLIO -->
-    <section id="portfolio" class="fade-in" style="transition-delay:.42s">
-      <div class="section-title">
-        <h2>Portfolio</h2>
-        <div class="section-sub">Seleziona un filtro per esplorare</div>
-      </div>
-
-      <div class="filter-row" role="tablist" aria-label="Filter projects">
-        <button class="chip active" data-filter="all">All</button>
-        <button class="chip" data-filter="web">Web</button>
-        <button class="chip" data-filter="branding">Branding</button>
-        <button class="chip" data-filter="audio">Audio</button>
-      </div>
-
-      <div class="portfolio-grid" id="portfolioGrid" aria-live="polite">
-        <!-- projects -->
-        <article class="proj" data-type="web" style="background-image:url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop&s=')">
-          <div class="proj-overlay">
-            <h4>Landing — FlowX</h4>
-            <p>Micro-interactions & animations</p>
-          </div>
-        </article>
-
-        <article class="proj" data-type="branding" style="background-image:url('https://images.unsplash.com/photo-1520975911347-9a0f9c02a1e2?q=80&w=1200&auto=format&fit=crop&s=')">
-          <div class="proj-overlay">
-            <h4>Identity — Nova</h4>
-            <p>Logo system & visual kit</p>
-          </div>
-        </article>
-
-        <article class="proj" data-type="audio" style="background-image:url('https://images.unsplash.com/photo-1518444024450-1bd48b7c13c3?q=80&w=1200&auto=format&fit=crop&s=')">
-          <div class="proj-overlay">
-            <h4>EP — Midnight</h4>
-            <p>Mixing & mastering</p>
-          </div>
-        </article>
-
-        <article class="proj" data-type="web" style="background-image:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop&s=')">
-          <div class="proj-overlay">
-            <h4>Dashboard — Gridly</h4>
-            <p>Data viz & components</p>
-          </div>
-        </article>
-
-        <article class="proj" data-type="branding" style="background-image:url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1200&auto=format&fit=crop&s=')">
-          <div class="proj-overlay">
-            <h4>Packaging — Bites</h4>
-            <p>Concept & print-ready</p>
-          </div>
-        </article>
-
-        <article class="proj" data-type="audio" style="background-image:url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1200&auto=format&fit=crop&s=')">
-          <div class="proj-overlay">
-            <h4>SFX Pack</h4>
-            <p>Sound library for creators</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section id="testimonials" class="fade-in" style="transition-delay:.48s">
-      <div class="section-title">
-        <h2>Testimonials</h2>
-        <div class="section-sub">What clients say</div>
-      </div>
-
-      <div class="testi" role="list">
-        <div class="bubble" role="listitem">
-          <strong>Alex</strong>
-          <p class="muted">"Top quality — delivered fast and with style. 10/10!"</p>
-        </div>
-        <div class="bubble" role="listitem">
-          <strong>Martina</strong>
-          <p class="muted">"Brand new identity that literally doubled my DMs."</p>
-        </div>
-        <div class="bubble" role="listitem">
-          <strong>Studio XL</strong>
-          <p class="muted">"Mixing skills next level. Collab again for sure."</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="fade-in" style="transition-delay:.55s">
-      <div class="section-title">
-        <h2>Contact</h2>
-        <div class="section-sub">Hit me up — let's collab</div>
-      </div>
-
-      <div class="contact-grid">
-        <form id="contactForm" novalidate>
-          <div style="display:flex; gap:12px;flex-wrap:wrap;">
-            <div style="flex:1;min-width:160px">
-              <label for="name">Name</label>
-              <input id="name" name="name" required placeholder="Es: Marco" />
-            </div>
-            <div style="flex:1;min-width:160px">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" required placeholder="you@email.com" />
-            </div>
-          </div>
-
-          <div style="margin-top:12px">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required placeholder="Che progetto hai in mente?"></textarea>
-          </div>
-
-          <div style="display:flex;gap:10px;align-items:center;margin-top:12px">
-            <button type="submit" class="btn primary">Send</button>
-            <div class="muted">Risponderò entro 48 ore.</div>
-          </div>
-
-          <div id="formMsg" style="margin-top:12px;font-weight:700;color:var(--accent);display:none"></div>
-        </form>
-
-        <aside style="background:var(--panel);padding:18px;border-radius:12px">
-          <h3>Quick info</h3>
-          <p class="muted" style="margin-top:8px">Disponibile per freelance, produzioni audio e consulenze UX. Rate negotiable — let’s talk.</p>
-
-          <div style="margin-top:14px;font-weight:800">Follow</div>
-          <div style="display:flex;gap:8px;margin-top:8px">
-            <a class="chip" href="#" aria-label="Instagram">IG</a>
-            <a class="chip" href="#" aria-label="YouTube">YT</a>
-            <a class="chip" href="#" aria-label="SoundCloud">SC</a>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <footer>
-      <div>© <span id="year"></span> GOAT Studio — Made with ♥</div>
-    </footer>
-  </main>
-
-  <script>
-    // ========== Utilities ==========
-    const $ = sel => document.querySelector(sel);
-    const $$ = sel => Array.from(document.querySelectorAll(sel));
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // ========== Theme toggle (persist) ==========
-    const themeToggle = $('#themeToggle');
-    const root = document.documentElement;
-    const saved = localStorage.getItem('site-theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme:light)').matches ? 'light' : null);
-    if(saved) root.setAttribute('data-theme', saved);
-    themeToggle.addEventListener('click', () => {
-      const current = root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
-      const next = current === 'light' ? 'dark' : 'light';
-      root.setAttribute('data-theme', next);
-      localStorage.setItem('site-theme', next);
-      themeToggle.setAttribute('aria-pressed', next==='light');
-    });
-
-    // ========== Simple fade-in on load/scroll ==========
-    const faders = $$('.fade-in');
-    const obs = new IntersectionObserver((entries)=> {
-      entries.forEach(e=>{
-        if(e.isIntersecting) e.target.classList.add('show');
-      });
-    }, {threshold: .12});
-    faders.forEach(n => obs.observe(n));
-
-    // ========== Mobile menu (tiny) ==========
-    const hamburger = $('#hamburgerBtn');
-    hamburger?.addEventListener('click', ()=>{
-      // naive mobile nav: toggle a simple menu
-      const menu = document.createElement('div');
-      menu.style.position = 'fixed';
-      menu.style.inset = '80px 16px 16px 16px';
-      menu.style.background = getComputedStyle(document.documentElement).getPropertyValue('--panel').trim();
-      menu.style.borderRadius = '12px';
-      menu.style.padding = '18px';
-      menu.style.boxShadow = '0 20px 40px rgba(0,0,0,0.5)';
-      menu.innerHTML = `
-        <a href="#home" style="display:block;padding:10px 0;">Home</a>
-        <a href="#about" style="display:block;padding:10px 0;">About</a>
-        <a href="#portf
