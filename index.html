@@ -1,141 +1,27 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GOAT Website</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #fff; background: #0d0d0d; }
-    img { max-width: 100%; display: block; border-radius: 12px; }
-
-    header { position: fixed; top: 0; left: 0; width: 100%; padding: 20px; background: rgba(0,0,0,0.7); z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
-    header h1 { font-size: 1.3rem; }
-    header nav a { margin: 0 10px; color: #fff; text-decoration: none; font-weight: 500; transition: 0.3s; }
-    header nav a:hover { color: #00ffcc; }
-
-    section { padding: 80px 20px; max-width: 1200px; margin: auto; }
-
-    /* HERO */
-    .hero { height: 100vh; background: url('https://source.unsplash.com/1600x900/?night,city') center/cover no-repeat; display: flex; justify-content: center; align-items: center; text-align: center; }
-    .hero h2 { font-size: 3rem; color: #fff; animation: fadeInDown 1s ease-in; }
-    .hero p { font-size: 1.2rem; margin-top: 10px; color: #eee; animation: fadeInUp 1.5s ease-in; }
-
-    @keyframes fadeInDown { from {opacity:0; transform:translateY(-20px);} to {opacity:1; transform:translateY(0);} }
-    @keyframes fadeInUp { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
-
-    /* ABOUT */
-    .about { display: flex; flex-wrap: wrap; gap: 30px; align-items: center; }
-    .about img { flex: 1 1 300px; border-radius: 20px; }
-    .about div { flex: 1 1 400px; }
-
-    /* SERVICES */
-    .services { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 20px; }
-    .service { background: #1a1a1a; padding: 20px; border-radius: 15px; text-align: center; transition: 0.3s; }
-    .service:hover { transform: translateY(-5px); background: #222; }
-
-    /* SOCIAL */
-    .social { text-align: center; }
-    .social-icons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
-    .social-icons a { display: inline-block; width: 80px; height: 80px; background: #1a1a1a; border-radius: 15px; display: flex; justify-content: center; align-items: center; text-decoration: none; color: #fff; font-size: 1.5rem; transition: 0.3s; }
-    .social-icons a:hover { background: #00ffcc; color: #000; transform: translateY(-5px); }
-
-    /* CONTACT */
-    .contact form { display: grid; gap: 15px; }
-    .contact input, .contact textarea { padding: 10px; border-radius: 8px; border: none; }
-    .contact button { padding: 12px; background: #00ffcc; color: #000; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
-    .contact button:hover { background: #00cca3; }
-
-    footer { text-align: center; padding: 30px; background: #111; margin-top: 50px; }
-    footer a { color: #00ffcc; margin: 0 10px; text-decoration: none; }
-  </style>
-  <!-- ICONS -->
-  <script src="https://kit.fontawesome.com/4ad8d6d2d4.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoaTs RevenGE</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <nav>
+    <div class="logo">🐐 GoaTs RevenGE 🧠</div>
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="social.html">Social</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-  <!-- NAVBAR -->
-  <header>
-    <h1>🐐 GoaTs RevenGE 🧠</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#services">Servizi</a>
-      <a href="#social">Social</a>
-      <a href="#contact">Contatti</a>
-    </nav>
+  <header class="hero">
+    <h1>Benvenuto nel regno di GoaTs RevenGE 🐐</h1>
+    <p>Il sito ufficiale, pieno di vibes uniche.</p>
+    <a href="about.html" class="btn">Scopri di più</a>
   </header>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div>
-      <h2>Benvenuto nel mio mondo 🔥</h2>
-      <p>Musica, creatività e vibes uniche</p>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="about">
-    <img src="https://source.unsplash.com/600x600/?dj,music" alt="About me">
-    <div>
-      <h2>Chi sono</h2>
-      <p>Sono un DJ, producer e creator con la passione per la musica e i contenuti digitali. Porto vibes, energia e stile in ogni progetto. 🎶🔥</p>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services">
-    <h2>Servizi</h2>
-    <div class="services">
-      <div class="service">
-        <img src="https://source.unsplash.com/300x200/?dj,party" alt="">
-        <h3>DJ Set</h3>
-        <p>Live performance uniche per club, eventi e festival.</p>
-      </div>
-      <div class="service">
-        <img src="https://source.unsplash.com/300x200/?music,studio" alt="">
-        <h3>Produzione</h3>
-        <p>Creazione di tracce e beat personalizzati per ogni stile.</p>
-      </div>
-      <div class="service">
-        <img src="https://source.unsplash.com/300x200/?youtube,content" alt="">
-        <h3>Contenuti</h3>
-        <p>Produzione video e format creativi per social e YouTube.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOCIAL -->
-  <section id="social" class="social">
-    <h2>Seguimi sui Social 🚀</h2>
-    <div class="social-icons">
-      <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
-      <a href="https://youtube.com/" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
-      <a href="https://twitch.tv/" target="_blank"><i class="fab fa-twitch fa-2x"></i></a>
-      <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
-      <a href="https://spotify.com/" target="_blank"><i class="fab fa-spotify fa-2x"></i></a>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="contact">
-    <h2>Contattami</h2>
-    <form>
-      <input type="text" placeholder="Il tuo nome" required>
-      <input type="email" placeholder="La tua email" required>
-      <textarea rows="5" placeholder="Il tuo messaggio" required></textarea>
-      <button type="submit">Invia</button>
-    </form>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 GoaTs RevenGE - Tutti i diritti riservati</p>
-    <p>
-      <a href="https://instagram.com/">Instagram</a> |
-      <a href="https://youtube.com/">YouTube</a> |
-      <a href="https://twitch.tv/">Twitch</a>
-    </p>
-  </footer>
-
 </body>
 </html>
