@@ -160,38 +160,41 @@
 <hr class="divider-neon" style="margin:204px auto;">
 
 
-   <!-- SLIDER FOTO -->
+ <!-- SLIDER FOTO -->
 <div class="slider">
   <div class="slides">
-    <img src="https://source.unsplash.com/1600x900/?dj,music" alt="DJ 1">
-    <img src="https://source.unsplash.com/1600x900/?club,party" alt="Party 2">
-    <img src="https://source.unsplash.com/1600x900/?mix,turntable" alt="Mix 3">
-    <img src="https://source.unsplash.com/1600x900/?concert,lights" alt="Concert 4">
+    <img src="https://source.unsplash.com/1600x900/?dj,music&sig=1" alt="DJ 1">
+    <img src="https://source.unsplash.com/1600x900/?club,party&sig=2" alt="Party 2">
+    <img src="https://source.unsplash.com/1600x900/?mix,turntable&sig=3" alt="Mix 3">
+    <img src="https://source.unsplash.com/1600x900/?concert,lights&sig=4" alt="Concert 4">
   </div>
 </div>
 
 <style>
+/* Slider container */
 .slider {
-  width: 80%;
-  max-width: 900px;
-  margin: 50px auto;
+  width: 90%;             /* occupa quasi tutta la pagina */
+  max-width: 1100px;      /* limite massimo */
+  margin: 40px auto;      /* centrato */
   overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0 0 20px #ffcc00, 0 0 40px #ffcc00;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #ffcc00, 0 0 30px #ffcc00;
 }
 
+/* Righe con immagini */
 .slides {
   display: flex;
-  width: 400%; /* 4 immagini → 100% x 4 */
+  width: 400%;            /* 4 immagini */
   animation: slide 16s infinite;
 }
 
 .slides img {
   width: 100%;
-  height: 400px;
+  height: 250px;          /* altezza più bassa */
   object-fit: cover;
 }
 
+/* Animazione scorrimento */
 @keyframes slide {
   0%   { margin-left: 0; }
   20%  { margin-left: 0; }
@@ -203,7 +206,13 @@
   95%  { margin-left: -300%; }
   100% { margin-left: 0; }
 }
+
+/* Linea neon più larga */
+hr.divider-neon {
+  width: 100%;  /* full width */
+}
 </style>
+
       
       
 <!-- Linea divisoria neon in basso -->
