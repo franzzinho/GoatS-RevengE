@@ -3,34 +3,137 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GoaTs RevenGE</title>
+  <title>Social - GoaTs RevenGE</title>
   <link rel="stylesheet" href="style.css">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    /* Pulsing neon animation */
+    .social-icons a {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .social-icons a:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 40px currentColor, 0 0 60px currentColor;
+    }
+  </style>
 </head>
 <body>
 
   <!-- NAVBAR -->
   <nav>
     <div class="logo">
-  <a href="index.html" style="text-decoration:none; color:inherit;">🐐 GoaTs RevenGE 🧠</a>
-</div>
-
+      <a href="index.html" style="text-decoration:none; color:inherit;">🐐 GoaTs RevenGE 🧠</a>
+    </div>
     <ul>
-      <li><a href="index.html" class="active">🏠  Home  🏠</a></li>
+      <li><a href="index.html">🏠  Home  🏠</a></li>
       <li><a href="about.html">❓ About ❓</a></li>
       <li><a href="services.html">👀  Utility  👀</a></li>
-      <li><a href="social.html">🔴  Social  🟠</a></li>
+      <li><a href="social.html" class="active">🔴  Social  🟠</a></li>
       <li><a href="contact.html">💡  Video Ideas  💡</a></li>
     </ul>
   </nav>
 
-  <!-- HERO -->
-  <header class="hero">
-    <div>
-      <h1>Benvenuto nel mondo di GoaTs RevenGE 🐐</h1>
-      <p>Musica, energia e vibes che spaccano ogni palco 🔥</p>
-      <a href="about.html" class="btn">Scopri di più</a>
+  <!-- SOCIAL -->
+  <section class="social" style="padding:80px 20px; text-align:center; color:#fff;">
+    <h1 style="font-size:2.5rem; color:#ff00ff; margin-bottom:40px;">⬇️ DI SEGUITO, PUOI 📲 STALKERARMI 📲 SUI SEGUENTI SOCIAL ⬇️.</h1>
+    
+    <div class="social-icons" style="display:flex; justify-content:center; gap:30px; flex-wrap:wrap;">
+
+      <!-- tutti i tuoi social qui (non ho tolto nulla) -->
+      <!-- FOLLOWPAGE -->
+      <a href="https://lnk.bio/franzzinho" target="_blank" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:90px; height:90px; 
+background:#111; border-radius:15px; color:#fff; font-size:2rem; box-shadow:0 0 25px #ffcc00;">
+        <i class="fas fa-link"></i>
+        <span style="margin-top:5px; font-size:0.8rem;">FOLLOWPAGE</span>
+      </a>
+      
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/franzzinho.zbb/" target="_blank" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:90px; height:90px; background:#111; border-radius:15px; color:#fff; font-size:2rem; box-shadow:0 0 25px #f13584;">
+        <i class="fab fa-instagram"></i>
+        <span style="margin-top:5px; font-size:0.8rem;">INSTAGRAM</span>
+      </a>
+
+      <!-- TikTok -->
+      <a href="https://www.tiktok.com/@franzzinho.zbb?_t=ZN-8z5d1Qutkfe&_r=1" target="_blank" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:90px; height:90px; background:#111; border-radius:15px; color:#fff; font-size:2rem; box-shadow:0 0 25px #69c9d0;">
+        <i class="fab fa-tiktok"></i>
+        <span style="margin-top:5px; font-size:0.8rem;">TIKTOK</span>
+      </a>
+
+      <!-- Discord -->
+      <a href="https://discord.gg/xBj5wgMZH9" target="_blank" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:90px; height:90px; background:#111; border-radius:15px; color:#fff; font-size:2rem; box-shadow:0 0 25px #7289da;">
+        <i class="fab fa-discord"></i>
+        <span style="margin-top:5px; font-size:0.8rem;">DISCORD</span>
+      </a>
+
+      <!-- YouTube -->
+      <a href="https://youtube.com/@franzzinho?si=cJiskLlGq_kUUDew" target="_blank" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:90px; height:90px; background:#111; border-radius:15px; color:#fff; font-size:2rem; box-shadow:0 0 25px #ff0000;">
+        <i class="fab fa-youtube"></i>
+        <span style="margin-top:5px; font-size:0.8rem;">YOUTUBE</span>
+      </a>
+
+      <!-- YouTube 2 -->
+      <a href="https://www.youtube.com/@Goat.exe_4r" target="_blank" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:90px; height:90px; background:#111; border-radius:15px; color:#fff; font-size:2rem; box-shadow:0 0 25px #ff0000;">
+        <i class="fab fa-youtube"></i>
+        <span style="margin-top:5px; font-size:0.8rem;">YOUTUBE SECRET</span>
+      </a>
+
+      <!-- Twitch -->
+      <a href="https://www.twitch.tv/franzzinho_GT" target="_blank" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:90px; height:90px; background:#111; border-radius:15px; color:#fff; font-size:2rem; box-shadow:0 0 25px #6441a5;">
+        <i class="fab fa-twitch"></i>
+        <span style="margin-top:5px; font-size:0.8rem;">TWITCH</span>
+      </a>
+
+      <!-- Vinted -->
+      <a href="https://www.vinted.it/member/147466576-franzzinho" target="_blank" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:90px; height:90px; background:#111; border-radius:15px; color:#fff; font-size:2rem; box-shadow:0 0 25px #85d045;">
+        <i class="fas fa-tshirt"></i>
+        <span style="margin-top:5px; font-size:0.8rem;">VINTED</span>
+      </a>
+
+      <!-- Wallapop -->
+      <a href="https://www.wallapop.com/user/francescoc-436774478?_pid=wi&_uid=436774478" target="_blank" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:90px; height:90px; background:#111; border-radius:15px; color:#fff; font-size:2rem; box-shadow:0 0 25px #ff8000;">
+        <i class="fas fa-shopping-bag"></i>
+        <span style="margin-top:5px; font-size:0.8rem;">WALLAPOP</span>
+      </a>
+
+      <!-- Telegram -->
+      <a href="https://t.me/goatdeals_real" target="_blank" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:90px; height:90px; background:#111; border-radius:15px; color:#fff; font-size:2rem; box-shadow:0 0 25px #0088cc;">
+        <i class="fab fa-telegram"></i>
+        <span style="margin-top:5px; font-size:0.8rem;">TELEGRAM</span>
+      </a>
+
+      <!-- Amazon -->
+      <a href="https://www.amazon.it/hz/wishlist/ls/DD71H7TZJ9I4?ref_=wl_share" target="_blank" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:90px; height:90px; background:#111; border-radius:15px; color:#fff; font-size:2rem; box-shadow:0 0 25px #ff9900;">
+        <i class="fab fa-amazon"></i>
+        <span style="margin-top:5px; font-size:0.8rem;">SETUP STREAMING</span>
+      </a>
+
+      <!-- Amazon Music -->
+      <a href="https://music.amazon.it/profiles/@zbabyy?ref=dm_sh_nZ3zwFphlYRUc04ow57sRvQXf" target="_blank" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:90px; height:90px; background:#111; border-radius:15px; color:#fff; font-size:2rem; box-shadow:0 0 25px #1db954;">
+        <i class="fas fa-music"></i>
+        <span style="margin-top:5px; font-size:0.8rem;">AMAZON MUSIC</span>
+      </a>
+
+      <!-- Spotify -->
+      <a href="https://open.spotify.com/user/31b7fabh5h4v4wls254ofg55knxe?si=52PzdpixQA6nTP23M8LxFw" target="_blank" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:90px; height:90px; background:#111; border-radius:15px; color:#fff; font-size:2rem; box-shadow:0 0 25px #1db954;">
+        <i class="fab fa-spotify"></i>
+        <span style="margin-top:5px; font-size:0.8rem;">SPOTIFY</span>
+      </a>
+
+      <!-- Shop -->
+      <a href="https://franzzinho.company.site/" target="_blank" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:90px; height:90px; background:#111; border-radius:15px; color:#fff; font-size:2rem; box-shadow:0 0 25px #ff00ff;">
+        <i class="fas fa-store"></i>
+        <span style="margin-top:5px; font-size:0.8rem;">SHOP</span>
+      </a>
+
     </div>
-  </header>
+
+    <!-- SPOTIFY PLAYER -->
+    <div style="margin-top:60px; display:flex; justify-content:center;">
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5UISu8gK5DzDIo1t8lI9nr?utm_source=generator" width="80%" height="380" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+
+  </section>
 
   <!-- FOOTER -->
   <footer style="text-align:center; padding:30px; background:#111; margin-top:50px; color:#fff;">
