@@ -1,154 +1,203 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Social - GoaTs RevenGE</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      background: #000;
-      color: #fff;
-      font-family: Arial, sans-serif;
-    }
-    main { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 60px 20px; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social - GoaTs RevenGE</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    /* Pulsing neon animation */
+    .social-icons a {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .social-icons a:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 40px currentColor, 0 0 60px currentColor;
+    }
 
-    /* Neon social icons */
-    .social-icons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin-bottom: 40px;
-    }
-    .social-icons a {
-      display:flex; flex-direction:column; align-items:center; justify-content:center;
-      width:90px; height:90px; background:#111; border-radius:15px;
-      font-size:2rem; color:#fff; text-decoration:none;
-      box-shadow:0 0 25px currentColor;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .social-icons a:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 40px currentColor, 0 0 60px currentColor;
-    }
+    /* Footer e corpo per rimanere in basso */
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      background: #000;
+    }
+    main {
+      flex: 1;
+    }
 
-    /* Neon divider */
-    hr.divider-neon {
-      border: none;
-      border-top: 2px dashed #ffcc00;
-      width: 90%;
-      max-width: 1200px;
-      box-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00;
-      margin: 40px auto;
-    }
+    /* Neon glow attorno al player */
+    .spotify-player-container {
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+      border-radius: 12px;
+      box-shadow: 0 0 30px #1db954, 0 0 60px #1db954;
+    }
 
-    /* Slider */
-    .slider { width:90%; max-width:1100px; overflow:hidden; border-radius:12px; margin: 40px 0; position: relative; z-index:1; }
-    .slides { display:flex; width:400%; animation: slide 16s infinite; }
-    .slides img { width:100%; height:250px; object-fit:cover; border-radius:12px; }
-    @keyframes slide {
-      0%,20% { margin-left:0; }
-      25%,45% { margin-left:-100%; }
-      50%,70% { margin-left:-200%; }
-      75%,95% { margin-left:-300%; }
-      100% { margin-left:0; }
-    }
-
-    /* Spotify player */
-    .spotify-player-container { display:flex; justify-content:center; width:100%; max-width:1400px; padding:10px; box-shadow:0 0 30px #1db954,0 0 60px #1db954; border-radius:12px; margin-bottom:80px; }
-    .spotify-player-container iframe { width:100%; height:380px; border-radius:12px; }
-
-    /* Decorative background glow */
-    .bg-glow {
-      position:absolute;
-      top:50%;
-      left:50%;
-      width:120%;
-      height:300px;
-      background: radial-gradient(circle, rgba(255,204,0,0.2) 0%, transparent 70%);
-      transform:translate(-50%, -50%);
-      z-index:0;
-      filter:blur(60px);
-    }
-
-    /* Title styles */
-    h1 { font-size:2.5rem; color:#ff00ff; text-align:center; margin-bottom:40px; }
-    h2 { font-size:2rem; color:#00ffcc; text-align:center; margin:40px 0 20px 0; }
-  </style>
+    .spotify-player-container iframe {
+      border-radius: 12px;
+      width: 90%; /* larghezza più grande, centrata */
+      max-width: 900px; /* evita che diventi troppo grande su schermi enormi */
+      height: 352px;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav>
-    <div class="logo">
-      <a href="index.html" style="text-decoration:none; color:inherit;">🐐 GoaTs RevenGE 🧠</a>
-    </div>
-    <ul>
-      <li><a href="index.html">🏠 Home 🏠</a></li>
-      <li><a href="about.html">❓ About ❓</a></li>
-      <li><a href="services.html">👀 Utility 👀</a></li>
-      <li><a href="social.html" class="active">🔴 Social 🟠</a></li>
-      <li><a href="contact.html">💡 Video Ideas 💡</a></li>
-    </ul>
-  </nav>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">
+      <a href="index.html" style="text-decoration:none; color:inherit;">🐐 GoaTs RevenGE 🧠</a>
+    </div>
+    <ul>
+      <li><a href="index.html">🏠  Home  🏠</a></li>
+      <li><a href="about.html">❓ About ❓</a></li>
+      <li><a href="services.html">👀  Utility  👀</a></li>
+      <li><a href="social.html" class="active">🔴  Social  🟠</a></li>
+      <li><a href="contact.html">💡  Video Ideas  💡</a></li>
+    </ul>
+  </nav>
 
-  <main>
-    <h1>⬇️ DI SEGUITO, PUOI 📲 STALKERARMI 📲 SUI SEGUENTI SOCIAL ⬇️.</h1>
+  <main>
+    <!-- SOCIAL -->
+    <section class="social" style="padding:80px 20px; text-align:center; color:#fff;">
+      <h1 style="font-size:2.5rem; color:#ff00ff; margin-bottom:40px;">
+        ⬇️ DI SEGUITO, PUOI 📲 STALKERARMI 📲 SUI SEGUENTI SOCIAL ⬇️.
+      </h1>
+      
+      <div class="social-icons" style="display:flex; justify-content:center; gap:30px; flex-wrap:wrap;">
 
-    <div class="social-icons">
-      <a href="https://lnk.bio/franzzinho" target="_blank"><i class="fas fa-link"></i><span style="font-size:0.8rem; margin-top:5px;">FOLLOWPAGE</span></a>
-      <a href="https://www.instagram.com/franzzinho.zbb/" target="_blank"><i class="fab fa-instagram"></i><span style="font-size:0.8rem; margin-top:5px;">INSTAGRAM</span></a>
-      <a href="https://www.tiktok.com/@franzzinho.zbb?_t=ZN-8z5d1Qutkfe&_r=1" target="_blank"><i class="fab fa-tiktok"></i><span style="font-size:0.8rem; margin-top:5px;">TIKTOK</span></a>
-      <a href="https://discord.gg/xBj5wgMZH9" target="_blank"><i class="fab fa-discord"></i><span style="font-size:0.8rem; margin-top:5px;">DISCORD</span></a>
-      <a href="https://youtube.com/@franzzinho?si=cJiskLlGq_kUUDew" target="_blank"><i class="fab fa-youtube"></i><span style="font-size:0.8rem; margin-top:5px;">YOUTUBE</span></a>
-      <a href="https://www.youtube.com/@Goat.exe_4r" target="_blank"><i class="fab fa-youtube"></i><span style="font-size:0.8rem; margin-top:5px;">YOUTUBE SECRET</span></a>
-      <a href="https://www.twitch.tv/franzzinho_GT" target="_blank"><i class="fab fa-twitch"></i><span style="font-size:0.8rem; margin-top:5px;">TWITCH</span></a>
-      <a href="https://www.vinted.it/member/147466576-franzzinho" target="_blank"><i class="fas fa-tshirt"></i><span style="font-size:0.8rem; margin-top:5px;">VINTED</span></a>
-      <a href="https://www.wallapop.com/user/francescoc-436774478?_pid=wi&_uid=436774478" target="_blank"><i class="fas fa-shopping-bag"></i><span style="font-size:0.8rem; margin-top:5px;">WALLAPOP</span></a>
-      <a href="https://t.me/goatdeals_real" target="_blank"><i class="fab fa-telegram"></i><span style="font-size:0.8rem; margin-top:5px;">TELEGRAM</span></a>
-      <a href="https://www.amazon.it/hz/wishlist/ls/DD71H7TZJ9I4?ref_=wl_share" target="_blank"><i class="fab fa-amazon"></i><span style="font-size:0.8rem; margin-top:5px;">SETUP STREAMING</span></a>
-      <a href="https://music.amazon.it/profiles/@zbabyy?ref=dm_sh_nZ3zwFphlYRUc04ow57sRvQXf" target="_blank"><i class="fas fa-music"></i><span style="font-size:0.8rem; margin-top:5px;">AMAZON MUSIC</span></a>
-      <a href="https://open.spotify.com/user/31b7fabh5h4v4wls254ofg55knxe?si=52PzdpixQA6nTP23M8LxFw" target="_blank"><i class="fab fa-spotify"></i><span style="font-size:0.8rem; margin-top:5px;">SPOTIFY</span></a>
-      <a href="https://franzzinho.company.site/" target="_blank"><i class="fas fa-store"></i><span style="font-size:0.8rem; margin-top:5px;">SHOP</span></a>
-    </div>
+  <!-- FOLLOWPAGE -->
+  <a href="https://lnk.bio/franzzinho" target="_blank" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:90px; height:90px; background:#111; border-radius:15px; color:#fff; font-size:2rem; box-shadow:0 0 25px #ffcc00;">
+    <i class="fas fa-link"></i>
+    <span style="margin-top:5px; font-size:0.8rem;">FOLLOWPAGE</span>
+  </a>
 
-    <hr class="divider-neon">
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/franzzinho.zbb/" target="_blank" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:90px; height:90px; background:#111; border-radius:15px; color:#fff; font-size:2rem; box-shadow:0 0 25px #f13584;">
+    <i class="fab fa-instagram"></i>
+    <span style="margin-top:5px; font-size:0.8rem;">INSTAGRAM</span>
+  </a>
 
-    <div class="bg-glow"></div>
+  <!-- TikTok -->
+  <a href="https://www.tiktok.com/@franzzinho.zbb?_t=ZN-8z5d1Qutkfe&_r=1" target="_blank" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:90px; height:90px; background:#111; border-radius:15px; color:#fff; font-size:2rem; box-shadow:0 0 25px #69c9d0;">
+    <i class="fab fa-tiktok"></i>
+    <span style="margin-top:5px; font-size:0.8rem;">TIKTOK</span>
+  </a>
 
-    <!-- SLIDER CON IL POST INSTAGRAM -->
-    <div class="slider">
-      <div class="slides">
-        <img src="https://www.instagram.com/p/DNk5Vc9IUmM/media/?size=l" alt="Post Instagram">
-        <img src="https://source.unsplash.com/800x400/?dj,music&sig=2" alt="DJ Mix 2">
-        <img src="https://source.unsplash.com/800x400/?club,party&sig=3" alt="Party 3">
-        <img src="https://source.unsplash.com/800x400/?concert,lights&sig=4" alt="Concert 4">
-      </div>
-    </div>
+  <!-- Discord -->
+  <a href="https://discord.gg/xBj5wgMZH9" target="_blank" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:90px; height:90px; background:#111; border-radius:15px; color:#fff; font-size:2rem; box-shadow:0 0 25px #7289da;">
+    <i class="fab fa-discord"></i>
+    <span style="margin-top:5px; font-size:0.8rem;">DISCORD</span>
+  </a>
 
-    <hr class="divider-neon">
+  <!-- YouTube -->
+  <a href="https://youtube.com/@franzzinho?si=cJiskLlGq_kUUDew" target="_blank" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:90px; height:90px; background:#111; border-radius:15px; color:#fff; font-size:2rem; box-shadow:0 0 25px #ff0000;">
+    <i class="fab fa-youtube"></i>
+    <span style="margin-top:5px; font-size:0.8rem;">YOUTUBE</span>
+  </a>
 
-    <h2>🎙️ Ascolta la mia playlist su Spotify 🎙️</h2>
-    <div class="spotify-player-container">
-      <iframe src="https://open.spotify.com/embed/playlist/5UISu8gK5DzDIo1t8lI9nr?utm_source=generator" width="100%" height="380" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    </div>
-  </main>
+  <!-- YouTube 2 -->
+  <a href="https://www.youtube.com/@Goat.exe_4r" target="_blank" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:90px; height:90px; background:#111; border-radius:15px; color:#fff; font-size:2rem; box-shadow:0 0 25px #ff0000;">
+    <i class="fab fa-youtube"></i>
+    <span style="margin-top:5px; font-size:0.8rem;">YOUTUBE SECRET</span>
+  </a>
 
-  <footer style="text-align:center; padding:30px; background:#111; color:#fff;">
-    <p>© 2025 GoaTs RevenGE - Tutti i diritti riservati</p>
-    <p>
-      <a href="https://www.instagram.com/franzzinho.zbb/" target="_blank" style="color:#f13584;">Instagram</a> |
-      <a href="https://www.tiktok.com/@franzzinho.zbb?_t=ZN-8z5d1Qutkfe&_r=1" target="_blank" style="color:#69c9d0;">TikTok</a> |
-      <a href="https://discord.gg/xBj5wgMZH9" target="_blank" style="color:#7289da;">Discord</a> |
-      <a href="https://youtube.com/@franzzinho?si=cJiskLlGq_kUUDew" target="_blank" style="color:#ff0000;">YouTube</a> |
-      <a href="https://www.twitch.tv/franzzinho_GT" target="_blank" style="color:#6441a5;">Twitch</a>
-    </p>
-  </footer>
+  <!-- Twitch -->
+  <a href="https://www.twitch.tv/franzzinho_GT" target="_blank" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:90px; height:90px; background:#111; border-radius:15px; color:#fff; font-size:2rem; box-shadow:0 0 25px #6441a5;">
+    <i class="fab fa-twitch"></i>
+    <span style="margin-top:5px; font-size:0.8rem;">TWITCH</span>
+  </a>
+
+  <!-- Vinted -->
+  <a href="https://www.vinted.it/member/147466576-franzzinho" target="_blank" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:90px; height:90px; background:#111; border-radius:15px; color:#fff; font-size:2rem; box-shadow:0 0 25px #85d045;">
+    <i class="fas fa-tshirt"></i>
+    <span style="margin-top:5px; font-size:0.8rem;">VINTED</span>
+  </a>
+
+  <!-- Wallapop -->
+  <a href="https://www.wallapop.com/user/francescoc-436774478?_pid=wi&_uid=436774478" target="_blank" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:90px; height:90px; background:#111; border-radius:15px; color:#fff; font-size:2rem; box-shadow:0 0 25px #ff8000;">
+    <i class="fas fa-shopping-bag"></i>
+    <span style="margin-top:5px; font-size:0.8rem;">WALLAPOP</span>
+  </a>
+
+  <!-- Telegram -->
+  <a href="https://t.me/goatdeals_real" target="_blank" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:90px; height:90px; background:#111; border-radius:15px; color:#fff; font-size:2rem; box-shadow:0 0 25px #0088cc;">
+    <i class="fab fa-telegram"></i>
+    <span style="margin-top:5px; font-size:0.8rem;">TELEGRAM</span>
+  </a>
+
+  <!-- Amazon -->
+  <a href="https://www.amazon.it/hz/wishlist/ls/DD71H7TZJ9I4?ref_=wl_share" target="_blank" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:90px; height:90px; background:#111; border-radius:15px; color:#fff; font-size:2rem; box-shadow:0 0 25px #ff9900;">
+    <i class="fab fa-amazon"></i>
+    <span style="margin-top:5px; font-size:0.8rem;">SETUP STREAMING</span>
+  </a>
+
+  <!-- Amazon Music -->
+  <a href="https://music.amazon.it/profiles/@zbabyy?ref=dm_sh_nZ3zwFphlYRUc04ow57sRvQXf" target="_blank" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:90px; height:90px; background:#111; border-radius:15px; color:#fff; font-size:2rem; box-shadow:0 0 25px #1db954;">
+    <i class="fas fa-music"></i>
+    <span style="margin-top:5px; font-size:0.8rem;">AMAZON MUSIC</span>
+  </a>
+
+  <!-- Spotify -->
+  <a href="https://open.spotify.com/user/31b7fabh5h4v4wls254ofg55knxe?si=52PzdpixQA6nTP23M8LxFw" target="_blank" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:90px; height:90px; background:#111; border-radius:15px; color:#fff; font-size:2rem; box-shadow:0 0 25px #1db954;">
+    <i class="fab fa-spotify"></i>
+    <span style="margin-top:5px; font-size:0.8rem;">SPOTIFY</span>
+  </a>
+
+  <!-- Shop -->
+  <a href="https://franzzinho.company.site/" target="_blank" style="display:flex; flex-direction:column; align-items:center; justify-content:center; width:90px; height:90px; background:#111; border-radius:15px; color:#fff; font-size:2rem; box-shadow:0 0 25px #ff00ff;">
+    <i class="fas fa-store"></i>
+    <span style="margin-top:5px; font-size:0.8rem;">SHOP</span>
+  </a>
+
+</div>
+    <!-- Linea divisoria neon in alto -->
+<hr class="divider-neon" style="margin:204px auto;">
+
+<!-- Linea divisoria neon in basso -->
+<hr class="divider-neon" style="margin:404px auto;"> <!-- puoi cambiare 80px con quanto vuoi -->
+
+<style>
+hr.divider-neon {
+  border: none; /* Rimuove il bordo predefinito */
+  border-top: 2px dashed #ffcc00; /* Linea tratteggiata gialla/fucsia */
+  width: 100%; /* Larghezza della linea */
+  box-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00; /* Effetto neon */
+}
+</style>
+
+
+      
+
+      <!-- SPAZIO PER DISTANZA PLAYER -->
+      <div style="margin-top:-200px;"></div>
+
+      <!-- PLAYER SPOTIFY -->
+      <h2 style="font-size:2rem; margin-bottom:20px; color:#00ffcc;">
+        🎙️ Ascolta la mia playlist su Spotify 🎙️.
+      </h2>
+      <div class="spotify-player-container">
+        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5UISu8gK5DzDIo1t8lI9nr?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="text-align:center; padding:30px; background:#111; margin-top:50px; color:#fff;">
+    <p>© 2025 GoaTs RevenGE - Tutti i diritti riservati</p>
+    <p>
+      <a href="https://www.instagram.com/franzzinho.zbb/" target="_blank" style="color:#f13584;">Instagram</a> |
+      <a href="https://www.tiktok.com/@franzzinho.zbb?_t=ZN-8z5d1Qutkfe&_r=1" target="_blank" style="color:#69c9d0;">TikTok</a> |
+      <a href="https://discord.gg/xBj5wgMZH9" target="_blank" style="color:#7289da;">Discord</a> |
+      <a href="https://youtube.com/@franzzinho?si=cJiskLlGq_kUUDew" target="_blank" style="color:#ff0000;">YouTube</a> |
+      <a href="https://www.twitch.tv/franzzinho_GT" target="_blank" style="color:#6441a5;">Twitch</a>
+    </p>
+  </footer>
+
 </body>
 </html>
