@@ -27,25 +27,61 @@ nav ul li { margin: 0 10px; }
 nav ul li a { padding: 5px 10px; }
 nav ul li a:hover, nav ul li a.active { color: #ff00ff; text-shadow: 0 0 15px #ff00ff; }
 
-/* HERO */
+/* HERO (HOME CARTOON) */
 header.hero {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://source.unsplash.com/1600x900/?dj,music') center/cover no-repeat;
+  background: linear-gradient(135deg, #ffcc00 20%, #ff00ff 80%);
+  position: relative;
+  overflow: hidden;
 }
-header.hero h1 { font-size: 3rem; margin-bottom: 10px; text-shadow: 0 0 25px #ff00ff; color:#ffcc00; }
-header.hero p { font-size: 1.3rem; margin: 20px 0; text-shadow: 0 0 15px #fff; }
-header.hero .btn { padding: 12px 30px; background: #ffcc00; color: #000; font-weight: bold; border-radius: 10px; }
-header.hero .btn:hover { background: #ffaa00; }
+header.hero::before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: url("https://i.ibb.co/yF0kYYN/cartoon-clouds.png") repeat;
+  opacity: 0.2;
+  top: -10%;
+  left: -10%;
+  animation: cloudsMove 60s linear infinite;
+}
+@keyframes cloudsMove {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 0; }
+}
+header.hero h1 {
+  font-size: 3.5rem;
+  color: #111;
+  text-shadow: 3px 3px #fff, -3px -3px #ffcc00;
+}
+header.hero p {
+  font-size: 1.5rem;
+  color: #fff;
+  text-shadow: 2px 2px #000;
+}
+header.hero .btn {
+  padding: 15px 35px;
+  background: #ff00ff;
+  color: #fff;
+  border-radius: 15px;
+  border: 3px solid #111;
+  font-weight: bold;
+  box-shadow: 0 0 15px #ff00ff;
+}
+header.hero .btn:hover {
+  background: #ff66ff;
+  box-shadow: 0 0 25px #ff66ff;
+}
 
 /* SEZIONI */
 section { padding: 80px 20px; max-width: 1200px; margin: auto; }
 section h1, section h2 { margin-bottom: 20px; }
 
-/* ABOUT */
+/* ABOUT (non toccata) */
 .about { 
   display: flex; 
   flex-wrap: wrap; 
@@ -60,32 +96,48 @@ section h1, section h2 { margin-bottom: 20px; }
 .about div { flex: 1 1 500px; }
 .about ul { list-style: none; margin-top: 15px; }
 
-/* SERVICES */
+/* UTILITY (services cartoon) */
 .services { 
   display: grid; 
   grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); 
   gap: 25px; 
 }
 .service { 
-  background: linear-gradient(135deg, #111, #222); 
+  background: #fff;
+  color: #111;
   padding: 25px; 
-  border-radius: 15px; 
+  border-radius: 20px; 
   text-align: center; 
-  box-shadow: 0 0 20px #00ffcc; 
-  transition: 0.3s; 
+  box-shadow: 6px 6px 0 #111;
+  transition: transform 0.3s, box-shadow 0.3s; 
 }
 .service:hover { 
-  transform: translateY(-5px); 
-  box-shadow: 0 0 30px #00ffcc; 
+  transform: translateY(-8px) rotate(-1deg); 
+  box-shadow: 9px 9px 0 #111; 
+}
+.service h3 {
+  color: #6600ff;
+  margin-bottom: 15px;
 }
 
-/* SOCIAL */
+/* SOCIAL (fumetto vibes) */
 .social { 
   text-align: center; 
-  background: linear-gradient(135deg, #330033, #1a1a1a);
-  padding: 60px 20px; 
-  border-radius: 20px; 
-  box-shadow: 0 0 25px #ff00ff;
+  background: linear-gradient(135deg, #ff9900, #ff00cc);
+  padding: 80px 20px; 
+  border-radius: 25px; 
+  box-shadow: 0 0 25px #ff00cc;
+}
+.social h1 {
+  font-size: 2.2rem;
+  color: #fff;
+  background: #111;
+  display: inline-block;
+  padding: 15px 25px;
+  border-radius: 15px;
+  border: 3px solid #fff;
+  box-shadow: 5px 5px 0 #ffcc00;
+  transform: rotate(-2deg);
 }
 .social-icons { 
   display: flex; 
@@ -99,17 +151,24 @@ section h1, section h2 { margin-bottom: 20px; }
   flex-direction: column;
   align-items: center; 
   justify-content: center; 
-  width: 100px; 
-  height: 100px; 
-  background: #111; 
-  border-radius: 15px; 
-  font-size: 2rem; 
-  color: #fff; 
+  width: 110px; 
+  height: 110px; 
+  background: #fff; 
+  border: 3px solid #111; 
+  border-radius: 20px; 
+  font-size: 2.2rem; 
+  color: #111; 
+  box-shadow: 5px 5px 0 #111; 
   transition: 0.3s; 
 }
+.social-icons a span {
+  font-size: 0.9rem;
+  margin-top: 5px;
+  font-weight: bold;
+}
 .social-icons a:hover { 
-  transform: scale(1.1); 
-  box-shadow: 0 0 30px currentColor; 
+  transform: scale(1.1) rotate(-3deg);
+  box-shadow: 8px 8px 0 #111; 
 }
 
 /* CONTACT */
