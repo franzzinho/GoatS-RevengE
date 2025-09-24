@@ -5,6 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Utility - GoaTs RevenGE</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* TITOLI NEON */
+    .services-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin: 40px 0 20px;
+      color: #fff;
+      text-shadow: 0 0 5px #00eaff, 0 0 15px #00eaff, 0 0 25px #6f00ff;
+      animation: neonFlash 1.5s infinite alternate;
+    }
+
+    @keyframes neonFlash {
+      from { text-shadow: 0 0 5px #00eaff, 0 0 15px #00eaff, 0 0 25px #6f00ff; }
+      to   { text-shadow: 0 0 10px #6f00ff, 0 0 20px #6f00ff, 0 0 30px #00eaff; }
+    }
+
+    /* PULSANTI */
+    .service-btn {
+      display: inline-block;
+      padding: 10px 18px;
+      margin-top: 10px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #fff;
+      background: #00eaff;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff;
+    }
+
+    .service-btn:hover {
+      background: #ff7300;
+      box-shadow: 0 0 15px #ff7300, 0 0 30px #ff7300;
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
 
@@ -66,7 +104,7 @@
         <img src="https://source.unsplash.com/300x200/?youtube,content" alt="">
         <h3>Video Content</h3>
         <p>Format e contenuti originali per YouTube e TikTok.</p>
-        <a href="#" class="service-btn">Collabora 🚀</a>
+        <a href="TEAM.html" class="service-btn">Collabora 🚀</a>
       </div>
       <div class="service">
         <img src="https://source.unsplash.com/300x200/?camera,studio" alt="">
