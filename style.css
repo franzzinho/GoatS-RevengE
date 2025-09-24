@@ -129,28 +129,107 @@ section h1, section h2 { margin-bottom: 20px; }
 .about ul { list-style: none; margin-top: 15px; }
 
 /* UTILITY (services cartoon) */
+/* UTILITY (services cartoon + neon vibes) */
+.services-section {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Titoli con effetto insegna neon */
+.services-title {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #ff00ff;
+  margin: 80px 0 40px;
+  font-family: 'Segoe UI', sans-serif;
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #ffcc00, 0 0 30px #ff00ff;
+  animation: neon-flicker 2s infinite alternate;
+  position: relative;
+}
+
+/* Divisore sotto i titoli */
+.services-title::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff00ff, #ffcc00);
+  margin: 15px auto 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ff00ff;
+}
+
+/* Effetto flicker neon */
+@keyframes neon-flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ffcc00, 0 0 20px #ff00ff;
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    text-shadow: none;
+    opacity: 0.6;
+  }
+}
+
+/* Griglia servizi */
 .services { 
   display: grid; 
-  grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); 
-  gap: 25px; 
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 30px; 
+  margin-top: 30px;
 }
+
+/* Card */
 .service { 
-  background: #fff;
-  color: #111;
+  background: #111;
+  color: #fff;
   padding: 25px; 
   border-radius: 20px; 
   text-align: center; 
-  box-shadow: 6px 6px 0 #111;
+  box-shadow: 0 0 20px #6600ff;
   transition: transform 0.3s, box-shadow 0.3s; 
+  border: 2px solid #6600ff;
 }
 .service:hover { 
-  transform: translateY(-8px) rotate(-1deg); 
-  box-shadow: 9px 9px 0 #111; 
+  transform: translateY(-10px) scale(1.03); 
+  box-shadow: 0 0 30px #ff00ff, 0 0 50px #ffcc00;
+}
+.service img {
+  border-radius: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 15px #000;
 }
 .service h3 {
-  color: #6600ff;
+  color: #ffcc00;
   margin-bottom: 15px;
+  font-size: 1.4rem;
+  text-shadow: 0 0 10px #ff00ff;
 }
+.service p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+/* Pulsanti neon */
+.service-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 10px;
+  background: #ff00ff;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 0 15px #ff00ff, 0 0 25px #ffcc00;
+  transition: 0.3s;
+}
+.service-btn:hover {
+  background: #ffcc00;
+  color: #111;
+  box-shadow: 0 0 20px #ffcc00, 0 0 40px #ff00ff;
+  transform: scale(1.05);
+}
+
 
 /* SOCIAL (STILE VINTAGE RETRO) */
 /* SOCIAL SECTION (neon vibes) */
