@@ -5,9 +5,144 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GoaTs RevenGE - Home</title>
   <link rel="stylesheet" href="style.css">
-  
-  <link rel="icon" type="image/png" href="icona_sito.png">      <!-- ICONA SITO -->
-  
+  <link rel="icon" type="image/png" href="icona_sito.png">
+  <style>
+    /* HERO futuristico */
+    header.hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #0a0a0a, #1c1c1c);
+      position: relative;
+      overflow: hidden;
+    }
+    header.hero h1 {
+      font-size: 3.5rem;
+      color: #ff4500;
+      letter-spacing: 2px;
+      text-shadow: 0 0 15px #ff4500;
+    }
+    header.hero p {
+      font-size: 1.3rem;
+      margin-top: 20px;
+      max-width: 700px;
+      color: #ccc;
+    }
+    .hero-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 35px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 10px;
+      text-decoration: none;
+      background: #00e6ff;
+      color: #111;
+      box-shadow: 0 0 20px #00e6ff;
+      transition: 0.3s;
+    }
+    .hero-btn:hover {
+      background: #ff4500;
+      color: #fff;
+      box-shadow: 0 0 25px #ff4500;
+      transform: scale(1.05);
+    }
+
+    /* INTRO con panoramica */
+    section.intro {
+      padding: 80px 20px;
+      text-align: center;
+      max-width: 1100px;
+      margin: auto;
+    }
+    section.intro h2 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      color: #00e6ff;
+      text-shadow: 0 0 10px #00e6ff;
+    }
+    section.intro p {
+      font-size: 1.2rem;
+      color: #ddd;
+      margin-bottom: 50px;
+    }
+
+    /* Panoramica card sezioni */
+    .overview {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+    }
+    .overview-card {
+      background: #111;
+      padding: 30px 20px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 0 15px #222;
+      transition: 0.3s;
+    }
+    .overview-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 25px #00e6ff;
+    }
+    .overview-card h3 {
+      color: #ff4500;
+      margin-bottom: 10px;
+    }
+    .overview-card p {
+      font-size: 0.95rem;
+      color: #bbb;
+      margin-bottom: 20px;
+    }
+    .overview-card a {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #00e6ff;
+      color: #111;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .overview-card a:hover {
+      background: #ff4500;
+      color: #fff;
+      box-shadow: 0 0 15px #ff4500;
+    }
+
+    /* CALL TO ACTION */
+    section.cta {
+      text-align: center;
+      padding: 70px 20px;
+      background: #1a1a1a;
+      color: #fff;
+    }
+    section.cta h2 {
+      font-size: 2rem;
+      margin-bottom: 25px;
+      color: #ff4500;
+      text-shadow: 0 0 10px #ff4500;
+    }
+    section.cta a {
+      display: inline-block;
+      padding: 15px 30px;
+      background: #00e6ff;
+      color: #111;
+      font-weight: bold;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    section.cta a:hover {
+      background: #ff4500;
+      color: #fff;
+      box-shadow: 0 0 20px #ff4500;
+    }
+  </style>
 </head>
 <body>
 
@@ -17,35 +152,59 @@
       <a href="index.html" style="text-decoration:none; color:inherit;">🐐 GoaTs RevenGE 🧠</a>
     </div>
     <ul>
-      <li><a href="index.html" class="active"></a></li>
-      <li><a href="ABOUT.html">❓ About ❓</a></li>
-      <li><a href="UTILITY.html">👀 Utility 👀</a></li>
-      <li><a href="SOCIAL.html">🔴 Social 🟠</a></li>
-      <li><a href="VIDEO IDEAS.html">💡 Video Ideas 💡</a></li>
+      <li><a href="index.html" class="active">🏠 Home</a></li>
+      <li><a href="ABOUT.html">❓ About</a></li>
+      <li><a href="UTILITY.html">⚙ Utility</a></li>
+      <li><a href="SOCIAL.html">📱 Social</a></li>
+      <li><a href="VIDEO IDEAS.html">💡 Video Ideas</a></li>
     </ul>
   </nav>
 
-  <!-- HERO SECTION -->
-  <header style="text-align:center; padding:100px 20px; background:#111; color:#fff;">
-    <h1 style="font-size:3rem; color:#ff4500;">Benvenuto su 🐐 GoaTs RevenGE 🧠</h1>
-    <p style="font-size:1.3rem; margin-top:20px;">Il mio mondo tra YouTube, Twitch, Musica & tanto altro. 🔥</p>
-    <a href="social.html" style="display:inline-block; margin-top:30px; padding:15px 30px; background:#ff00ff; color:#fff; border-radius:10px; text-decoration:none; font-size:1.2rem; box-shadow:0 0 20px #ff00ff;">👉 Seguimi sui Social 👈</a>
+  <!-- HERO -->
+  <header class="hero">
+    <h1>Benvenuto su 🐐 GoaTs RevenGE 🧠</h1>
+    <p>Il mio mondo tra YouTube, Twitch, Musica e collaborazioni.  
+       Qui trovi tutto, raccolto in un unico hub futuristico 🔥</p>
+    <a href="SOCIAL.html" class="hero-btn">🚀 Seguimi sui Social</a>
   </header>
 
-  <!-- INTRO SECTION -->
-  <section style="padding:60px 20px; text-align:center;">
-    <h2 style="font-size:2rem; color:#ff00ff; margin-bottom:20px;">🔥 Cosa troverai qui?</h2>
-    <p style="font-size:1.2rem; max-width:800px; margin:auto;">
-      Qui raccoglio tutto quello che faccio: dai miei video su <b>YouTube</b>, alle live su <b>Twitch</b>, 
-      passando per <b>Musica, Social</b> e tanto altro.  
-      Questo è il mio hub ufficiale 💯.
+  <!-- INTRO -->
+  <section class="intro">
+    <h2>🔥 Cosa troverai qui?</h2>
+    <p>
+      Scopri tutte le sezioni del sito: contenuti esclusivi, servizi musicali, 
+      collaborazioni e idee per i prossimi progetti.  
+      Un portale completo per chi vuole entrare nel mio universo 🐐
     </p>
+
+    <div class="overview">
+      <div class="overview-card">
+        <h3>❓ About</h3>
+        <p>Chi sono, cosa faccio e la mia visione.</p>
+        <a href="ABOUT.html">Scopri</a>
+      </div>
+      <div class="overview-card">
+        <h3>⚙ Utility</h3>
+        <p>DJ set, beat e servizi per creator.</p>
+        <a href="UTILITY.html">Entra</a>
+      </div>
+      <div class="overview-card">
+        <h3>📱 Social</h3>
+        <p>I miei link ufficiali e contenuti esclusivi.</p>
+        <a href="SOCIAL.html">Vai</a>
+      </div>
+      <div class="overview-card">
+        <h3>💡 Video Ideas</h3>
+        <p>Proponi idee e collabora ai prossimi contenuti.</p>
+        <a href="VIDEO IDEAS.html">Collabora</a>
+      </div>
+    </div>
   </section>
 
   <!-- CALL TO ACTION -->
-  <section style="text-align:center; padding:50px; background:#222; color:#fff;">
-    <h2 style="font-size:2rem; margin-bottom:20px;">Vuoi collaborare o darmi idee per i prossimi contenuti?</h2>
-    <a href="contact.html" style="display:inline-block; margin-top:20px; padding:15px 30px; background:#ff4500; color:#fff; border-radius:10px; text-decoration:none; font-size:1.2rem; box-shadow:0 0 20px #ff4500;">💡 Vai alla sezione Video Ideas 💡</a>
+  <section class="cta">
+    <h2>Vuoi collaborare o lasciare la tua idea?</h2>
+    <a href="VIDEO IDEAS.html">💡 Vai alla sezione Video Ideas 💡</a>
   </section>
 
   <!-- FOOTER -->
