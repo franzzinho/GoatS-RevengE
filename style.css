@@ -128,8 +128,7 @@ section h1, section h2 { margin-bottom: 20px; }
 .about div { flex: 1 1 500px; }
 .about ul { list-style: none; margin-top: 15px; }
 
-/* UTILITY (services cartoon) */
-/* UTILITY (services cartoon + neon vibes) */
+/* UTILITY (neon vibes) */
 .services-section {
   padding: 80px 20px;
   max-width: 1200px;
@@ -216,8 +215,8 @@ section h1, section h2 { margin-bottom: 20px; }
   display: inline-block;
   padding: 12px 25px;
   border-radius: 10px;
-  background: #ff00ff;
-  color: #fff;
+  background: #ffcc00;
+  color: #000
   font-weight: bold;
   text-decoration: none;
   box-shadow: 0 0 15px #ff00ff, 0 0 25px #ffcc00;
@@ -225,13 +224,11 @@ section h1, section h2 { margin-bottom: 20px; }
 }
 .service-btn:hover {
   background: #ffcc00;
-  color: #111;
+  color: #000;
   box-shadow: 0 0 20px #ffcc00, 0 0 40px #ff00ff;
   transform: scale(1.05);
 }
 
-
-/* SOCIAL (STILE VINTAGE RETRO) */
 /* SOCIAL SECTION (neon vibes) */
 .social { 
   text-align: center; 
