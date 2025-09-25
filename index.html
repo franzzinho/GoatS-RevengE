@@ -4,154 +4,215 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GoaTs RevenGE - Home</title>
-  <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="icona_sito.png">
 
-  <!-- FONT AWESOME ICONS -->
-  <link rel="stylesheet" href="icona_sito.png">
+  <!-- FONT AWESOME -->
+  <script src="https://kit.fontawesome.com/4e5f1f8c4c.js" crossorigin="anonymous"></script>
 
   <style>
-    /* HERO futuristico */
+    /* RESET */
+    * { margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif; }
+
+    /* NAVBAR */
+    nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 40px;
+      background:#111;
+      color:#fff;
+      position:fixed;
+      width:100%;
+      top:0;
+      z-index:1000;
+    }
+    nav .logo { font-size:1.3rem; font-weight:bold; }
+    nav ul { list-style:none; display:flex; gap:20px; }
+    nav ul li a {
+      text-decoration:none;
+      color:#fff;
+      font-weight:bold;
+      transition:0.3s;
+    }
+    nav ul li a:hover { color:#00e6ff; }
+
+    /* HERO con slideshow */
     header.hero {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background: linear-gradient(135deg, #0a0a0a, #1c1c1c);
-      position: relative;
-      overflow: hidden;
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+      background-size:cover;
+      background-position:center;
+      animation: slideShow 18s infinite;
+    }
+    @keyframes slideShow {
+      0%   { background-image:url("img1.jpg"); }
+      33%  { background-image:url("img2.jpg"); }
+      66%  { background-image:url("img3.jpg"); }
+      100% { background-image:url("img1.jpg"); }
+    }
+    header.hero::before {
+      content:"";
+      position:absolute;
+      top:0; left:0; right:0; bottom:0;
+      background:rgba(0,0,0,0.35);
+      z-index:0;
     }
     header.hero h1 {
-      font-size: 3.5rem;
-      color: #00e6ff;
-      letter-spacing: 2px;
-      text-shadow: 0 0 15px #00e6ff;
+      font-size:3.5rem;
+      color:#00e6ff;
+      text-shadow:0 0 15px #00e6ff;
+      z-index:1;
     }
     header.hero p {
-      font-size: 1.3rem;
-      margin-top: 20px;
-      max-width: 700px;
-      color: #ccc;
+      font-size:1.3rem;
+      margin-top:20px;
+      max-width:700px;
+      color:#000;
+      font-weight:600;
+      background:rgba(255,255,255,0.6);
+      padding:10px 15px;
+      border-radius:10px;
+      display:inline-block;
+      z-index:1;
     }
     .hero-btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 15px 35px;
-      font-size: 1.2rem;
-      font-weight: bold;
-      border-radius: 10px;
-      text-decoration: none;
-      background: #00e6ff;
-      color: #111;
-      box-shadow: 0 0 20px #00e6ff;
-      transition: 0.3s;
+      display:inline-block;
+      margin-top:30px;
+      padding:15px 35px;
+      font-size:1.2rem;
+      font-weight:bold;
+      border-radius:10px;
+      text-decoration:none;
+      background:#FFD700;
+      color:#111;
+      box-shadow:0 0 20px #FFD700;
+      transition:0.3s;
+      z-index:1;
     }
     .hero-btn:hover {
-      background: #ff4500;
-      color: #fff;
-      box-shadow: 0 0 25px #ff4500;
-      transform: scale(1.05);
+      background:#ff4500;
+      color:#fff;
+      box-shadow:0 0 25px #ff4500;
+      transform:scale(1.05);
     }
 
-    /* INTRO con panoramica */
+    /* INTRO Panoramica */
     section.intro {
-      padding: 80px 20px;
-      text-align: center;
-      max-width: 1200px;
-      margin: auto;
+      padding:100px 20px;
+      text-align:center;
+      max-width:1200px;
+      margin:auto;
     }
     section.intro h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: #ff4500;
-      text-shadow: 0 0 12px #ff4500;
+      font-size:2.5rem;
+      margin-bottom:20px;
+      color:#ff4500;
+      text-shadow:0 0 12px #ff4500;
     }
     section.intro p {
-      font-size: 1.2rem;
-      color: #ddd;
-      margin-bottom: 50px;
+      font-size:1.2rem;
+      color:#ddd;
+      margin-bottom:50px;
     }
 
-    /* Panoramica card sezioni */
+    /* Panoramica cards */
     .overview {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 30px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+      gap:30px;
     }
     .overview-card {
-      background: #111;
-      padding: 40px 20px;
-      border-radius: 15px;
-      text-align: center;
-      box-shadow: 0 0 15px #222;
-      transition: 0.3s;
+      background:#111;
+      padding:40px 20px;
+      border-radius:15px;
+      text-align:center;
+      box-shadow:0 0 15px #222;
+      transition:0.3s;
     }
     .overview-card:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 0 25px #00e6ff;
+      transform:translateY(-10px) scale(1.02);
+      box-shadow:0 0 25px #00e6ff;
     }
     .overview-card i {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-      color: #00e6ff;
-      text-shadow: 0 0 15px #00e6ff;
+      font-size:2.5rem;
+      margin-bottom:15px;
+      color:#00e6ff;
+      text-shadow:0 0 15px #00e6ff;
     }
     .overview-card h3 {
-      color: #ff4500;
-      margin-bottom: 10px;
-      font-size: 1.4rem;
+      color:#ff4500;
+      margin-bottom:10px;
+      font-size:1.4rem;
     }
     .overview-card p {
-      font-size: 0.95rem;
-      color: #bbb;
-      margin-bottom: 20px;
+      font-size:0.95rem;
+      color:#bbb;
+      margin-bottom:20px;
     }
     .overview-card a {
-      display: inline-block;
-      padding: 10px 20px;
-      background: #00e6ff;
-      color: #111;
-      font-weight: bold;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: 0.3s;
+      display:inline-block;
+      padding:10px 20px;
+      background:#00e6ff;
+      color:#111;
+      font-weight:bold;
+      border-radius:8px;
+      text-decoration:none;
+      transition:0.3s;
     }
     .overview-card a:hover {
-      background: #ff4500;
-      color: #fff;
-      box-shadow: 0 0 15px #ff4500;
+      background:#ff4500;
+      color:#fff;
+      box-shadow:0 0 15px #ff4500;
     }
 
-    /* CALL TO ACTION */
+    /* CTA */
     section.cta {
-      text-align: center;
-      padding: 70px 20px;
-      background: #1a1a1a;
-      color: #fff;
+      text-align:center;
+      padding:70px 20px;
+      background:#1a1a1a;
+      color:#fff;
     }
     section.cta h2 {
-      font-size: 2rem;
-      margin-bottom: 25px;
-      color: #00e6ff;
-      text-shadow: 0 0 12px #00e6ff;
+      font-size:2rem;
+      margin-bottom:25px;
+      color:#00e6ff;
+      text-shadow:0 0 12px #00e6ff;
     }
     section.cta a {
-      display: inline-block;
-      padding: 15px 30px;
-      background: #ff4500;
-      color: #fff;
-      font-weight: bold;
-      border-radius: 10px;
-      font-size: 1.1rem;
-      text-decoration: none;
-      transition: 0.3s;
+      display:inline-block;
+      padding:15px 30px;
+      background:#ff4500;
+      color:#fff;
+      font-weight:bold;
+      border-radius:10px;
+      font-size:1.1rem;
+      text-decoration:none;
+      transition:0.3s;
     }
     section.cta a:hover {
-      background: #00e6ff;
-      color: #111;
-      box-shadow: 0 0 20px #00e6ff;
+      background:#00e6ff;
+      color:#111;
+      box-shadow:0 0 20px #00e6ff;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align:center;
+      padding:30px;
+      background:#111;
+      color:#fff;
+      margin-top:50px;
+    }
+    footer a {
+      text-decoration:none;
+      margin:0 8px;
+      font-weight:bold;
     }
   </style>
 </head>
@@ -174,13 +235,13 @@
   <!-- HERO -->
   <header class="hero">
     <h1>Benvenuto su 🐐 GoaTs RevenGE 🧠</h1>
-    <p>Il mio universo tra YouTube, Twitch, Musica e collaborazioni.  
+    <p>Il mio universo tra YouTube, Twitch, Musica e collaborazioni.<br>
        Tutto raccolto in un unico hub futuristico 🔥</p>
-    <a href="SOCIAL.html" class="hero-btn"><i class="fa-brands fa-rocket"></i> Seguimi sui Social</a>
+    <a href="#panoramica" class="hero-btn"><i class="fa-solid fa-arrow-down"></i> Scopri di più</a>
   </header>
 
-  <!-- INTRO -->
-  <section class="intro">
+  <!-- INTRO + PANORAMICA -->
+  <section id="panoramica" class="intro">
     <h2>🚀 Panoramica del sito</h2>
     <p>
       Qui puoi navigare tra sezioni dedicate a video, musica, collaborazioni e tanto altro.  
@@ -212,7 +273,6 @@
         <p>Proponi idee e collabora ai prossimi contenuti.</p>
         <a href="VIDEO IDEAS.html">Collabora</a>
       </div>
-      <!-- CARD EXTRA -->
       <div class="overview-card">
         <i class="fa-solid fa-store"></i>
         <h3>Merch</h3>
@@ -228,20 +288,20 @@
     </div>
   </section>
 
-  <!-- CALL TO ACTION -->
+  <!-- CTA -->
   <section class="cta">
     <h2>Vuoi collaborare o lasciare la tua idea?</h2>
     <a href="VIDEO IDEAS.html"><i class="fa-solid fa-lightbulb"></i> Vai alla sezione Video Ideas</a>
   </section>
 
   <!-- FOOTER -->
-  <footer style="text-align:center; padding:30px; background:#111; color:#fff; margin-top:50px;">
+  <footer>
     <p>© 2025 GoaTs RevenGE - Tutti i diritti riservati</p>
     <p>
       <a href="https://www.instagram.com/franzzinho.zbb/" target="_blank" style="color:#f13584;"><i class="fa-brands fa-instagram"></i> Instagram</a> |
-      <a href="https://www.tiktok.com/@franzzinho.zbb?_t=ZN-8z5d1Qutkfe&_r=1" target="_blank" style="color:#69c9d0;"><i class="fa-brands fa-tiktok"></i> TikTok</a> |
+      <a href="https://www.tiktok.com/@franzzinho.zbb" target="_blank" style="color:#69c9d0;"><i class="fa-brands fa-tiktok"></i> TikTok</a> |
       <a href="https://discord.gg/xBj5wgMZH9" target="_blank" style="color:#7289da;"><i class="fa-brands fa-discord"></i> Discord</a> |
-      <a href="https://youtube.com/@franzzinho?si=cJiskLlGq_kUUDew" target="_blank" style="color:#ff0000;"><i class="fa-brands fa-youtube"></i> YouTube</a> |
+      <a href="https://youtube.com/@franzzinho" target="_blank" style="color:#ff0000;"><i class="fa-brands fa-youtube"></i> YouTube</a> |
       <a href="https://www.twitch.tv/franzzinho_GT" target="_blank" style="color:#6441a5;"><i class="fa-brands fa-twitch"></i> Twitch</a>
     </p>
   </footer>
