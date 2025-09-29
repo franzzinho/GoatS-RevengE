@@ -78,31 +78,25 @@
 <body>
 
   <!-- NAVBAR -->
-<nav>
+<nav class="navbar">
   <div class="logo">
     <a href="index.html" style="text-decoration:none; color:inherit;">🐐 GoaTs RevenGE 🧠</a>
-    <span class="arrow" onclick="toggleMenu()">⬇️</span>
   </div>
 
-  <ul id="dropdownMenu" style="display:none; position:absolute; top:70px; left:20px; background:#111; padding:15px; border-radius:10px; box-shadow:0 0 15px #00ffcc;">
-    <li><a href="ABOUT.html" style="display:block; color:#fff; padding:8px;">❓ About ❓</a></li>
-    <li><a href="UTILITY.html" style="display:block; color:#fff; padding:8px;">👀 Utility 👀</a></li>
-    <li><a href="SOCIAL.html" style="display:block; color:#fff; padding:8px;">🔴 Social 🟠</a></li>
-    <li><a href="VIDEO IDEAS.html" style="display:block; color:#fff; padding:8px;">💡 Video Ideas 💡</a></li>
-    <li><a href="TEAM.html" style="display:block; color:#fff; padding:8px;">👨🏻‍💼 Team 👨🏻‍💼</a></li>
+  <ul>
+    <li><a href="ABOUT.html">❓ About ❓</a></li>
+    <li><a href="UTILITY.html">👀 Utility 👀</a></li>
+    <li><a href="SOCIAL.html">🔴 Social 🟠</a></li>
+    <li><a href="VIDEO IDEAS.html" class="active">💡 Video Ideas 💡</a></li>
   </ul>
+
+  <!-- MENÙ + FRECCIA -->
+  <div class="menu-btn">
+    <p class="menu-label">MENÙ</p>
+    <a href="menu.html" class="arrow">⬇️</a>
+  </div>
 </nav>
 
-<script>
-  function toggleMenu() {
-    let menu = document.getElementById("dropdownMenu");
-    if (menu.style.display === "none" || menu.style.display === "") {
-      menu.style.display = "block";
-    } else {
-      menu.style.display = "none";
-    }
-  }
-</script>
 
 
   <!-- HERO -->
