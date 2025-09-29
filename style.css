@@ -307,6 +307,40 @@ section h1, section h2 { margin-bottom: 20px; font-weight: bold; } /* GRASSETTO 
   overflow: hidden;
 }
 
+/* Container del menu NAVBAR */
+.menu-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto; /* Spinge tutto a destra */
+  margin-right: 20px;
+}
+
+/* Testo "MENÙ" */
+.menu-label {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #00f, 0 0 20px #0ff;
+  margin: 0;
+  margin-bottom: 5px; /* distanza dalla freccia */
+}
+
+/* Freccia neon */
+.arrow {
+  font-size: 1.5rem;
+  color: #ff00ff;
+  text-decoration: none;
+  text-shadow: 0 0 5px #ff00ff, 0 0 10px #f0f, 0 0 20px #ff00ff;
+  transition: 0.3s ease-in-out;
+}
+
+.arrow:hover {
+  transform: scale(1.2);
+  text-shadow: 0 0 10px #0ff, 0 0 20px #00f, 0 0 40px #0ff;
+}
+
+
 /* CONTACT */
 .contact { 
   background: linear-gradient(135deg, #001a33, #000); 
