@@ -21,7 +21,24 @@ nav {
   z-index: 1000;
   box-shadow: 0 0 15px #ffcc00;
 }
-nav .logo { font-size: 1.3rem; font-weight: bold; color:#ffcc00; text-shadow: 0 0 10px #ffcc00; }
+nav .logo { 
+  display: flex; 
+  align-items: center; 
+  gap: 8px; 
+  font-size: 1.3rem; 
+  font-weight: bold; 
+  color:#ffcc00; 
+  text-shadow: 0 0 10px #ffcc00; 
+}
+nav .logo a {
+  color: #ffcc00;
+  font-weight: bold;
+  text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00;
+}
+nav .logo .arrow {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
 nav ul { display: flex; list-style: none; }
 nav ul li { margin: 0 10px; }
 nav ul li a { padding: 5px 10px; }
@@ -54,6 +71,7 @@ header.hero::before {
 header.hero h1 {
   font-size: 4.5rem;
   color: #fff;
+  font-weight: bold; /* GRASSETTO */
   font-family: 'Comic Sans MS', cursive, sans-serif;
   text-shadow: -5px 5px 0 #111, 5px -5px 0 #ff00ff;
   z-index: 1;
@@ -111,7 +129,7 @@ header.hero p {
 
 /* SEZIONI */
 section { padding: 80px 20px; max-width: 1200px; margin: auto; }
-section h1, section h2 { margin-bottom: 20px; }
+section h1, section h2 { margin-bottom: 20px; font-weight: bold; } /* GRASSETTO TITOLI */
 
 /* ABOUT (non toccata) */
 .about { 
@@ -142,6 +160,7 @@ section h1, section h2 { margin-bottom: 20px; }
   color: #ff00ff;
   margin: 80px 0 40px;
   font-family: 'Segoe UI', sans-serif;
+  font-weight: bold; /* GRASSETTO */
   text-shadow: 0 0 10px #ff00ff, 0 0 20px #ffcc00, 0 0 30px #ff00ff;
   animation: neon-flicker 2s infinite alternate;
   position: relative;
@@ -203,6 +222,7 @@ section h1, section h2 { margin-bottom: 20px; }
   color: #ffcc00;
   margin-bottom: 15px;
   font-size: 1.4rem;
+  font-weight: bold; /* GRASSETTO */
   text-shadow: 0 0 10px #ff00ff;
 }
 .service p {
@@ -216,15 +236,15 @@ section h1, section h2 { margin-bottom: 20px; }
   padding: 12px 25px;
   border-radius: 10px;
   background: #ffcc00;
-  color: #000;  /* <-- TESTO NERO, ho aggiunto il ; finale */
+  color: #000;  
   font-weight: bold;
   text-decoration: none;
   box-shadow: 0 0 15px #ff00ff, 0 0 25px #ffcc00;
   transition: 0.3s;
 }
 .service-btn:hover {
-  background: #ff7300;  /* sfondo arancione quando hoveri */
-  color: #000;          /* testo rimane nero */
+  background: #ff7300;
+  color: #000;
   box-shadow: 0 0 20px #ffcc00, 0 0 40px #ff00ff;
   transform: scale(1.05);
 }
@@ -241,6 +261,7 @@ section h1, section h2 { margin-bottom: 20px; }
 .social h1 {
   font-size: 2.5rem;
   color: #fff;
+  font-weight: bold; /* GRASSETTO */
   margin-bottom: 40px;
   text-shadow: 0 0 10px #ff00ff, 0 0 20px #ffcc00;
 }
@@ -286,8 +307,6 @@ section h1, section h2 { margin-bottom: 20px; }
   overflow: hidden;
 }
 
-
-
 /* CONTACT */
 .contact { 
   background: linear-gradient(135deg, #001a33, #000); 
@@ -324,5 +343,5 @@ footer {
   color:#fff; 
   box-shadow: 0 0 20px #ff00ff; 
 }
-footer a { color: #ffcc00; margin: 0 10px; }
+footer a { color: #ffcc00; margin: 0 10px; font-weight: bold; } /* GRASSETTO link footer */
 footer a:hover { color:#ff00ff; }
