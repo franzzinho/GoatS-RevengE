@@ -77,25 +77,27 @@
 </head>
 <body>
 
-  <!-- NAVBAR -->
-<nav class="navbar">
+  <nav>
   <div class="logo">
-    <a href="index.html" style="text-decoration:none; color:inherit;">🐐 GoaTs RevenGE 🧠</a>
+    <a href="#">MY LOGO</a>
   </div>
 
-  <ul>
-    <li><a href="ABOUT.html">❓ About ❓</a></li>
-    <li><a href="UTILITY.html">👀 Utility 👀</a></li>
-    <li><a href="SOCIAL.html">🔴 Social 🟠</a></li>
-    <li><a href="VIDEO IDEAS.html" class="active">💡 Video Ideas 💡</a></li>
-  </ul>
-
-  <!-- MENÙ + FRECCIA -->
-  <div class="menu-btn">
+  <div class="menu-btn" onclick="document.querySelector('.dropdown').classList.toggle('active')">
     <p class="menu-label">MENÙ</p>
-    <a href="menu.html" class="arrow">⬇️</a>
+    <span class="arrow">▼</span>
+  </div>
+
+  <div class="dropdown">
+    <a href="#about">ABOUT</a>
+    <a href="#utility">UTILITY</a>
+    <a href="#social">SOCIAL</a>
+    <a href="#video-ideas">VIDEO IDEAS</a>
+    <a href="#team">TEAM</a>
+    <a href="#coming-soon">COMING SOON</a>
+    <a href="#shop">SHOP</a>
   </div>
 </nav>
+
 
 
 
