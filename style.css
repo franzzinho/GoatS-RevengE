@@ -10,9 +10,11 @@ img { max-width: 100%; display: block; border-radius: 12px; }
 a { text-decoration: none; color: inherit; transition: 0.3s; }
 
 /* NAVBAR */
+/* NAVBAR */
 nav {
   background: linear-gradient(90deg, #111, #1a1a1a);
   display: flex;
+  justify-content: space-between; /* logo a sinistra, menu a destra */
   align-items: center;
   padding: 20px;
   position: sticky;
@@ -21,7 +23,7 @@ nav {
   box-shadow: 0 0 15px #ffcc00;
 }
 
-/* Logo a sinistra */
+/* Logo/nome sito (rimane a sinistra) */
 nav .logo { 
   display: flex; 
   align-items: center; 
@@ -37,12 +39,11 @@ nav .logo a {
   text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00;
 }
 
-/* Container del menu (a destra) */
+/* Bottone menu a destra */
 .menu-btn {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: auto;
   cursor: pointer;
 }
 
@@ -67,7 +68,7 @@ nav .logo a {
   text-shadow: 0 0 10px #0ff, 0 0 20px #00f, 0 0 40px #0ff;
 }
 
-/* Menu a tendina nascosto */
+/* Dropdown */
 .dropdown {
   display: none;
   position: absolute;
@@ -81,7 +82,7 @@ nav .logo a {
   padding: 15px;
 }
 
-/* Link del menu */
+/* Link nel menu */
 .dropdown a {
   color: #fff;
   padding: 10px 15px;
@@ -95,10 +96,11 @@ nav .logo a {
   text-shadow: 0 0 12px #ffcc00, 0 0 25px #ff00ff;
 }
 
-/* Mostra menu quando attivo */
+/* Attivazione */
 .dropdown.active {
   display: flex;
 }
+
 
 /* HERO (HOME CARTOON COMPLETAMENTE NUOVA) */
 header.hero {
