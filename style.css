@@ -13,7 +13,6 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
 nav {
   background: linear-gradient(90deg, #111, #1a1a1a);
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 20px;
   position: sticky;
@@ -21,6 +20,8 @@ nav {
   z-index: 1000;
   box-shadow: 0 0 15px #ffcc00;
 }
+
+/* Logo a sinistra */
 nav .logo { 
   display: flex; 
   align-items: center; 
@@ -35,14 +36,69 @@ nav .logo a {
   font-weight: bold;
   text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00;
 }
-nav .logo .arrow {
-  font-size: 1.2rem;
+
+/* Container del menu (a destra) */
+.menu-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto;
   cursor: pointer;
 }
-nav ul { display: flex; list-style: none; }
-nav ul li { margin: 0 10px; }
-nav ul li a { padding: 5px 10px; }
-nav ul li a:hover, nav ul li a.active { color: #ff00ff; text-shadow: 0 0 15px #ff00ff; }
+
+/* Testo "MENÙ" */
+.menu-label {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #00f, 0 0 20px #0ff;
+  margin-bottom: 5px;
+}
+
+/* Freccia neon */
+.arrow {
+  font-size: 1.8rem;
+  color: #ff00ff;
+  text-shadow: 0 0 5px #ff00ff, 0 0 10px #f0f, 0 0 20px #ff00ff;
+  transition: 0.3s ease-in-out;
+}
+.arrow:hover {
+  transform: scale(1.2);
+  text-shadow: 0 0 10px #0ff, 0 0 20px #00f, 0 0 40px #0ff;
+}
+
+/* Menu a tendina nascosto */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background: #111;
+  border: 2px solid #ff00ff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #ff00ff;
+  flex-direction: column;
+  padding: 15px;
+}
+
+/* Link del menu */
+.dropdown a {
+  color: #fff;
+  padding: 10px 15px;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 0 0 8px #ff00ff;
+  transition: 0.3s;
+}
+.dropdown a:hover {
+  color: #ffcc00;
+  text-shadow: 0 0 12px #ffcc00, 0 0 25px #ff00ff;
+}
+
+/* Mostra menu quando attivo */
+.dropdown.active {
+  display: flex;
+}
 
 /* HERO (HOME CARTOON COMPLETAMENTE NUOVA) */
 header.hero {
@@ -305,34 +361,6 @@ section h1, section h2 { margin-bottom: 20px; font-weight: bold; } /* GRASSETTO 
   box-shadow: 0 0 20px #1db954;
   border-radius: 15px;
   overflow: hidden;
-}
-
-/* Container del menu NAVBAR */
-.menu-btn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-left: auto; /* Spinge tutto a destra */
-  margin-right: 20px;
-}
-
-/* Testo "MENÙ" */
-.menu-label {
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: #0ff;
-  text-shadow: 0 0 5px #0ff, 0 0 10px #00f, 0 0 20px #0ff;
-  margin: 0;
-  margin-bottom: 5px; /* distanza dalla freccia */
-}
-
-/* Freccia neon */
-.arrow {
-  font-size: 1.5rem;
-  color: #ff00ff;
-  text-decoration: none;
-  text-shadow: 0 0 5px #ff00ff, 0 0 10px #f0f, 0 0 20px #ff00ff;
-  transition: 0.3s ease-in-out;
 }
 
 .arrow:hover {
