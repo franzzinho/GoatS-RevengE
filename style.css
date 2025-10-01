@@ -9,97 +9,18 @@ body {
 img { max-width: 100%; display: block; border-radius: 12px; }
 a { text-decoration: none; color: inherit; transition: 0.3s; }
 
-/* NAVBAR */
-/* NAVBAR */
-nav {
-  background: linear-gradient(90deg, #111, #1a1a1a);
-  display: flex;
-  justify-content: space-between; /* logo a sinistra, menu a destra */
-  align-items: center;
-  padding: 20px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 0 15px #ffcc00;
-}
 
-/* Logo/nome sito (rimane a sinistra) */
-nav .logo { 
-  display: flex; 
-  align-items: center; 
-  gap: 8px; 
-  font-size: 1.3rem; 
-  font-weight: bold; 
-  color:#ffcc00; 
-  text-shadow: 0 0 10px #ffcc00; 
-}
-nav .logo a {
-  color: #ffcc00;
-  font-weight: bold;
-  text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00;
-}
+<!-- NAVBAR -->
 
-/* Bottone menu a destra */
-.menu-btn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-}
-
-/* Testo "MENÙ" */
-.menu-label {
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: #0ff;
-  text-shadow: 0 0 5px #0ff, 0 0 10px #00f, 0 0 20px #0ff;
-  margin-bottom: 5px;
-}
-
-/* Freccia neon */
-.arrow {
-  font-size: 1.8rem;
-  color: #ff00ff;
-  text-shadow: 0 0 5px #ff00ff, 0 0 10px #f0f, 0 0 20px #ff00ff;
-  transition: 0.3s ease-in-out;
-}
-.arrow:hover {
-  transform: scale(1.2);
-  text-shadow: 0 0 10px #0ff, 0 0 20px #00f, 0 0 40px #0ff;
-}
-
-/* Dropdown */
-.dropdown {
-  display: none;
-  position: absolute;
-  top: 70px;
-  right: 20px;
-  background: #111;
-  border: 2px solid #ff00ff;
-  border-radius: 10px;
-  box-shadow: 0 0 20px #ff00ff;
-  flex-direction: column;
-  padding: 15px;
-}
-
-/* Link nel menu */
-.dropdown a {
-  color: #fff;
-  padding: 10px 15px;
-  text-align: center;
-  font-weight: bold;
-  text-shadow: 0 0 8px #ff00ff;
-  transition: 0.3s;
-}
-.dropdown a:hover {
-  color: #ffcc00;
-  text-shadow: 0 0 12px #ffcc00, 0 0 25px #ff00ff;
-}
-
-/* Attivazione */
-.dropdown.active {
-  display: flex;
-}
+  <nav class="navbar">
+  <div class="logo">
+    <a href="index.html">🐐 GoaTs RevenGE 🧠</a>
+    <span class="arrow">⬅️</span>
+  </div>
+  <ul>
+      
+  </ul>
+  </nav>
 
 
 /* HERO (HOME CARTOON COMPLETAMENTE NUOVA) */
