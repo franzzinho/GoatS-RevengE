@@ -10,17 +10,47 @@ img { max-width: 100%; display: block; border-radius: 12px; }
 a { text-decoration: none; color: inherit; transition: 0.3s; }
 
 
-<!-- NAVBAR -->
+/* NAVBAR BASE */
+nav {
+  background: linear-gradient(90deg, #111, #1a1a1a);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 0 15px #ffcc00;
+}
 
-  <nav class="navbar">
-  <div class="logo">
-    <a href="index.html">🐐 GoaTs RevenGE 🧠</a>
-    <span class="arrow">⬅️</span>
-  </div>
-  <ul>
-      
-  </ul>
-  </nav>
+/* Logo neon giallo */
+nav .logo a {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ffcc00;
+  text-shadow: 0 0 5px #ffcc00, 0 0 15px #ffcc00, 0 0 30px #ffcc00;
+  animation: neon-yellow 1.5s infinite alternate;
+}
+
+/* Freccia neon viola */
+nav .logo .arrow {
+  font-size: 1.5rem;
+  margin-left: 10px;
+  color: #ff00ff;
+  text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff, 0 0 30px #ff00ff;
+  animation: neon-purple 1.5s infinite alternate;
+}
+
+/* Animazioni lampeggio */
+@keyframes neon-yellow {
+  from { text-shadow: 0 0 5px #ffcc00, 0 0 15px #ffcc00; }
+  to { text-shadow: 0 0 10px #ffcc00, 0 0 25px #ffcc00, 0 0 40px #ffaa00; }
+}
+@keyframes neon-purple {
+  from { text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff; }
+  to { text-shadow: 0 0 10px #ff00ff, 0 0 25px #ff00ff, 0 0 40px #cc00ff; }
+}
+
 
 
 /* HERO (HOME CARTOON COMPLETAMENTE NUOVA) */
