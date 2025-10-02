@@ -10,62 +10,112 @@
 <body>
 
   <!-- NAVBAR -->
+  
   <nav class="navbar">
+    
     <div class="logo">
+      
       <a href="index.html">🐐 GoaTs RevenGE 🧠</a>
+      
       <span class="arrow">⬅️</span>
+      
     </div>
+    
     <ul></ul>
+    
   </nav>
 
   <!-- ABOUT -->
+  
   <section class="about">
+    
     <div>
-      <h1>Chi sono 🧠</h1>
+      
+      <h1>🐐 Chi è <a href="https://www.twitch.tv/franzzinho_gt" target="_blank" style="color:blue; text-decoration:underline;">
+      Franzzinho</a> 🐐 ❓
+      
       <p>GoaTs RevenGE, DJ, producer e creator digitale. Porto vibrazioni uniche e contenuti che spaccano tra musica, video e live show. 🎶🔥</p>
-      <ul>
+      
+        <ul>
+          
         <li>🎧 DJ Set epici per club ed eventi</li>
-        <li>🎵 Produzione musicale unica</li>
-        <li>🎥 Contenuti video e streaming top</li>
-      </ul>
+        
+          <li>🎵 Produzione musicale unica</li>
+        
+          <li>🎥 Contenuti video e streaming top</li>
+      
+        </ul>
+        
     </div>
+    
   </section>
 
+  
   <!-- LINEA RGB -->
+  
   <hr class="neon-line">
 
-  <!-- SCRITTA NEON -->
+ <!-- SCRITTA NEON -->
+  
   <h2 class="neon-title pink">🔞 Franzzinho 🔞.</h2>
 
+  
   <!-- CAROSELLO ORIZZONTALE -->
+  
   <div class="carousel-container">
+    
     <div class="carousel-slide">
+      
       <img src="carosello_about/BMW 1.JPG" alt="BMW 1">
       <img src="carosello_about/BMW 2.JPG" alt="BMW 2">
       <img src="carosello_about/BMW 3.JPG" alt="BMW 3">
+
+      
     </div>
+    
     <a class="prev" onclick="moveSlide(-1, 0)">&#10094;</a>
+    
     <a class="next" onclick="moveSlide(1, 0)">&#10095;</a>
+
   </div>
 
+  
   <!-- LINEA RGB -->
+  
   <hr class="neon-line">
 
+  
   <!-- SCRITTA NEON -->
+  
   <h2 class="neon-title yellow">📸 Vertical Vibes 📸.</h2>
 
+  
   <!-- CAROSELLO VERTICALE -->
+  
+  
   <div class="carousel-container vertical">
+    
     <div class="carousel-slide">
+      
       <img src="carosello_about/LOGO FRANZZINHO.jpg" alt="Vertical 1">
+    
+    
     </div>
+    
     <a class="prev" onclick="moveSlide(-1, 1)">&#10094;</a>
+    
     <a class="next" onclick="moveSlide(1, 1)">&#10095;</a>
+ 
   </div>
 
+  
   <!-- STYLE INTERNO -->
+  
   <style>
+
+    
     /* LINEA NEON RGB */
+    
     .neon-line {
       border: none;
       height: 3px;
@@ -81,7 +131,9 @@
       100% {background-position: 400% 0;}
     }
 
+    
     /* TITOLI NEON */
+    
     .neon-title {
       text-align: center;
       font-size: 2rem;
@@ -107,7 +159,9 @@
       to { text-shadow: 0 0 15px #ffaa00, 0 0 35px #ffcc00; }
     }
 
+    
     /* CAROSELLO BASE */
+    
     .carousel-container {
       position: relative;
       max-width: 80%;
@@ -129,7 +183,9 @@
       display: block;
     }
 
+    
     /* FRECCE */
+    
     .prev, .next {
       position: absolute;
       top: 50%;
@@ -145,7 +201,9 @@
     .next { right: 10px; }
   </style>
 
+  
   <!-- SCRIPT CAROSELLO -->
+  
   <script>
     let slideIndex = [0, 0]; 
     const carousels = document.querySelectorAll(".carousel-slide");
@@ -163,26 +221,41 @@
         "translateX(" + (-slideIndex[carouselIndex] * 100) + "%)";
     }
 
+    
     // Inizializza entrambi
+    
     showSlide(0);
     showSlide(1);
 
+    
     // AUTOPLAY OGNI 3 SECONDI
+    
     setInterval(() => moveSlide(1, 0), 3000);
+    
     setInterval(() => moveSlide(1, 1), 3000);
+  
   </script>
 
+  
   <!-- FOOTER -->
+  
+  
   <footer style="text-align:center; padding:30px; background:#111; margin-top:50px; color:#fff;">
+    
     <p>© 2025. 🐐 GoaTs RevenGE 🧠. - <a href="TERMINI.html" target="_blank" style="color:blue; text-decoration:underline;">Tutti i diritti riservati</a></p>
+    
     <p>
+      
       <a href="https://www.instagram.com/franzzinho.zbb/" target="_blank" style="color:#f13584;">Instagram</a> |
       <a href="https://www.tiktok.com/@franzzinho.zbb?_t=ZN-8z5d1Qutkfe&_r=1" target="_blank" style="color:#69c9d0;">TikTok</a> |
       <a href="https://discord.gg/xBj5wgMZH9" target="_blank" style="color:#7289da;">Discord</a> |
       <a href="https://youtube.com/@franzzinho?si=cJiskLlGq_kUUDew" target="_blank" style="color:#ff0000;">YouTube</a> |
       <a href="https://www.twitch.tv/franzzinho_GT" target="_blank" style="color:#6441a5;">Twitch</a>
+   
     </p>
+    
   </footer>
 
 </body>
+  
 </html>
