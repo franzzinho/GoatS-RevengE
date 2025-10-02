@@ -205,7 +205,24 @@
       display: block;
     }
 
-  
+     /* FRECCE */
+    
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2.5rem;
+      padding: 10px;
+      color: #fff;
+      text-shadow: 0 0 5px #000, 0 0 15px #000, 0 0 30px #000;
+      cursor: pointer;
+      user-select: none;
+    }
+    .prev { left: 10px; }
+    .next { right: 10px; }
+  </style>
+
+    
   <!-- SCRIPT CAROSELLO -->
   
   <script>
