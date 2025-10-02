@@ -20,7 +20,6 @@
 
   <!-- ABOUT -->
   <section class="about">
-    <img src="https://source.unsplash.com/500x500/?dj,studio" alt="DJ GoaTs">
     <div>
       <h1>Chi sono 🧠</h1>
       <p>GoaTs RevenGE, DJ, producer e creator digitale. Porto vibrazioni uniche e contenuti che spaccano tra musica, video e live show. 🎶🔥</p>
@@ -32,73 +31,125 @@
     </div>
   </section>
 
-  <!-- LINEA DI DIVISIONE -->
-  <hr style="border: 1px solid #39ff14; box-shadow: 0 0 10px #39ff14; margin: 50px 0;">
+  <!-- LINEA RGB -->
+  <hr class="neon-line">
 
   <!-- SCRITTA NEON -->
-  <h2 style="
-    text-align:center;
-    font-size:2rem;
-    color:#ff00ff;
-    text-shadow:0 0 5px #ff00ff, 0 0 15px #ff00ff, 0 0 30px #ff00ff;
-    animation: neon-pink 1.5s infinite alternate;
-  ">
-    🔞 Franzzinho 🔞
-  </h2>
+  <h2 class="neon-title pink">🔞 Franzzinho 🔞.</h2>
 
   <!-- CAROSELLO ORIZZONTALE -->
-  <div class="carousel-container" style="position:relative; max-width:80%; margin:30px auto; overflow:hidden;">
-    <div class="carousel-slide" style="display:flex; transition:transform 0.5s ease-in-out;">
-      <!-- 🔥 INSERISCI QUI LE TUE FOTO ORIZZONTALI -->
-      <img src="carosello_about/BMW 1.JPG" style="width:100%; max-height:400px; object-fit:cover;">
-      <img src="carosello_about/BMW 2.JPG" style="width:100%; max-height:400px; object-fit:cover;">
-      <img src="carosello_about/BMW 3.JPG" style="width:100%; max-height:400px; object-fit:cover;">
+  <div class="carousel-container">
+    <div class="carousel-slide">
+      <img src="carosello_about/bmw1.jpg" alt="BMW 1">
+      <img src="carosello_about/bmw2.jpg" alt="BMW 2">
+      <img src="carosello_about/bmw3.jpg" alt="BMW 3">
     </div>
-    <!-- FRECCE -->
-    <a class="prev" onclick="moveSlide(-1, 0)" style="position:absolute; top:50%; left:10px; transform:translateY(-50%); font-size:2rem; color:#ff00ff; cursor:pointer;">&#10094;</a>
-    <a class="next" onclick="moveSlide(1, 0)" style="position:absolute; top:50%; right:10px; transform:translateY(-50%); font-size:2rem; color:#ff00ff; cursor:pointer;">&#10095;</a>
+    <a class="prev" onclick="moveSlide(-1, 0)">&#10094;</a>
+    <a class="next" onclick="moveSlide(1, 0)">&#10095;</a>
   </div>
 
-  <!-- LINEA DI DIVISIONE -->
-  <hr style="border: 1px solid #39ff14; box-shadow: 0 0 10px #39ff14; margin: 50px 0;">
+  <!-- LINEA RGB -->
+  <hr class="neon-line">
 
-  <!-- SCRITTA NEON PER VERTICALI -->
-  <h2 style="
-    text-align:center;
-    font-size:2rem;
-    color:#ffcc00;
-    text-shadow:0 0 5px #ffcc00, 0 0 15px #ffcc00, 0 0 30px #ffcc00;
-    animation: neon-yellow 1.5s infinite alternate;
-  ">
-    📸 Vertical Vibes 📸
-  </h2>
+  <!-- SCRITTA NEON -->
+  <h2 class="neon-title yellow">📸 Vertical Vibes 📸.</h2>
 
   <!-- CAROSELLO VERTICALE -->
-  <div class="carousel-container" style="position:relative; max-width:50%; margin:30px auto; overflow:hidden;">
-    <div class="carousel-slide" style="display:flex; transition:transform 0.5s ease-in-out;">
-      <!-- 🔥 INSERISCI QUI LE TUE FOTO VERTICALI -->
-      <img src="carosello_about/LOGO FRANZZINHO.jpg" style="width:100%; max-height:600px; object-fit:cover;">
+  <div class="carousel-container vertical">
+    <div class="carousel-slide">
+      <img src="carosello_about/verticale1.jpg" alt="Vertical 1">
+      <img src="carosello_about/verticale2.jpg" alt="Vertical 2">
+      <img src="carosello_about/verticale3.jpg" alt="Vertical 3">
     </div>
-    <!-- FRECCE -->
-    <a class="prev" onclick="moveSlide(-1, 1)" style="position:absolute; top:50%; left:10px; transform:translateY(-50%); font-size:2rem; color:#ffcc00; cursor:pointer;">&#10094;</a>
-    <a class="next" onclick="moveSlide(1, 1)" style="position:absolute; top:50%; right:10px; transform:translateY(-50%); font-size:2rem; color:#ffcc00; cursor:pointer;">&#10095;</a>
+    <a class="prev" onclick="moveSlide(-1, 1)">&#10094;</a>
+    <a class="next" onclick="moveSlide(1, 1)">&#10095;</a>
   </div>
 
-  <!-- ANIMAZIONI NEON -->
+  <!-- STYLE INTERNO -->
   <style>
+    /* LINEA NEON RGB */
+    .neon-line {
+      border: none;
+      height: 3px;
+      margin: 50px auto;
+      width: 80%;
+      background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, violet, red);
+      background-size: 400% 100%;
+      animation: rgb-flow 5s linear infinite;
+      box-shadow: 0 0 20px lime, 0 0 40px cyan;
+    }
+    @keyframes rgb-flow {
+      0% {background-position: 0 0;}
+      100% {background-position: 400% 0;}
+    }
+
+    /* TITOLI NEON */
+    .neon-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    .neon-title.pink {
+      color: #ff00ff;
+      text-shadow: 0 0 10px #ff00ff, 0 0 25px #ff00ff;
+      animation: neon-pink 1.5s infinite alternate;
+    }
+    .neon-title.yellow {
+      color: #ffcc00;
+      text-shadow: 0 0 10px #ffcc00, 0 0 25px #ffaa00;
+      animation: neon-yellow 1.5s infinite alternate;
+    }
+
     @keyframes neon-pink {
-      from { text-shadow:0 0 5px #ff00ff, 0 0 15px #ff00ff; }
-      to { text-shadow:0 0 15px #ff00ff, 0 0 30px #cc00ff; }
+      from { text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff; }
+      to { text-shadow: 0 0 15px #ff00ff, 0 0 35px #cc00ff; }
     }
     @keyframes neon-yellow {
-      from { text-shadow:0 0 5px #ffcc00, 0 0 15px #ffcc00; }
-      to { text-shadow:0 0 15px #ffcc00, 0 0 30px #ffaa00; }
+      from { text-shadow: 0 0 5px #ffcc00, 0 0 15px #ffcc00; }
+      to { text-shadow: 0 0 15px #ffaa00, 0 0 35px #ffcc00; }
     }
+
+    /* CAROSELLO BASE */
+    .carousel-container {
+      position: relative;
+      max-width: 80%;
+      margin: 40px auto;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+    .carousel-container.vertical { max-width: 40%; }
+
+    .carousel-slide {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 100%;
+    }
+    .carousel-slide img {
+      min-width: 100%;
+      max-width: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* FRECCE */
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2.5rem;
+      padding: 10px;
+      color: #fff;
+      text-shadow: 0 0 5px #000, 0 0 15px #000, 0 0 30px #000;
+      cursor: pointer;
+      user-select: none;
+    }
+    .prev { left: 10px; }
+    .next { right: 10px; }
   </style>
 
   <!-- SCRIPT CAROSELLO -->
   <script>
-    let slideIndex = [0, 0]; // uno per carosello
+    let slideIndex = [0, 0]; 
     const carousels = document.querySelectorAll(".carousel-slide");
 
     function moveSlide(n, carouselIndex) {
@@ -110,12 +161,17 @@
       let slides = carousels[carouselIndex].children;
       if (slideIndex[carouselIndex] >= slides.length) slideIndex[carouselIndex] = 0;
       if (slideIndex[carouselIndex] < 0) slideIndex[carouselIndex] = slides.length - 1;
-      carousels[carouselIndex].style.transform = "translateX(" + (-slideIndex[carouselIndex] * 100) + "%)";
+      carousels[carouselIndex].style.transform =
+        "translateX(" + (-slideIndex[carouselIndex] * 100) + "%)";
     }
 
-    // inizializzazione
+    // Inizializza entrambi
     showSlide(0);
     showSlide(1);
+
+    // AUTOPLAY OGNI 3 SECONDI
+    setInterval(() => moveSlide(1, 0), 3000);
+    setInterval(() => moveSlide(1, 1), 3000);
   </script>
 
   <!-- FOOTER -->
@@ -131,5 +187,4 @@
   </footer>
 
 </body>
-  </html>
-  
+</html>
