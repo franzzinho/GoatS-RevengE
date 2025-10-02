@@ -5,24 +5,85 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About - GoaTs RevenGE</title>
   <link rel="stylesheet" href="style.css">
-    
-  <link rel="icon" type="image/png" href="icona_sito.png">      <!-- ICONA SITO -->
-  
+  <link rel="icon" type="image/png" href="icona_sito.png"> <!-- ICONA SITO -->
+
+  <style>
+    /* --- STILI SOLO PER ABOUT --- */
+
+    /* Separatore */
+    .divider {
+      margin: 50px auto 30px;
+      width: 80%;
+      height: 2px;
+      background: linear-gradient(90deg, #ff00ff, #ffcc00, #00ffff);
+      box-shadow: 0 0 15px #ff00ff, 0 0 25px #ffcc00;
+    }
+
+    /* Testo neon "Franzzinho" */
+    .neon-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ff00ff;
+      text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+      animation: flicker 1.5s infinite alternate;
+      margin: 20px 0 30px;
+    }
+    @keyframes flicker {
+      from { opacity: 1; }
+      to { opacity: 0.6; text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff; }
+    }
+
+    /* Carosello */
+    .carousel {
+      position: relative;
+      max-width: 600px;
+      margin: 0 auto 50px;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #ff00ff, 0 0 30px #00ffff;
+    }
+    .carousel img {
+      width: 100%;
+      display: none;
+    }
+    .carousel img.active {
+      display: block;
+    }
+    .btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      border: none;
+      padding: 12px 18px;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 8px;
+      text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff;
+      transition: 0.2s;
+    }
+    .btn:hover {
+      background: #ff00ff;
+      box-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+    }
+    .btn.left { left: 10px; }
+    .btn.right { right: 10px; }
+  </style>
 </head>
 <body>
 
   <!-- NAVBAR -->
   <nav class="navbar">
-  <div class="logo">
-    <a href="index.html">🐐 GoaTs RevenGE 🧠</a>
-    <span class="arrow">⬅️</span>
-  </div>
-  <ul>
-      
-  </ul>
+    <div class="logo">
+      <a href="index.html">🐐 GoaTs RevenGE 🧠</a>
+      <span class="arrow">⬅️</span>
+    </div>
+    <ul></ul>
   </nav>
 
-  
   <!-- ABOUT -->
   <section class="about">
     <img src="https://source.unsplash.com/500x500/?dj,studio" alt="DJ GoaTs">
@@ -37,9 +98,47 @@
     </div>
   </section>
 
+  <!-- LINEA DI SEPARAZIONE -->
+  <div class="divider"></div>
+
+  <!-- SCRITTA NEON -->
+  <div class="neon-title">🔞 Franzzinho 🔞</div>
+
+  <!-- CAROSELLO -->
+  <div class="carousel">
+    <!-- QUI METTI LE TUE IMMAGINI -->
+    <img src="carosello_about/img1.jpg" class="active" alt="Foto 1">
+    <img src="carosello_about/img2.jpg" alt="Foto 2">
+    <img src="carosello_about/img3.jpg" alt="Foto 3">
+    <img src="carosello_about/img4.jpg" alt="Foto 4">
+    <!-- FRECCE -->
+    <button class="btn left" onclick="prevSlide()">&#10094;</button>
+    <button class="btn right" onclick="nextSlide()">&#10095;</button>
+  </div>
+
+  <!-- SCRIPT CAROSELLO -->
+  <script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.carousel img');
+
+    function showSlide(index) {
+      slides.forEach((img, i) => {
+        img.classList.toggle('active', i === index);
+      });
+    }
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    }
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      showSlide(currentIndex);
+    }
+  </script>
+
   <!-- FOOTER -->
   <footer style="text-align:center; padding:30px; background:#111; margin-top:50px; color:#fff;">
-    <p>© 2025. 🐐 GoaTs RevenGE 🧠.  - <a href="TERMINI.html" target="_blank" style="color:blue; text-decoration:underline;">Tutti i diritti riservati</p>
+    <p>© 2025. 🐐 GoaTs RevenGE 🧠.  - <a href="TERMINI.html" target="_blank" style="color:blue; text-decoration:underline;">Tutti i diritti riservati</a></p>
     <p>
       <a href="https://www.instagram.com/franzzinho.zbb/" target="_blank" style="color:#f13584;">Instagram</a> |
       <a href="https://www.tiktok.com/@franzzinho.zbb?_t=ZN-8z5d1Qutkfe&_r=1" target="_blank" style="color:#69c9d0;">TikTok</a> |
@@ -50,4 +149,5 @@
   </footer>
 
 </body>
-</html>
+                                                                                                                                                          </html>
+                                                                                                                                                          
