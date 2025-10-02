@@ -6,72 +6,6 @@
   <title>About - GoaTs RevenGE</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="icona_sito.png"> <!-- ICONA SITO -->
-
-  <style>
-    /* --- STILI SOLO PER ABOUT --- */
-
-    /* Separatore */
-    .divider {
-      margin: 50px auto 30px;
-      width: 80%;
-      height: 2px;
-      background: linear-gradient(90deg, #ff00ff, #ffcc00, #00ffff);
-      box-shadow: 0 0 15px #ff00ff, 0 0 25px #ffcc00;
-    }
-
-    /* Testo neon "Franzzinho" */
-    .neon-title {
-      text-align: center;
-      font-size: 2rem;
-      font-weight: bold;
-      color: #ff00ff;
-      text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff;
-      animation: flicker 1.5s infinite alternate;
-      margin: 20px 0 30px;
-    }
-    @keyframes flicker {
-      from { opacity: 1; }
-      to { opacity: 0.6; text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff; }
-    }
-
-    /* Carosello */
-    .carousel {
-      position: relative;
-      max-width: 600px;
-      margin: 0 auto 50px;
-      overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 0 20px #ff00ff, 0 0 30px #00ffff;
-    }
-    .carousel img {
-      width: 100%;
-      display: none;
-    }
-    .carousel img.active {
-      display: block;
-    }
-    .btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0,0,0,0.6);
-      color: #fff;
-      border: none;
-      padding: 12px 18px;
-      cursor: pointer;
-      font-size: 20px;
-      font-weight: bold;
-      border-radius: 8px;
-      text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff;
-      transition: 0.2s;
-    }
-    .btn:hover {
-      background: #ff00ff;
-      box-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
-    }
-    .btn.left { left: 10px; }
-    .btn.right { right: 10px; }
-  </style>
 </head>
 <body>
 
@@ -86,6 +20,7 @@
 
   <!-- ABOUT -->
   <section class="about">
+    <img src="https://source.unsplash.com/500x500/?dj,studio" alt="DJ GoaTs">
     <div>
       <h1>Chi sono 🧠</h1>
       <p>GoaTs RevenGE, DJ, producer e creator digitale. Porto vibrazioni uniche e contenuti che spaccano tra musica, video e live show. 🎶🔥</p>
@@ -97,47 +32,97 @@
     </div>
   </section>
 
-  <!-- LINEA DI SEPARAZIONE -->
-  <div class="divider"></div>
+  <!-- LINEA DI DIVISIONE -->
+  <hr style="border: 1px solid #39ff14; box-shadow: 0 0 10px #39ff14; margin: 50px 0;">
 
   <!-- SCRITTA NEON -->
-  <div class="neon-title">🔞 Franzzinho 🔞</div>
+  <h2 style="
+    text-align:center;
+    font-size:2rem;
+    color:#ff00ff;
+    text-shadow:0 0 5px #ff00ff, 0 0 15px #ff00ff, 0 0 30px #ff00ff;
+    animation: neon-pink 1.5s infinite alternate;
+  ">
+    🔞 Franzzinho 🔞
+  </h2>
 
-  <!-- CAROSELLO -->
-  <div class="carousel">
-    <!-- QUI METTI LE TUE IMMAGINI -->
-    <img src="carosello_about/BMW 1.JPG" class="active" alt="Foto 1">
-    <img src="carosello_about/BMW 2.JPG" alt="Foto 2">
-    <img src="carosello_about/BMW 3.JPG" alt="Foto 3">
-    <img src="carosello_about/BMW 4.JPG" alt="Foto 4">
+  <!-- CAROSELLO ORIZZONTALE -->
+  <div class="carousel-container" style="position:relative; max-width:80%; margin:30px auto; overflow:hidden;">
+    <div class="carousel-slide" style="display:flex; transition:transform 0.5s ease-in-out;">
+      <!-- 🔥 INSERISCI QUI LE TUE FOTO ORIZZONTALI -->
+      <img src="carosello_about/BMW 1.JPG" style="width:100%; max-height:400px; object-fit:cover;">
+      <img src="carosello_about/BMW 2.JPGorizz2.jpg" style="width:100%; max-height:400px; object-fit:cover;">
+      <img src="carosello_about/BMW 3.JPG" style="width:100%; max-height:400px; object-fit:cover;">
+    </div>
     <!-- FRECCE -->
-    <button class="btn left" onclick="prevSlide()">&#10094;</button>
-    <button class="btn right" onclick="nextSlide()">&#10095;</button>
+    <a class="prev" onclick="moveSlide(-1, 0)" style="position:absolute; top:50%; left:10px; transform:translateY(-50%); font-size:2rem; color:#ff00ff; cursor:pointer;">&#10094;</a>
+    <a class="next" onclick="moveSlide(1, 0)" style="position:absolute; top:50%; right:10px; transform:translateY(-50%); font-size:2rem; color:#ff00ff; cursor:pointer;">&#10095;</a>
   </div>
+
+  <!-- LINEA DI DIVISIONE -->
+  <hr style="border: 1px solid #39ff14; box-shadow: 0 0 10px #39ff14; margin: 50px 0;">
+
+  <!-- SCRITTA NEON PER VERTICALI -->
+  <h2 style="
+    text-align:center;
+    font-size:2rem;
+    color:#ffcc00;
+    text-shadow:0 0 5px #ffcc00, 0 0 15px #ffcc00, 0 0 30px #ffcc00;
+    animation: neon-yellow 1.5s infinite alternate;
+  ">
+    📸 Vertical Vibes 📸
+  </h2>
+
+  <!-- CAROSELLO VERTICALE -->
+  <div class="carousel-container" style="position:relative; max-width:50%; margin:30px auto; overflow:hidden;">
+    <div class="carousel-slide" style="display:flex; transition:transform 0.5s ease-in-out;">
+      <!-- 🔥 INSERISCI QUI LE TUE FOTO VERTICALI -->
+      <img src="carosello_about/LOGO FRANZZINHO.jpg" style="width:100%; max-height:600px; object-fit:cover;">
+      <img src="carosello_about/vert2.jpg" style="width:100%; max-height:600px; object-fit:cover;">
+      <img src="carosello_about/vert3.jpg" style="width:100%; max-height:600px; object-fit:cover;">
+    </div>
+    <!-- FRECCE -->
+    <a class="prev" onclick="moveSlide(-1, 1)" style="position:absolute; top:50%; left:10px; transform:translateY(-50%); font-size:2rem; color:#ffcc00; cursor:pointer;">&#10094;</a>
+    <a class="next" onclick="moveSlide(1, 1)" style="position:absolute; top:50%; right:10px; transform:translateY(-50%); font-size:2rem; color:#ffcc00; cursor:pointer;">&#10095;</a>
+  </div>
+
+  <!-- ANIMAZIONI NEON -->
+  <style>
+    @keyframes neon-pink {
+      from { text-shadow:0 0 5px #ff00ff, 0 0 15px #ff00ff; }
+      to { text-shadow:0 0 15px #ff00ff, 0 0 30px #cc00ff; }
+    }
+    @keyframes neon-yellow {
+      from { text-shadow:0 0 5px #ffcc00, 0 0 15px #ffcc00; }
+      to { text-shadow:0 0 15px #ffcc00, 0 0 30px #ffaa00; }
+    }
+  </style>
 
   <!-- SCRIPT CAROSELLO -->
   <script>
-    let currentIndex = 0;
-    const slides = document.querySelectorAll('.carousel img');
+    let slideIndex = [0, 0]; // uno per carosello
+    const carousels = document.querySelectorAll(".carousel-slide");
 
-    function showSlide(index) {
-      slides.forEach((img, i) => {
-        img.classList.toggle('active', i === index);
-      });
+    function moveSlide(n, carouselIndex) {
+      slideIndex[carouselIndex] += n;
+      showSlide(carouselIndex);
     }
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % slides.length;
-      showSlide(currentIndex);
+
+    function showSlide(carouselIndex) {
+      let slides = carousels[carouselIndex].children;
+      if (slideIndex[carouselIndex] >= slides.length) slideIndex[carouselIndex] = 0;
+      if (slideIndex[carouselIndex] < 0) slideIndex[carouselIndex] = slides.length - 1;
+      carousels[carouselIndex].style.transform = "translateX(" + (-slideIndex[carouselIndex] * 100) + "%)";
     }
-    function prevSlide() {
-      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-      showSlide(currentIndex);
-    }
+
+    // inizializzazione
+    showSlide(0);
+    showSlide(1);
   </script>
 
   <!-- FOOTER -->
   <footer style="text-align:center; padding:30px; background:#111; margin-top:50px; color:#fff;">
-    <p>© 2025. 🐐 GoaTs RevenGE 🧠.  - <a href="TERMINI.html" target="_blank" style="color:blue; text-decoration:underline;">Tutti i diritti riservati</a></p>
+    <p>© 2025. 🐐 GoaTs RevenGE 🧠. - <a href="TERMINI.html" target="_blank" style="color:blue; text-decoration:underline;">Tutti i diritti riservati</a></p>
     <p>
       <a href="https://www.instagram.com/franzzinho.zbb/" target="_blank" style="color:#f13584;">Instagram</a> |
       <a href="https://www.tiktok.com/@franzzinho.zbb?_t=ZN-8z5d1Qutkfe&_r=1" target="_blank" style="color:#69c9d0;">TikTok</a> |
@@ -148,5 +133,5 @@
   </footer>
 
 </body>
-                                                                                                                                                          </html>
-                                                                                                                                                          
+  </html>
+  
