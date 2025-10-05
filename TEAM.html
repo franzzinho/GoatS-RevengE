@@ -21,94 +21,139 @@
 
   <!-- STILE INTERNO -->
   <style>
-    /* LINEA NEON RGB */
-    .neon-line {
-      border: none;
-      height: 3px;
-      margin: 50px auto;
-      width: 80%;
-      background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, violet, red);
-      background-size: 400% 100%;
-      animation: rgb-flow 5s linear infinite;
-      box-shadow: 0 0 20px lime, 0 0 40px cyan;
+
+    /* 🌈 BACKGROUND ANIMATO RGB */
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      color: #fff;
+      background: linear-gradient(270deg, #000000, #040404, #0d0d0d, #0b001a);
+      background-size: 400% 400%;
+      animation: bgFlow 15s ease infinite;
+      overflow-x: hidden;
     }
 
-    @keyframes rgb-flow {
-      0% {background-position: 0 0;}
-      100% {background-position: 400% 0;}
+    @keyframes bgFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
-    /* STILE GENERALE TESTO */
+    /* 🌟 TESTI & STRUTTURA */
     section {
       text-align: center;
-      color: white;
-      padding: 50px 20px;
-    }
-
-    body {
-      background-color: #000;
-      font-family: 'Orbitron', sans-serif;
+      padding: 80px 20px;
+      position: relative;
     }
 
     h1 {
-      font-size: 2.5rem;
-      text-shadow: 0 0 10px #0f0, 0 0 20px #0ff;
-      margin-bottom: 20px;
+      font-size: 2.8rem;
+      margin-bottom: 25px;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-shadow: 0 0 10px #0ff, 0 0 30px #0f0, 0 0 60px #00f;
+      animation: glowPulse 3s ease-in-out infinite;
+    }
+
+    @keyframes glowPulse {
+      0%, 100% { text-shadow: 0 0 10px #0ff, 0 0 30px #0f0; }
+      50% { text-shadow: 0 0 20px #00f, 0 0 40px #0ff; }
     }
 
     p {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
+      max-width: 850px;
+      margin: 0 auto 40px auto;
       line-height: 1.8;
-      max-width: 800px;
-      margin: 0 auto 30px auto;
+      color: #ccc;
+      text-shadow: 0 0 10px #0f0;
+      animation: fadeIn 2s ease-in-out;
     }
 
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 🟩 LINEA NEON RGB */
+    .neon-line {
+      border: none;
+      height: 3px;
+      margin: 60px auto;
+      width: 85%;
+      background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, violet, red);
+      background-size: 400% 100%;
+      animation: rgb-flow 5s linear infinite;
+      box-shadow: 0 0 25px #0f0, 0 0 50px #0ff;
+      border-radius: 10px;
+      filter: blur(0.5px);
+    }
+
+    @keyframes rgb-flow {
+      0% { background-position: 0 0; }
+      100% { background-position: 400% 0; }
+    }
+
+    /* 🔘 BOTTONI GOATTATI */
     a.button {
       display: inline-block;
       background: linear-gradient(90deg, #00ffcc, #00ff66);
       color: black;
       text-transform: uppercase;
       font-weight: bold;
-      padding: 15px 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px #00ffcc, 0 0 40px #00ff66;
+      padding: 15px 35px;
+      border-radius: 15px;
+      box-shadow: 0 0 25px #00ffcc, 0 0 60px #00ff66;
       text-decoration: none;
       transition: 0.2s ease-in-out;
+      font-size: 1.1rem;
     }
 
     a.button:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 25px #00ffcc, 0 0 60px #00ff66;
+      transform: scale(1.12);
+      box-shadow: 0 0 40px #00ffcc, 0 0 90px #00ff66, 0 0 120px #00f;
     }
+
+    /* 🌫️ EFFETTO FUMO / GLOW TRA LE SEZIONI */
+    .glow-divider {
+      width: 100%;
+      height: 100px;
+      background: radial-gradient(circle, rgba(0,255,170,0.2) 0%, rgba(0,0,0,0) 70%);
+      filter: blur(8px);
+    }
+
   </style>
 
-  <!-- BLOCCO 1: COLLABORAZIONI -->
+  <!-- 🔥 BLOCCO 1: COLLABORAZIONI -->
   <section id="collab">
-    <h1>🤝 COLLABORAZIONI SOCIAL</h1>
+    <h1>🤝 COLLABORAZIONI SOCIAL.</h1>
     <p>
-      Vuoi collaborare con me per contenuti, remix, produzioni o progetti video?  
-      Sono sempre aperto a nuove idee, sfide creative e sinergie 🔥  
-      Se hai un canale, un profilo o un progetto serio, scrivimi direttamente su Instagram o Discord!
+      Vuoi collaborare con me per remix, contenuti o produzioni video che spacchino il web?  
+      Se hai talento, creatività e voglia di lasciare il segno, allora sei nel posto giusto.  
+      Contattami e portiamo il GOAT MODE direttamente sui tuoi social. 🧠💥
     </p>
-
     <a href="https://www.instagram.com/franzzinho.zbb/" target="_blank" class="button">📩 CONTATTAMI</a>
 
     <hr class="neon-line">
   </section>
 
-  <!-- BLOCCO 2: ENTRA NEL TEAM -->
-  <section id="join-team">
-    <h1>🐐 ENTRA NEL TEAM GOATS REVENGE</h1>
-    <p>
-      Il nostro Team è formato da persone con visione, energia e voglia di creare contenuti che spaccano.  
-      Se pensi di avere talento in uno di questi ambiti — editing, grafica, musica, video o social —  
-      potresti essere il prossimo membro ufficiale del Team. 💪
-    </p>
+  <div class="glow-divider"></div>
 
+  <!-- ⚡ BLOCCO 2: ENTRA NEL TEAM -->
+  <section id="join-team">
+    <h1>🐐 ENTRA NEL TEAM GOATS REVENGE.</h1>
+    <p>
+      Cerchiamo persone che non si accontentano, che vogliono creare, innovare e dominare i contenuti digitali.  
+      Se sai montare video, fare beat, curare grafiche o gestire community — potresti essere il prossimo GOAT del Team.  
+      Dimostra chi sei. Il palco è tuo. 🔥
+    </p>
     <a href="https://forms.gle/" target="_blank" class="button">🚀 CANDIDATI ORA</a>
 
     <hr class="neon-line">
   </section>
+
+  <div class="glow-divider"></div>
 
   <!-- FOOTER -->
   <footer style="text-align:center; padding:30px; background:#111; margin-top:50px; color:#fff;">
