@@ -1,180 +1,188 @@
-<!-- TEAM SECTION -->
-<section class="team">
-  <!-- FUMO ANIMATO -->
-  <div class="smoke"></div>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team - GoaTs RevenGE</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="icona_sito.png">
+</head>
+<body>
 
   <!-- NAVBAR -->
-  <nav class="navbar">
-  <div class="logo">
-    <a href="index.html">🐐 GoaTs RevenGE 🧠</a>
-    <span class="arrow">⬅️</span>
-  </div>
-  <ul>
-      
-  </ul>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html">🐐 GoaTs RevenGE 🧠</a>
+      <span class="arrow">⬅️</span>
+    </div>
+    <ul></ul>
   </nav>
 
-  <!-- COLLABORAZIONE SOCIAL -->
-  <div class="team-part social-collab">
-    <h1>💥 COLLABORA SUI SOCIAL 💥</h1>
-    <p>Se vuoi spaccare insieme a me sui social, creare contenuti folli e farti notare, questa è la tua occasione!🔥</p>
-    <a href="mailto:collaborazioni@goatsrevenge.com" class="team-btn">Proporsi Ora</a>
-  </div>
+  <!-- TEAM SECTION -->
+  <section class="team">
+    <!-- FUMO ANIMATO -->
+    <div class="smoke"></div>
 
-  <!-- JOIN THE TEAM -->
-  <div class="team-part join-team">
-    <h1>🎯 ENTRA NEL TEAM 🎯</h1>
-    <p>Vuoi diventare parte del nostro team? Gestione eventi, video, grafica o supporto live: se hai passione, sei dei nostri!</p>
-    <div class="team-cards">
-      <div class="team-card">
-        <h3>DJ / Producer</h3>
-        <p>Fai girare i beat e produci vibrazioni uniche con noi!</p>
-      </div>
-      <div class="team-card">
-        <h3>Videomaker</h3>
-        <p>Riprendi e monta contenuti che fanno esplodere il feed!</p>
-      </div>
-      <div class="team-card">
-        <h3>Community Manager</h3>
-        <p>Gestisci la nostra community e fai crescere la famiglia!</p>
-      </div>
+    <!-- COLLABORAZIONE SOCIAL -->
+    <div class="team-part social-collab">
+      <h1>💥 COLLABORA SUI SOCIAL 💥</h1>
+      <p>Se vuoi spaccare insieme a me sui social, creare contenuti folli e farti notare, questa è la tua occasione!🔥</p>
+      <a href="mailto:collaborazioni@goatsrevenge.com" class="team-btn">Proporsi Ora</a>
     </div>
-    <a href="mailto:team@goatsrevenge.com" class="team-btn">Entra Ora</a>
-  </div>
 
-  <style>
-    /* SEZIONE TEAM */
-    .team {
-      position: relative;
-      padding: 100px 20px;
-      overflow: hidden;
-      color: #fff;
-      font-family: 'Segoe UI', sans-serif;
-    }
+    <!-- JOIN THE TEAM -->
+    <div class="team-part join-team">
+      <h1>🎯 ENTRA NEL TEAM 🎯</h1>
+      <p>Vuoi diventare parte del nostro team? Gestione eventi, video, grafica o supporto live: se hai passione, sei dei nostri!</p>
+      <div class="team-cards">
+        <div class="team-card">
+          <h3>DJ / Producer</h3>
+          <p>Fai girare i beat e produci vibrazioni uniche con noi!</p>
+        </div>
+        <div class="team-card">
+          <h3>Videomaker</h3>
+          <p>Riprendi e monta contenuti che fanno esplodere il feed!</p>
+        </div>
+        <div class="team-card">
+          <h3>Community Manager</h3>
+          <p>Gestisci la nostra community e fai crescere la famiglia!</p>
+        </div>
+      </div>
+      <a href="mailto:team@goatsrevenge.com" class="team-btn">Entra Ora</a>
+    </div>
 
-    /* FUMO ANIMATO */
-    .smoke {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.6) 70%);
-      animation: smokeMove 20s linear infinite;
-      pointer-events: none;
-      z-index: 0;
-    }
-    @keyframes smokeMove {
-      0% {transform: translateY(0) scale(1);}
-      50% {transform: translateY(-50px) scale(1.1);}
-      100% {transform: translateY(0) scale(1);}
-    }
+    <style>
+      /* SEZIONE TEAM */
+      .team {
+        position: relative;
+        padding: 100px 20px;
+        overflow: hidden;
+        color: #fff;
+        font-family: 'Segoe UI', sans-serif;
+      }
 
-    /* PARTI TEAM */
-    .team-part {
-      position: relative;
-      z-index: 1;
-      max-width: 1200px;
-      margin: auto;
-      text-align: center;
-      padding: 60px 20px;
-      border-radius: 25px;
-      background: linear-gradient(135deg, rgba(30,0,50,0.8), rgba(0,0,0,0.8));
-      box-shadow: 0 0 25px #ff00ff, 0 0 50px #00ffff;
-      margin-bottom: 50px;
-    }
+      /* FUMO ANIMATO */
+      .smoke {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.6) 70%);
+        animation: smokeMove 20s linear infinite;
+        pointer-events: none;
+        z-index: 0;
+      }
+      @keyframes smokeMove {
+        0% {transform: translateY(0) scale(1);}
+        50% {transform: translateY(-50px) scale(1.1);}
+        100% {transform: translateY(0) scale(1);}
+      }
 
-    .team-part h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
-      animation: neon-flicker 2s infinite alternate;
-    }
-    @keyframes neon-flicker {
-      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      /* PARTI TEAM */
+      .team-part {
+        position: relative;
+        z-index: 1;
+        max-width: 1200px;
+        margin: auto;
+        text-align: center;
+        padding: 60px 20px;
+        border-radius: 25px;
+        background: linear-gradient(135deg, rgba(30,0,50,0.8), rgba(0,0,0,0.8));
+        box-shadow: 0 0 25px #ff00ff, 0 0 50px #00ffff;
+        margin-bottom: 50px;
+      }
+
+      .team-part h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
         text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
-        opacity: 1;
+        animation: neon-flicker 2s infinite alternate;
       }
-      20%, 24%, 55% {
-        text-shadow: none;
-        opacity: 0.6;
+      @keyframes neon-flicker {
+        0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+          text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+          opacity: 1;
+        }
+        20%, 24%, 55% {
+          text-shadow: none;
+          opacity: 0.6;
+        }
       }
-    }
 
-    .team-part p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-      line-height: 1.6;
-    }
+      .team-part p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        line-height: 1.6;
+      }
 
-    /* PULSANTI */
-    .team-btn {
-      display: inline-block;
-      padding: 15px 35px;
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #fff;
-      border: 3px solid #ff00ff;
-      border-radius: 15px;
-      text-decoration: none;
-      box-shadow: 0 0 15px #ff00ff, 0 0 25px #00ffff;
-      transition: 0.3s;
-    }
-    .team-btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 25px #ff00ff, 0 0 50px #00ffff;
-    }
+      /* PULSANTI */
+      .team-btn {
+        display: inline-block;
+        padding: 15px 35px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #fff;
+        border: 3px solid #ff00ff;
+        border-radius: 15px;
+        text-decoration: none;
+        box-shadow: 0 0 15px #ff00ff, 0 0 25px #00ffff;
+        transition: 0.3s;
+      }
+      .team-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 25px #ff00ff, 0 0 50px #00ffff;
+      }
 
-    /* CARDS JOIN TEAM */
-    .team-cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 25px;
-      margin-bottom: 30px;
-    }
-    .team-card {
-      background: rgba(0,0,0,0.6);
-      border: 2px solid #ff00ff;
-      border-radius: 20px;
-      padding: 25px;
-      width: 250px;
-      text-align: center;
-      box-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffff;
-      transition: 0.3s;
-    }
-    .team-card:hover {
-      transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 0 40px #ff00ff, 0 0 60px #00ffff;
-    }
-    .team-card h3 {
-      margin-bottom: 15px;
-      font-size: 1.4rem;
-      font-weight: bold;
-      text-shadow: 0 0 10px #ff00ff;
-    }
-    .team-card p {
-      font-size: 1rem;
-      line-height: 1.4;
-    }
+      /* CARDS JOIN TEAM */
+      .team-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+        margin-bottom: 30px;
+      }
+      .team-card {
+        background: rgba(0,0,0,0.6);
+        border: 2px solid #ff00ff;
+        border-radius: 20px;
+        padding: 25px;
+        width: 250px;
+        text-align: center;
+        box-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffff;
+        transition: 0.3s;
+      }
+      .team-card:hover {
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 0 40px #ff00ff, 0 0 60px #00ffff;
+      }
+      .team-card h3 {
+        margin-bottom: 15px;
+        font-size: 1.4rem;
+        font-weight: bold;
+        text-shadow: 0 0 10px #ff00ff;
+      }
+      .team-card p {
+        font-size: 1rem;
+        line-height: 1.4;
+      }
 
-    /* MEDIA QUERY */
-    @media(max-width:900px){
-      .team-cards { flex-direction: column; align-items: center; }
-      .team-card { width: 80%; }
-    }
+      @media(max-width:900px){
+        .team-cards { flex-direction: column; align-items: center; }
+        .team-card { width: 80%; }
+      }
+    </style>
+  </section>
 
-  </style>
-</section>
-
-  <!-- FOOTER -->
-  <footer style="text-align:center; padding:30px; background:#111; margin-top:50px; color:#fff;">
-    <p>© 2025. 🐐 GoaTs RevenGE 🧠.  - <a href="TERMINI.html" target="_blank" style="color:blue; text-decoration:underline;">Tutti i diritti riservati</p>
-    <p>
-      <a href="https://www.instagram.com/franzzinho.zbb/" target="_blank" style="color:#f13584;">Instagram</a> |
-      <a href="https://www.tiktok.com/@franzzinho.zbb?_t=ZN-8z5d1Qutkfe&_r=1" target="_blank" style="color:#69c9d0;">TikTok</a> |
-      <a href="https://discord.gg/xBj5wgMZH9" target="_blank" style="color:#7289da;">Discord</a> |
-      <a href="https://youtube.com/@franzzinho?si=cJiskLlGq_kUUDew" target="_blank" style="color:#ff0000;">YouTube</a> |
-      <a href="https://www.twitch.tv/franzzinho_GT" target="_blank" style="color:#6441a5;">Twitch</a>
-    </p>
-  </footer>
+  <!-- FOOTER -->
+  <footer style="text-align:center; padding:30px; background:#111; margin-top:50px; color:#fff;">
+    <p>© 2025. 🐐 GoaTs RevenGE 🧠.  - <a href="TERMINI.html" target="_blank" style="color:blue; text-decoration:underline;">Tutti i diritti riservati</a></p>
+    <p>
+      <a href="https://www.instagram.com/franzzinho.zbb/" target="_blank" style="color:#f13584;">Instagram</a> |
+      <a href="https://www.tiktok.com/@franzzinho.zbb?_t=ZN-8z5d1Qutkfe&_r=1" target="_blank" style="color:#69c9d0;">TikTok</a> |
+      <a href="https://discord.gg/xBj5wgMZH9" target="_blank" style="color:#7289da;">Discord</a> |
+      <a href="https://youtube.com/@franzzinho?si=cJiskLlGq_kUUDew" target="_blank" style="color:#ff0000;">YouTube</a> |
+      <a href="https://www.twitch.tv/franzzinho_GT" target="_blank" style="color:#6441a5;">Twitch</a>
+    </p>
+  </footer>
 
 </body>
 </html>
+
