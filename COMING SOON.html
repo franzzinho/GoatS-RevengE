@@ -79,6 +79,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 30px;
+      margin-bottom: 80px;
     }
 
     .video-box {
@@ -108,11 +109,82 @@
       font-size: 1.2rem;
     }
 
+    /* --- NUOVA SEZIONE: FUTURE PROJECTS --- */
+    .future-projects {
+      margin-top: 100px;
+      background: linear-gradient(180deg, #000 0%, #001a26 100%);
+      padding: 80px 20px;
+      text-align: center;
+      border-top: 3px solid #00ccff;
+      box-shadow: 0 0 50px #00ccff;
+    }
+
+    .future-title {
+      font-size: 2.8rem;
+      color: #00ccff;
+      text-shadow: 0 0 20px #00ccff, 0 0 40px #00ffaa;
+      margin-bottom: 40px;
+      letter-spacing: 2px;
+    }
+
+    .projects-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .project-card {
+      background: #0a0a0a;
+      border: 2px solid #00ccff;
+      border-radius: 15px;
+      padding: 25px;
+      width: 280px;
+      color: #fff;
+      box-shadow: 0 0 25px #00ccff, 0 0 50px #00ffaa;
+      position: relative;
+      overflow: hidden;
+      transition: 0.4s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 0 50px #00ffaa, 0 0 100px #00ccff;
+    }
+
+    .project-card h3 {
+      font-size: 1.5rem;
+      color: #00ffaa;
+      text-shadow: 0 0 10px #00ccff;
+      margin-bottom: 15px;
+    }
+
+    .project-card p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    .glitch {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: #ff0033;
+      animation: glitchBlink 1.2s infinite;
+    }
+
+    @keyframes glitchBlink {
+      0%, 100% { opacity: 0.2; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.1); }
+    }
+
     @media(max-width: 900px) {
-      .spoiler-videos {
+      .spoiler-videos, .projects-grid {
         flex-direction: column;
         align-items: center;
       }
+      .video-box, .project-card { width: 80%; }
     }
 
   </style>
@@ -157,6 +229,34 @@
       <div class="video-box">
         <video src="spoiler2.mp4" autoplay muted loop></video>
         <h3>🚀 Preview #2</h3>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- NUOVA SEZIONE FUTURE PROJECTS -->
+  <section class="future-projects">
+    <h1 class="future-title">🧠 FUTURE PROJECTS 🧠</h1>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <span class="glitch">CLASSIFIED</span>
+        <h3>Project 404</h3>
+        <p>Accesso limitato. Dettagli disponibili solo ai membri interni del G-Share.</p>
+      </div>
+
+      <div class="project-card">
+        <span class="glitch">ACCESS DENIED</span>
+        <h3>Operation VERTEX</h3>
+        <p>Un'espansione digitale che cambierà il modo di creare contenuti. Stay tuned.</p>
+      </div>
+
+      <div class="project-card">
+        <span class="glitch">LOADING...</span>
+        <h3>Neon Protocol</h3>
+        <p>Progetto segreto in sviluppo. Rilascio stimato: 🔒 TBA.</p>
       </div>
 
     </div>
