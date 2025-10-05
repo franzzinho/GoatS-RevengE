@@ -3,38 +3,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About - GoaTs RevenGE</title>
+  <title>Team - GoaTs RevenGE</title>
   <link rel="stylesheet" href="style.css">
-    
-  <link rel="icon" type="image/png" href="icona_sito.png">      <!-- ICONA SITO -->
-  
+  <link rel="icon" type="image/png" href="icona_sito.png">
 </head>
+
 <body>
 
   <!-- NAVBAR -->
   <nav class="navbar">
-  <div class="logo">
-    <a href="index.html">🐐 GoaTs RevenGE 🧠</a>
-    <span class="arrow">⬅️</span>
-  </div>
-  <ul>
-      
-  </ul>
+    <div class="logo">
+      <a href="index.html">🐐 GoaTs RevenGE 🧠</a>
+      <span class="arrow">⬅️</span>
+    </div>
+    <ul></ul>
   </nav>
 
-  
-<img src="Screenshot_2025-09-20-22-31-44-597_com.miui.home.jpg">
-  
+  <!-- STILE INTERNO -->
+  <style>
+    /* LINEA NEON RGB */
+    .neon-line {
+      border: none;
+      height: 3px;
+      margin: 50px auto;
+      width: 80%;
+      background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, violet, red);
+      background-size: 400% 100%;
+      animation: rgb-flow 5s linear infinite;
+      box-shadow: 0 0 20px lime, 0 0 40px cyan;
+    }
+
+    @keyframes rgb-flow {
+      0% {background-position: 0 0;}
+      100% {background-position: 400% 0;}
+    }
+
+    /* STILE GENERALE TESTO */
+    section {
+      text-align: center;
+      color: white;
+      padding: 50px 20px;
+    }
+
+    body {
+      background-color: #000;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      text-shadow: 0 0 10px #0f0, 0 0 20px #0ff;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: 0 auto 30px auto;
+    }
+
+    a.button {
+      display: inline-block;
+      background: linear-gradient(90deg, #00ffcc, #00ff66);
+      color: black;
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 15px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #00ffcc, 0 0 40px #00ff66;
+      text-decoration: none;
+      transition: 0.2s ease-in-out;
+    }
+
+    a.button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px #00ffcc, 0 0 60px #00ff66;
+    }
+  </style>
+
+  <!-- BLOCCO 1: COLLABORAZIONI -->
+  <section id="collab">
+    <h1>🤝 COLLABORAZIONI SOCIAL</h1>
+    <p>
+      Vuoi collaborare con me per contenuti, remix, produzioni o progetti video?  
+      Sono sempre aperto a nuove idee, sfide creative e sinergie 🔥  
+      Se hai un canale, un profilo o un progetto serio, scrivimi direttamente su Instagram o Discord!
+    </p>
+
+    <a href="https://www.instagram.com/franzzinho.zbb/" target="_blank" class="button">📩 CONTATTAMI</a>
+
+    <hr class="neon-line">
+  </section>
+
+  <!-- BLOCCO 2: ENTRA NEL TEAM -->
+  <section id="join-team">
+    <h1>🐐 ENTRA NEL TEAM GOATS REVENGE</h1>
+    <p>
+      Il nostro Team è formato da persone con visione, energia e voglia di creare contenuti che spaccano.  
+      Se pensi di avere talento in uno di questi ambiti — editing, grafica, musica, video o social —  
+      potresti essere il prossimo membro ufficiale del Team. 💪
+    </p>
+
+    <a href="https://forms.gle/" target="_blank" class="button">🚀 CANDIDATI ORA</a>
+
+    <hr class="neon-line">
+  </section>
+
   <!-- FOOTER -->
   <footer style="text-align:center; padding:30px; background:#111; margin-top:50px; color:#fff;">
-    <p>© 2025. 🐐 GoaTs RevenGE 🧠.  - <a href="TERMINI.html" target="_blank" style="color:blue; text-decoration:underline;">Tutti i diritti riservati</p>
-    <p>
-      <a href="https://www.instagram.com/franzzinho.zbb/" target="_blank" style="color:#f13584;">Instagram</a> |
-      <a href="https://www.tiktok.com/@franzzinho.zbb?_t=ZN-8z5d1Qutkfe&_r=1" target="_blank" style="color:#69c9d0;">TikTok</a> |
-      <a href="https://discord.gg/xBj5wgMZH9" target="_blank" style="color:#7289da;">Discord</a> |
-      <a href="https://youtube.com/@franzzinho?si=cJiskLlGq_kUUDew" target="_blank" style="color:#ff0000;">YouTube</a> |
-      <a href="https://www.twitch.tv/franzzinho_GT" target="_blank" style="color:#6441a5;">Twitch</a>
-    </p>
+    <p>© 2025. 🐐 GoaTs RevenGE 🧠. - <a href="TERMINI.html" target="_blank" style="color:blue; text-decoration:underline;">Tutti i diritti riservati</a></p>
   </footer>
 
 </body>
