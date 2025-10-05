@@ -307,14 +307,27 @@ section h1, section h2 { margin-bottom: 20px; font-weight: bold; } /* GRASSETTO 
   box-shadow: 0 0 25px #ffcc00, 0 0 40px #ff00ff; 
 }
 
-/* SPOTIFY PLAYER */
 .spotify-player {
   max-width: 600px;
   margin: 40px auto 0;
-  box-shadow: 0 0 15px #1db954;
-  border-radius: 15px;
+  border-radius: 20px;
   overflow: hidden;
+  box-shadow:
+    0 0 25px 5px #1db954,   /* alone più spesso e diffuso */
+    0 0 50px 10px #1db954,  /* alone più largo per effetto neon */
+    0 0 80px 15px #1db954;  /* glow esterno morbido */
+  transition: box-shadow 0.3s ease-in-out;
 }
+
+@keyframes spotify-glow {
+  0% { box-shadow: 0 0 25px 5px #1db954, 0 0 50px 10px #1db954, 0 0 80px 15px #1db954; }
+  50% { box-shadow: 0 0 40px 10px #1db954, 0 0 70px 20px #1db954, 0 0 100px 25px #1db954; }
+  100% { box-shadow: 0 0 25px 5px #1db954, 0 0 50px 10px #1db954, 0 0 80px 15px #1db954; }
+}
+.spotify-player {
+  animation: spotify-glow 3s ease-in-out infinite;
+}
+
 
 .arrow:hover {
   transform: scale(1.2);
