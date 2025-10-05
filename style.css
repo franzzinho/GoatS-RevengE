@@ -666,7 +666,7 @@ section h1, section h2 { margin-bottom: 20px; font-weight: bold; } /* GRASSETTO 
 .contact button:hover { background: #0099cc; }
 
 
-\
+
 
 /* TEAM SECTION *    +    /* LINEA DIVISORIA TRA I TITOLI */
 
@@ -687,6 +687,19 @@ section h1, section h2 { margin-bottom: 20px; font-weight: bold; } /* GRASSETTO 
   border-radius: 10px;
   
   box-shadow: 0 0 10px #ff00ff;
+}
+
+.team-title {
+
+  text-align: center;
+
+  font-size: 2.5rem;
+
+  color: #000;
+
+  text-shadow: 0 0 5px #ff00ff, 0 0 10px #ffcc00;
+
+  margin-botton: 20px;
 }
 
 
