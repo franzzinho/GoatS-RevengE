@@ -311,7 +311,7 @@ section h1, section h2 { margin-bottom: 20px; font-weight: bold; } /* GRASSETTO 
 .spotify-player {
   max-width: 600px;
   margin: 40px auto 0;
-  box-shadow: 0 0 20px #1db954;
+  box-shadow: 0 0 15px #1db954;
   border-radius: 15px;
   overflow: hidden;
 }
