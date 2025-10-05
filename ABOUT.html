@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="it">
+  
 <head>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About - GoaTs RevenGE</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="icona_sito.png"> <!-- ICONA SITO -->
+
 </head>
 <body>
 
@@ -154,17 +157,28 @@ Franzzinho</a> 🐐 ❗</h1>
     /* LINEA NEON RGB */
     
     .neon-line {
+      
       border: none;
+     
       height: 3px;
+      
       margin: 50px auto;
+      
       width: 80%;
+      
       background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, violet, red);
+     
       background-size: 400% 100%;
+     
       animation: rgb-flow 5s linear infinite;
+     
       box-shadow: 0 0 20px lime, 0 0 40px cyan;
     }
+   
     @keyframes rgb-flow {
+      
       0% {background-position: 0 0;}
+      
       100% {background-position: 400% 0;}
     }
 
@@ -172,27 +186,43 @@ Franzzinho</a> 🐐 ❗</h1>
     /* TITOLI NEON */
     
     .neon-title {
+      
       text-align: center;
+      
       font-size: 2rem;
+     
       margin-bottom: 20px;
     }
+    
     .neon-title.pink {
+      
       color: #ff00ff;
+      
       text-shadow: 0 0 10px #ff00ff, 0 0 25px #ff00ff;
+      
       animation: neon-pink 1.5s infinite alternate;
     }
+    
     .neon-title.yellow {
+     
       color: #ffcc00;
+      
       text-shadow: 0 0 10px #ffcc00, 0 0 25px #ffaa00;
+      
       animation: neon-yellow 1.5s infinite alternate;
     }
 
     @keyframes neon-pink {
+      
       from { text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff; }
+      
       to { text-shadow: 0 0 15px #ff00ff, 0 0 35px #cc00ff; }
     }
+    
     @keyframes neon-yellow {
+      
       from { text-shadow: 0 0 5px #ffcc00, 0 0 15px #ffcc00; }
+      
       to { text-shadow: 0 0 15px #ffaa00, 0 0 35px #ffcc00; }
     }
 
@@ -200,45 +230,68 @@ Franzzinho</a> 🐐 ❗</h1>
     /* CAROSELLO BASE */
     
     .carousel-container {
+      
       position: relative;
+      
       max-width: 80%;
+     
       margin: 40px auto;
+      
       overflow: hidden;
+      
       border-radius: 12px;
     }
+    
     .carousel-container.vertical { max-width: 40%; }
 
     .carousel-slide {
+      
       display: flex;
+      
       transition: transform 0.5s ease-in-out;
+      
       width: 100%;
     }
     .carousel-slide img {
+      
       min-width: 100%;
+      
       max-width: 100%;
+      
       object-fit: cover;
+      
       display: block;
     }
 
   </style>
 
+
     
   <!-- SCRIPT CAROSELLO -->
   
   <script>
+    
     let slideIndex = [0, 0]; 
+    
     const carousels = document.querySelectorAll(".carousel-slide");
 
     function moveSlide(n, carouselIndex) {
+      
       slideIndex[carouselIndex] += n;
+      
       showSlide(carouselIndex);
     }
 
     function showSlide(carouselIndex) {
+      
       let slides = carousels[carouselIndex].children;
+      
       if (slideIndex[carouselIndex] >= slides.length) slideIndex[carouselIndex] = 0;
+      
       if (slideIndex[carouselIndex] < 0) slideIndex[carouselIndex] = slides.length - 1;
+      
       carousels[carouselIndex].style.transform =
+      
         "translateX(" + (-slideIndex[carouselIndex] * 100) + "%)";
     }
 
