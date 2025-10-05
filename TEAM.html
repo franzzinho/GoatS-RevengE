@@ -1,221 +1,154 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Team - GoaTs RevenGE</title>
-  <link rel="icon" type="image/png" href="icona_sito.png">
-</head>
+<!-- TEAM SECTION -->
+<section class="team">
+  <!-- FUMO ANIMATO -->
+  <div class="smoke"></div>
 
-<body>
-
-  <!-- SFONDO 3D ANIMATO -->
-  <div class="background">
-    <div class="stars"></div>
-    <div class="nebula"></div>
+  <!-- COLLABORAZIONE SOCIAL -->
+  <div class="team-part social-collab">
+    <h1>💥 COLLABORA SUI SOCIAL 💥</h1>
+    <p>Se vuoi spaccare insieme a me sui social, creare contenuti folli e farti notare, questa è la tua occasione!🔥</p>
+    <a href="mailto:collaborazioni@goatsrevenge.com" class="team-btn">Proporsi Ora</a>
   </div>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="logo">
-      <a href="index.html">🐐 GoaTs RevenGE 🧠</a>
-      <span class="arrow">⬅️</span>
+  <!-- JOIN THE TEAM -->
+  <div class="team-part join-team">
+    <h1>🎯 ENTRA NEL TEAM 🎯</h1>
+    <p>Vuoi diventare parte del nostro team? Gestione eventi, video, grafica o supporto live: se hai passione, sei dei nostri!</p>
+    <div class="team-cards">
+      <div class="team-card">
+        <h3>DJ / Producer</h3>
+        <p>Fai girare i beat e produci vibrazioni uniche con noi!</p>
+      </div>
+      <div class="team-card">
+        <h3>Videomaker</h3>
+        <p>Riprendi e monta contenuti che fanno esplodere il feed!</p>
+      </div>
+      <div class="team-card">
+        <h3>Community Manager</h3>
+        <p>Gestisci la nostra community e fai crescere la famiglia!</p>
+      </div>
     </div>
-    <ul></ul>
-  </nav>
+    <a href="mailto:team@goatsrevenge.com" class="team-btn">Entra Ora</a>
+  </div>
 
-  <!-- STILE INTERNO -->
   <style>
-    /* ===== SFONDO ANIMATO ===== */
-    body {
-      margin: 0;
-      overflow-x: hidden;
-      color: #fff;
-      font-family: 'Orbitron', sans-serif;
-    }
-
-    .background {
-      position: fixed;
-      inset: 0;
-      overflow: hidden;
-      z-index: -1;
-      background: radial-gradient(circle at 30% 30%, #050505 0%, #000 80%);
-    }
-
-    .stars {
-      width: 100%;
-      height: 100%;
-      background: url('https://i.ibb.co/s5R7DKW/stars.png') repeat;
-      animation: moveStars 60s linear infinite;
-      opacity: 0.7;
-    }
-
-    @keyframes moveStars {
-      from { background-position: 0 0; }
-      to { background-position: -2000px 2000px; }
-    }
-
-    .nebula {
-      position: absolute;
-      width: 150%;
-      height: 150%;
-      background: radial-gradient(circle, rgba(0,255,200,0.2), rgba(0,0,0,0));
-      filter: blur(200px);
-      animation: moveNebula 30s ease-in-out infinite alternate;
-    }
-
-    @keyframes moveNebula {
-      0% { transform: translate(-10%, -10%) scale(1); }
-      100% { transform: translate(10%, 10%) scale(1.3); }
-    }
-
-    /* ===== TITOLO ===== */
-    .team-title {
-      text-align: center;
-      font-size: 3rem;
-      text-transform: uppercase;
-      margin-top: 100px;
-      letter-spacing: 5px;
-      text-shadow: 0 0 20px #0ff, 0 0 60px #00ff9d;
-      animation: glowPulse 3s ease-in-out infinite;
-    }
-
-    @keyframes glowPulse {
-      0%, 100% { text-shadow: 0 0 15px #0ff, 0 0 60px #00ff9d; }
-      50% { text-shadow: 0 0 35px #0ff, 0 0 90px #00ffaa; }
-    }
-
-    /* ===== CONTENITORE CARD ===== */
-    .team-container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 40px;
-      margin: 80px auto;
-      width: 90%;
-      max-width: 1300px;
-    }
-
-    /* ===== CARD ===== */
-    .team-card {
-      background: rgba(0, 0, 0, 0.6);
-      border: 2px solid rgba(0, 255, 200, 0.5);
-      border-radius: 20px;
-      padding: 40px;
-      width: 500px;
-      text-align: center;
-      box-shadow: 0 0 20px rgba(0,255,200,0.4);
-      transition: 0.3s ease-in-out;
-      backdrop-filter: blur(8px);
+    /* SEZIONE TEAM */
+    .team {
       position: relative;
+      padding: 100px 20px;
       overflow: hidden;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
     }
 
-    .team-card::before {
-      content: '';
+    /* FUMO ANIMATO */
+    .smoke {
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, transparent, rgba(0,255,170,0.1), transparent);
-      transform: translateX(-100%);
-      transition: transform 0.8s ease;
+      background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.6) 70%);
+      animation: smokeMove 20s linear infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+    @keyframes smokeMove {
+      0% {transform: translateY(0) scale(1);}
+      50% {transform: translateY(-50px) scale(1.1);}
+      100% {transform: translateY(0) scale(1);}
     }
 
-    .team-card:hover::before {
-      transform: translateX(100%);
+    /* PARTI TEAM */
+    .team-part {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+      padding: 60px 20px;
+      border-radius: 25px;
+      background: linear-gradient(135deg, rgba(30,0,50,0.8), rgba(0,0,0,0.8));
+      box-shadow: 0 0 25px #ff00ff, 0 0 50px #00ffff;
+      margin-bottom: 50px;
     }
 
-    .team-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 40px rgba(0,255,170,0.8), 0 0 80px #00f5ff;
+    .team-part h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+      animation: neon-flicker 2s infinite alternate;
+    }
+    @keyframes neon-flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+        opacity: 1;
+      }
+      20%, 24%, 55% {
+        text-shadow: none;
+        opacity: 0.6;
+      }
     }
 
-    .team-card h2 {
-      font-size: 1.8rem;
-      color: #00fff2;
-      margin-bottom: 15px;
-      text-shadow: 0 0 15px #00ffe1;
-    }
-
-    .team-card p {
-      font-size: 1.1rem;
-      color: #ccc;
+    .team-part p {
+      font-size: 1.2rem;
       margin-bottom: 30px;
       line-height: 1.6;
     }
 
-    /* ===== BOTTONI FUTURISTICI ===== */
-    .button {
-      background: linear-gradient(90deg, #00fff7, #00ff7e);
-      color: #000;
+    /* PULSANTI */
+    .team-btn {
+      display: inline-block;
+      padding: 15px 35px;
+      font-size: 1.2rem;
       font-weight: bold;
-      padding: 14px 30px;
-      border-radius: 12px;
-      text-transform: uppercase;
-      box-shadow: 0 0 20px #00ffe7;
+      color: #fff;
+      border: 3px solid #ff00ff;
+      border-radius: 15px;
       text-decoration: none;
-      transition: all 0.25s ease;
+      box-shadow: 0 0 15px #ff00ff, 0 0 25px #00ffff;
+      transition: 0.3s;
+    }
+    .team-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px #ff00ff, 0 0 50px #00ffff;
     }
 
-    .button:hover {
-      transform: scale(1.1) rotate(1deg);
-      box-shadow: 0 0 40px #00ffbb, 0 0 70px #00bfff;
+    /* CARDS JOIN TEAM */
+    .team-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      margin-bottom: 30px;
     }
-
-    /* ===== LINEA RGB ===== */
-    .neon-line {
-      border: none;
-      height: 3px;
-      width: 70%;
-      margin: 70px auto;
-      background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, violet);
-      background-size: 400%;
-      animation: rgb-flow 5s linear infinite;
-      box-shadow: 0 0 25px #00ffcc, 0 0 45px #00f5ff;
+    .team-card {
+      background: rgba(0,0,0,0.6);
+      border: 2px solid #ff00ff;
       border-radius: 20px;
+      padding: 25px;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffff;
+      transition: 0.3s;
+    }
+    .team-card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 0 40px #ff00ff, 0 0 60px #00ffff;
+    }
+    .team-card h3 {
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+      font-weight: bold;
+      text-shadow: 0 0 10px #ff00ff;
+    }
+    .team-card p {
+      font-size: 1rem;
+      line-height: 1.4;
     }
 
-    @keyframes rgb-flow {
-      0% { background-position: 0 0; }
-      100% { background-position: 400% 0; }
+    /* MEDIA QUERY */
+    @media(max-width:900px){
+      .team-cards { flex-direction: column; align-items: center; }
+      .team-card { width: 80%; }
     }
 
   </style>
-
-  <!-- ===== SEZIONE TEAM ===== -->
-  <h1 class="team-title">🔥 GOATS TEAM 🔥</h1>
-
-  <div class="team-container">
-    
-    <!-- CARD 1 -->
-    <div class="team-card">
-      <h2>🤝 Collaborazioni Social</h2>
-      <p>
-        Hai idee fuori di testa, vuoi creare contenuti o remix che spacchino ovunque?  
-        Collabora con me e portiamo l’energia GOAT direttamente sui tuoi social.  
-        Fatti sentire, il web deve sapere chi sei. ⚡
-      </p>
-      <a href="https://www.instagram.com/franzzinho.zbb/" target="_blank" class="button">📩 Collabora Ora</a>
-    </div>
-
-    <!-- CARD 2 -->
-    <div class="team-card">
-      <h2>🐐 Entra nel Team</h2>
-      <p>
-        Cerchiamo editor, beatmaker, grafici e menti folli che respirano creatività.  
-        Se vuoi far parte della squadra e dominare la scena digitale,  
-        il portale è aperto. Mostra di che pasta sei fatto. 💀
-      </p>
-      <a href="https://forms.gle/" target="_blank" class="button">🚀 Candidati Subito</a>
-    </div>
-
-  </div>
-
-  <hr class="neon-line">
-
-  <!-- FOOTER -->
-  <footer style="text-align:center; padding:30px; background:#111; color:#fff;">
-    <p>© 2025. 🐐 GoaTs RevenGE 🧠. - <a href="TERMINI.html" target="_blank" style="color:blue; text-decoration:underline;">Tutti i diritti riservati</a></p>
-  </footer>
-
-</body>
-</html>
+</section>
