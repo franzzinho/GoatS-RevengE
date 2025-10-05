@@ -1,375 +1,689 @@
 /* RESET BASE */
+
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
 body { 
+
   font-family: 'Segoe UI', sans-serif; 
+  
   line-height: 1.6; 
+  
   color: #fff; 
+  
   background: #0d0d0d; 
 }
+
 img { max-width: 100%; display: block; border-radius: 12px; }
+
 a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+
 
 
 /* NAVBAR BASE */
 nav {
+
   background: linear-gradient(90deg, #111, #1a1a1a);
+  
   display: flex;
+  
   justify-content: space-between;
+  
   align-items: center;
+  
   padding: 20px;
+  
   position: sticky;
+  
   top: 0;
+  
   z-index: 1000;
+  
   box-shadow: 0 0 15px #ffcc00;
 }
 
-/* Logo neon giallo */
+
+
+/* NOME: GOATS REVENGE NEON */
+
 nav .logo a {
+
   font-size: 1.3rem;
+  
   font-weight: bold;
+  
   color: #ffcc00;
+  
   text-shadow: 0 0 5px #ffcc00, 0 0 15px #ffcc00, 0 0 30px #ffcc00;
+  
   animation: neon-yellow 1.5s infinite alternate;
 }
 
-/* Freccia neon viola */
+
+
+/* FRECCIA NEON VIOLA, VICINO AL NOOME: GOATS REVENGE */
+
 nav .logo .arrow {
+  
   font-size: 1.5rem;
+  
   margin-left: 10px;
+  
   color: #ff00ff;
+  
   text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff, 0 0 30px #ff00ff;
+  
   animation: neon-purple 1.5s infinite alternate;
 }
 
+
+
 /* Animazioni lampeggio */
+
 @keyframes neon-yellow {
+  
   from { text-shadow: 0 0 5px #ffcc00, 0 0 15px #ffcc00; }
+  
   to { text-shadow: 0 0 10px #ffcc00, 0 0 25px #ffcc00, 0 0 40px #ffaa00; }
 }
+
 @keyframes neon-purple {
+
   from { text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff; }
+  
   to { text-shadow: 0 0 10px #ff00ff, 0 0 25px #ff00ff, 0 0 40px #cc00ff; }
 }
 
 
 
-/* HERO (HOME CARTOON COMPLETAMENTE NUOVA) */
+/* HERO */
+
 header.hero {
+
   height: 100vh;
+  
   display: flex;
+  
   flex-direction: column;
+  
   justify-content: center;
+  
   align-items: center;
+  
   text-align: center;
+  
   background: radial-gradient(circle at top left, #ff0066, #ffcc00, #00e6ff);
+  
   position: relative;
+  
   overflow: hidden;
 }
+
 header.hero::before {
+
   content: "";
+  
   position: absolute;
+  
   inset: 0;
+  
   background: url("https://i.ibb.co/dW2Dx2d/comic-dots.png");
+  
   opacity: 0.3;
+  
   animation: moveDots 20s linear infinite;
 }
+
 @keyframes moveDots {
+
   from { background-position: 0 0; }
+  
   to { background-position: 1000px 1000px; }
 }
+
 header.hero h1 {
+
   font-size: 4.5rem;
+  
   color: #fff;
-  font-weight: bold; /* GRASSETTO */
+  
+  font-weight: bold;           /* GRASSETTO */
+  
   font-family: 'Comic Sans MS', cursive, sans-serif;
+  
   text-shadow: -5px 5px 0 #111, 5px -5px 0 #ff00ff;
   z-index: 1;
 }
+
 header.hero p {
+
   font-size: 1.8rem;
+  
   color: #111;
+  
   background: #fff;
+  
   display: inline-block;
+  
   padding: 10px 20px;
+  
   border-radius: 15px;
+  
   margin-top: 20px;
+  
   transform: rotate(-2deg);
+  
   box-shadow: 6px 6px 0 #ff00ff;
+  
   z-index: 1;
 }
+
 .hero-buttons {
+
   margin-top: 40px;
+  
   display: flex;
+  
   gap: 25px;
+  
   flex-wrap: wrap;
+  
   justify-content: center;
+  
   z-index: 1;
 }
+
 .hero-buttons a {
+  
   padding: 20px 40px;
+
   border-radius: 20px;
+  
   font-weight: bold;
+  
   border: 4px solid #111;
+  
   font-size: 1.2rem;
+  
   cursor: pointer;
+  
   transition: 0.3s;
+ 
   font-family: 'Comic Sans MS', cursive, sans-serif;
 }
+
 .hero-buttons a:first-child {
+
   background: #00e6ff;
+  
   color: #111;
+  
   box-shadow: 6px 6px 0 #111;
 }
+
 .hero-buttons a:first-child:hover {
+  
   background: #66f2ff;
+
   transform: translateY(-8px) rotate(-3deg);
-  box-shadow: 9px 9px 0 #111;
-}
-.hero-buttons a:last-child {
-  background: #ff0066;
-  color: #fff;
-  box-shadow: 6px 6px 0 #111;
-}
-.hero-buttons a:last-child:hover {
-  background: #ff3399;
-  transform: translateY(-8px) rotate(3deg);
+  
   box-shadow: 9px 9px 0 #111;
 }
 
-/* SEZIONI */
+.hero-buttons a:last-child {
+
+  background: #ff0066;
+  
+  color: #fff;
+  
+  box-shadow: 6px 6px 0 #111;
+}
+
+.hero-buttons a:last-child:hover {
+
+  background: #ff3399;
+  
+  transform: translateY(-8px) rotate(3deg);
+  
+  box-shadow: 9px 9px 0 #111;
+}
+
+
+
+
+/* ELENCO SEZIONI */
+
+
 section { padding: 80px 20px; max-width: 1200px; margin: auto; }
+
 section h1, section h2 { margin-bottom: 20px; font-weight: bold; } /* GRASSETTO TITOLI */
 
-/* ABOUT (non toccata) */
+
+
+/* ABOUT SECTION*/
+
 .about { 
+
   display: flex; 
+  
   flex-wrap: wrap; 
+  
   gap: 30px; 
+  
   align-items: center; 
+  
   background: linear-gradient(135deg, #1a0033, #33001a); 
+  
   border-radius: 20px;
+  
   padding: 40px;
+  
   box-shadow: 0 0 25px #ff00ff;
 }
+
 .about img { flex: 1 1 400px; border-radius: 20px; box-shadow: 0 0 20px #ff00ff; }
+
 .about div { flex: 1 1 500px; }
+
 .about ul { list-style: none; margin-top: 15px; }
 
-/* UTILITY (neon vibes) */
+
+
+/* UTILITY SECTION */
+
 .services-section {
+
   padding: 80px 20px;
+  
   max-width: 1200px;
+  
   margin: auto;
 }
 
-/* Titoli con effetto insegna neon */
+
+
+/* TITOLI CON EFFETTO NEON */
+
 .services-title {
+
   font-size: 2.5rem;
+  
   text-align: center;
+  
   color: #ff00ff;
+  
   margin: 80px 0 40px;
+  
   font-family: 'Segoe UI', sans-serif;
-  font-weight: bold; /* GRASSETTO */
+  
+  font-weight: bold;         /* GRASSETTO */
+  
   text-shadow: 0 0 10px #ff00ff, 0 0 20px #ffcc00, 0 0 30px #ff00ff;
+  
   animation: neon-flicker 2s infinite alternate;
+  
   position: relative;
 }
 
-/* Divisore sotto i titoli */
+
+/* LINEA DIVISORIA TRA I TITOLI */
+
 .services-title::after {
+
   content: "";
+  
   display: block;
+  
   width: 120px;
+  
   height: 4px;
+  
   background: linear-gradient(90deg, #ff00ff, #ffcc00);
+  
   margin: 15px auto 0;
+  
   border-radius: 10px;
+  
   box-shadow: 0 0 10px #ff00ff;
 }
 
-/* Effetto flicker neon */
+
+/* EFFETTO FLICKER NEON */
+
 @keyframes neon-flicker {
+
   0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+  
     text-shadow: 0 0 5px #ff00ff, 0 0 10px #ffcc00, 0 0 20px #ff00ff;
+    
     opacity: 1;
   }
+  
   20%, 24%, 55% {
+    
     text-shadow: none;
+  
     opacity: 0.6;
   }
 }
 
-/* Griglia servizi */
+
+
+/* GRIGLIA SERVIZI */
+
 .services { 
+
   display: grid; 
+  
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  
   gap: 30px; 
+  
   margin-top: 30px;
 }
 
-/* Card */
+
+
+/* CARD */
+
 .service { 
+
   background: #111;
+  
   color: #fff;
+  
   padding: 25px; 
+  
   border-radius: 20px; 
+  
   text-align: center; 
+  
   box-shadow: 0 0 20px #6600ff;
+  
   transition: transform 0.3s, box-shadow 0.3s; 
+  
   border: 2px solid #6600ff;
 }
+
 .service:hover { 
+
   transform: translateY(-10px) scale(1.03); 
+  
   box-shadow: 0 0 30px #ff00ff, 0 0 50px #ffcc00;
 }
+
 .service img {
+
   border-radius: 15px;
+  
   margin-bottom: 15px;
+  
   box-shadow: 0 0 15px #000;
 }
+
 .service h3 {
+
   color: #ffcc00;
+  
   margin-bottom: 15px;
+  
   font-size: 1.4rem;
+  
   font-weight: bold; /* GRASSETTO */
+  
   text-shadow: 0 0 10px #ff00ff;
 }
+
 .service p {
+
   font-size: 1rem;
+  
   margin-bottom: 20px;
 }
 
-/* Pulsanti neon */
+
+
+/* PULSANTI NEON */
+
 .service-btn {
+  
   display: inline-block;
+  
   padding: 12px 25px;
+  
   border-radius: 10px;
+  
   background: #ffcc00;
+  
   color: #000;  
+  
   font-weight: bold;
+  
   text-decoration: none;
+  
   box-shadow: 0 0 15px #ff00ff, 0 0 25px #ffcc00;
+  
   transition: 0.3s;
 }
+
 .service-btn:hover {
+  
   background: #ff7300;
+  
   color: #000;
+  
   box-shadow: 0 0 20px #ffcc00, 0 0 40px #ff00ff;
+  
   transform: scale(1.05);
 }
 
 
-/* SOCIAL SECTION (neon vibes) */
+/* SOCIAL SECTION */
+
 .social { 
+
   text-align: center; 
+  
   background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+  
   padding: 80px 20px; 
+  
   border-radius: 25px; 
+  
   box-shadow: 0 0 25px #ff00cc;
 }
+
 .social h1 {
+
   font-size: 2.5rem;
+  
   color: #fff;
-  font-weight: bold; /* GRASSETTO */
+  
+  font-weight: bold;               /* GRASSETTO */
+  
   margin-bottom: 40px;
+  
   text-shadow: 0 0 10px #ff00ff, 0 0 20px #ffcc00;
 }
+
 .social-icons { 
+
   display: flex; 
+  
   justify-content: center; 
+  
   gap: 25px; 
+  
   flex-wrap: wrap; 
+  
   margin-bottom: 50px;
 }
+
 .social-icons a { 
+
   display: flex; 
+  
   flex-direction: column;
+  
   align-items: center; 
+  
   justify-content: center; 
+  
   width: 120px; 
+  
   height: 120px; 
+  
   background: #111; 
+  
   border: 2px solid #ff00ff; 
+  
   border-radius: 15px; 
+  
   font-size: 2.2rem; 
+  
   color: #fff; 
+  
   box-shadow: 0 0 15px #ff00ff, 0 0 25px #ff00ff; 
+  
   transition: 0.3s; 
 }
+
 .social-icons a span {
+
   font-size: 0.9rem;
+  
   margin-top: 5px;
+  
   font-weight: bold;
+  
   color: #fff;
 }
+
 .social-icons a:hover { 
+
   transform: scale(1.1) rotate(-2deg);
+  
   box-shadow: 0 0 25px #ffcc00, 0 0 40px #ff00ff; 
 }
 
 .spotify-player {
+  
   max-width: 600px;
+  
   margin: 40px auto 0;
+  
   border-radius: 20px;
+  
   overflow: hidden;
+  
   box-shadow:
-    0 0 25px 5px #1db954,   /* alone più spesso e diffuso */
-    0 0 50px 10px #1db954,  /* alone più largo per effetto neon */
-    0 0 80px 15px #1db954;  /* glow esterno morbido */
+
+    
+    0 0 25px 5px #1db954,   /* ALONE SPESSO E DIFFUSO */
+
+    
+    0 0 50px 10px #1db954,  /* ALONE LARGO PER EFFETTO NEON */
+    
+    
+    0 0 80px 15px #1db954;  /* EFFETTO NEON PIU' ESTERNO */
+
+  
   transition: box-shadow 0.3s ease-in-out;
 }
 
 @keyframes spotify-glow {
+  
   0% { box-shadow: 0 0 25px 5px #1db954, 0 0 50px 10px #1db954, 0 0 80px 15px #1db954; }
+  
   50% { box-shadow: 0 0 40px 10px #1db954, 0 0 70px 20px #1db954, 0 0 100px 25px #1db954; }
+  
   100% { box-shadow: 0 0 25px 5px #1db954, 0 0 50px 10px #1db954, 0 0 80px 15px #1db954; }
 }
+
 .spotify-player {
+
   animation: spotify-glow 3s ease-in-out infinite;
 }
 
 
 .arrow:hover {
+  
   transform: scale(1.2);
+  
   text-shadow: 0 0 10px #0ff, 0 0 20px #00f, 0 0 40px #0ff;
 }
 
 
-/* CONTACT */
+
+/* VIDEO IDEAS SECTION */
+
 .contact { 
+
   background: linear-gradient(135deg, #001a33, #000); 
+  
   padding: 60px; 
+  
   border-radius: 20px; 
+  
   box-shadow: 0 0 25px #00ccff; 
 }
+
 .contact form { display: grid; gap: 20px; max-width: 600px; margin: auto; }
+
 .contact input, .contact textarea { 
+
   padding: 12px; 
+  
   border-radius: 10px; 
+  
   border: none; 
+  
   background: #111; 
+  
   color: #fff; 
+  
   box-shadow: 0 0 10px #00ccff; 
 }
+
 .contact button { 
+
   padding: 15px; 
+  
   border-radius: 10px; 
+  
   border: none; 
+  
   background: #00ccff; 
+  
   color: #000; 
+  
   font-weight: bold; 
+  
   cursor: pointer; 
 }
+
 .contact button:hover { background: #0099cc; }
 
+
+
 /* FOOTER */
+
 footer { 
+
   text-align: center; 
+  
   padding: 30px;
+  
   background: linear-gradient(90deg, #111, #1a0033); 
+  
   margin-top: 50px; 
+  
   color:#fff; 
+  
   box-shadow: 0 0 20px #ff00ff; 
 }
+
 footer a { color: #ffcc00; margin: 0 10px; font-weight: bold; } /* GRASSETTO link footer */
+
 footer a:hover { color:#ff00ff; }
