@@ -4,11 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Team - GoaTs RevenGE</title>
-  <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="icona_sito.png">
 </head>
 
 <body>
+
+  <!-- SFONDO 3D ANIMATO -->
+  <div class="background">
+    <div class="stars"></div>
+    <div class="nebula"></div>
+  </div>
 
   <!-- NAVBAR -->
   <nav class="navbar">
@@ -21,73 +26,152 @@
 
   <!-- STILE INTERNO -->
   <style>
-
-    /* 🌈 BACKGROUND ANIMATO RGB */
+    /* ===== SFONDO ANIMATO ===== */
     body {
       margin: 0;
-      font-family: 'Orbitron', sans-serif;
-      color: #fff;
-      background: linear-gradient(270deg, #000000, #040404, #0d0d0d, #0b001a);
-      background-size: 400% 400%;
-      animation: bgFlow 15s ease infinite;
       overflow-x: hidden;
-    }
-
-    @keyframes bgFlow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    /* 🌟 TESTI & STRUTTURA */
-    section {
-      text-align: center;
-      padding: 80px 20px;
-      position: relative;
-    }
-
-    h1 {
-      font-size: 2.8rem;
-      margin-bottom: 25px;
       color: #fff;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .background {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      z-index: -1;
+      background: radial-gradient(circle at 30% 30%, #050505 0%, #000 80%);
+    }
+
+    .stars {
+      width: 100%;
+      height: 100%;
+      background: url('https://i.ibb.co/s5R7DKW/stars.png') repeat;
+      animation: moveStars 60s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes moveStars {
+      from { background-position: 0 0; }
+      to { background-position: -2000px 2000px; }
+    }
+
+    .nebula {
+      position: absolute;
+      width: 150%;
+      height: 150%;
+      background: radial-gradient(circle, rgba(0,255,200,0.2), rgba(0,0,0,0));
+      filter: blur(200px);
+      animation: moveNebula 30s ease-in-out infinite alternate;
+    }
+
+    @keyframes moveNebula {
+      0% { transform: translate(-10%, -10%) scale(1); }
+      100% { transform: translate(10%, 10%) scale(1.3); }
+    }
+
+    /* ===== TITOLO ===== */
+    .team-title {
+      text-align: center;
+      font-size: 3rem;
       text-transform: uppercase;
-      letter-spacing: 3px;
-      text-shadow: 0 0 10px #0ff, 0 0 30px #0f0, 0 0 60px #00f;
+      margin-top: 100px;
+      letter-spacing: 5px;
+      text-shadow: 0 0 20px #0ff, 0 0 60px #00ff9d;
       animation: glowPulse 3s ease-in-out infinite;
     }
 
     @keyframes glowPulse {
-      0%, 100% { text-shadow: 0 0 10px #0ff, 0 0 30px #0f0; }
-      50% { text-shadow: 0 0 20px #00f, 0 0 40px #0ff; }
+      0%, 100% { text-shadow: 0 0 15px #0ff, 0 0 60px #00ff9d; }
+      50% { text-shadow: 0 0 35px #0ff, 0 0 90px #00ffaa; }
     }
 
-    p {
-      font-size: 1.25rem;
-      max-width: 850px;
-      margin: 0 auto 40px auto;
-      line-height: 1.8;
+    /* ===== CONTENITORE CARD ===== */
+    .team-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin: 80px auto;
+      width: 90%;
+      max-width: 1300px;
+    }
+
+    /* ===== CARD ===== */
+    .team-card {
+      background: rgba(0, 0, 0, 0.6);
+      border: 2px solid rgba(0, 255, 200, 0.5);
+      border-radius: 20px;
+      padding: 40px;
+      width: 500px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,255,200,0.4);
+      transition: 0.3s ease-in-out;
+      backdrop-filter: blur(8px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .team-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent, rgba(0,255,170,0.1), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.8s ease;
+    }
+
+    .team-card:hover::before {
+      transform: translateX(100%);
+    }
+
+    .team-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(0,255,170,0.8), 0 0 80px #00f5ff;
+    }
+
+    .team-card h2 {
+      font-size: 1.8rem;
+      color: #00fff2;
+      margin-bottom: 15px;
+      text-shadow: 0 0 15px #00ffe1;
+    }
+
+    .team-card p {
+      font-size: 1.1rem;
       color: #ccc;
-      text-shadow: 0 0 10px #0f0;
-      animation: fadeIn 2s ease-in-out;
+      margin-bottom: 30px;
+      line-height: 1.6;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* ===== BOTTONI FUTURISTICI ===== */
+    .button {
+      background: linear-gradient(90deg, #00fff7, #00ff7e);
+      color: #000;
+      font-weight: bold;
+      padding: 14px 30px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      box-shadow: 0 0 20px #00ffe7;
+      text-decoration: none;
+      transition: all 0.25s ease;
     }
 
-    /* 🟩 LINEA NEON RGB */
+    .button:hover {
+      transform: scale(1.1) rotate(1deg);
+      box-shadow: 0 0 40px #00ffbb, 0 0 70px #00bfff;
+    }
+
+    /* ===== LINEA RGB ===== */
     .neon-line {
       border: none;
       height: 3px;
-      margin: 60px auto;
-      width: 85%;
-      background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, violet, red);
-      background-size: 400% 100%;
+      width: 70%;
+      margin: 70px auto;
+      background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, violet);
+      background-size: 400%;
       animation: rgb-flow 5s linear infinite;
-      box-shadow: 0 0 25px #0f0, 0 0 50px #0ff;
-      border-radius: 10px;
-      filter: blur(0.5px);
+      box-shadow: 0 0 25px #00ffcc, 0 0 45px #00f5ff;
+      border-radius: 20px;
     }
 
     @keyframes rgb-flow {
@@ -95,68 +179,41 @@
       100% { background-position: 400% 0; }
     }
 
-    /* 🔘 BOTTONI GOATTATI */
-    a.button {
-      display: inline-block;
-      background: linear-gradient(90deg, #00ffcc, #00ff66);
-      color: black;
-      text-transform: uppercase;
-      font-weight: bold;
-      padding: 15px 35px;
-      border-radius: 15px;
-      box-shadow: 0 0 25px #00ffcc, 0 0 60px #00ff66;
-      text-decoration: none;
-      transition: 0.2s ease-in-out;
-      font-size: 1.1rem;
-    }
-
-    a.button:hover {
-      transform: scale(1.12);
-      box-shadow: 0 0 40px #00ffcc, 0 0 90px #00ff66, 0 0 120px #00f;
-    }
-
-    /* 🌫️ EFFETTO FUMO / GLOW TRA LE SEZIONI */
-    .glow-divider {
-      width: 100%;
-      height: 100px;
-      background: radial-gradient(circle, rgba(0,255,170,0.2) 0%, rgba(0,0,0,0) 70%);
-      filter: blur(8px);
-    }
-
   </style>
 
-  <!-- 🔥 BLOCCO 1: COLLABORAZIONI -->
-  <section id="collab">
-    <h1>🤝 COLLABORAZIONI SOCIAL.</h1>
-    <p>
-      Vuoi collaborare con me per remix, contenuti o produzioni video che spacchino il web?  
-      Se hai talento, creatività e voglia di lasciare il segno, allora sei nel posto giusto.  
-      Contattami e portiamo il GOAT MODE direttamente sui tuoi social. 🧠💥
-    </p>
-    <a href="https://www.instagram.com/franzzinho.zbb/" target="_blank" class="button">📩 CONTATTAMI</a>
+  <!-- ===== SEZIONE TEAM ===== -->
+  <h1 class="team-title">🔥 GOATS TEAM 🔥</h1>
 
-    <hr class="neon-line">
-  </section>
+  <div class="team-container">
+    
+    <!-- CARD 1 -->
+    <div class="team-card">
+      <h2>🤝 Collaborazioni Social</h2>
+      <p>
+        Hai idee fuori di testa, vuoi creare contenuti o remix che spacchino ovunque?  
+        Collabora con me e portiamo l’energia GOAT direttamente sui tuoi social.  
+        Fatti sentire, il web deve sapere chi sei. ⚡
+      </p>
+      <a href="https://www.instagram.com/franzzinho.zbb/" target="_blank" class="button">📩 Collabora Ora</a>
+    </div>
 
-  <div class="glow-divider"></div>
+    <!-- CARD 2 -->
+    <div class="team-card">
+      <h2>🐐 Entra nel Team</h2>
+      <p>
+        Cerchiamo editor, beatmaker, grafici e menti folli che respirano creatività.  
+        Se vuoi far parte della squadra e dominare la scena digitale,  
+        il portale è aperto. Mostra di che pasta sei fatto. 💀
+      </p>
+      <a href="https://forms.gle/" target="_blank" class="button">🚀 Candidati Subito</a>
+    </div>
 
-  <!-- ⚡ BLOCCO 2: ENTRA NEL TEAM -->
-  <section id="join-team">
-    <h1>🐐 ENTRA NEL TEAM GOATS REVENGE.</h1>
-    <p>
-      Cerchiamo persone che non si accontentano, che vogliono creare, innovare e dominare i contenuti digitali.  
-      Se sai montare video, fare beat, curare grafiche o gestire community — potresti essere il prossimo GOAT del Team.  
-      Dimostra chi sei. Il palco è tuo. 🔥
-    </p>
-    <a href="https://forms.gle/" target="_blank" class="button">🚀 CANDIDATI ORA</a>
+  </div>
 
-    <hr class="neon-line">
-  </section>
-
-  <div class="glow-divider"></div>
+  <hr class="neon-line">
 
   <!-- FOOTER -->
-  <footer style="text-align:center; padding:30px; background:#111; margin-top:50px; color:#fff;">
+  <footer style="text-align:center; padding:30px; background:#111; color:#fff;">
     <p>© 2025. 🐐 GoaTs RevenGE 🧠. - <a href="TERMINI.html" target="_blank" style="color:blue; text-decoration:underline;">Tutti i diritti riservati</a></p>
   </footer>
 
