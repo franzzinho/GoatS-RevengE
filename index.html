@@ -1,6 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="it">
+  
 <head>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GoaTs RevenGE - Home</title>
@@ -8,232 +11,428 @@
   <script src="https://kit.fontawesome.com/4e5f1f8c4c.js" crossorigin="anonymous"></script>
 
   <style>
+    
     * { margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif; }
+    
     body { background:#0a0a0a; color:#fff; }
 
+    
+    
     /* NAVBAR */
+    
     nav {
+    
       background: linear-gradient(90deg, #111, #1a1a1a);
+      
       display: flex;
+      
       justify-content: space-between;
+      
       align-items: center;
+      
       padding: 20px;
+      
       position: sticky;
+      
       top: 0;
+      
       z-index: 1000;
+      
       box-shadow: 0 0 15px #ffcc00;
     }
+    
     nav .logo a {
+    
       font-size: 1.3rem;
+      
       font-weight: bold;
+      
       color: #ffcc00;
+      
       text-shadow: 0 0 5px #ffcc00, 0 0 15px #ffcc00, 0 0 30px #ffcc00;
+      
       animation: neon-yellow 1.5s infinite alternate;
+      
       text-decoration: none;
     }
+    
     nav .logo .arrow {
+    
       font-size: 1.5rem;
+      
       margin-left: 10px;
+      
       color: #ff00ff;
+      
       text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff, 0 0 30px #ff00ff;
+      
       animation: neon-purple 1.5s infinite alternate;
     }
+    
     @keyframes neon-yellow {
+    
       from { text-shadow: 0 0 5px #ffcc00, 0 0 15px #ffcc00; }
+      
       to   { text-shadow: 0 0 10px #ffcc00, 0 0 25px #ffcc00, 0 0 40px #ffaa00; }
     }
+    
     @keyframes neon-purple {
+    
       from { text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff; }
+      
       to   { text-shadow: 0 0 10px #ff00ff, 0 0 25px #ff00ff, 0 0 40px #cc00ff; }
     }
 
+
+    
     /* HERO */
+    
     header.hero {
+    
       height:100vh;
+      
       display:flex;
+      
       flex-direction:column;
+      
       justify-content:center;
+      
       align-items:center;
+      
       text-align:center;
+      
       background:#111;
+      
       position:relative;
+      
       overflow:hidden;
     }
+    
     header.hero h1 {
+    
       font-size:3.5rem;
+      
       color:#00e6ff;
+      
       text-shadow:0 0 15px #00e6ff;
+      
       margin-bottom:20px;
     }
+    
     header.hero p {
+    
       font-size:1.3rem;
+      
       font-weight:600;
+      
       color:#000;
+      
       background:#FFD700;
+      
       padding:15px 20px;
+      
       border-radius:10px;
+      
       display:inline-block;
+      
       text-align:center;
     }
+    
     .hero-btn {
+    
       margin-top:30px;
+      
       padding:15px 35px;
+      
       font-size:1.2rem;
+      
       font-weight:bold;
+      
       border-radius:10px;
+      
       text-decoration:none;
+      
       background:#FFD700;
+      
       color:#111;
+      
       box-shadow:0 0 20px #FFD700;
+      
       transition:0.3s;
     }
+    
     .hero-btn:hover {
+    
       background:#ff4500;
+      
       color:#fff;
+      
       box-shadow:0 0 25px #ff4500;
+      
       transform:scale(1.05);
     }
 
+
+    
     /* INTRO + PANORAMICA */
+    
     section.intro {
+      
       padding:100px 20px;
+      
       text-align:center;
+      
       max-width:1200px;
+      
       margin:auto;
+      
       background:#000;
     }
+    
     section.intro h2 {
+    
       font-size:2.5rem;
+      
       margin-bottom:20px;
+      
       color:#ff4500;
+      
       text-shadow:0 0 12px #ff4500;
     }
+    
     section.intro p {
+      
       font-size:1.2rem;
+      
       color:#ddd;
+      
       margin-bottom:50px;
     }
+    
     .overview {
+     
       display:grid;
+      
       grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+      
       gap:30px;
     }
+    
     .overview-card {
+    
       background:#111;
+      
       padding:40px 20px;
+      
       border-radius:15px;
+      
       text-align:center;
+      
       box-shadow:0 0 15px #222;
+      
       transition:0.3s;
     }
+    
     .overview-card:hover {
+    
       transform:translateY(-10px) scale(1.02);
+      
       box-shadow:0 0 25px #00e6ff;
     }
+    
     .overview-card i {
+    
       font-size:2.5rem;
+      
       margin-bottom:15px;
+      
       color:#00e6ff;
+      
       text-shadow:0 0 15px #00e6ff;
     }
+    
     .overview-card h3 {
+    
       color:#ff4500;
+      
       margin-bottom:10px;
+      
       font-size:1.4rem;
     }
+    
     .overview-card p {
+    
       font-size:0.95rem;
+      
       color:#bbb;
+      
       margin-bottom:20px;
     }
+    
     .overview-card a {
+    
       display:inline-block;
+      
       padding:10px 20px;
+      
       background:#00e6ff;
+      
       color:#111;
+      
       font-weight:bold;
+      
       border-radius:8px;
+      
       text-decoration:none;
+      
       transition:0.3s;
     }
+    
     .overview-card a:hover {
+      
       background:#ff4500;
+    
       color:#fff;
+      
       box-shadow:0 0 15px #ff4500;
     }
 
+    
+
     /* CTA */
+    
     section.cta {
+      
       text-align:center;
+      
       padding:70px 20px;
+      
       background:#1a1a1a;
+      
       color:#fff;
     }
+    
     section.cta h2 {
+    
       font-size:2rem;
+      
       margin-bottom:25px;
+      
       color:#00e6ff;
+      
       text-shadow:0 0 12px #00e6ff;
     }
+    
     section.cta a {
+    
       display:inline-block;
+      
       padding:15px 30px;
+      
       background:#ff4500;
+      
       color:#fff;
+      
       font-weight:bold;
+      
       border-radius:10px;
+      
       font-size:1.1rem;
+      
       text-decoration:none;
+      
       transition:0.3s;
     }
+    
     section.cta a:hover {
+    
       background:#00e6ff;
+      
       color:#111;
+      
       box-shadow:0 0 20px #00e6ff;
     }
 
+    
+
     /* FOOTER */
+    
     footer {
+      
       text-align:center;
+      
       padding:30px;
+      
       background:#111;
+      
       color:#fff;
+      
       margin-top:50px;
     }
+    
     footer a {
+    
+      
       text-decoration:none;
+      
       margin:0 8px;
+      
       font-weight:bold;
     }
+    
   </style>
+
 </head>
 
 <body>
 
+
+  
   <!-- NAVBAR -->
+  
   <nav class="navbar">
+    
     <div class="logo">
-      <a href="index.html">🐐 GoaTs RevenGE 🧠</a>
-      <span class="arrow">⬅️</span>
+    
+    <a href="index.html">🐐 GoaTs RevenGE 🧠</a>
+  
+    <span class="arrow">⬅️</span>
+    
     </div>
+  
   </nav>
 
+
+  
   <!-- HERO -->
+  
   <header class="hero">
+  
     <h1>Welcome to: 🐐 GoaTs RevenGE 🧠.</h1>
+    
     <p>L'universo di <a href="https://www.instagram.com/franzzinho.zbb/" target="_blank" style="color:blue; text-decoration:underline;">
+    
       Franzzinho </a>   tra:  <a href="https://lnk.bio/franzzinho" target="_blank" style="color:blue; text-decoration:underline;"> Social </a>, <a href="https://youtube.com/@franzzinho?si=cJiskLlGq_kUUDew" target="_blank" style="color:blue; text-decoration:underline;">
+      
       YouTube </a>, <a href="https://www.twitch.tv/franzzinho_gt" target="_blank" style="color:blue; text-decoration:underline;">
+      
       Twitch </a>, <a href="https://open.spotify.com/user/31b7fabh5h4v4wls254ofg55knxe?si=52PzdpixQA6nTP23M8LxFw" target="_blank" style="color:blue; text-decoration:underline;">
+      
       Dj-ing </a>   e   <a href=" https://music.amazon.it/profiles/@zbabyy?ref=dm_sh_nZ3zwFphlYRUc04ow57sRvQXf" target="_blank" style="color:blue; text-decoration:underline;">
+      
       Produzione Musicale.</a> <br> </p>
+    
     <a href="#panoramica" class="hero-btn"><i class="fa-solid fa-arrow-down"></i> Scopri di più.</a>
+  
   </header>
 
+
+  
 
   <!-- STYLE INTERNO -->
   
   <style>
+
 
     
     /* LINEA NEON RGB */
@@ -266,8 +465,12 @@
 
       </style>
 
+
+  
   <!-- PANORAMICA -->
+  
   <section id="panoramica" class="intro">
+  
     <h2>🚀  Panoramica del sito  🚀:</h2>
     
     <br>
@@ -276,137 +479,237 @@
    
     <br>
 
+    
     <!-- LINEA RGB SOTTO -->
       
 <hr class="neon-line">
     
     <div class="overview">
+      
       <div class="overview-card">
+      
         <i class="fa-solid fa-circle-info"></i>
+        
         <h3>❓ About ❓</h3>
 
         <hr style="border: 1px solid #39ff14; box-shadow: 0 0 10px #39ff14; margin: 30px 0;">
+        
         <br>
+        
         <p>Le origini di Franzzinho.</p>
+        
         <hr style="border: 1px solid #39ff14; box-shadow: 0 0 7px #39ff14; margin: 7px 0;">
+        
         <br>
+        
         <a href="ABOUT.html">Scopri di più.</a>
+      
       </div>
 
       <div class="overview-card">
+      
         <i class="fa-solid fa-gear"></i>
+        
         <h3>👀   Utility   👀.</h3>
+        
         <hr style="border: 1px solid #39ff14; box-shadow: 0 0 10px #39ff14; margin: 30px 0;">
+        
         <br>
+        
         <p>Strumenti e Servizi per: Dj, Producer e Creator.</p>
+        
         <hr style="border: 1px solid #39ff14; box-shadow: 0 0 7px #39ff14; margin: 7px 0;">
+        
         <br>
+        
         <a href="UTILITY.html">Scopri di più.</a>
+      
       </div>
 
       <div class="overview-card">
+        
         <i class="fa-brands fa-instagram"></i>
+        
         <h3>🔴   Social   🟠.</h3>
+        
         <hr style="border: 1px solid #39ff14; box-shadow: 0 0 10px #39ff14; margin: 30px 0;">
+        
         <br>
+        
         <p>Link social of Franzzinho ➕ Player Spotify.</p>
+        
         <hr style="border: 1px solid #39ff14; box-shadow: 0 0 7px #39ff14; margin: 7px 0;">
+        
         <br>
+        
         <a href="SOCIAL.html">Scopri di più.</a>
+      
       </div>
 
       <div class="overview-card">
+       
         <i class="fa-solid fa-lightbulb"></i>
+        
         <h3>💡   Video Ideas   💡.</h3>
+        
         <hr style="border: 1px solid #39ff14; box-shadow: 0 0 10px #39ff14; margin: 30px 0;">
+        
         <br>
+        
         <p>Proponi Idee per Nuovi Video Insane.</p>
+        
         <hr style="border: 1px solid #39ff14; box-shadow: 0 0 7px #39ff14; margin: 7px 0;">
+        
         <br>
+        
         <a href="VIDEO IDEAS.html">Scopri di più.</a>
+      
       </div>
 
+      
+      
       <div class="overview-card">
+      
         <i class="fa-solid fa-lightbulb"></i>
+        
         <h3>🛒   Shop  🛒.</h3>
+        
         <hr style="border: 1px solid #39ff14; box-shadow: 0 0 10px #39ff14; margin: 30px 0;">
+        
         <br>
+        
         <p>VISITA LO SHOP CON IL MERCH UFFICIALE DI FRANZZINHO.</p>
+        
         <hr style="border: 1px solid #39ff14; box-shadow: 0 0 7px #39ff14; margin: 7px 0;">
+        
         <br>
+        
         <a href="https://goats-market.company.site/">Scopri di più.</a>
+      
       </div>
 
       <div class="overview-card">
+      
         <i class="fa-solid fa-gear"></i>
+        
         <h3>💸   Support   💸.</h3>
+        
         <hr style="border: 1px solid #39ff14; box-shadow: 0 0 10px #39ff14; margin: 30px 0;">
+        
         <br>
+        
         <p>Supporta Franzzinho, donando tramite PayPal.</p>
+        
         <hr style="border: 1px solid #39ff14; box-shadow: 0 0 7px #39ff14; margin: 7px 0;">
+        
         <br>
+        
         <a href="http://paypal.com">Scopri di più.</a>
+      
       </div>
 
       <div class="overview-card">
+       
         <i class="fa-solid fa-store"></i>
+        
         <h3>👨🏻‍💼   Team   👨🏻‍💼.</h3>
+        
         <hr style="border: 1px solid #39ff14; box-shadow: 0 0 10px #39ff14; margin: 30px 0;">
+        
         <br>
+        
         <p>Entra nel G-SHARE o contatta Franzzinho per una collab.</p>
+        
         <hr style="border: 1px solid #39ff14; box-shadow: 0 0 7px #39ff14; margin: 7px 0;">
+        
         <br>
+        
         <a href="TEAM.html">Scopri di più.</a>
+      
       </div>
 
       <div class="overview-card">
+      
         <i class="fa-solid fa-microphone"></i>
+        
         <h3>🚧   Coming Soon   🚧.</h3>
+        
         <hr style="border: 1px solid #39ff14; box-shadow: 0 0 10px #39ff14; margin: 30px 0;">
+        
         <br>
+        
         <p>ACCESSO IN ANTEPRIMA A CONTENUTI ESCLUSIVI.</p>
+        
         <hr style="border: 1px solid #39ff14; box-shadow: 0 0 7px #39ff14; margin: 7px 0;">
+        
         <br>
+        
         <a href="COMING SOON.html">🔥  SPOILER ALERT  🔥.</a>
+      
       </div>
 
 
     </div>
 
+
+    
     <!-- LINEA RGB SOTTO -->
       
 <hr class="neon-line">
     
   </section>
 
+
+
+  
   <!-- CTA -->
+  
   <section class="cta">
+    
     <h2>❓ Vuoi lasciare la tua idea per un nuovo video of yt ❓</h2>
+    
     <a href="VIDEO IDEAS.html"><i class="fa-solid fa-lightbulb"></i>LASCIA LA TUA IDEA.</a>
+  
   </section>
+  
 
   <section class="cta">
+  
     <h2>❓ Vuoi collaborare (su YouTube, Tik Tok, ecc...) con Franzzinho ❓</h2>
+    
     <a href="TEAM.html"><i class="fa-solid fa-lightbulb"></i>COLLABORA.</a>
+  
   </section>
+  
 
   <section class="cta">
+    
     <h2>❓ Vuoi entrare a far parte del Team (G - Share) di Franzzinho ❓</h2>
+   
     <a href="TEAM.html"><i class="fa-solid fa-lightbulb"></i>ENTRA NEL TEAM.</a>
+  
   </section>
 
+
+  
+  
   <!-- FOOTER -->
+  
   <footer>
+    
     <p>© 2025. 🐐 GoaTs RevenGE 🧠.   <a href="TERMINI.html" target="_blank" style="color:blue; text-decoration:underline;">Tutti i diritti riservati</a></p>
+    
     <p>
+      
       <a href="https://www.instagram.com/franzzinho.zbb/" target="_blank" style="color:#f13584;"><i class="fa-brands fa-instagram"></i> Instagram</a> |
       <a href="https://www.tiktok.com/@franzzinho.zbb" target="_blank" style="color:#69c9d0;"><i class="fa-brands fa-tiktok"></i> TikTok</a> |
       <a href="https://discord.gg/xBj5wgMZH9" target="_blank" style="color:#7289da;"><i class="fa-brands fa-discord"></i> Discord</a> |
       <a href="https://youtube.com/@franzzinho" target="_blank" style="color:#ff0000;"><i class="fa-brands fa-youtube"></i> YouTube</a> |
       <a href="https://www.twitch.tv/franzzinho_GT" target="_blank" style="color:#6441a5;"><i class="fa-brands fa-twitch"></i> Twitch</a>
+    
     </p>
+    
   </footer>
 
 </body>
-          </html>
-          
+</html>
