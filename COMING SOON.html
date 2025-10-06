@@ -1,7 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="it">
 
 <head>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Coming Soon - GoaTs RevenGE</title>
@@ -10,50 +12,85 @@
 
   <style>
 
+
+    
     /* SEZIONE COMING SOON */
+    
     .coming-soon {
+      
       padding: 100px 20px;
+      
       background: #050505;
+      
       color: #fff;
+     
       text-align: center;
+     
       font-family: 'Orbitron', sans-serif;
     }
 
 
     .neon-line {
+      
       width: 200px;
+     
       height: 4px;
+     
       margin: 20px auto 60px auto;
+    
       background: linear-gradient(90deg, #00ffaa, #00ccff, #00ffaa);
+      
       box-shadow: 0 0 20px #00ffaa, 0 0 40px #00ccff;
+     
       border-radius: 4px;
+      
       animation: line-glow 4s ease-in-out infinite;
     }
 
     @keyframes line-glow {
+      
       0%, 100% { box-shadow: 0 0 15px #00ffaa, 0 0 25px #00ccff; }
+    
       50% { box-shadow: 0 0 30px #00ccff, 0 0 60px #00ffaa; }
     }
 
-    /* SPOILER TESTUALI */
+    
+
+    /* EFFETTI SPOILER TESTUALI */
+    
     .spoiler-texts {
+     
       background: rgba(0, 255, 136, 0.1);
+     
       border: 2px solid #00ffaa;
+      
       border-radius: 25px;
+     
       box-shadow: 0 0 25px #00ffaa, 0 0 40px #00ccff;
+   
       padding: 50px 20px;
+     
       margin-bottom: 80px;
+     
       max-width: 900px;
+     
       margin-left: auto;
+      
       margin-right: auto;
     }
 
     .spoiler-text {
+      
       font-size: 1.5rem;
+      
       color: #e0ffe0;
+      
       margin: 15px 0;
+      
       text-shadow: 0 0 15px #00ffaa;
+     
       opacity: 0;
+      
       animation: fadeIn 6s infinite;
     }
 
@@ -61,209 +98,333 @@
     .spoiler-text:nth-child(2) { animation-delay: 2s; }
     .spoiler-text:nth-child(3) { animation-delay: 4s; }
 
-    @keyframes fadeIn {
+    @keyframes fadeIn {     /* ANIMAZIONI FADE IN DEL TESTO*/
+      
       0%, 80%, 100% { opacity: 0; }
+      
       20%, 60% { opacity: 1; }
     }
 
-    /* SPOILER VIDEO */
+
+    
+    /* EFFETTI SPOILER VIDEO */
+    
     .spoiler-videos {
+    
       display: flex;
+     
       flex-wrap: wrap;
+    
       justify-content: center;
+   
       gap: 30px;
+    
       margin-bottom: 80px;
     }
 
     .video-box {
+     
       background: #001a26;
+     
       border: 3px solid #00ccff;
+    
       border-radius: 20px;
+      
       padding: 20px;
+     
       width: 320px;
+    
       box-shadow: 0 0 25px #00ccff, 0 0 50px #00ffaa;
+     
       transition: 0.4s;
     }
 
     .video-box:hover {
+     
       transform: scale(1.05);
+    
       box-shadow: 0 0 40px #00ccff, 0 0 80px #00ffaa;
     }
 
     .video-box video {
+     
       width: 100%;
+      
       border-radius: 15px;
     }
 
     .video-box h3 {
+     
       color: #00ffaa;
+      
       text-shadow: 0 0 15px #00ccff;
+     
       margin-top: 10px;
+      
       font-size: 1.2rem;
     }
 
-    /* --- NUOVA SEZIONE: FUTURE PROJECTS --- */
+    
+    
+    /* SEZIONE: FUTURE PROJECTS --- */
+    
     .future-projects {
+      
       margin-top: 100px;
+      
       background: linear-gradient(180deg, #000 0%, #001a26 100%);
+     
       padding: 80px 20px;
+     
       text-align: center;
+    
       border-top: 3px solid #00ccff;
+    
       box-shadow: 0 0 50px #00ccff;
     }
 
     .future-title {
+     
       font-size: 2.8rem;
+   
       color: #00ccff;
+     
       text-shadow: 0 0 20px #00ccff, 0 0 40px #00ffaa;
+      
       margin-bottom: 40px;
+     
       letter-spacing: 2px;
     }
 
     .projects-grid {
+     
       display: flex;
+      
       flex-wrap: wrap;
+      
       justify-content: center;
+    
       gap: 30px;
     }
 
     .project-card {
+   
       background: #0a0a0a;
+    
       border: 2px solid #00ccff;
+   
       border-radius: 15px;
+  
       padding: 25px;
+   
       width: 280px;
+   
       color: #fff;
+  
       box-shadow: 0 0 25px #00ccff, 0 0 50px #00ffaa;
+    
       position: relative;
+    
       overflow: hidden;
+    
       transition: 0.4s;
     }
 
     .project-card:hover {
+    
       transform: translateY(-10px) scale(1.05);
+     
       box-shadow: 0 0 50px #00ffaa, 0 0 100px #00ccff;
     }
 
     .project-card h3 {
+  
       font-size: 1.5rem;
+   
       color: #00ffaa;
+    
       text-shadow: 0 0 10px #00ccff;
+     
       margin-bottom: 15px;
     }
 
     .project-card p {
+    
       font-size: 1rem;
+  
       opacity: 0.9;
     }
 
-    .glitch {
+    .glitch {   /* EFFETTO GLITCH */
+   
       position: absolute;
+     
       top: 10px;
+      
       right: 15px;
+      
       font-size: 0.9rem;
+     
       font-weight: bold;
+     
       color: #ff0033;
+    
       animation: glitchBlink 1.2s infinite;
     }
 
     @keyframes glitchBlink {
+  
       0%, 100% { opacity: 0.2; transform: scale(1); }
+    
       50% { opacity: 1; transform: scale(1.1); }
     }
 
     @media(max-width: 900px) {
+      
       .spoiler-videos, .projects-grid {
+       
         flex-direction: column;
+      
         align-items: center;
       }
       .video-box, .project-card { width: 80%; }
     }
 
   </style>
+  
 </head>
 
 <body>
 
+
+  
   <!-- NAVBAR -->
+  
   <nav class="navbar">
+    
     <div class="logo">
+      
       <a href="index.html">🐐 GoaTs RevenGE 🧠</a>
+     
       <span class="arrow">⬅️</span>
+   
     </div>
+    
     <ul></ul>
+    
   </nav>
 
 
-  <!-- COMING SOON SECTION -->
+  <!-- SEZIONE GENERALE: COMING SOON -->
+  
   <section class="coming-soon">
 
-    <!-- PARTE 1: SPOILER TESTUALI -->
+    
+    <!-- SEZIONE 1: SPOILER TESTUALI -->
+    
     <div class="spoiler-texts">
-      <p class="spoiler-text">🌀 “Prova new is loading...”</p>
+     
+      <p class="spoiler-text">🌀 “Prova 2 new is loading...”</p>
       <p class="spoiler-text">💚 “The Revolution has just begun.”</p>
-      <p class="spoiler-text">⚙️ “Next drop: 100% unpredictable.”</p>
+    <p class="spoiler-text">⚙️ “Next drop: 100% unpredictable.”</p>
+    
     </div>
 
-    <!-- LINEA DIVISORIA -->
+    
+    <!-- LINEA DIVISORIA TRA LE SEZIONI -->
+    
     <hr class="neon-line">
 
-    <!-- PARTE 2: SPOILER VIDEO -->
+
+    
+    <!-- SEZIONE 2: SPOILER VIDEO -->
+    
     <div class="spoiler-videos">
 
       <div class="video-box">
+       
         <video src="spoiler1.mp4" autoplay muted loop></video>
+        
         <h3>💎 Preview #1</h3>
+    
       </div>
 
       <div class="video-box">
+       
         <video src="spoiler2.mp4" autoplay muted loop></video>
+       
         <h3>🚀 Preview #2</h3>
+    
       </div>
 
     </div>
 
   </section>
 
-  <!-- NUOVA SEZIONE FUTURE PROJECTS -->
+  
+  
+  <!-- SEZIONE 3: FUTURE PROJECTS -->
+  
   <section class="future-projects">
+    
     <h1 class="future-title">🧠 FUTURE PROJECTS 🧠</h1>
 
     <div class="projects-grid">
 
       <div class="project-card">
+       
         <span class="glitch">CLASSIFIED</span>
+       
         <h3>Project 404</h3>
+       
         <p>Accesso limitato. Dettagli disponibili solo ai membri interni del G-Share.</p>
+     
       </div>
 
       <div class="project-card">
+     
         <span class="glitch">ACCESS DENIED</span>
+        
         <h3>Operation VERTEX</h3>
+        
         <p>Un'espansione digitale che cambierà il modo di creare contenuti. Stay tuned.</p>
+     
       </div>
 
       <div class="project-card">
+       
         <span class="glitch">LOADING...</span>
+      
         <h3>Neon Protocol</h3>
+      
         <p>Progetto segreto in sviluppo. Rilascio stimato: 🔒 TBA.</p>
+     
       </div>
 
     </div>
+    
   </section>
 
 
+  
   <!-- FOOTER -->
+  
   <footer style="text-align:center; padding:30px; background:#111; margin-top:50px; color:#fff;">
+   
     <p>© 2025. 🐐 GoaTs RevenGE 🧠. <a href="TERMINI.html" target="_blank" style="color:blue; text-decoration:underline;">Tutti i diritti riservati</a></p>
+   
     <p>
+      
       <a href="https://www.instagram.com/franzzinho.zbb/" target="_blank" style="color:#f13584;">Instagram</a> |
       <a href="https://www.tiktok.com/@franzzinho.zbb?_t=ZN-8z5d1Qutkfe&_r=1" target="_blank" style="color:#69c9d0;">TikTok</a> |
       <a href="https://discord.gg/xBj5wgMZH9" target="_blank" style="color:#7289da;">Discord</a> |
       <a href="https://youtube.com/@franzzinho?si=cJiskLlGq_kUUDew" target="_blank" style="color:#ff0000;">YouTube</a> |
       <a href="https://www.twitch.tv/franzzinho_GT" target="_blank" style="color:#6441a5;">Twitch</a>
+   
     </p>
+    
   </footer>
 
 </body>
+  
 </html>
