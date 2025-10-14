@@ -1,18 +1,17 @@
-
-// 🔍 Configura le pagine da includere nella ricerca
+// 🔍 Elenco delle pagine dove cercare
 const pages = [
-  { url: "index.html", title: "Home" },
-  { url: "pages/about.html", title: "About" },
-  { url: "pages/contact.html", title: "Contatti" }
+  { url: "../index.html", title: "Home" },
+  { url: "../pages/about.html", title: "About" },
+  { url: "../pages/contact.html", title: "Contatti" }
 ];
 
-// ✅ Funzione per ottenere il parametro ?q=
+// ✅ Ottieni il parametro ?q=
 function getQuery() {
   const params = new URLSearchParams(window.location.search);
   return params.get("q") ? decodeURIComponent(params.get("q")).toLowerCase() : "";
 }
 
-// ✅ Esegui ricerca
+// ✅ Mostra i risultati
 async function searchSite() {
   const query = getQuery();
   const resultsDiv = document.getElementById("results");
@@ -34,7 +33,6 @@ async function searchSite() {
       const res = await fetch(page.url);
       const text = await res.text();
 
-      // Cerca solo nel testo visibile
       const parser = new DOMParser();
       const doc = parser.parseFromString(text, "text/html");
       const bodyText = doc.body.textContent.toLowerCase();
@@ -42,7 +40,6 @@ async function searchSite() {
       if (bodyText.includes(query)) {
         totalMatches++;
 
-        // Mostra breve anteprima del testo trovato
         const snippetIndex = bodyText.indexOf(query);
         const start = Math.max(0, snippetIndex - 60);
         const end = Math.min(bodyText.length, snippetIndex + 120);
@@ -50,7 +47,7 @@ async function searchSite() {
 
         const resultHTML = `
           <div style="margin-bottom:20px; border-bottom:1px solid #ccc; padding-bottom:10px;">
-            <h3><a href="${page.url}">${page.title}</a></h3>
+            <h3><a href="${page.url}" style="color:#0073e6; text-decoration:none;">${page.title}</a></h3>
             <p>${snippet.replace(new RegExp(query, "gi"), match => `<mark>${match}</mark>`)}</p>
           </div>
         `;
@@ -66,7 +63,7 @@ async function searchSite() {
     : `Nessun risultato per “${query}” 😕`;
 }
 
-// ✅ Gestisci nuova ricerca dalla barra
+// ✅ Gestisci nuove ricerche
 document.getElementById("searchForm").addEventListener("submit", e => {
   e.preventDefault();
   const newQuery = document.getElementById("searchQuery").value.trim();
