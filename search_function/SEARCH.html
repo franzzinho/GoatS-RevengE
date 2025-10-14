@@ -5,11 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Risultati ricerca</title>
 </head>
-<body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="pages/about.html">About</a>
-    <a href="pages/contact.html">Contatti</a>
+<body style="font-family: sans-serif; margin: 30px;">
+
+  <!-- Navbar -->
+  <nav style="margin-bottom: 20px;">
+    <a href="../index.html">Home</a> |
+    <a href="../pages/about.html">About</a> |
+    <a href="../pages/contact.html">Contatti</a> |
     <form id="searchForm" style="display:inline;">
       <input type="text" id="searchQuery" placeholder="Cerca..." />
       <button type="submit">🔍</button>
@@ -17,7 +19,7 @@
   </nav>
 
   <h1>Risultati della ricerca</h1>
-  <p id="results-count"></p>
+  <p id="results-count" style="font-weight: bold;"></p>
   <div id="results"></div>
 
   <script src="search.js"></script>
