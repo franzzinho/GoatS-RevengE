@@ -1,17 +1,19 @@
-// 🔍 Elenco delle pagine dove cercare
+// 🔍 Pagine incluse nella ricerca
 const pages = [
-  { url: "../index.html", title: "Home" },
-  { url: "../pages/about.html", title: "About" },
-  { url: "../pages/contact.html", title: "Contatti" }
+  { url: "index.html", title: "Home" },
+  { url: "ABOUT.html", title: "About" },
+  { url: "SOCIAL IDEAS.html", title: "Contatti" },
+  // 👇 puoi aggiungere altre pagine qui
+  // { url: "../shop.html", title: "Shop" },
 ];
 
-// ✅ Ottieni il parametro ?q=
+// ✅ Ottieni la query dalla barra (?q=)
 function getQuery() {
   const params = new URLSearchParams(window.location.search);
   return params.get("q") ? decodeURIComponent(params.get("q")).toLowerCase() : "";
 }
 
-// ✅ Mostra i risultati
+// ✅ Funzione principale
 async function searchSite() {
   const query = getQuery();
   const resultsDiv = document.getElementById("results");
@@ -26,49 +28,82 @@ async function searchSite() {
 
   inputEl.value = query;
   let totalMatches = 0;
-  resultsDiv.innerHTML = "";
+  resultsDiv.innerHTML = "<p>Sto cercando...</p>";
+
+  const resultsHTML = [];
 
   for (const page of pages) {
     try {
       const res = await fetch(page.url);
+      if (!res.ok) continue;
       const text = await res.text();
 
       const parser = new DOMParser();
       const doc = parser.parseFromString(text, "text/html");
       const bodyText = doc.body.textContent.toLowerCase();
 
-      if (bodyText.includes(query)) {
-        totalMatches++;
+      // cerca tutte le occorrenze, non solo la prima
+      const matches = [];
+      let index = bodyText.indexOf(query);
+      while (index !== -1) {
+        const start = Math.max(0, index - 60);
+        const end = Math.min(bodyText.length, index + 120);
+        const snippet = doc.body.textContent
+          .substring(start, end)
+          .replace(/\s+/g, " ");
+        matches.push(snippet);
+        index = bodyText.indexOf(query, index + query.length);
+      }
 
-        const snippetIndex = bodyText.indexOf(query);
-        const start = Math.max(0, snippetIndex - 60);
-        const end = Math.min(bodyText.length, snippetIndex + 120);
-        const snippet = doc.body.textContent.substring(start, end).replace(/\s+/g, " ");
+      if (matches.length > 0) {
+        totalMatches += matches.length;
 
-        const resultHTML = `
-          <div style="margin-bottom:20px; border-bottom:1px solid #ccc; padding-bottom:10px;">
-            <h3><a href="${page.url}" style="color:#0073e6; text-decoration:none;">${page.title}</a></h3>
-            <p>${snippet.replace(new RegExp(query, "gi"), match => `<mark>${match}</mark>`)}</p>
+        // prepara blocco HTML per i risultati
+        const snippetsHTML = matches
+          .map(
+            snip =>
+              `<p>${snip.replace(
+                new RegExp(query, "gi"),
+                match => `<mark>${match}</mark>`
+              )}</p>`
+          )
+          .join("");
+
+        const resultBlock = `
+          <div style="margin-bottom:25px; border-bottom:1px solid #ddd; padding-bottom:10px;">
+            <h3 style="margin:0 0 8px 0;">
+              <a href="${page.url}" style="color:#0066cc; text-decoration:none;">
+                ${page.title}
+              </a>
+            </h3>
+            ${snippetsHTML}
           </div>
         `;
-        resultsDiv.insertAdjacentHTML("beforeend", resultHTML);
+
+        resultsHTML.push(resultBlock);
       }
     } catch (err) {
       console.error("Errore caricando", page.url, err);
     }
   }
 
-  countEl.textContent = totalMatches
-    ? `${totalMatches} risultato${totalMatches > 1 ? "i" : ""} trovati per “${query}”`
-    : `Nessun risultato per “${query}” 😕`;
+  if (resultsHTML.length === 0) {
+    resultsDiv.innerHTML = `<p>Nessun risultato per “${query}” 😕</p>`;
+    countEl.textContent = "";
+  } else {
+    resultsDiv.innerHTML = resultsHTML.join("");
+    countEl.textContent = `${totalMatches} risultato${
+      totalMatches > 1 ? "i" : ""
+    } trovati per “${query}”`;
+  }
 }
 
-// ✅ Gestisci nuove ricerche
+// ✅ Gestisci nuove ricerche dalla navbar
 document.getElementById("searchForm").addEventListener("submit", e => {
   e.preventDefault();
   const newQuery = document.getElementById("searchQuery").value.trim();
   if (newQuery) {
-    window.location.href = "search.html?q=" + encodeURIComponent(newQuery);
+    window.location.href = "search_function/SEARCH.html?q=" + encodeURIComponent(newQuery);
   }
 });
 
