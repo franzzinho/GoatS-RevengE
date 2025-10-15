@@ -5,21 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Risultati ricerca</title>
 </head>
-<body style="font-family: sans-serif; margin: 30px;">
-
-  <!-- Navbar -->
-  <nav style="margin-bottom: 20px;">
-    <a href="../index.html">Home</a> |
-    <a href="../pages/about.html">About</a> |
-    <a href="../pages/contact.html">Contatti</a> |
-    <form id="searchForm" style="display:inline;">
-      <input type="text" id="searchQuery" placeholder="Cerca..." />
-      <button type="submit">🔍</button>
+<body style="font-family: system-ui, sans-serif; margin: 40px; color:#111;">
+  <nav style="margin-bottom: 25px; font-size: 18px;">
+    <a href="../index.html">🏠 Home</a> |
+    <a href="../about.html">About</a> |
+    <a href="../contact.html">Contatti</a>
+    <form id="searchForm" style="display:inline; margin-left: 10px;">
+      <input type="text" id="searchQuery" placeholder="Cerca..." style="padding:5px; font-size:16px;">
+      <button type="submit" style="padding:5px 10px;">🔍</button>
     </form>
   </nav>
 
-  <h1>Risultati della ricerca</h1>
-  <p id="results-count" style="font-weight: bold;"></p>
+  <h1 style="margin-bottom:10px;">Risultati della ricerca</h1>
+  <p id="results-count" style="font-weight: bold; margin-bottom: 20px;"></p>
+
   <div id="results"></div>
 
   <script src="SEARCH.js"></script>
