@@ -104,6 +104,7 @@ document.getElementById("searchForm").addEventListener("submit", e => {
   const newQuery = document.getElementById("searchQuery").value.trim();
   if (newQuery) {
     window.location.href = "search_function/SEARCH.html?q=" + encodeURIComponent(newQuery);
+
   }
 });
 
