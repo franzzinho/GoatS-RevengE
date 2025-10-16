@@ -3,165 +3,130 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Risultati della ricerca</title>
-
+  <title>Risultati ricerca</title>
   <style>
     body {
-      font-family: "Poppins", "Segoe UI", sans-serif;
       background-color: #0b0b0b;
+      color: #fff;
+      font-family: "Poppins", sans-serif;
       margin: 0;
-      padding: 0;
-      color: #e0f7fa;
+      padding: 30px;
     }
 
     nav {
-      background-color: #111;
-      padding: 15px 25px;
-      box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+      margin-bottom: 30px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
+      gap: 15px;
     }
 
     nav a {
-      text-decoration: none;
       color: #00e5ff;
-      font-weight: 500;
-      margin-right: 15px;
+      text-decoration: none;
+      font-weight: 600;
       text-shadow: 0 0 8px #00e5ff;
-      transition: 0.2s;
     }
 
     nav a:hover {
-      color: #fff;
-      text-shadow: 0 0 12px #00ffff;
+      text-decoration: underline;
     }
 
-    /* ✨ Barra di ricerca effetto NEON */
-    #searchForm input {
-      padding: 8px 14px;
+    #searchForm {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    #searchQuery {
+      background-color: transparent;
       border: 2px solid #00e5ff;
-      border-radius: 25px;
-      font-size: 16px;
-      width: 230px;
-      outline: none;
-      background-color: #0b0b0b;
       color: #fff;
-      box-shadow: 0 0 8px #00e5ff, 0 0 16px #00bcd4;
-      transition: all 0.3s ease;
-    }
-
-    #searchForm input::placeholder {
-      color: #aaa;
-    }
-
-    #searchForm input:focus {
-      box-shadow: 0 0 12px #00e5ff, 0 0 24px #00bcd4, 0 0 36px #00bcd4;
-      border-color: #00ffff;
-    }
-
-    /* 🔘 Bottone NEON */
-    #searchForm button {
-      background: #00e5ff;
-      color: #0b0b0b;
-      border: none;
-      border-radius: 25px;
-      padding: 8px 16px;
+      padding: 8px 12px;
+      border-radius: 10px;
       font-size: 16px;
-      cursor: pointer;
-      box-shadow: 0 0 10px #00e5ff, 0 0 20px #00bcd4;
-      transition: all 0.3s ease;
-      font-weight: bold;
+      outline: none;
+      text-shadow: 0 0 10px #00e5ff;
+      box-shadow: 0 0 10px #00e5ff;
+      transition: 0.3s;
     }
 
-    #searchForm button:hover {
-      box-shadow: 0 0 15px #00ffff, 0 0 30px #00bcd4;
+    #searchQuery:focus {
+      box-shadow: 0 0 20px #00e5ff, inset 0 0 10px #00e5ff;
+    }
+
+    button {
+      background: #00e5ff;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 14px;
+      color: #000;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 0 10px #00e5ff;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      box-shadow: 0 0 20px #00e5ff, inset 0 0 10px #00e5ff;
       transform: scale(1.05);
     }
 
-    main {
-      max-width: 800px;
-      margin: 40px auto;
-      background-color: #111;
-      padding: 25px 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
-    }
-
     h1 {
-      font-size: 24px;
-      margin-bottom: 8px;
-      color: #00e5ff;
-      text-shadow: 0 0 8px #00bcd4;
+      text-shadow: 0 0 15px #00e5ff;
+      margin-bottom: 10px;
     }
 
     #results-count {
-      color: #ccc;
-      margin-bottom: 25px;
+      color: #aaa;
+      margin-bottom: 20px;
     }
 
     .result {
-      margin-bottom: 25px;
-      border-bottom: 1px solid rgba(0,229,255,0.3);
-      padding-bottom: 10px;
+      background: rgba(0, 229, 255, 0.1);
+      border: 1px solid #00e5ff;
+      border-radius: 12px;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px #00e5ff30;
+      transition: 0.3s;
     }
 
-    .result a {
+    .result:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 15px #00e5ff70;
+    }
+
+    .result h3 a {
+      color: #00e5ff;
       text-decoration: none;
-      color: #00ffff;
-      font-size: 18px;
-      font-weight: 500;
-      text-shadow: 0 0 8px #00bcd4;
-      transition: 0.2s;
-    }
-
-    .result a:hover {
-      color: #fff;
-      text-shadow: 0 0 15px #00e5ff;
-    }
-
-    .result .url {
-      color: #00bcd4;
-      font-size: 14px;
-      margin-bottom: 4px;
-      display: block;
-    }
-
-    .result p {
-      margin: 0;
-      color: #c8faff;
-      line-height: 1.4;
+      text-shadow: 0 0 10px #00e5ff;
     }
 
     mark {
-      background-color: #00e5ff;
+      background: #00e5ff;
       color: #000;
-      padding: 0 2px;
+      font-weight: bold;
       border-radius: 3px;
+      padding: 1px 3px;
     }
   </style>
 </head>
 <body>
-
+  <!-- Navbar -->
   <nav>
-    <div>
-      <a href="../index.html">🏠 Home</a>
-      <a href="../about.html">About</a>
-      <a href="../contact.html">Contatti</a>
-    </div>
-
+    <a href="../index.html">Home</a>
+    <a href="../ABOUT.html">About</a>
+    <a href="../SOCIAL IDEAS.html">Contatti</a>
     <form id="searchForm">
-      <input type="text" id="searchQuery" placeholder="Cerca nel sito..." />
+      <input type="text" id="searchQuery" placeholder="Cerca..." />
       <button type="submit">🔍</button>
     </form>
   </nav>
 
-  <main>
-    <h1>Risultati della ricerca</h1>
-    <p id="results-count"></p>
-    <div id="results"></div>
-  </main>
+  <h1>Risultati della ricerca</h1>
+  <p id="results-count"></p>
+  <div id="results"></div>
 
   <script src="search_function/SEARCH.js"></script>
 </body>
