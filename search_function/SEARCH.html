@@ -3,23 +3,165 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Risultati ricerca</title>
+  <title>Risultati della ricerca</title>
+
+  <style>
+    body {
+      font-family: "Poppins", "Segoe UI", sans-serif;
+      background-color: #0b0b0b;
+      margin: 0;
+      padding: 0;
+      color: #e0f7fa;
+    }
+
+    nav {
+      background-color: #111;
+      padding: 15px 25px;
+      box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #00e5ff;
+      font-weight: 500;
+      margin-right: 15px;
+      text-shadow: 0 0 8px #00e5ff;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      color: #fff;
+      text-shadow: 0 0 12px #00ffff;
+    }
+
+    /* ✨ Barra di ricerca effetto NEON */
+    #searchForm input {
+      padding: 8px 14px;
+      border: 2px solid #00e5ff;
+      border-radius: 25px;
+      font-size: 16px;
+      width: 230px;
+      outline: none;
+      background-color: #0b0b0b;
+      color: #fff;
+      box-shadow: 0 0 8px #00e5ff, 0 0 16px #00bcd4;
+      transition: all 0.3s ease;
+    }
+
+    #searchForm input::placeholder {
+      color: #aaa;
+    }
+
+    #searchForm input:focus {
+      box-shadow: 0 0 12px #00e5ff, 0 0 24px #00bcd4, 0 0 36px #00bcd4;
+      border-color: #00ffff;
+    }
+
+    /* 🔘 Bottone NEON */
+    #searchForm button {
+      background: #00e5ff;
+      color: #0b0b0b;
+      border: none;
+      border-radius: 25px;
+      padding: 8px 16px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00e5ff, 0 0 20px #00bcd4;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+
+    #searchForm button:hover {
+      box-shadow: 0 0 15px #00ffff, 0 0 30px #00bcd4;
+      transform: scale(1.05);
+    }
+
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: #111;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 8px;
+      color: #00e5ff;
+      text-shadow: 0 0 8px #00bcd4;
+    }
+
+    #results-count {
+      color: #ccc;
+      margin-bottom: 25px;
+    }
+
+    .result {
+      margin-bottom: 25px;
+      border-bottom: 1px solid rgba(0,229,255,0.3);
+      padding-bottom: 10px;
+    }
+
+    .result a {
+      text-decoration: none;
+      color: #00ffff;
+      font-size: 18px;
+      font-weight: 500;
+      text-shadow: 0 0 8px #00bcd4;
+      transition: 0.2s;
+    }
+
+    .result a:hover {
+      color: #fff;
+      text-shadow: 0 0 15px #00e5ff;
+    }
+
+    .result .url {
+      color: #00bcd4;
+      font-size: 14px;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .result p {
+      margin: 0;
+      color: #c8faff;
+      line-height: 1.4;
+    }
+
+    mark {
+      background-color: #00e5ff;
+      color: #000;
+      padding: 0 2px;
+      border-radius: 3px;
+    }
+  </style>
 </head>
-<body style="font-family: system-ui, sans-serif; margin: 40px; color:#111;">
-  <nav style="margin-bottom: 25px; font-size: 18px;">
-    <a href="../index.html">🏠 Home</a> |
-    <a href="../about.html">About</a> |
-    <a href="../contact.html">Contatti</a>
-    <form id="searchForm" style="display:inline; margin-left: 10px;">
-      <input type="text" id="searchQuery" placeholder="Cerca..." style="padding:5px; font-size:16px;">
-      <button type="submit" style="padding:5px 10px;">🔍</button>
+<body>
+
+  <nav>
+    <div>
+      <a href="../index.html">🏠 Home</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contatti</a>
+    </div>
+
+    <form id="searchForm">
+      <input type="text" id="searchQuery" placeholder="Cerca nel sito..." />
+      <button type="submit">🔍</button>
     </form>
   </nav>
 
-  <h1 style="margin-bottom:10px;">Risultati della ricerca</h1>
-  <p id="results-count" style="font-weight: bold; margin-bottom: 20px;"></p>
-
-  <div id="results"></div>
+  <main>
+    <h1>Risultati della ricerca</h1>
+    <p id="results-count"></p>
+    <div id="results"></div>
+  </main>
 
   <script src="SEARCH.js"></script>
 </body>
