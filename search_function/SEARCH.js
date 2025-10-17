@@ -5,29 +5,18 @@ const pages = [
   { url: "../SOCIAL IDEAS.html", title: "Contatti" }
 ];
 
-// Utility per sicurezza (normalizzazione e HTML escaping)
-function norm(s) {
-  return (s || "").toString().normalize("NFC").toLowerCase();
-}
+function norm(s) { return (s || "").toString().normalize("NFC").toLowerCase(); }
 function escapeHtml(str) {
   return String(str).replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"}[s]));
 }
-function escapeRegExp(string) {
-  return String(string).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-}
+function escapeRegExp(string) { return String(string).replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
 
-// Prendi la query da ?q=
 function getQuery() {
   const params = new URLSearchParams(window.location.search);
   const raw = params.get("q") || "";
-  try {
-    return decodeURIComponent(raw);
-  } catch {
-    return raw;
-  }
+  try { return decodeURIComponent(raw); } catch { return raw; }
 }
 
-// Funzione principale
 async function searchSite() {
   const queryRaw = getQuery();
   const query = norm(queryRaw);
@@ -67,7 +56,6 @@ async function searchSite() {
 
       if (matches.length > 0) {
         totalMatches += matches.length;
-
         const snippetHTML = matches.map(snip =>
           `<p>${escapeHtml(snip).replace(
             new RegExp(escapeRegExp(queryRaw), "gi"),
@@ -77,7 +65,7 @@ async function searchSite() {
 
         allResults.push(`
           <div class="result">
-            <h3><a href="${page.url}">${page.title}</a></h3>
+            <h3><a href="${page.url}" target="_self">${page.title}</a></h3>
             ${snippetHTML}
           </div>
         `);
@@ -96,14 +84,4 @@ async function searchSite() {
   }
 }
 
-// Gestisci nuove ricerche
-document.getElementById("searchForm").addEventListener("submit", e => {
-  e.preventDefault();
-  const newQuery = document.getElementById("searchQuery").value.trim();
-  if (newQuery) {
-    window.location.href = "search_function/SEARCH.html?q=" + encodeURIComponent(newQuery);
-  }
-});
-
-// Avvia ricerca al caricamento
 searchSite();
