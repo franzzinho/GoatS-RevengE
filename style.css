@@ -786,6 +786,89 @@ section h1, section h2 { margin-bottom: 20px; font-weight: bold; } /* GRASSETTO 
 }
 
 
+
+.search-bar {  /* CASELLA RICERCA: NEON */
+  
+  display: flex;
+  
+  align-items: center;
+  
+  gap: 8px;
+}
+
+#searchQuery {
+  
+  background: transparent;
+  
+  border: 2px solid #00e5ff;
+
+  border-radius: 10px;
+  
+  color: #fff;
+  
+  font-size: 16px;
+ 
+  padding: 8px 12px;
+ 
+  outline: none;
+ 
+  text-shadow: 0 0 8px #00e5ff;
+ 
+  box-shadow: 0 0 10px #00e5ff;
+  
+  animation: neonPulse 2s infinite;
+  
+  transition: 0.3s;
+}
+
+#searchQuery::placeholder {
+  
+  color: #88f7ff;
+  
+  opacity: 0.8;
+}
+
+#searchQuery:focus {
+  
+  box-shadow: 0 0 20px #00e5ff, inset 0 0 10px #00e5ff;
+}
+
+@keyframes neonPulse {
+  
+  0%, 100% { box-shadow: 0 0 8px #00e5ff, 0 0 20px #00e5ff; }
+  
+  50% { box-shadow: 0 0 20px #00e5ff, 0 0 40px #00e5ff; }
+}
+
+button {
+ 
+  background: #00e5ff;
+ 
+  border: none;
+ 
+  border-radius: 8px;
+ 
+  padding: 8px 14px;
+
+  color: #000;
+ 
+  cursor: pointer;
+ 
+  font-weight: bold;
+ 
+  box-shadow: 0 0 10px #00e5ff;
+
+  transition: 0.3s;
+}
+
+button:hover {
+
+  box-shadow: 0 0 20px #00e5ff, inset 0 0 10px #00e5ff;
+ 
+  transform: scale(1.05);
+}
+
+
 /* FOOTER */
 
 footer { 
