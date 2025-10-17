@@ -51,16 +51,22 @@ async function searchSite() {
       const text = await res.text();
       const parser = new DOMParser();
       const doc = parser.parseFromString(text, "text/html");
-      const bodyText = doc.body.textContent; // ✅ niente HTML rotto
-      const bodyNorm = norm(bodyText);
+
+      // ✅ prendi solo testo visibile (no link, no meta, no script)
+      const walker = document.createTreeWalker(doc.body, NodeFilter.SHOW_TEXT);
+      let visibleText = "";
+      while (walker.nextNode()) visibleText += walker.currentNode.nodeValue + " ";
+
+      const cleanText = visibleText.replace(/\s+/g, " ");
+      const bodyNorm = norm(cleanText);
 
       let index = bodyNorm.indexOf(query);
       const matches = [];
 
       while (index !== -1) {
         const snippetStart = Math.max(0, index - 60);
-        const snippetEnd = Math.min(bodyText.length, index + 120);
-        const snippet = bodyText.substring(snippetStart, snippetEnd).replace(/\s+/g, " ");
+        const snippetEnd = Math.min(cleanText.length, index + 120);
+        const snippet = cleanText.substring(snippetStart, snippetEnd);
         matches.push(snippet);
         index = bodyNorm.indexOf(query, index + query.length);
       }
@@ -99,7 +105,7 @@ async function searchSite() {
   }
 }
 
-// ✅ Redirect universale (funziona anche da SEARCH.html)
+// ✅ Ricerca universale da qualunque pagina
 document.getElementById("searchForm").addEventListener("submit", e => {
   e.preventDefault();
   const newQuery = document.getElementById("searchQuery").value.trim();
