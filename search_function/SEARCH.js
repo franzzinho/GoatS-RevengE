@@ -1,118 +1,119 @@
+// SEARCH.js - GOAT final
 const pages = [
   { url: "../index.html", title: "Home" },
   { url: "../ABOUT.html", title: "About" },
   { url: "../SOCIAL IDEAS.html", title: "Social Ideas" }
 ];
 
-function norm(s) {
-  return (s || "").toString().normalize("NFC").toLowerCase();
-}
+function norm(s){ return (s||"").toString().normalize("NFC").toLowerCase(); }
+function escapeHtml(str){ return String(str).replace(/[&<>"']/g, s=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s])); }
+function escapeRegExp(s){ return String(s).replace(/[.*+?^${}()|[\]\\]/g,"\\$&"); }
+function getQuery(){ const p=new URLSearchParams(window.location.search); const raw=p.get("q")||""; try{return decodeURIComponent(raw);}catch{return raw;} }
 
-function escapeHtml(str) {
-  return String(str).replace(/[&<>"']/g, s => ({
-    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-  }[s]));
-}
+// helper: build safe anchor id (no spaces, predictable)
+function makeAnchorId(q,i){ return `match_${encodeURIComponent(q)}_${i}`; }
 
-function escapeRegExp(string) {
-  return String(string).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-}
-
-function getQuery() {
-  const params = new URLSearchParams(window.location.search);
-  const raw = params.get("q") || "";
-  try { return decodeURIComponent(raw); } catch { return raw; }
-}
-
-async function searchSite() {
+// main
+async function searchSite(){
   const queryRaw = getQuery();
-  const query = norm(queryRaw);
+  const qNorm = norm(queryRaw);
   const resultsDiv = document.getElementById("results");
   const countEl = document.getElementById("results-count");
   const inputEl = document.getElementById("searchQuery");
 
-  if (!query) {
-    resultsDiv.innerHTML = "<p>Digita qualcosa per cercare 🔍</p>";
-    countEl.textContent = "";
-    return;
-  }
-
+  if(!qNorm){ resultsDiv.innerHTML = "<p>Digita qualcosa per cercare 🔍</p>"; countEl.textContent=""; return; }
   inputEl.value = queryRaw;
   resultsDiv.innerHTML = "<p>Sto cercando...</p>";
 
   let totalMatches = 0;
   const allResults = [];
 
-  for (const page of pages) {
-    try {
+  for(const page of pages){
+    try{
       const res = await fetch(page.url);
-      if (!res.ok) continue;
-
+      if(!res.ok) continue;
       const text = await res.text();
+
+      // parse and extract visible text only (no attributes, no html)
       const parser = new DOMParser();
       const doc = parser.parseFromString(text, "text/html");
+      // Walk text nodes to build a continuous visible text with positions
+      const walker = doc.createTreeWalker(doc.body, NodeFilter.SHOW_TEXT);
+      let node;
+      let visible = "";
+      const nodes = []; // {node, start, end}
+      while(walker.nextNode()){
+        node = walker.currentNode;
+        const chunk = node.nodeValue.replace(/\s+/g," ");
+        const start = visible.length;
+        visible += chunk + " ";
+        const end = visible.length;
+        nodes.push({nodeValue: chunk, start, end, node});
+      }
+      const visibleNorm = norm(visible);
 
-      // ✅ prendi solo testo visibile (no link, no meta, no script)
-      const walker = document.createTreeWalker(doc.body, NodeFilter.SHOW_TEXT);
-      let visibleText = "";
-      while (walker.nextNode()) visibleText += walker.currentNode.nodeValue + " ";
-
-      const cleanText = visibleText.replace(/\s+/g, " ");
-      const bodyNorm = norm(cleanText);
-
-      let index = bodyNorm.indexOf(query);
-      const matches = [];
-
-      while (index !== -1) {
-        const snippetStart = Math.max(0, index - 60);
-        const snippetEnd = Math.min(cleanText.length, index + 120);
-        const snippet = cleanText.substring(snippetStart, snippetEnd);
-        matches.push(snippet);
-        index = bodyNorm.indexOf(query, index + query.length);
+      // find occurrences (indices) in normalized text
+      let idx = visibleNorm.indexOf(qNorm);
+      const occ = [];
+      while(idx !== -1){
+        occ.push(idx);
+        idx = visibleNorm.indexOf(qNorm, idx + Math.max(1, qNorm.length));
       }
 
-      if (matches.length > 0) {
-        totalMatches += matches.length;
+      if(occ.length === 0) continue;
+      totalMatches += occ.length;
 
-        const snippetHTML = matches.map((snip, i) => {
-          const anchor = `match_${encodeURIComponent(queryRaw)}_${i}`;
-          const safeSnippet = escapeHtml(snip);
-          const highlighted = safeSnippet.replace(
-            new RegExp(escapeRegExp(queryRaw), "gi"),
-            match => `<a href="${page.url}#${anchor}" class="snippet-link"><mark>${match}</mark></a>`
-          );
-          return `<p class="snippet">${highlighted}</p>`;
-        }).join("");
+      // For each occurrence create snippet (use substring from visible using start/end)
+      const snippets = occ.map((pos, occIndex) => {
+        const start = Math.max(0, pos - 60);
+        const end = Math.min(visible.length, pos + qNorm.length + 120);
+        const rawSnippet = visible.substring(start, end).replace(/\s+/g," ");
+        const anchorId = makeAnchorId(queryRaw, occIndex);
+        // Replace only the matched substring in the snippet with anchor+mark (escaped)
+        // Build a regex to match the original substring (case-insensitive). We want to avoid injecting HTML from page.
+        const matchedPart = visible.substring(pos, pos + qNorm.length);
+        // find the exact substring in rawSnippet: we will mark the first occurrence inside snippet (case-insensitive)
+        const re = new RegExp(escapeRegExp(matchedPart), "i");
+        const safeSnippet = escapeHtml(rawSnippet);
+        const highlighted = safeSnippet.replace(re, (m)=> `<a href="${page.url}#${anchorId}" class="snippet-link"><mark>${m}</mark></a>`);
+        return highlighted;
+      });
 
-        allResults.push(`
-          <div class="result">
-            <h3><a href="${page.url}">${page.title}</a></h3>
-            ${snippetHTML}
-          </div>
-        `);
-      }
-    } catch (err) {
-      console.error("Errore su", page.url, err);
+      // Build result block for this page: title + snippets
+      const snippetsHTML = snippets.map(s => `<p class="snippet">${s}</p>`).join("");
+      allResults.push(`
+        <div class="result">
+          <h3><a href="${page.url}">${page.title}</a></h3>
+          ${snippetsHTML}
+        </div>
+      `);
+
+    }catch(e){
+      console.error("Errore su", page.url, e);
     }
   }
 
-  if (allResults.length === 0) {
+  if(allResults.length === 0){
     resultsDiv.innerHTML = `<p>Nessun risultato per “${escapeHtml(queryRaw)}” 😕</p>`;
     countEl.textContent = "";
   } else {
     resultsDiv.innerHTML = allResults.join("");
-    countEl.textContent = `${totalMatches} risultato${totalMatches > 1 ? "i" : ""} trovati per “${escapeHtml(queryRaw)}”`;
+    countEl.textContent = `${totalMatches} risultato${totalMatches>1 ? "i" : ""} trovati per “${escapeHtml(queryRaw)}”`;
   }
 }
 
-// ✅ Ricerca universale da qualunque pagina
-document.getElementById("searchForm").addEventListener("submit", e => {
+// redirect universal (works when submitting from SEARCH.html or any other page)
+document.getElementById("searchForm").addEventListener("submit", e=>{
   e.preventDefault();
   const newQuery = document.getElementById("searchQuery").value.trim();
-  if (newQuery) {
-    const base = window.location.pathname.includes("search_function") ? "../" : "";
-    window.location.href = base + "search_function/SEARCH.html?q=" + encodeURIComponent(newQuery);
-  }
+  if(!newQuery) return;
+  const isInSearch = window.location.pathname.includes("search_function");
+  const base = isInSearch ? "../" : "";
+  // normalize target path so it always points to search_function/SEARCH.html absolute-ish from current dir
+  const target = (isInSearch ? "" : "search_function/") + "SEARCH.html";
+  const href = base + target + "?q=" + encodeURIComponent(newQuery);
+  // remove duplicate slashes
+  window.location.href = href.replace(/([^:]\/)\/+/g,"$1");
 });
 
 searchSite();
