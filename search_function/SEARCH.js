@@ -1,15 +1,22 @@
-// 🔍 Pagine incluse nella ricerca
 const pages = [
   { url: "../index.html", title: "Home" },
   { url: "../ABOUT.html", title: "About" },
   { url: "../SOCIAL IDEAS.html", title: "Contatti" }
 ];
 
-function norm(s) { return (s || "").toString().normalize("NFC").toLowerCase(); }
-function escapeHtml(str) {
-  return String(str).replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"}[s]));
+function norm(s) {
+  return (s || "").toString().normalize("NFC").toLowerCase();
 }
-function escapeRegExp(string) { return String(string).replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
+
+function escapeHtml(str) {
+  return String(str).replace(/[&<>"']/g, s => ({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'" :'&#39;'
+  }[s]));
+}
+
+function escapeRegExp(string) {
+  return String(string).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
 
 function getQuery() {
   const params = new URLSearchParams(window.location.search);
@@ -44,8 +51,8 @@ async function searchSite() {
       const doc = parser.parseFromString(text, "text/html");
       const bodyText = norm(doc.body.textContent);
 
-      const matches = [];
       let index = bodyText.indexOf(query);
+      const matches = [];
       while (index !== -1) {
         const snippetStart = Math.max(0, index - 60);
         const snippetEnd = Math.min(bodyText.length, index + 120);
@@ -56,16 +63,18 @@ async function searchSite() {
 
       if (matches.length > 0) {
         totalMatches += matches.length;
-        const snippetHTML = matches.map(snip =>
-          `<p>${escapeHtml(snip).replace(
+        const snippetHTML = matches.map((snip, i) => {
+          const highlighted = escapeHtml(snip).replace(
             new RegExp(escapeRegExp(queryRaw), "gi"),
             match => `<mark>${match}</mark>`
-          )}</p>`
-        ).join("");
+          );
+          const anchor = `${page.url}#match${i}`;
+          return `<p><a href="${anchor}" class="snippet-link">${highlighted}</a></p>`;
+        }).join("");
 
         allResults.push(`
           <div class="result">
-            <h3><a href="${page.url}" target="_self">${page.title}</a></h3>
+            <h3><a href="${page.url}">${page.title}</a></h3>
             ${snippetHTML}
           </div>
         `);
@@ -83,5 +92,14 @@ async function searchSite() {
     countEl.textContent = `${totalMatches} risultato${totalMatches > 1 ? "i" : ""} trovati per “${escapeHtml(queryRaw)}”`;
   }
 }
+
+// Neon Search in navbar
+document.getElementById("searchForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const newQuery = document.getElementById("searchQuery").value.trim();
+  if (newQuery) {
+    window.location.href = "search_function/SEARCH.html?q=" + encodeURIComponent(newQuery);
+  }
+});
 
 searchSite();
