@@ -897,6 +897,11 @@ button:hover {
   transition: 0.3s;
 }
 
+.search-bar button:hover {
+  box-shadow: 0 0 20px #00e5ff, inset 0 0 10px #00e5ff;
+  transform: scale(1.05);
+}
+
 
 
 
