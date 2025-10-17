@@ -733,34 +733,63 @@
   <script>
   // Effetto evidenziazione NEON su tutte le pagine
   const anchor = window.location.hash;
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const anchor = window.location.hash;
   if (anchor && anchor.startsWith("#match_")) {
-    const query = decodeURIComponent(anchor.split("_")[1] || "");
+    const query = decodeURIComponent(anchor.split("_")[1] || "").trim();
     if (query) {
-      const regex = new RegExp(query, "gi");
-      const highlightStyle = "background:#00ff91;color:#000;padding:2px 4px;border-radius:3px;text-decoration:underline;animation:highlightPulse 1.2s ease-in-out 2;";
-      document.body.innerHTML = document.body.innerHTML.replace(
-        regex,
-        match => `<mark style='${highlightStyle}'>${match}</mark>`
-      );
+      const highlightText = () => {
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+        const nodes = [];
+        while (walker.nextNode()) nodes.push(walker.currentNode);
+        const regex = new RegExp(query, "gi");
+        nodes.forEach(node => {
+          if (regex.test(node.nodeValue)) {
+            const span = document.createElement("mark");
+            span.style.background = "#00ff91";
+            span.style.color = "#000";
+            span.style.padding = "2px 4px";
+            span.style.borderRadius = "3px";
+            span.style.textDecoration = "underline";
+            span.style.animation = "highlightPulse 1.2s ease-in-out 2";
+            const replaced = node.nodeValue.replace(regex, m => span.outerHTML.replace("</mark>", `${m}</mark>`));
+            const wrapper = document.createElement("span");
+            wrapper.innerHTML = replaced;
+            node.parentNode.replaceChild(wrapper, node);
+          }
+        });
 
-      // effetto smooth scroll sulla parola
-      setTimeout(() => {
+        // scrolla dolcemente alla prima parola trovata
         const firstMark = document.querySelector("mark");
-        if (firstMark) window.scrollTo({ top: firstMark.offsetTop - 100, behavior: "smooth" });
-      }, 400);
+        if (firstMark) {
+          setTimeout(() => {
+            window.scrollTo({ top: firstMark.offsetTop - 100, behavior: "smooth" });
+          }, 300);
+        }
+      };
+
+      // se il body non è ancora completo, aspetta un attimo
+      if (document.readyState !== "complete") {
+        window.addEventListener("load", highlightText);
+      } else {
+        highlightText();
+      }
     }
   }
 
-  // animazione "pulse" della parola evidenziata
+  // animazione effetto neon
   const style = document.createElement("style");
   style.textContent = `
     @keyframes highlightPulse {
-      0%, 100% { box-shadow: 0 0 5px #00ff91, 0 0 10px #00ff91; }
-      50% { box-shadow: 0 0 20px #00ff91, 0 0 40px #00ff91; }
+      0%, 100% { box-shadow: 0 0 5px #00ff91, 0 0 15px #00ff91; }
+      50% { box-shadow: 0 0 25px #00ff91, 0 0 50px #00ff91; }
     }
   `;
   document.head.appendChild(style);
+});
 </script>
+
 
   
 
