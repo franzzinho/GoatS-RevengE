@@ -868,6 +868,37 @@ button:hover {
   transform: scale(1.05);
 }
 
+@keyframes neonPulse {
+  0%, 100% { box-shadow: 0 0 10px #00e5ff, inset 0 0 5px #00e5ff; }
+  50% { box-shadow: 0 0 20px #00e5ff, inset 0 0 10px #00e5ff; }
+}
+
+.search-bar input {
+  background-color: transparent;
+  border: 2px solid #00e5ff;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  text-shadow: 0 0 10px #00e5ff;
+  animation: neonPulse 2s infinite alternate;
+}
+
+.search-bar button {
+  background: #00e5ff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0 10px #00e5ff;
+  transition: 0.3s;
+}
+
+
+
 
 /* FOOTER */
 
