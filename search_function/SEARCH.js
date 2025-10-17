@@ -1,18 +1,19 @@
 const pages = [
   { url: "../index.html", title: "Home" },
   { url: "../ABOUT.html", title: "About" },
-  { url: "../SOCIAL IDEAS.html", title: "Contatti" }
+  { url: "../SOCIAL IDEAS.html", title: "Social Ideas" }
 ];
 
-// Normalizza e sanifica
 function norm(s) {
   return (s || "").toString().normalize("NFC").toLowerCase();
 }
+
 function escapeHtml(str) {
   return String(str).replace(/[&<>"']/g, s => ({
-    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'" :'&#39;'
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
   }[s]));
 }
+
 function escapeRegExp(string) {
   return String(string).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
@@ -46,20 +47,22 @@ async function searchSite() {
     try {
       const res = await fetch(page.url);
       if (!res.ok) continue;
+
       const text = await res.text();
       const parser = new DOMParser();
       const doc = parser.parseFromString(text, "text/html");
-      const bodyText = norm(doc.body.textContent);
+      const bodyText = doc.body.textContent; // ✅ niente HTML rotto
+      const bodyNorm = norm(bodyText);
 
-      let index = bodyText.indexOf(query);
+      let index = bodyNorm.indexOf(query);
       const matches = [];
 
       while (index !== -1) {
         const snippetStart = Math.max(0, index - 60);
         const snippetEnd = Math.min(bodyText.length, index + 120);
-        const snippet = doc.body.textContent.substring(snippetStart, snippetEnd).replace(/\s+/g, " ");
+        const snippet = bodyText.substring(snippetStart, snippetEnd).replace(/\s+/g, " ");
         matches.push(snippet);
-        index = bodyText.indexOf(query, index + query.length);
+        index = bodyNorm.indexOf(query, index + query.length);
       }
 
       if (matches.length > 0) {
@@ -67,7 +70,8 @@ async function searchSite() {
 
         const snippetHTML = matches.map((snip, i) => {
           const anchor = `match_${encodeURIComponent(queryRaw)}_${i}`;
-          const highlighted = escapeHtml(snip).replace(
+          const safeSnippet = escapeHtml(snip);
+          const highlighted = safeSnippet.replace(
             new RegExp(escapeRegExp(queryRaw), "gi"),
             match => `<a href="${page.url}#${anchor}" class="snippet-link"><mark>${match}</mark></a>`
           );
@@ -95,11 +99,13 @@ async function searchSite() {
   }
 }
 
+// ✅ Redirect universale (funziona anche da SEARCH.html)
 document.getElementById("searchForm").addEventListener("submit", e => {
   e.preventDefault();
   const newQuery = document.getElementById("searchQuery").value.trim();
   if (newQuery) {
-    window.location.href = "search_function/SEARCH.html?q=" + encodeURIComponent(newQuery);
+    const base = window.location.pathname.includes("search_function") ? "../" : "";
+    window.location.href = base + "search_function/SEARCH.html?q=" + encodeURIComponent(newQuery);
   }
 });
 
