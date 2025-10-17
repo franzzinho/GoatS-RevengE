@@ -4,16 +4,15 @@ const pages = [
   { url: "../SOCIAL IDEAS.html", title: "Contatti" }
 ];
 
+// Normalizza e sanifica
 function norm(s) {
   return (s || "").toString().normalize("NFC").toLowerCase();
 }
-
 function escapeHtml(str) {
   return String(str).replace(/[&<>"']/g, s => ({
     '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'" :'&#39;'
   }[s]));
 }
-
 function escapeRegExp(string) {
   return String(string).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
@@ -39,6 +38,7 @@ async function searchSite() {
 
   inputEl.value = queryRaw;
   resultsDiv.innerHTML = "<p>Sto cercando...</p>";
+
   let totalMatches = 0;
   const allResults = [];
 
@@ -53,6 +53,7 @@ async function searchSite() {
 
       let index = bodyText.indexOf(query);
       const matches = [];
+
       while (index !== -1) {
         const snippetStart = Math.max(0, index - 60);
         const snippetEnd = Math.min(bodyText.length, index + 120);
@@ -63,13 +64,14 @@ async function searchSite() {
 
       if (matches.length > 0) {
         totalMatches += matches.length;
+
         const snippetHTML = matches.map((snip, i) => {
+          const anchor = `match_${encodeURIComponent(queryRaw)}_${i}`;
           const highlighted = escapeHtml(snip).replace(
             new RegExp(escapeRegExp(queryRaw), "gi"),
-            match => `<mark>${match}</mark>`
+            match => `<a href="${page.url}#${anchor}" class="snippet-link"><mark>${match}</mark></a>`
           );
-          const anchor = `${page.url}#match${i}`;
-          return `<p><a href="${anchor}" class="snippet-link">${highlighted}</a></p>`;
+          return `<p class="snippet">${highlighted}</p>`;
         }).join("");
 
         allResults.push(`
@@ -93,7 +95,6 @@ async function searchSite() {
   }
 }
 
-// Neon Search in navbar
 document.getElementById("searchForm").addEventListener("submit", e => {
   e.preventDefault();
   const newQuery = document.getElementById("searchQuery").value.trim();
