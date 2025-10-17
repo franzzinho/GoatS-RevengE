@@ -731,20 +731,35 @@
   </footer>
 
   <script>
+  // Effetto evidenziazione NEON su tutte le pagine
   const anchor = window.location.hash;
   if (anchor && anchor.startsWith("#match_")) {
     const query = decodeURIComponent(anchor.split("_")[1] || "");
     if (query) {
       const regex = new RegExp(query, "gi");
-      document.body.innerHTML = document.body.innerHTML.replace(regex, match =>
-        `<mark style="background:#00ff91; color:#000; padding:2px 4px;">${match}</mark>`
+      const highlightStyle = "background:#00ff91;color:#000;padding:2px 4px;border-radius:3px;text-decoration:underline;animation:highlightPulse 1.2s ease-in-out 2;";
+      document.body.innerHTML = document.body.innerHTML.replace(
+        regex,
+        match => `<mark style='${highlightStyle}'>${match}</mark>`
       );
+
+      // effetto smooth scroll sulla parola
       setTimeout(() => {
         const firstMark = document.querySelector("mark");
         if (firstMark) window.scrollTo({ top: firstMark.offsetTop - 100, behavior: "smooth" });
-      }, 300);
+      }, 400);
     }
   }
+
+  // animazione "pulse" della parola evidenziata
+  const style = document.createElement("style");
+  style.textContent = `
+    @keyframes highlightPulse {
+      0%, 100% { box-shadow: 0 0 5px #00ff91, 0 0 10px #00ff91; }
+      50% { box-shadow: 0 0 20px #00ff91, 0 0 40px #00ff91; }
+    }
+  `;
+  document.head.appendChild(style);
 </script>
 
   
