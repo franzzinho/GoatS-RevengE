@@ -731,20 +731,22 @@
   </footer>
 
   <script>
-  // evidenziazione automatica se arrivi con #match_
   const anchor = window.location.hash;
   if (anchor && anchor.startsWith("#match_")) {
     const query = decodeURIComponent(anchor.split("_")[1] || "");
     if (query) {
-      const bodyText = document.body.innerHTML;
       const regex = new RegExp(query, "gi");
-      document.body.innerHTML = bodyText.replace(regex, match =>
-        `<mark style="background:#ffeb3b; color:#000; padding:2px 4px;">${match}</mark>`
+      document.body.innerHTML = document.body.innerHTML.replace(regex, match =>
+        `<mark style="background:#00ff91; color:#000; padding:2px 4px;">${match}</mark>`
       );
-      setTimeout(() => window.scrollTo(0, document.querySelector("mark")?.offsetTop - 100 || 0), 200);
+      setTimeout(() => {
+        const firstMark = document.querySelector("mark");
+        if (firstMark) window.scrollTo({ top: firstMark.offsetTop - 100, behavior: "smooth" });
+      }, 300);
     }
   }
-  </script>
+</script>
+
   
 
 </body>
