@@ -403,33 +403,20 @@
   <ul></ul>
 
     <form id="searchForm" class="search-bar">
-   
-      <input type="text" id="searchQuery" placeholder="Cerca..." />
-   
-      <button type="submit">🔍</button>
- 
-    </form>
+  <input type="text" id="searchQuery" placeholder="Cerca..." />
+  <button type="submit">🔍</button>
+</form>
 
-  </nav>
-
-  
 <script>
-  
-  //SEZIONE RICERCA NELLA NAV-BAR
-  
   document.getElementById("searchForm").addEventListener("submit", function (e) {
-    
     e.preventDefault();
-  
     const query = document.getElementById("searchQuery").value.trim();
-    
     if (query) {
       window.location.href = "search_function/SEARCH.html?q=" + encodeURIComponent(query);
     }
-    
   });
-  
 </script>
+
 
 
   
