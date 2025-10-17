@@ -400,12 +400,13 @@
     
     </div>
 
-  </nav>
 
     <form id="searchForm" class="search-bar">
   <input type="text" id="searchQuery" placeholder="Cerca..." />
   <button type="submit">🔍</button>
 </form>
+
+  </nav>
 
 <script>
   document.getElementById("searchForm").addEventListener("submit", function (e) {
@@ -416,6 +417,7 @@
     }
   });
 </script>
+
 
 
 
@@ -727,6 +729,23 @@
     </p>
     
   </footer>
+
+  <script>
+  // evidenziazione automatica se arrivi con #match_
+  const anchor = window.location.hash;
+  if (anchor && anchor.startsWith("#match_")) {
+    const query = decodeURIComponent(anchor.split("_")[1] || "");
+    if (query) {
+      const bodyText = document.body.innerHTML;
+      const regex = new RegExp(query, "gi");
+      document.body.innerHTML = bodyText.replace(regex, match =>
+        `<mark style="background:#ffeb3b; color:#000; padding:2px 4px;">${match}</mark>`
+      );
+      setTimeout(() => window.scrollTo(0, document.querySelector("mark")?.offsetTop - 100 || 0), 200);
+    }
+  }
+  </script>
+  
 
 </body>
 </html>
