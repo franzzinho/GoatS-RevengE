@@ -116,7 +116,7 @@ if(searchForm){
     if(!newQuery) return;
 
     // Redirect assoluto → evita problemi di 404
-    const href = "/search_function/SEARCH.html?q=" + encodeURIComponent(newQuery);
+    const href = "/search_FIX/fix_search.html?q=" + encodeURIComponent(newQuery);
     window.location.href = href;
   });
 }
