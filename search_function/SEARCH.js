@@ -20,7 +20,7 @@ async function searchSite(){
   const inputEl = document.getElementById("searchQuery");
 
   if(!qNorm){ resultsDiv.innerHTML = "<p>Digita qualcosa per cercare 🔍</p>"; countEl.textContent=""; return; }
-  inputEl.value = queryRaw;
+  if(inputEl) inputEl.value = queryRaw; // non crasha se input non esiste
   resultsDiv.innerHTML = "<p>Sto cercando...</p>";
 
   let totalMatches = 0;
@@ -28,12 +28,20 @@ async function searchSite(){
 
   for(const page of pages){
     try{
-      const res = await fetch(page.url);
+      const res = await fetch(encodeURI(page.url)); // GOAT-safe: gestisce spazi e caratteri speciali
+
       if(!res.ok) continue;
       const text = await res.text();
       const parser = new DOMParser();
       const doc = parser.parseFromString(text, "text/html");
-      const walker = doc.createTreeWalker(doc.body, NodeFilter.SHOW_TEXT);
+      const walker = doc.createTreeWalker(doc.body, NodeFilter.SHOW_TEXT, {
+  acceptNode: (node) => {
+    if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT; // ignora spazi vuoti
+    if (["SCRIPT","STYLE","NOSCRIPT"].includes(node.parentNode.tagName)) return NodeFilter.FILTER_REJECT; // ignora testo nascosto
+    return NodeFilter.FILTER_ACCEPT;
+  }
+});
+
       let node; let visible = "";
       while(walker.nextNode()){
         node = walker.currentNode;
