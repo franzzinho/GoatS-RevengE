@@ -1,14 +1,15 @@
 // SEARCH.js - GOAT-FINAL ✨
 
 // ======== CONFIGURAZIONE PAGINE ========
+const isInSearch = window.location.pathname.includes("search_function");
 const pages = [
-  { url: "/index.html", title: "Home" },
-  { url: "/ABOUT.html", title: "About" },
-  { url: "/VIDEO IDEAS.html", title: "Video Ideas" },
-  { url: "/UTILITY.html", title: "Utility" },
-  { url: "/TERMINI.html", title: "Termini" },
-  { url: "/TEAM.html", title: "Team" },
-  { url: "/search_FIX/fix_search.html", title: "Coming Soon" } // <- tuo fix
+  { url: isInSearch ? "../index.html" : "index.html", title: "Home" },
+  { url: isInSearch ? "../ABOUT.html" : "ABOUT.html", title: "About" },
+  { url: isInSearch ? "../VIDEO IDEAS.html" : "VIDEO IDEAS.html", title: "Video Ideas" },
+  { url: isInSearch ? "../UTILITY.html" : "UTILITY.html", title: "Utility" },
+  { url: isInSearch ? "../TERMINI.html" : "TERMINI.html", title: "Termini" },
+  { url: isInSearch ? "../TEAM.html" : "TEAM.html", title: "Team" },
+  { url: isInSearch ? "../COMING SOON.html" : "COMING SOON.html", title: "Coming Soon" }
 ];
 
 // ======== FUNZIONI UTILI ========
@@ -105,7 +106,7 @@ async function searchSite() {
   }
 }
 
-// ======== REDIRECT UNIVERSALE BARRA DI RICERCA ========
+// ======== REDIRECT UNIVERSALE GOAT-SAFE ========
 const searchForm = document.getElementById("searchForm");
 if(searchForm){
   searchForm.addEventListener("submit", e=>{
@@ -115,8 +116,11 @@ if(searchForm){
     const newQuery = queryInput.value.trim();
     if(!newQuery) return;
 
-    // Redirect assoluto → evita problemi di 404
-    const href = "/search_FIX/fix_search.html?q=" + encodeURIComponent(newQuery);
+    const isInSearch = window.location.pathname.includes("search_function");
+    const base = isInSearch ? "../" : "";
+    const target = (isInSearch ? "" : "search_function/") + "SEARCH.html";
+    let href = base + target + "?q=" + encodeURIComponent(newQuery);
+    href = href.replace(/([^:]\/)\/+/g,"$1");
     window.location.href = href;
   });
 }
