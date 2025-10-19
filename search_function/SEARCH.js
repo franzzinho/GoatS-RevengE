@@ -1,15 +1,12 @@
-// SEARCH.js - GOAT-FINAL ✨
-
-// ======== CONFIGURAZIONE PAGINE ========
-const isInSearch = window.location.pathname.includes("search_function");
+const base = "/GoatS-RevengE"; // nome del repo GitHub
 const pages = [
-  { url: isInSearch ? "../index.html" : "index.html", title: "Home" },
-  { url: isInSearch ? "../ABOUT.html" : "ABOUT.html", title: "About" },
-  { url: isInSearch ? "../VIDEO IDEAS.html" : "VIDEO IDEAS.html", title: "Video Ideas" },
-  { url: isInSearch ? "../UTILITY.html" : "UTILITY.html", title: "Utility" },
-  { url: isInSearch ? "../TERMINI.html" : "TERMINI.html", title: "Termini" },
-  { url: isInSearch ? "../TEAM.html" : "TEAM.html", title: "Team" },
-  { url: isInSearch ? "../COMING SOON.html" : "COMING SOON.html", title: "Coming Soon" }
+  { url: `${base}/index.html`, title: "Home" },
+  { url: `${base}/ABOUT.html`, title: "About" },
+  { url: `${base}/VIDEO IDEAS.html`, title: "Video Ideas" },
+  { url: `${base}/UTILITY.html`, title: "Utility" },
+  { url: `${base}/TERMINI.html`, title: "Termini" },
+  { url: `${base}/TEAM.html`, title: "Team" },
+  { url: `${base}/COMING SOON.html`, title: "Coming Soon" }
 ];
 
 // ======== FUNZIONI UTILI ========
@@ -116,10 +113,18 @@ if(searchForm){
     if(!newQuery) return;
 
     // Redirect **assoluto dalla root** → non rompe mai
-    const href = "/search_function/SEARCH.html?q=" + encodeURIComponent(newQuery);
+const base = "/my-repo-name"; // <-- qui metti il nome del tuo repository
 
-    window.location.href = href;
-  });
+searchForm.addEventListener("submit", e => {
+  e.preventDefault();
+  const queryInput = document.getElementById("searchQuery");
+  if (!queryInput) return;
+  const newQuery = queryInput.value.trim();
+  if (!newQuery) return;
+
+  const href = `${base}/search_function/SEARCH.html?q=` + encodeURIComponent(newQuery);
+  window.location.href = href;
+});
 }
 
 // ======== AVVIO RICERCA ========
