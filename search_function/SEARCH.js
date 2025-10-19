@@ -31,14 +31,13 @@ async function searchSite(){
   let totalMatches = 0;
   const allResults = [];
 
-  for(const page of pages){
-    try{
-      const res = await fetch(encodeURI(page.url)); // 🔹 fetch sicuro con spazi e caratteri speciali
-      if(!res.ok) continue;
-      const text = await res.text();
-
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(text,"text/html");
+for(const page of pages){
+  try{
+    const res = await fetch(page.url);
+    console.log("Provo a fare fetch su:", page.url, "OK?", res.ok);
+    if(!res.ok) continue;
+    const text = await res.text();
+    console.log("Testo della pagina:", text.slice(0,200));
 
       // TreeWalker solo testo visibile
       const walker = doc.createTreeWalker(doc.body, NodeFilter.SHOW_TEXT, {
