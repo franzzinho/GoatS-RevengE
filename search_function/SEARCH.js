@@ -1,4 +1,3 @@
-const base = "/GoatS-RevengE"; // nome del repo GitHub
 const pages = [
 { url: isInSearch ? "../index.html" : "index.html", title: "Home" },
   { url: isInSearch ? "../ABOUT.html" : "ABOUT.html", title: "About" },
