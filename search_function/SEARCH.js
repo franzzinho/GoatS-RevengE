@@ -1,8 +1,9 @@
-// SEARCH.js - GOAT final
+// percorso corretto delle pagine relativo alla posizione del file corrente
+const isInSearch = window.location.pathname.includes("search_function");
 const pages = [
-  { url: "../index.html", title: "Home" },
-  { url: "../ABOUT.html", title: "About" },
-  { url: "../SOCIAL IDEAS.html", title: "Social Ideas" }
+  { url: isInSearch ? "../index.html" : "index.html", title: "Home" },
+  { url: isInSearch ? "../ABOUT.html" : "ABOUT.html", title: "About" },
+  { url: isInSearch ? "../SOCIAL IDEAS.html" : "SOCIAL IDEAS.html", title: "Social Ideas" }
 ];
 
 function norm(s){ return (s||"").toString().normalize("NFC").toLowerCase(); }
