@@ -1,12 +1,12 @@
 const base = "/GoatS-RevengE"; // nome del repo GitHub
 const pages = [
-  { url: `${base}/index.html`, title: "Home" },
-  { url: `${base}/ABOUT.html`, title: "About" },
-  { url: `${base}/VIDEO IDEAS.html`, title: "Video Ideas" },
-  { url: `${base}/UTILITY.html`, title: "Utility" },
-  { url: `${base}/TERMINI.html`, title: "Termini" },
-  { url: `${base}/TEAM.html`, title: "Team" },
-  { url: `${base}/COMING SOON.html`, title: "Coming Soon" }
+{ url: isInSearch ? "../index.html" : "index.html", title: "Home" },
+  { url: isInSearch ? "../ABOUT.html" : "ABOUT.html", title: "About" },
+  { url: isInSearch ? "../VIDEO IDEAS.html" : "VIDEO IDEAS.html", title: "Video Ideas" },
+  { url: isInSearch ? "../UTILITY.html" : "UTILITY.html", title: "Utility" },
+  { url: isInSearch ? "../TERMINI.html" : "TERMINI.html", title: "Termini" },
+  { url: isInSearch ? "../TEAM.html" : "TEAM.html", title: "Team" },
+  { url: isInSearch ? "../COMING SOON.html" : "COMING SOON.html", title: "Coming Soon" }
 ];
 
 // ======== FUNZIONI UTILI ========
