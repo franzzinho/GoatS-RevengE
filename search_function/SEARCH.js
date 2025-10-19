@@ -106,7 +106,6 @@ async function searchSite() {
   }
 }
 
-// ======== REDIRECT UNIVERSALE GOAT-SAFE ========
 const searchForm = document.getElementById("searchForm");
 if(searchForm){
   searchForm.addEventListener("submit", e=>{
@@ -116,21 +115,8 @@ if(searchForm){
     const newQuery = queryInput.value.trim();
     if(!newQuery) return;
 
-    // ✅ Controllo se siamo già in SEARCH.html
-    const currentPath = window.location.pathname;
-    const isInSearchHtml = currentPath.endsWith("/SEARCH.html") || currentPath.endsWith("/search_function/SEARCH.html");
-
-    let href;
-    if(isInSearchHtml){
-      // Siamo già dentro SEARCH.html, basta cambiare solo la query
-      href = "SEARCH.html?q=" + encodeURIComponent(newQuery);
-    } else {
-      // Siamo in altre pagine, redirect normale alla cartella search_function
-      href = "search_function/SEARCH.html?q=" + encodeURIComponent(newQuery);
-    }
-
-    // rimuove eventuali doppie slash
-    href = href.replace(/([^:]\/)\/+/g,"$1");
+    // Redirect **assoluto dalla root** → non rompe mai
+    const href = "/search_function/SEARCH.html?q=" + encodeURIComponent(newQuery);
 
     window.location.href = href;
   });
