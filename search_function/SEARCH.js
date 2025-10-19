@@ -106,7 +106,6 @@ async function searchSite() {
   }
 }
 
-// ======== REDIRECT UNIVERSALE GOAT-SAFE ========
 const searchForm = document.getElementById("searchForm");
 if(searchForm){
   searchForm.addEventListener("submit", e=>{
@@ -116,11 +115,9 @@ if(searchForm){
     const newQuery = queryInput.value.trim();
     if(!newQuery) return;
 
-    const isInSearch = window.location.pathname.includes("search_function");
-    const base = isInSearch ? "../" : "";
-    const target = (isInSearch ? "" : "search_function/") + "SEARCH.html";
-    let href = base + target + "?q=" + encodeURIComponent(newQuery);
-    href = href.replace(/([^:]\/)\/+/g,"$1");
+    // Redirect **assoluto dalla root** → non rompe mai
+    const href = "/search_function/SEARCH.html?q=" + encodeURIComponent(newQuery);
+
     window.location.href = href;
   });
 }
