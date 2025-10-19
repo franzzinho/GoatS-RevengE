@@ -116,11 +116,22 @@ if(searchForm){
     const newQuery = queryInput.value.trim();
     if(!newQuery) return;
 
-    const isInSearch = window.location.pathname.includes("search_function");
-    const base = isInSearch ? "../" : "";
-    const target = (isInSearch ? "" : "search_function/") + "SEARCH.html";
-    let href = base + target + "?q=" + encodeURIComponent(newQuery);
+    // ✅ Controllo se siamo già in SEARCH.html
+    const currentPath = window.location.pathname;
+    const isInSearchHtml = currentPath.endsWith("/SEARCH.html") || currentPath.endsWith("/search_function/SEARCH.html");
+
+    let href;
+    if(isInSearchHtml){
+      // Siamo già dentro SEARCH.html, basta cambiare solo la query
+      href = "SEARCH.html?q=" + encodeURIComponent(newQuery);
+    } else {
+      // Siamo in altre pagine, redirect normale alla cartella search_function
+      href = "search_function/SEARCH.html?q=" + encodeURIComponent(newQuery);
+    }
+
+    // rimuove eventuali doppie slash
     href = href.replace(/([^:]\/)\/+/g,"$1");
+
     window.location.href = href;
   });
 }
