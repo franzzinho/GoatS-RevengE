@@ -734,103 +734,169 @@
 
   <script>
 (function(){
-  // quando si arriva con hash #match_<encodedQuery>_<i>
-  function decodeHashInfo(hash){
-    if(!hash || !hash.startsWith("#match_")) return null;
-    const parts = hash.slice(1).split("_");
-    // parts[0] === 'match', parts[1] is encodedQuery, parts[2] is index
-    if(parts.length < 3) return null;
-    const encQuery = parts.slice(1, parts.length-1).join("_");
-    const idx = parseInt(parts[parts.length-1], 10);
-    try { return { query: decodeURIComponent(encQuery), index: isNaN(idx)?0:idx }; } catch { return { query: encQuery, index: isNaN(idx)?0:idx }; }
-  }
-
-  function wrapMatchesOnPage(queryRaw, targetIndex){
+  function highlightAllMatches(queryRaw) {
     if(!queryRaw) return;
+    
     const q = queryRaw;
     const regex = new RegExp(escapeRegExp(q), "gi");
-
-    // collect text nodes
+    
+    // Salva il contenuto originale per evitare duplicati
+    if (!document.body.hasAttribute('data-original-content')) {
+      document.body.setAttribute('data-original-content', document.body.innerHTML);
+    }
+    
+    // Ripristina il contenuto originale
+    document.body.innerHTML = document.body.getAttribute('data-original-content');
+    
+    // Collect text nodes
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
     const textNodes = [];
     while(walker.nextNode()) textNodes.push(walker.currentNode);
-
-    let globalCount = 0;
-    // iterate nodes and replace only matched pieces (careful: operate on nodes directly)
+    
+    let matchCount = 0;
+    
+    // Highlight ALL matches
     textNodes.forEach(node => {
       const parent = node.parentNode;
-      if(!parent) return;
+      if(!parent || parent.tagName === 'SCRIPT' || parent.tagName === 'STYLE') return;
+      
       const text = node.nodeValue;
       if(!regex.test(text)) return;
-      // rebuild fragment
+      
       const frag = document.createDocumentFragment();
       let lastIndex = 0;
+      
       text.replace(regex, (m, offset) => {
-        // append text before match
+        // Append text before match
         if(offset > lastIndex){
           frag.appendChild(document.createTextNode(text.slice(lastIndex, offset)));
         }
-        // create mark element (wrap)
+        
+        // Create mark element for EVERY match
         const mark = document.createElement("mark");
         mark.style.background = "#00ff91";
         mark.style.color = "#000";
         mark.style.padding = "2px 4px";
         mark.style.borderRadius = "3px";
         mark.style.textDecoration = "underline";
+        mark.style.margin = "0 1px";
+        mark.className = "search-highlight";
+        mark.setAttribute('data-search-term', q);
         mark.textContent = m;
-        // if this is the target index, give it the id from hash and scroll to it later
-        if(globalCount === targetIndex){
-          // id must match the one SEARCH.js created
-          const anchorId = `match_${encodeURIComponent(q)}_${targetIndex}`;
-          mark.id = anchorId;
-        }
+        
+        // Give each match a unique ID
+        const matchId = `match_${encodeURIComponent(q)}_${matchCount}`;
+        mark.id = matchId;
+        
         frag.appendChild(mark);
         lastIndex = offset + m.length;
-        globalCount++;
+        matchCount++;
       });
-      // append remaining text
+      
+      // Append remaining text
       if(lastIndex < text.length){
         frag.appendChild(document.createTextNode(text.slice(lastIndex)));
       }
-      // replace the original node with fragment
+      
+      // Replace the original node with fragment
       parent.replaceChild(frag, node);
     });
-
-    // scroll to target mark if present
-    const targetId = `match_${encodeURIComponent(q)}_${targetIndex}`;
-    const el = document.getElementById(targetId);
-    if(el){
-      setTimeout(()=> {
-        el.scrollIntoView({behavior:"smooth", block:"center"});
-        // add a short pulse animation (flash)
-        el.style.transition = "box-shadow 0.3s";
-        el.style.boxShadow = "0 0 8px #00ff91, 0 0 20px #00ff91";
-        setTimeout(()=> el.style.boxShadow = "", 1600);
-      }, 200);
+    
+    // Scroll to first match if there are any
+    if (matchCount > 0) {
+      const firstMatch = document.getElementById(`match_${encodeURIComponent(q)}_0`);
+      if (firstMatch) {
+        setTimeout(() => {
+          firstMatch.scrollIntoView({ behavior: "smooth", block: "center" });
+          // Pulse animation for first match
+          firstMatch.style.transition = "box-shadow 0.3s";
+          firstMatch.style.boxShadow = "0 0 12px #00ff91, 0 0 25px #00ff91";
+          setTimeout(() => firstMatch.style.boxShadow = "", 2000);
+        }, 300);
+      }
+      
+      // Aggiungi contatore dei risultati
+      addMatchCounter(matchCount, q);
     }
   }
-
+  
+  // Aggiungi contatore dei risultati in alto
+  function addMatchCounter(count, query) {
+    // Rimuovi contatore esistente
+    const existingCounter = document.getElementById('search-match-counter');
+    if (existingCounter) existingCounter.remove();
+    
+    const counter = document.createElement('div');
+    counter.id = 'search-match-counter';
+    counter.innerHTML = `
+      <div style="
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: rgba(0, 255, 145, 0.9);
+        color: #000;
+        padding: 10px 15px;
+        border-radius: 10px;
+        font-weight: bold;
+        z-index: 10000;
+        box-shadow: 0 0 15px #00ff91;
+        border: 2px solid #00ff91;
+      ">
+        🔍 Trovate ${count} occorrenze di "${query}"
+      </div>
+    `;
+    
+    document.body.appendChild(counter);
+    
+    // Rimuovi automaticamente dopo 5 secondi
+    setTimeout(() => {
+      if (counter.parentNode) {
+        counter.parentNode.removeChild(counter);
+      }
+    }, 5000);
+  }
+  
   // util
   function escapeRegExp(s){ return String(s).replace(/[.*+?^${}()|[\]\\]/g,"\\$&"); }
 
   document.addEventListener("DOMContentLoaded", ()=>{
-    // Cerca il parametro 'q' nell'URL prima di controllare l'hash
     const urlParams = new URLSearchParams(window.location.search);
     const queryFromURL = urlParams.get('q');
+    const highlightAll = urlParams.get('highlight');
     
     if (queryFromURL) {
-      // Se c'è un parametro 'q' nell'URL, usa quello
-      setTimeout(()=> wrapMatchesOnPage(queryFromURL, 0), 80);
+      setTimeout(() => {
+        if (highlightAll === 'all') {
+          // Evidenzia TUTTE le occorrenze
+          highlightAllMatches(queryFromURL);
+        } else {
+          // Comportamento originale (solo prima occorrenza)
+          wrapMatchesOnPage(queryFromURL, 0);
+        }
+      }, 100);
     } else {
-      // Altrimenti controlla l'hash come prima
       const info = decodeHashInfo(window.location.hash);
       if(info){
-        setTimeout(()=> wrapMatchesOnPage(info.query, info.index), 80);
+        setTimeout(()=> wrapMatchesOnPage(info.query, info.index), 100);
       }
     }
   });
+  
+  // Mantieni la funzione originale per compatibilità
+  function wrapMatchesOnPage(queryRaw, targetIndex) {
+    if(!queryRaw) return;
+    highlightAllMatches(queryRaw); // Ora usa sempre la funzione che evidenzia tutto
+  }
+  
+  function decodeHashInfo(hash){
+    if(!hash || !hash.startsWith("#match_")) return null;
+    const parts = hash.slice(1).split("_");
+    if(parts.length < 3) return null;
+    const encQuery = parts.slice(1, parts.length-1).join("_");
+    const idx = parseInt(parts[parts.length-1], 10);
+    try { return { query: decodeURIComponent(encQuery), index: isNaN(idx)?0:idx }; } catch { return { query: encQuery, index: isNaN(idx)?0:idx }; }
+  }
 })();
-    
 </script>
 
   
