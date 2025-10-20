@@ -1,5 +1,5 @@
 const pages = [
-{ url: isInSearch ? "../index.html" : "index.html", title: "Home" },
+{ url: isInSearch ? "index.html" : "index.html", title: "Home" },
   { url: isInSearch ? "../ABOUT.html" : "ABOUT.html", title: "About" },
   { url: isInSearch ? "../VIDEO IDEAS.html" : "VIDEO IDEAS.html", title: "Video Ideas" },
   { url: isInSearch ? "../UTILITY.html" : "UTILITY.html", title: "Utility" },
