@@ -73,27 +73,33 @@ async function performSearch(query) {
       const textContent = doc.body.textContent || '';
       const lowerContent = textContent.toLowerCase();
       
-      // Controlla se la pagina contiene almeno uno dei termini di ricerca
-      let hasMatch = false;
-      let matchCount = 0;
+      // Controlla TUTTE le occorrenze di TUTTI i termini
+      let totalMatches = 0;
+      let allMatches = [];
       
       for (const term of searchTerms) {
         const regex = new RegExp(escapeRegExp(term), 'gi');
-        const matches = textContent.match(regex);
-        if (matches) {
-          hasMatch = true;
-          matchCount += matches.length;
+        let match;
+        while ((match = regex.exec(textContent)) !== null) {
+          totalMatches++;
+          allMatches.push({
+            term: term,
+            position: match.index,
+            text: match[0]
+          });
         }
       }
       
-      if (hasMatch) {
-        // Crea uno snippet del contenuto
-        const snippet = createSnippet(textContent, searchTerms);
+      if (totalMatches > 0) {
+        // Crea snippet con MULTIPLE evidenziazioni
+        const snippet = createDetailedSnippet(textContent, searchTerms, allMatches);
         results.push({
           title: page.title,
           url: page.url,
           snippet: snippet,
-          matchCount: matchCount
+          matchCount: totalMatches,
+          allMatches: allMatches,
+          searchQuery: query
         });
       }
     } catch (error) {
@@ -105,40 +111,32 @@ async function performSearch(query) {
   return results.sort((a, b) => b.matchCount - a.matchCount);
 }
 
-// FUNZIONE PER CREARE LO SNIPPET
-function createSnippet(content, searchTerms) {
-  const maxLength = 200;
-  let bestPosition = -1;
-  let bestTerm = '';
+// FUNZIONE PER CREARE SNIPPET DETTAGLIATO CON TUTTE LE OCCORRENZE
+function createDetailedSnippet(content, searchTerms, matches) {
+  const maxLength = 300;
   
-  // Trova la prima occorrenza di qualsiasi termine di ricerca
-  for (const term of searchTerms) {
-    const position = content.toLowerCase().indexOf(term.toLowerCase());
-    if (position !== -1 && (bestPosition === -1 || position < bestPosition)) {
-      bestPosition = position;
-      bestTerm = term;
-    }
+  if (matches.length === 0) {
+    return content.substring(0, maxLength) + (content.length > maxLength ? '...' : '');
   }
   
-  let snippet = '';
-  if (bestPosition !== -1) {
-    const start = Math.max(0, bestPosition - 60);
-    const end = Math.min(content.length, bestPosition + 140);
-    snippet = content.substring(start, end);
-    
-    // Aggiungi ellissi se necessario
-    if (start > 0) snippet = '...' + snippet;
-    if (end < content.length) snippet = snippet + '...';
-  } else {
-    // Se non trova termini specifici, prendi l'inizio del contenuto
-    snippet = content.substring(0, maxLength);
-    if (content.length > maxLength) snippet += '...';
-  }
+  // Ordina matches per posizione
+  matches.sort((a, b) => a.position - b.position);
+  
+  // Prendi l'area attorno alla PRIMA occorrenza, ma mostra più contesto
+  const firstMatch = matches[0];
+  const start = Math.max(0, firstMatch.position - 80);
+  const end = Math.min(content.length, start + maxLength);
+  
+  let snippet = content.substring(start, end);
+  
+  // Aggiungi ellissi se necessario
+  if (start > 0) snippet = '...' + snippet;
+  if (end < content.length) snippet = snippet + '...';
   
   return snippet;
 }
 
-// FUNZIONE PER VISUALIZZARE I RISULTATI
+// FUNZIONE PER VISUALIZZARE I RISULTATI CON LINK CLICCABILI SULLE PAROLE
 function displayResults(results, query) {
   const resultsContainer = document.getElementById('results');
   const resultsCount = document.getElementById('results-count');
@@ -149,16 +147,39 @@ function displayResults(results, query) {
     return;
   }
   
-  resultsCount.textContent = `Trovati ${results.length} risultati per: ${query}`;
+  resultsCount.textContent = `Trovati ${results.length} pagine con risultati per: ${query}`;
   
   const resultsHTML = results.map(result => `
     <div class="result">
-      <h3><a href="${result.url}?q=${encodeURIComponent(query)}">${highlightText(result.title, query)}</a></h3>
-      <p class="snippet">${highlightText(result.snippet, query)}</p>
+      <h3>${result.title}</h3>
+      <p class="match-count">🎯 Trovate ${result.matchCount} occorrenze</p>
+      <div class="snippet">
+        ${createClickableSnippet(result.snippet, query, result.url, result.searchQuery)}
+      </div>
+      <p class="page-link"><a href="${result.url}?q=${encodeURIComponent(result.searchQuery)}&highlight=all">🔗 Vai alla pagina "${result.title}"</a></p>
     </div>
   `).join('');
   
   resultsContainer.innerHTML = resultsHTML;
+}
+
+// FUNZIONE PER CREARE SNIPPET CON PAROLE CLICCABILI
+function createClickableSnippet(snippet, query, pageUrl, searchQuery) {
+  const searchTerms = query.split(/\s+/).filter(term => term.length > 0);
+  let clickableSnippet = snippet;
+  
+  for (const term of searchTerms) {
+    const regex = new RegExp(`(${escapeRegExp(term)})`, 'gi');
+    clickableSnippet = clickableSnippet.replace(regex, 
+      `<a href="${pageUrl}?q=${encodeURIComponent(searchQuery)}&highlight=all" 
+          class="clickable-word" 
+          title="Clicca per vedere tutte le occorrenze di '${term}' in questa pagina">
+        <mark>$1</mark>
+      </a>`
+    );
+  }
+  
+  return clickableSnippet;
 }
 
 // FUNZIONE PER EVIDENZIARE IL TESTO
