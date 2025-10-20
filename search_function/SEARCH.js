@@ -136,7 +136,7 @@ function createDetailedSnippet(content, searchTerms, matches) {
   return snippet;
 }
 
-// FUNZIONE PER VISUALIZZARE I RISULTATI CON LINK CLICCABILI SULLE PAROLE
+// FUNZIONE PER VISUALIZZARE I RISULTATI CON LINK CLICCABILI SOLO SULLE PAROLE
 function displayResults(results, query) {
   const resultsContainer = document.getElementById('results');
   const resultsCount = document.getElementById('results-count');
@@ -152,11 +152,9 @@ function displayResults(results, query) {
   const resultsHTML = results.map(result => `
     <div class="result">
       <h3>${result.title}</h3>
-      <p class="match-count">🎯 Trovate ${result.matchCount} occorrenze</p>
       <div class="snippet">
         ${createClickableSnippet(result.snippet, query, result.url, result.searchQuery)}
       </div>
-      <p class="page-link"><a href="${result.url}?q=${encodeURIComponent(result.searchQuery)}&highlight=all">🔗 Vai alla pagina "${result.title}"</a></p>
     </div>
   `).join('');
   
@@ -180,21 +178,6 @@ function createClickableSnippet(snippet, query, pageUrl, searchQuery) {
   }
   
   return clickableSnippet;
-}
-
-// FUNZIONE PER EVIDENZIARE IL TESTO
-function highlightText(text, query) {
-  if (!query) return text;
-  
-  const searchTerms = query.split(/\s+/).filter(term => term.length > 0);
-  let highlightedText = text;
-  
-  for (const term of searchTerms) {
-    const regex = new RegExp(`(${escapeRegExp(term)})`, 'gi');
-    highlightedText = highlightedText.replace(regex, '<mark>$1</mark>');
-  }
-  
-  return highlightedText;
 }
 
 // FUNZIONE UTILITY PER ESCAPE REGEX
