@@ -730,7 +730,8 @@
     
   </footer>
 
-  
+
+
   <script>
 (function(){
   // quando si arriva con hash #match_<encodedQuery>_<i>
@@ -813,14 +814,25 @@
   function escapeRegExp(s){ return String(s).replace(/[.*+?^${}()|[\]\\]/g,"\\$&"); }
 
   document.addEventListener("DOMContentLoaded", ()=>{
-    const info = decodeHashInfo(window.location.hash);
-    if(info){
-      // run after small timeout to let page finish rendering (images, scripts)
-      setTimeout(()=> wrapMatchesOnPage(info.query, info.index), 80);
+    // Cerca il parametro 'q' nell'URL prima di controllare l'hash
+    const urlParams = new URLSearchParams(window.location.search);
+    const queryFromURL = urlParams.get('q');
+    
+    if (queryFromURL) {
+      // Se c'è un parametro 'q' nell'URL, usa quello
+      setTimeout(()=> wrapMatchesOnPage(queryFromURL, 0), 80);
+    } else {
+      // Altrimenti controlla l'hash come prima
+      const info = decodeHashInfo(window.location.hash);
+      if(info){
+        setTimeout(()=> wrapMatchesOnPage(info.query, info.index), 80);
+      }
     }
   });
 })();
-  </script>
+    
+</script>
+
   
 
 </body>
