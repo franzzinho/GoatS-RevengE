@@ -902,49 +902,77 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* Aggiungi questo al tuo CSS esistente */
+/* === EFFETTI NEON PER LE PAROLE EVIDENZIATE === */
+@keyframes neonPulse {
+  0% {
+    box-shadow: 0 0 5px #00ff91, 0 0 10px #00ff91, inset 0 0 3px #00ff91;
+    text-shadow: 0 0 5px #00ff91;
+  }
+  100% {
+    box-shadow: 0 0 12px #00ff91, 0 0 20px #00ff91, inset 0 0 6px #00ff91;
+    text-shadow: 0 0 10px #00ff91;
+  }
+}
+
+@keyframes neonPulseIntense {
+  0% {
+    box-shadow: 0 0 15px #00ff91, 0 0 30px #00ff91, 0 0 45px #00ff91, inset 0 0 10px #00ff91;
+    text-shadow: 0 0 15px #00ff91;
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0 25px #00ff91, 0 0 50px #00ff91, 0 0 75px #00ff91, inset 0 0 15px #00ff91;
+    text-shadow: 0 0 25px #00ff91;
+    transform: scale(1.08);
+  }
+}
+
+.neon-highlight {
+  animation: neonPulse 2s infinite alternate;
+  position: relative;
+  z-index: 10;
+}
+
+/* Stile per le parole cliccabili nella pagina di ricerca */
 .clickable-word {
   text-decoration: none !important;
   cursor: pointer;
   transition: all 0.3s ease;
+  display: inline-block;
 }
 
 .clickable-word:hover mark {
+  animation: neonPulseIntense 0.6s infinite alternate;
   background: #ff00ff !important;
   color: #000 !important;
-  box-shadow: 0 0 10px #ff00ff;
-  transform: scale(1.1);
+  box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff !important;
+  transform: scale(1.15);
 }
 
-.match-count {
+/* Migliora l'aspetto dei risultati */
+.result {
+  background: rgba(0, 255, 145, 0.05);
+  border: 1px solid #00ff9140;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 15px #00ff9120;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.result:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px #00ff9160;
+  border: 1px solid #00ff9180;
+}
+
+.result h3 {
   color: #00ff91;
-  font-weight: bold;
-  margin: 5px 0;
+  text-shadow: 0 0 10px #00ff91;
+  margin-bottom: 15px;
+  font-size: 22px;
 }
-
-.page-link {
-  margin-top: 10px;
-}
-
-.page-link a {
-  color: #00ff91;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.page-link a:hover {
-  text-decoration: underline;
-}
-
-.search-highlight {
-  animation: highlightPulse 2s ease-in-out;
-}
-
-@keyframes highlightPulse {
-  0%, 100% { box-shadow: 0 0 5px #00ff91; }
-  50% { box-shadow: 0 0 15px #00ff91, 0 0 20px #00ff91; }
-}
-
 
 
 
