@@ -9,6 +9,41 @@
   <link rel="stylesheet" href="style.css">
     
   <link rel="icon" type="image/png" href="icona_sito.png">      <!-- ICONA SITO -->
+
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .required {
+            color: red;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .terms-box {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 15px 0;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+    </style>
   
 </head>
 <body>
@@ -152,26 +187,31 @@
 <br>
 <br>
   
-  <h1>Termini e condizioni</h1>
+ <form action="https://server.com/terms.php" method="GET" id="terms-form">
+        <div class="form-group">
+            <input type="checkbox" name="terms-read" id="terms-read" value="yes" required>
+            <label for="terms-read">Ho letto e compreso i Termini e le Condizioni del Sito Web <span class="required">*</span></label>
+        </div>
+        
+        <div class="form-group">
+            <input type="checkbox" name="terms-accept" id="terms-accept" value="accepted" required>
+            <label for="terms-accept">Accetto i Termini e le Condizioni del Sito Web <span class="required">*</span></label>
+        </div>
+        
+        <button type="submit">Invia</button>
+    </form>
 
-  <form action = "https://server.com/terms.php" method = "GET">
-
-  Ho letto e compreso i Termini e le Condizioni del Sito Web:
-
-  <br>
-  
-<input type = "radio" name = "terms-read" value = "no" checked>S&igrave;
-
-  <br>
-
-    <input type = "checkbox" name = "terms-accept" value = "accepted">Accetto i Termini e le Condizioni del Sito Web.
-
-    <br>
-    <br>
-
-    <input type = "submit" value = "Invia">
-
-  </form>
+    <script>
+        document.getElementById('terms-form').addEventListener('submit', function(e) {
+            const termsRead = document.getElementById('terms-read').checked;
+            const termsAccept = document.getElementById('terms-accept').checked;
+            
+            if (!termsRead || !termsAccept) {
+                e.preventDefault();
+                alert('Devi leggere e accettare i termini e condizioni per procedere.');
+            }
+        });
+    </script>
     
 </body>
 </html>
