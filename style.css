@@ -787,7 +787,9 @@ section h1, section h2 { margin-bottom: 20px; font-weight: bold; } /* GRASSETTO 
   
   height: 3px;
   
-  margin: 10px auto 20px auto;
+  margin: 10px 0 20px 0;    /* RMOZIONE DELL'AUTO - MARGINE */
+
+  margin-left: 0; /* FORZIAMO L'ALLINEAMENTO AL MARGINE SINISTRO */
   
   width: 20%; /* LUNGHEZZA */
   
