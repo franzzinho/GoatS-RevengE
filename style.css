@@ -827,6 +827,8 @@ section h1, section h2 { margin-bottom: 20px; font-weight: bold; } /* GRASSETTO 
   
   margin: 10px 0 20px 0;      /* RMOZIONE DELL'AUTO - MARGINE */
 
+  margin-left: auto;        /* ALLINEA LA LINEA A DESTRA */
+
   margin-right: 0;           /* FORZIAMO L'ALLINEAMENTO AL MARGINE DESTRO */
   
   width: 20%; /* LUNGHEZZA */
