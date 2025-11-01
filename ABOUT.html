@@ -101,6 +101,8 @@ Franzzinho</a> 🐐 ❗</h1>
     
   </section>
 
+  <br>
+
   
   <!-- LINEA RGB -->
   
@@ -268,44 +270,31 @@ Franzzinho</a> 🐐 ❗</h1>
     
   <!-- SCRIPT CAROSELLO -->
   
-  <script>
-    
-    let slideIndex = 0; 
-    
-    const carousels = document.querySelector(".carousel-slide");
+<script>
+  let slideIndex = 0; 
 
-     const slides = carousel.children;
+  // seleziona il carosello e le immagini
+  const carousel = document.querySelector(".carousel-slide");
+  const slides = carousel.children;
 
-
-    function showSlide() {
-      
+  function showSlide() {
     if (slideIndex >= slides.length) slideIndex = 0;
     if (slideIndex < 0) slideIndex = slides.length - 1;
     carousel.style.transform = "translateX(" + (-slideIndex * 100) + "%)";
   }
-    
 
-    function moveSlide(n) {
-      
-      slideIndex += n;
-      
-      showSlide();
-    }
-
-
-
-
-    
-    //INIZIALIZZAZIONE
-    
+  function moveSlide(n) {
+    slideIndex += n;
     showSlide();
+  }
 
-    
-    // AUTOPLAY OGNI 3 SECONDI
-    
-    setInterval(() => moveSlide(1), 3000);
-  
-  </script>
+  // avvia lo scorrimento automatico ogni 3 secondi
+  setInterval(() => moveSlide(1), 3000);
+
+  // mostra la prima immagine all'avvio
+  showSlide();
+</script>
+
 
   
   <!-- FOOTER -->
