@@ -272,37 +272,40 @@ Franzzinho</a> 🐐 ❗</h1>
   
   <script>
     
-    let slideIndex = [0, 0]; 
+    let slideIndex = 0; 
     
-    const carousels = document.querySelectorAll(".carousel-slide");
+    const carousels = document.querySelector(".carousel-slide");
 
-    function moveSlide(n, carouselIndex) {
+     const slides = carousel.children;
+
+
+    function showSlide() {
       
-      slideIndex[carouselIndex] += n;
+    if (slideIndex >= slides.length) slideIndex = 0;
+    if (slideIndex < 0) slideIndex = slides.length - 1;
+    carousel.style.transform = "translateX(" + (-slideIndex * 100) + "%)";
+  }
+    
+
+    function moveSlide(n) {
       
-      showSlide(carouselIndex);
+      slideIndex += n;
+      
+      showSlide();
     }
 
-    function showSlide(carouselIndex) {
-      
-      let slides = carousels[carouselIndex].children;
-      
-      if (slideIndex[carouselIndex] >= slides.length) slideIndex[carouselIndex] = 0;
-      
-      if (slideIndex[carouselIndex] < 0) slideIndex[carouselIndex] = slides.length - 1;
-      
-      carousels[carouselIndex].style.transform =
-      
-        "translateX(" + (-slideIndex[carouselIndex] * 100) + "%)";
-    }
 
+
+
+    
+    //INIZIALIZZAZIONE
     
     showSlide();
 
     
     // AUTOPLAY OGNI 3 SECONDI
     
-    setInterval(() => moveSlide(1, 0), 3000);
+    setInterval(() => moveSlide(1), 3000);
   
   </script>
 
