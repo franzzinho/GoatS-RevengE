@@ -272,10 +272,10 @@ Franzzinho</a> 🐐 ❗</h1>
   
 <script>
   let slideIndex = 0; 
-
-  // seleziona il carosello e le immagini
   const carousel = document.querySelector(".carousel-slide");
   const slides = carousel.children;
+
+  let interval = setInterval(() => moveSlide(1), 3000); // autoplay ogni 3 secondi
 
   function showSlide() {
     if (slideIndex >= slides.length) slideIndex = 0;
@@ -288,12 +288,21 @@ Franzzinho</a> 🐐 ❗</h1>
     showSlide();
   }
 
-  // avvia lo scorrimento automatico ogni 3 secondi
-  setInterval(() => moveSlide(1), 3000);
-
-  // mostra la prima immagine all'avvio
+  // Mostra la prima immagine
   showSlide();
+
+  // --- 🛑 Pausa su hover ---
+  const container = document.querySelector(".carousel-container");
+
+  container.addEventListener("mouseenter", () => {
+    clearInterval(interval); // ferma il carosello
+  });
+
+  container.addEventListener("mouseleave", () => {
+    interval = setInterval(() => moveSlide(1), 3000); // riparte
+  });
 </script>
+
 
 
   
