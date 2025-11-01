@@ -112,6 +112,12 @@ Franzzinho</a> 🐐 ❗</h1>
   
   <h2 class="neon-title pink">🔞  Franzzinho  🔞.</h2>
 
+
+<div style="text-align:center; margin-top:10px;">
+  <button id="toggleBtn" style="padding:10px 20px; background:#333; color:white; border:none; border-radius:8px; cursor:pointer;">
+    ⏸ Pausa
+  </button>
+</div>
   
   <!-- CAROSELLO ORIZZONTALE -->
   
@@ -275,7 +281,8 @@ Franzzinho</a> 🐐 ❗</h1>
   const carousel = document.querySelector(".carousel-slide");
   const slides = carousel.children;
 
-  let interval = setInterval(() => moveSlide(1), 3000); // autoplay ogni 3 secondi
+  let isPaused = false;
+  let interval = setInterval(() => moveSlide(1), 3000);
 
   function showSlide() {
     if (slideIndex >= slides.length) slideIndex = 0;
@@ -288,20 +295,32 @@ Franzzinho</a> 🐐 ❗</h1>
     showSlide();
   }
 
-  // Mostra la prima immagine
   showSlide();
 
-  // --- 🛑 Pausa su hover ---
+  // --- Hover stop ---
   const container = document.querySelector(".carousel-container");
-
   container.addEventListener("mouseenter", () => {
-    clearInterval(interval); // ferma il carosello
+    clearInterval(interval);
+  });
+  container.addEventListener("mouseleave", () => {
+    if (!isPaused) interval = setInterval(() => moveSlide(1), 3000);
   });
 
-  container.addEventListener("mouseleave", () => {
-    interval = setInterval(() => moveSlide(1), 3000); // riparte
+  // --- Pulsante Pausa/Riprendi ---
+  const toggleBtn = document.getElementById("toggleBtn");
+  toggleBtn.addEventListener("click", () => {
+    if (isPaused) {
+      interval = setInterval(() => moveSlide(1), 3000);
+      toggleBtn.textContent = "⏸ Pausa";
+      isPaused = false;
+    } else {
+      clearInterval(interval);
+      toggleBtn.textContent = "▶️ Riprendi";
+      isPaused = true;
+    }
   });
 </script>
+
 
 
 
