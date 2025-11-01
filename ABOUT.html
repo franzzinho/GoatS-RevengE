@@ -278,8 +278,11 @@ Franzzinho</a> 🐐 ❗</h1>
 
 
 
-    /* Pulsanti ai lati */
+/* PULSANTI AI LATI */
 .carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -307,13 +310,20 @@ Franzzinho</a> 🐐 ❗</h1>
   margin-top: 4px;
 }
 
-/* Posizionamento lato sinistro e destro */
+/* POSIZIONAMENTO LATERALE */
 .carousel-btn.left {
-  margin-right: 10px;
+  left: -60px; /* distanza dal bordo sinistro */
 }
 
 .carousel-btn.right {
-  margin-left: 10px;
+  right: -60px; /* distanza dal bordo destro */
+}
+
+/* RESPONSIVE per schermi piccoli */
+@media (max-width: 768px) {
+  .carousel-btn.left { left: -40px; }
+  .carousel-btn.right { right: -40px; }
+  .carousel-btn button { font-size: 1.2rem; padding: 8px 12px; }
 }
 
   </style>
@@ -352,7 +362,7 @@ Franzzinho</a> 🐐 ❗</h1>
   // Pulsante RIPRENDI
   document.getElementById("resumeBtn").addEventListener("click", () => {
     if (isPaused) {
-      interval = setInterval(() => moveSlide(1), 2000);
+      interval = setInterval(() => moveSlide(1), 3000);
       isPaused = false;
     }
   });
