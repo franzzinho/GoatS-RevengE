@@ -115,8 +115,8 @@ Franzzinho</a> 🐐 ❗</h1>
 
   <!-- Pulsante sinistro -->
   <div class="carousel-btn left">
-    <button id="pauseBtn">⏸</button>
-    <small>Pausa</small>
+    <button id="pauseBtn">⏹️</button>
+    <small>Pausa.</small>
   </div>
   
   <!-- CAROSELLO ORIZZONTALE -->
@@ -156,7 +156,7 @@ Franzzinho</a> 🐐 ❗</h1>
     <!-- Pulsante destro -->
   <div class="carousel-btn right">
     <button id="resumeBtn">▶️</button>
-    <small>Riprendi</small>
+    <small>Riprendi.</small>
   </div>
 
 </div>
@@ -352,7 +352,7 @@ Franzzinho</a> 🐐 ❗</h1>
   // Pulsante RIPRENDI
   document.getElementById("resumeBtn").addEventListener("click", () => {
     if (isPaused) {
-      interval = setInterval(() => moveSlide(1), 3000);
+      interval = setInterval(() => moveSlide(1), 2000);
       isPaused = false;
     }
   });
