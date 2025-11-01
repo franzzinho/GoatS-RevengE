@@ -281,7 +281,7 @@ Franzzinho</a> 🐐 ❗</h1>
 
 
 
-/* pulsanti */
+/* --- PULSANTI --- */
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -289,38 +289,40 @@ Franzzinho</a> 🐐 ❗</h1>
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 5;
+  z-index: 10; /* sopra le immagini */
 }
 
 .carousel-btn button {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.6); /* visibili ma non invadenti */
   color: white;
-  font-size: 1.5rem;
-  border: 2px solid #888;
-  border-radius: 8px;
-  padding: 8px 12px;
+  font-size: 1.8rem;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  transition: all 0.3s;
 }
 
 .carousel-btn button:hover {
-  background-color: rgba(50, 50, 50, 0.9);
-  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.15);
 }
 
 .carousel-btn small {
-  color: #ccc;
-  font-size: 0.75rem;
+  color: white;
+  font-size: 0.7rem;
   margin-top: 4px;
+  text-shadow: 0 0 5px black;
 }
 
-/* Posizionamento preciso, ai lati delle foto */
+/* --- POSIZIONAMENTO PERFETTO --- */
 .carousel-btn.left {
-  left: 5px; /* vicino al bordo sinistro del carosello */
+  left: 15px; /* dentro il carosello */
 }
 
 .carousel-btn.right {
-  right: 5px; /* vicino al bordo destro del carosello */
+  right: 15px; /* dentro il carosello */
 }
 
   </style>
