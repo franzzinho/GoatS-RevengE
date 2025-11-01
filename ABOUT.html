@@ -113,11 +113,11 @@ Franzzinho</a> 🐐 ❗</h1>
   <h2 class="neon-title pink">🔞  Franzzinho  🔞.</h2>
 
 
-<div style="text-align:center; margin-top:10px;">
-  <button id="toggleBtn" style="padding:10px 20px; background:#333; color:white; border:none; border-radius:8px; cursor:pointer;">
-    ⏸ Pausa
-  </button>
-</div>
+  <!-- Pulsante sinistro -->
+  <div class="carousel-btn left">
+    <button id="pauseBtn">⏸</button>
+    <small>Pausa</small>
+  </div>
   
   <!-- CAROSELLO ORIZZONTALE -->
   
@@ -152,8 +152,14 @@ Franzzinho</a> 🐐 ❗</h1>
     </div>
 
   </div>
- 
+
+    <!-- Pulsante destro -->
+  <div class="carousel-btn right">
+    <button id="resumeBtn">▶️</button>
+    <small>Riprendi</small>
   </div>
+
+</div>
 
   
   <!-- STYLE INTERNO -->
@@ -270,6 +276,46 @@ Franzzinho</a> 🐐 ❗</h1>
       display: block;
     }
 
+
+
+    /* Pulsanti ai lati */
+.carousel-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel-btn button {
+  background-color: #111;
+  color: white;
+  font-size: 1.5rem;
+  border: 2px solid #888;
+  border-radius: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.carousel-btn button:hover {
+  background-color: #333;
+  transform: scale(1.1);
+}
+
+.carousel-btn small {
+  color: #ccc;
+  font-size: 0.75rem;
+  margin-top: 4px;
+}
+
+/* Posizionamento lato sinistro e destro */
+.carousel-btn.left {
+  margin-right: 10px;
+}
+
+.carousel-btn.right {
+  margin-left: 10px;
+}
+
   </style>
 
 
@@ -297,26 +343,17 @@ Franzzinho</a> 🐐 ❗</h1>
 
   showSlide();
 
-  // --- Hover stop ---
-  const container = document.querySelector(".carousel-container");
-  container.addEventListener("mouseenter", () => {
+  // Pulsante PAUSA
+  document.getElementById("pauseBtn").addEventListener("click", () => {
     clearInterval(interval);
-  });
-  container.addEventListener("mouseleave", () => {
-    if (!isPaused) interval = setInterval(() => moveSlide(1), 3000);
+    isPaused = true;
   });
 
-  // --- Pulsante Pausa/Riprendi ---
-  const toggleBtn = document.getElementById("toggleBtn");
-  toggleBtn.addEventListener("click", () => {
+  // Pulsante RIPRENDI
+  document.getElementById("resumeBtn").addEventListener("click", () => {
     if (isPaused) {
       interval = setInterval(() => moveSlide(1), 3000);
-      toggleBtn.textContent = "⏸ Pausa";
       isPaused = false;
-    } else {
-      clearInterval(interval);
-      toggleBtn.textContent = "▶️ Riprendi";
-      isPaused = true;
     }
   });
 </script>
