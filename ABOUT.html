@@ -281,7 +281,7 @@ Franzzinho</a> 🐐 ❗</h1>
 
 
 
-/* --- PULSANTI ESTERNI --- */
+/* --- PULSANTI --- */
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -289,56 +289,43 @@ Franzzinho</a> 🐐 ❗</h1>
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 20; /* sopra tutto */
+  z-index: 10; /* sopra tutto */
 }
 
-/* Pulsante grafico */
+/* stile pulsanti */
 .carousel-btn button {
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
   font-size: 1.8rem;
   border: 2px solid #fff;
   border-radius: 50%;
-  width: 55px;
-  height: 55px;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
   transition: all 0.3s;
-  box-shadow: 0 0 10px #00ffea;
 }
 
 .carousel-btn button:hover {
   background-color: rgba(255, 255, 255, 0.2);
   transform: scale(1.15);
-  box-shadow: 0 0 15px #00ffea, 0 0 30px #00ffea;
 }
 
-/* Testo sotto */
 .carousel-btn small {
-  color: #fff;
-  font-size: 0.8rem;
+  color: white;
+  font-size: 0.7rem;
   margin-top: 4px;
   text-shadow: 0 0 5px black;
 }
 
-/* --- POSIZIONAMENTO AI LATI FUORI DAL CAROSELLO --- */
+/* --- POSIZIONAMENTO FUORI DAL CAROSELLO --- */
 .carousel-btn.left {
-  left: -90px;  /* Sposta fuori dal carosello, ma dentro lo sfondo nero */
+  left: -75px; /* sposta fuori ma ancora nello sfondo nero */
 }
 
 .carousel-btn.right {
-  right: -90px; /* Sposta fuori dal carosello, ma dentro lo sfondo nero */
+  right: -75px; /* sposta fuori ma ancora nello sfondo nero */
 }
 
-/* Assicurati che il container permetta spazio ai lati */
-.carousel-container {
-  position: relative;
-  max-width: 80%;
-  margin: 40px auto;
-  overflow: hidden;
-  border-radius: 12px;
-  padding: 0 100px; /* aggiunge spazio virtuale ai lati */
-  background-color: #000; /* mantiene lo sfondo nero visibile ai lati */
-}
 
   </style>
 
