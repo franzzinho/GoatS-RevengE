@@ -331,69 +331,60 @@ Franzzinho</a> 🐐 ❗</h1>
 
 
 
-<audio id="carouselMusic" src="carosello_about/Travis Scott - FE!N (Lyrics).mp3" preload="auto"></audio>
-  
-  
+<!-- AUDIO DI SOTTOFONDO -->
+<audio id="carouselMusic" src="carosello_about/FEIN_travis scott.mp3‎" preload="auto"></audio>
+
 <script>
+  // --- VARIABILI PRINCIPALI ---
   let slideIndex = 0; 
   const carousel = document.querySelector(".carousel-slide");
   const slides = carousel.children;
-  const music = document.getElementById("carouselMusic"); // ⭐ riferimento all'audio
+  const music = document.getElementById("carouselMusic");
 
   let isPaused = false;
   let interval = null;
 
-  function startCarousel() {
-    interval = setInterval(() => moveSlide(1), 1200);
-    // ⭐ Avvia la musica se non è già in riproduzione
-    if (music.paused) {
-      music.currentTime = 0; // ricomincia dall’inizio
-      music.play().catch(err => console.log("Audio bloccato dal browser:", err));
-    }
-  }
-
-  function stopCarousel() {
-    clearInterval(interval);
-    isPaused = true;
-    // ⭐ Ferma la musica
-    music.pause();
-  }
-
+  // --- FUNZIONE: MOSTRA SLIDE ---
   function showSlide() {
-    if (slideIndex >= slides.length) {
-      slideIndex = 0;
-      // ⭐ Quando il carosello ha finito un ciclo, ferma la musica (se vuoi)
-      music.pause();
-      music.currentTime = 0;
-      stopCarousel();
-      return; // termina
-    }
+    if (slideIndex >= slides.length) slideIndex = 0;
     if (slideIndex < 0) slideIndex = slides.length - 1;
     carousel.style.transform = "translateX(" + (-slideIndex * 100) + "%)";
   }
 
+  // --- FUNZIONE: AVVIA IL CAROSELLO ---
+  function startCarousel() {
+    clearInterval(interval);
+    interval = setInterval(() => moveSlide(1), 1200);
+    isPaused = false;
+
+    // Avvia la musica (solo se non è già in riproduzione)
+    if (music.paused) {
+      music.currentTime = 0;
+      music.play().catch(err => console.log("Autoplay bloccato:", err));
+    }
+  }
+
+  // --- FUNZIONE: FERMA IL CAROSELLO ---
+  function stopCarousel() {
+    clearInterval(interval);
+    isPaused = true;
+    music.pause();
+  }
+
+  // --- FUNZIONE: CAMBIA SLIDE ---
   function moveSlide(n) {
     slideIndex += n;
     showSlide();
   }
 
+  // --- EVENTI PULSANTI ---
+  document.getElementById("pauseBtn").addEventListener("click", stopCarousel);
+  document.getElementById("resumeBtn").addEventListener("click", startCarousel);
+
+  // --- AVVIO INIZIALE ---
   showSlide();
-  startCarousel(); // ⭐ parte automaticamente con musica
-
-  // Pulsante PAUSA
-  document.getElementById("pauseBtn").addEventListener("click", () => {
-    stopCarousel();
-  });
-
-  // Pulsante RIPRENDI
-  document.getElementById("resumeBtn").addEventListener("click", () => {
-    if (isPaused) {
-      isPaused = false;
-      startCarousel();
-    }
-  });
+  startCarousel(); // parte automaticamente (se il browser lo consente)
 </script>
-
 
 
 
