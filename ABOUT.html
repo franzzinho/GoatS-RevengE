@@ -337,7 +337,7 @@ Franzzinho</a> 🐐 ❗</h1>
   const slides = carousel.children;
 
   let isPaused = false;
-  let interval = setInterval(() => moveSlide(1), 1500);
+  let interval = setInterval(() => moveSlide(1), 1200);
 
   function showSlide() {
     if (slideIndex >= slides.length) slideIndex = 0;
@@ -361,7 +361,7 @@ Franzzinho</a> 🐐 ❗</h1>
   // Pulsante RIPRENDI
   document.getElementById("resumeBtn").addEventListener("click", () => {
     if (isPaused) {
-      interval = setInterval(() => moveSlide(1), 1500);
+      interval = setInterval(() => moveSlide(1), 1200);
       isPaused = false;
     }
   });
