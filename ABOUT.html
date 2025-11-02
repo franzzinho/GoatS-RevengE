@@ -330,19 +330,44 @@ Franzzinho</a> 🐐 ❗</h1>
   </style>
 
 
-    
-  <!-- SCRIPT CAROSELLO -->
+
+<audio id="carouselMusic" src="carosello_about/Travis Scott - FE!N (Lyrics).mp3" preload="auto"></audio>
+  
   
 <script>
   let slideIndex = 0; 
   const carousel = document.querySelector(".carousel-slide");
   const slides = carousel.children;
+  const music = document.getElementById("carouselMusic"); // ⭐ riferimento all'audio
 
   let isPaused = false;
-  let interval = setInterval(() => moveSlide(1), 1200);
+  let interval = null;
+
+  function startCarousel() {
+    interval = setInterval(() => moveSlide(1), 1200);
+    // ⭐ Avvia la musica se non è già in riproduzione
+    if (music.paused) {
+      music.currentTime = 0; // ricomincia dall’inizio
+      music.play().catch(err => console.log("Audio bloccato dal browser:", err));
+    }
+  }
+
+  function stopCarousel() {
+    clearInterval(interval);
+    isPaused = true;
+    // ⭐ Ferma la musica
+    music.pause();
+  }
 
   function showSlide() {
-    if (slideIndex >= slides.length) slideIndex = 0;
+    if (slideIndex >= slides.length) {
+      slideIndex = 0;
+      // ⭐ Quando il carosello ha finito un ciclo, ferma la musica (se vuoi)
+      music.pause();
+      music.currentTime = 0;
+      stopCarousel();
+      return; // termina
+    }
     if (slideIndex < 0) slideIndex = slides.length - 1;
     carousel.style.transform = "translateX(" + (-slideIndex * 100) + "%)";
   }
@@ -353,18 +378,18 @@ Franzzinho</a> 🐐 ❗</h1>
   }
 
   showSlide();
+  startCarousel(); // ⭐ parte automaticamente con musica
 
   // Pulsante PAUSA
   document.getElementById("pauseBtn").addEventListener("click", () => {
-    clearInterval(interval);
-    isPaused = true;
+    stopCarousel();
   });
 
   // Pulsante RIPRENDI
   document.getElementById("resumeBtn").addEventListener("click", () => {
     if (isPaused) {
-      interval = setInterval(() => moveSlide(1), 1200);
       isPaused = false;
+      startCarousel();
     }
   });
 </script>
@@ -391,6 +416,15 @@ Franzzinho</a> 🐐 ❗</h1>
   
   </footer>
 
+
+
+
+
+
+
+
+
+  
     <script>
 (function(){
   // quando si arriva con hash #match_<encodedQuery>_<i>
