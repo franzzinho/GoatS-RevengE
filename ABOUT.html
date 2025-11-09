@@ -329,6 +329,7 @@ document.addEventListener('DOMContentLoaded', startCarousel);
 </script>
 
 
+
   
   <!-- FOOTER -->
   
@@ -347,109 +348,7 @@ document.addEventListener('DOMContentLoaded', startCarousel);
     </p>
   
   </footer>
-
-
-
-
-
-
-
-
-
   
-    <script>
-(function(){
-  // quando si arriva con hash #match_<encodedQuery>_<i>
-  function decodeHashInfo(hash){
-    if(!hash || !hash.startsWith("#match_")) return null;
-    const parts = hash.slice(1).split("_");
-    // parts[0] === 'match', parts[1] is encodedQuery, parts[2] is index
-    if(parts.length < 3) return null;
-    const encQuery = parts.slice(1, parts.length-1).join("_");
-    const idx = parseInt(parts[parts.length-1], 10);
-    try { return { query: decodeURIComponent(encQuery), index: isNaN(idx)?0:idx }; } catch { return { query: encQuery, index: isNaN(idx)?0:idx }; }
-  }
-
-  function wrapMatchesOnPage(queryRaw, targetIndex){
-    if(!queryRaw) return;
-    const q = queryRaw;
-    const regex = new RegExp(escapeRegExp(q), "gi");
-
-    // collect text nodes
-    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-    const textNodes = [];
-    while(walker.nextNode()) textNodes.push(walker.currentNode);
-
-    let globalCount = 0;
-    // iterate nodes and replace only matched pieces (careful: operate on nodes directly)
-    textNodes.forEach(node => {
-      const parent = node.parentNode;
-      if(!parent) return;
-      const text = node.nodeValue;
-      if(!regex.test(text)) return;
-      // rebuild fragment
-      const frag = document.createDocumentFragment();
-      let lastIndex = 0;
-      text.replace(regex, (m, offset) => {
-        // append text before match
-        if(offset > lastIndex){
-          frag.appendChild(document.createTextNode(text.slice(lastIndex, offset)));
-        }
-        // create mark element (wrap)
-        const mark = document.createElement("mark");
-        mark.style.background = "#00ff91";
-        mark.style.color = "#000";
-        mark.style.padding = "2px 4px";
-        mark.style.borderRadius = "3px";
-        mark.style.textDecoration = "underline";
-        mark.textContent = m;
-        // if this is the target index, give it the id from hash and scroll to it later
-        if(globalCount === targetIndex){
-          // id must match the one SEARCH.js created
-          const anchorId = `match_${encodeURIComponent(q)}_${targetIndex}`;
-          mark.id = anchorId;
-        }
-        frag.appendChild(mark);
-        lastIndex = offset + m.length;
-        globalCount++;
-      });
-      // append remaining text
-      if(lastIndex < text.length){
-        frag.appendChild(document.createTextNode(text.slice(lastIndex)));
-      }
-      // replace the original node with fragment
-      parent.replaceChild(frag, node);
-    });
-
-    // scroll to target mark if present
-    const targetId = `match_${encodeURIComponent(q)}_${targetIndex}`;
-    const el = document.getElementById(targetId);
-    if(el){
-      setTimeout(()=> {
-        el.scrollIntoView({behavior:"smooth", block:"center"});
-        // add a short pulse animation (flash)
-        el.style.transition = "box-shadow 0.3s";
-        el.style.boxShadow = "0 0 8px #00ff91, 0 0 20px #00ff91";
-        setTimeout(()=> el.style.boxShadow = "", 1600);
-      }, 200);
-    }
-  }
-
-  // util
-  function escapeRegExp(s){ return String(s).replace(/[.*+?^${}()|[\]\\]/g,"\\$&"); }
-
-  document.addEventListener("DOMContentLoaded", ()=>{
-    const info = decodeHashInfo(window.location.hash);
-    if(info){
-      // run after small timeout to let page finish rendering (images, scripts)
-      setTimeout(()=> wrapMatchesOnPage(info.query, info.index), 80);
-    }
-  });
-})();
-</script>
-
-    
-
 </body>
   
 </html>
