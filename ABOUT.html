@@ -277,49 +277,44 @@ Franzzinho</a> 🐐 ❗</h1>
 
 
 
-<!-- AUDIO DI SOTTOFONDO -->
-<audio id="carouselMusic" src="carosello_about/FEIN_travis scott.mp3‎" preload="auto"></audio>
-
-<script>
-  let slideIndex = 0; 
-  const carousel = document.querySelector(".carousel-slide");
-  const slides = carousel.children;
-  const music = document.getElementById("carouselMusic");
-
-  let isPaused = false;
-  let interval = null;
-
-  // --- FUNZIONE: MOSTRA SLIDE ---
-  function showSlide() {
-    if (slideIndex >= slides.length) slideIndex = 0;
-    if (slideIndex < 0) slideIndex = slides.length - 1;
-    carousel.style.transform = "translateX(" + (-slideIndex * 100) + "%)";
-  }
-
-  // --- FUNZIONE: AVVIA IL CAROSELLO ---
-  function startCarousel() {
-    clearInterval(interval);
-    interval = setInterval(() => moveSlide(1), 3200);
-    isPaused = false;
-
-    // Avvia la musica (solo se non è già in riproduzione)
-    if (music.paused) {
-      music.currentTime = 0;
-      music.play().catch(err => console.log("Autoplay bloccato:", err));
-    }
-  }
-
-  // --- FUNZIONE: CAMBIA SLIDE ---
-  function moveSlide(n) {
-    slideIndex += n;
-    showSlide();
-  }
 
    
 
-  // --- AVVIO INIZIALE ---
-  showSlide();
-  startCarousel(); // parte automaticamente (se il browser lo consente)
+  <!-- AUDIO DI SOTTOFONDO -->
+<audio id="carouselMusic" loop>
+  <source src="https://youtu.be/B9synWjqBn8?si=AHfqoKblzU8lsAoq" type="audio/mpeg">
+  Il tuo browser non supporta l'elemento audio.
+</audio>
+
+<script>
+// CAROSELLO AUTOMATICO SEMPLIFICATO
+let slideIndex = 0;
+const carousel = document.querySelector(".carousel-slide");
+const slides = document.querySelectorAll(".carousel-slide img");
+const music = document.getElementById("carouselMusic");
+
+// Funzione per scorrere le slide
+function moveToNextSlide() {
+  slideIndex++;
+  if (slideIndex >= slides.length) slideIndex = 0;
+  carousel.style.transform = `translateX(-${slideIndex * 100}%)`;
+}
+
+// Avvia il carosello automatico
+function startCarousel() {
+  // Scorrimento automatico ogni 3 secondi
+  setInterval(moveToNextSlide, 3000);
+  
+  // Riproduci la musica (con gestione errori)
+  music.play().catch(error => {
+    console.log("Autoplay bloccato dal browser:", error);
+    // Suggerimento per l'utente
+    console.log("Clicca da qualche parte sulla pagina per attivare l'audio");
+  });
+}
+
+// Avvia tutto quando la pagina è caricata
+document.addEventListener('DOMContentLoaded', startCarousel);
 </script>
 
 
