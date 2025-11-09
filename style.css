@@ -258,9 +258,12 @@ section h1, section h2 { margin-bottom: 20px; font-weight: bold; } /* GRASSETTO 
 
 
 
-/* ABOUT SECTION*/
+/* ------------- ABOUT SECTION ------------- */
 
-.about { 
+
+.about
+
+{ 
 
   display: flex; 
   
@@ -277,6 +280,7 @@ section h1, section h2 { margin-bottom: 20px; font-weight: bold; } /* GRASSETTO 
   padding: 40px;
   
   box-shadow: 0 0 25px #ff00ff;
+  
 }
 
 .about img { flex: 1 1 400px; border-radius: 20px; box-shadow: 0 0 20px #ff00ff; }
@@ -287,15 +291,101 @@ section h1, section h2 { margin-bottom: 20px; font-weight: bold; } /* GRASSETTO 
 
 
 
-/* UTILITY SECTION */
+/* STYLE PER LA SCRITTA: 🔞 FRANZZINHO 🔞 */
 
-.services-section {
+.neon-title.pink 
+
+{
+
+      text-align: center;
+
+      font-size: 2rem;
+
+      margin-botton: 20px;
+      
+      color: #ff00ff;
+      
+      text-shadow: 0 0 10px #ff00ff, 0 0 25px #ff00ff;
+      
+      animation: neon-pink 1.5s infinite alternate;
+    
+}
+    
+
+    @keyframes neon-pink 
+
+{
+      
+      from text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff; }
+      
+      to { text-shadow: 0 0 15px #ff00ff, 0 0 35px #cc00ff; }
+    
+}
+    
+
+    
+    /* STYLE PER IL CAROSELLO */
+    
+    .carousel-container 
+{
+      
+      position: relative;
+      
+      max-width: 80%;
+     
+      margin: 40px auto;
+      
+      overflow: hidden;
+      
+      border-radius: 12px;
+   
+}
+    
+    .carousel-container.vertical { max-width: 40%; }
+
+    .carousel-slide 
+{
+      
+      display: flex;
+      
+      transition: transform 0.5s ease-in-out;
+      
+      width: 100%;
+    
+}
+
+
+    .carousel-slide img 
+
+{
+      
+      min-width: 100%;
+      
+      max-width: 100%;
+      
+      object-fit: cover;
+      
+      display: block;
+    
+}
+
+
+
+
+
+/* ------------- UTILITY SECTION ------------- */
+
+
+.services-section 
+
+{
 
   padding: 80px 20px;
   
   max-width: 1200px;
   
   margin: auto;
+  
 }
 
 
@@ -475,8 +565,103 @@ section h1, section h2 { margin-bottom: 20px; font-weight: bold; } /* GRASSETTO 
   transform: scale(1.05);
 }
 
+/* TITOLI NEON */
+    
+    .services-title {
+      
+      text-align: center;
+      
+      font-size: 2.5rem;
+      
+      
+      margin: 40px 0 20px;
+      
+      color: #fff;
+      
+      text-shadow: 0 0 5px #00eaff, 0 0 15px #00eaff, 0 0 25px #6f00ff;
+     
+      animation: neonFlash 1.5s infinite alternate;
+    }
 
-/* SOCIAL SECTION */
+    @keyframes neonFlash {
+    
+      from { text-shadow: 0 0 5px #00eaff, 0 0 15px #00eaff, 0 0 25px #6f00ff; }
+      
+      to   { text-shadow: 0 0 10px #6f00ff, 0 0 20px #6f00ff, 0 0 30px #00eaff; }
+    }
+
+
+    
+    /* PULSANTI */
+    
+    .service-btn {
+    
+      display: inline-block;
+      
+      padding: 10px 18px;
+      
+      margin-top: 10px;
+    
+      font-size: 1rem;
+   
+      font-weight: bold;
+  
+      color: #fff;
+ 
+      background: #00eaff;
+  
+      border: none;
+   
+      border-radius: 8px;
+   
+      text-decoration: none;
+    
+      transition: 0.3s;
+  
+      box-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff;
+    }
+
+    .service-btn:hover {
+   
+      background: #ff7300;
+      
+      box-shadow: 0 0 15px #ff7300, 0 0 30px #ff7300;
+    
+      transform: scale(1.05);
+    }
+
+        /* LINEA NEON RGB */
+    
+    .neon-line {
+      
+      border: none;
+    
+      height: 3px;
+      
+      margin: 50px auto;
+     
+      width: 80%;
+     
+      background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, violet, red);
+    
+      background-size: 400% 100%;
+     
+      animation: rgb-flow 5s linear infinite;
+    
+      box-shadow: 0 0 20px lime, 0 0 40px cyan;
+    }
+
+@keyframes rgb-flow 
+{
+      
+      0% {background-position: 0 0;}
+      
+      100% {background-position: 400% 0;}
+}
+
+
+/* ------------- SOCIAL SECTION ------------- */
+
 
 .social { 
 
@@ -777,68 +962,6 @@ section h1, section h2 { margin-bottom: 20px; font-weight: bold; } /* GRASSETTO 
 
 
 
-/* ABOUT SECTION */
-
-.neon-title.pink {
-
-      text-align: center;
-
-      font-size: 2rem;
-
-      margin-botton: 20px;
-      
-      color: #ff00ff;
-      
-      text-shadow: 0 0 10px #ff00ff, 0 0 25px #ff00ff;
-      
-      animation: neon-pink 1.5s infinite alternate;
-    }
-    
-
-    @keyframes neon-pink {
-      
-      from { text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff; }
-      
-      to { text-shadow: 0 0 15px #ff00ff, 0 0 35px #cc00ff; }
-    }
-    
-
-    
-    /* CAROSELLO BASE */
-    
-    .carousel-container {
-      
-      position: relative;
-      
-      max-width: 80%;
-     
-      margin: 40px auto;
-      
-      overflow: hidden;
-      
-      border-radius: 12px;
-    }
-    
-    .carousel-container.vertical { max-width: 40%; }
-
-    .carousel-slide {
-      
-      display: flex;
-      
-      transition: transform 0.5s ease-in-out;
-      
-      width: 100%;
-    }
-    .carousel-slide img {
-      
-      min-width: 100%;
-      
-      max-width: 100%;
-      
-      object-fit: cover;
-      
-      display: block;
-    }
 
 
 .team-card {          /* PER ASSICURARSI CHE LA LINEA STIA ALL'INTERNO DEL QUADRATO */
