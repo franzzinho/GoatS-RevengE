@@ -1,7 +1,4 @@
-/* RESET BASE */
-
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
+{ margin: 0; padding: 0; box-sizing: border-box; }
 
 body { 
 
@@ -779,117 +776,69 @@ section h1, section h2 { margin-bottom: 20px; font-weight: bold; } /* GRASSETTO 
 }
 
 
-/* LINEA ARANCIONE SOTTO AI FIGHI GIOCHINI SX*/
 
-.orange-line_giochi_sx {
-  
-  border: none;
-  
-  height: 3px;
-  
-  margin: 10px 0 20px 0;    /* RMOZIONE DELL'AUTO - MARGINE */
+/* ABOUT SECTION */
 
-  margin-left: 0; /* FORZIAMO L'ALLINEAMENTO AL MARGINE SINISTRO */
-  
-  width: 20%; /* LUNGHEZZA */
-  
-  background: linear-gradient(90deg, #ff9900, #ff6600, #ffaa00);
-  
-  box-shadow: 0 0 15px #ff9900, 0 0 30px #ff6600;
-  
-  border-radius: 3px;
-  
-  animation: orange-glow 3s ease-in-out infinite;
-}
+.neon-title.pink {
 
-@keyframes orange-glow {            /* EFFETTO NEON PULSANTE */
-  
-  0%, 100% {
+      text-align: center;
+
+      font-size: 2rem;
+
+      margin-botton: 20px;
+      
+      color: #ff00ff;
+      
+      text-shadow: 0 0 10px #ff00ff, 0 0 25px #ff00ff;
+      
+      animation: neon-pink 1.5s infinite alternate;
+    }
     
-    box-shadow: 0 0 10px #ff6600, 0 0 25px #ff9900;
-  }
-  
-  50% {
+
+    @keyframes neon-pink {
+      
+      from { text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff; }
+      
+      to { text-shadow: 0 0 15px #ff00ff, 0 0 35px #cc00ff; }
+    }
     
-    box-shadow: 0 0 25px #ff6600, 0 0 40px #ffaa00;
-  }
-}
 
-
-
-/* LINEA ARANCIONE SOTTO AI FIGHI GIOCHINI DX*/
-
-.orange-line_giochi_dx {
-  
-  border: none;
-  
-  height: 3px;
-  
-  margin: 10px 0 20px 0;      /* RMOZIONE DELL'AUTO - MARGINE */
-
-  margin-left: auto;        /* ALLINEA LA LINEA A DESTRA */
-
-  margin-right: 0;           /* FORZIAMO L'ALLINEAMENTO AL MARGINE DESTRO */
-  
-  width: 20%; /* LUNGHEZZA */
-  
-  background: linear-gradient(90deg, #ff9900, #ff6600, #ffaa00);
-  
-  box-shadow: 0 0 15px #ff9900, 0 0 30px #ff6600;
-  
-  border-radius: 3px;
-  
-  animation: orange-glow 3s ease-in-out infinite;
-}
-
-@keyframes orange-glow {            /* EFFETTO NEON PULSANTE */
-  
-  0%, 100% {
     
-    box-shadow: 0 0 10px #ff6600, 0 0 25px #ff9900;
-  }
-  
-  50% {
+    /* CAROSELLO BASE */
     
-    box-shadow: 0 0 25px #ff6600, 0 0 40px #ffaa00;
-  }
-}
-
-
-/* LINEA ARANCIONE SOTTO AI FIGHI GIOCHINI CX*/
-
-.orange-line_giochi_cx {      /* CX = CENTRO */
-  
-  border: none;
-  
-  height: 3px;
-  
-  margin: 10px auto 20px auto;    /* IMPLEMENTAZIONE AUTO - MARGINE, PER METTERE LA LINEA LA CENTRO */
-  
-  width: 20%; /* LUNGHEZZA */
-  
-  background: linear-gradient(90deg, #ff9900, #ff6600, #ffaa00);
-  
-  box-shadow: 0 0 15px #ff9900, 0 0 30px #ff6600;
-  
-  border-radius: 3px;
-  
-  animation: orange-glow 3s ease-in-out infinite;
-}
-
-@keyframes orange-glow {            /* EFFETTO NEON PULSANTE */
-  
-  0%, 100% {
+    .carousel-container {
+      
+      position: relative;
+      
+      max-width: 80%;
+     
+      margin: 40px auto;
+      
+      overflow: hidden;
+      
+      border-radius: 12px;
+    }
     
-    box-shadow: 0 0 10px #ff6600, 0 0 25px #ff9900;
-  }
-  
-  50% {
-    
-    box-shadow: 0 0 25px #ff6600, 0 0 40px #ffaa00;
-  }
-}
+    .carousel-container.vertical { max-width: 40%; }
 
+    .carousel-slide {
+      
+      display: flex;
+      
+      transition: transform 0.5s ease-in-out;
+      
+      width: 100%;
+    }
+    .carousel-slide img {
+      
+      min-width: 100%;
+      
+      max-width: 100%;
+      
+      object-fit: cover;
+      
+      display: block;
+    }
 
 
 .team-card {          /* PER ASSICURARSI CHE LA LINEA STIA ALL'INTERNO DEL QUADRATO */
