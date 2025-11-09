@@ -332,22 +332,13 @@ Franzzinho</a> 🐐 ❗</h1>
     }
   }
 
-  // --- FUNZIONE: FERMA IL CAROSELLO ---
-  function stopCarousel() {
-    clearInterval(interval);
-    isPaused = true;
-    music.pause();
-  }
-
   // --- FUNZIONE: CAMBIA SLIDE ---
   function moveSlide(n) {
     slideIndex += n;
     showSlide();
   }
 
-  // --- EVENTI PULSANTI ---
-  document.getElementById("pauseBtn").addEventListener("click", stopCarousel);
-  document.getElementById("resumeBtn").addEventListener("click", startCarousel);
+   
 
   // --- AVVIO INIZIALE ---
   showSlide();
