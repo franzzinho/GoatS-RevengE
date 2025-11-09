@@ -280,42 +280,53 @@ Franzzinho</a> 🐐 ❗</h1>
 
    
 
-  <!-- AUDIO DI SOTTOFONDO -->
+  <!-- PULSANTE PER ATTIVARE L'AUDIO -->
+<div style="text-align: center; margin: 20px;">
+  <button id="audioButton" style="padding: 10px 20px; background: #ff00ff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+    🎵 ATTIVA AUDIO 🎵
+  </button>
+</div>
+
+<!-- AUDIO -->
 <audio id="carouselMusic" loop>
-  <source src="fein.mp3" type="audio/mpeg">
+  <source src="carosello_about/FEIN_travis_scott.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-// CAROSELLO AUTOMATICO SEMPLIFICATO
 let slideIndex = 0;
 const carousel = document.querySelector(".carousel-slide");
-const slides = document.querySelectorAll(".carousel-slide img");
 const music = document.getElementById("carouselMusic");
+const audioButton = document.getElementById("audioButton");
 
 // Funzione per scorrere le slide
 function moveToNextSlide() {
   slideIndex++;
-  if (slideIndex >= slides.length) slideIndex = 0;
+  const totalSlides = document.querySelectorAll(".carousel-slide img").length;
+  if (slideIndex >= totalSlides) slideIndex = 0;
   carousel.style.transform = `translateX(-${slideIndex * 100}%)`;
 }
 
-// Avvia il carosello automatico
+// Avvia carosello
 function startCarousel() {
-  // Scorrimento automatico ogni 3 secondi
   setInterval(moveToNextSlide, 3000);
-  
-  // Riproduci la musica (con gestione errori)
-  music.play().catch(error => {
-    console.log("Autoplay bloccato dal browser:", error);
-    // Suggerimento per l'utente
-    console.log("Clicca da qualche parte sulla pagina per attivare l'audio");
-  });
 }
 
-// Avvia tutto quando la pagina è caricata
+// Gestione audio
+audioButton.addEventListener('click', function() {
+  music.play().then(() => {
+    console.log("Audio avviato!");
+    audioButton.textContent = "🎵 AUDIO ATTIVO 🎵";
+    audioButton.style.background = "#00ff00";
+  }).catch(error => {
+    console.log("Errore audio:", error);
+    audioButton.textContent = "❌ ERRORE AUDIO";
+    audioButton.style.background = "#ff0000";
+  });
+});
+
+// Avvia carosello immediatamente
 document.addEventListener('DOMContentLoaded', startCarousel);
 </script>
-
 
 
   
