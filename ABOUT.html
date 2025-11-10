@@ -211,79 +211,15 @@ Franzzinho</a> 🐐 ❗</h1>
   
 
   
-  <style>
-    .neon-title.pink {
-
-      text-align: center;
-
-      font-size: 2rem;
-
-      margin-botton: 20px;
+  
       
-      color: #ff00ff;
       
-      text-shadow: 0 0 10px #ff00ff, 0 0 25px #ff00ff;
-      
-      animation: neon-pink 1.5s infinite alternate;
-    }
-    
-
-    @keyframes neon-pink {
-      
-      from { text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff; }
-      
-      to { text-shadow: 0 0 15px #ff00ff, 0 0 35px #cc00ff; }
-    }
-    
-
-    
-    /* CAROSELLO BASE */
-    
-    .carousel-container {
-      
-      position: relative;
-      
-      max-width: 80%;
-     
-      margin: 40px auto;
-      
-      overflow: hidden;
-      
-      border-radius: 12px;
-    }
-    
-    .carousel-container.vertical { max-width: 40%; }
-
-    .carousel-slide {
-      
-      display: flex;
-      
-      transition: transform 0.5s ease-in-out;
-      
-      width: 100%;
-    }
-    .carousel-slide img {
-      
-      min-width: 100%;
-      
-      max-width: 100%;
-      
-      object-fit: cover;
-      
-      display: block;
-    }
-
-  </style>
-
-
-
-
-   
+  
 
   <!-- PULSANTE PER ATTIVARE L'AUDIO -->
 <div style="text-align: center; margin: 20px;">
   <button id="audioButton" style="padding: 10px 20px; background: #ff00ff; color: white; border: none; border-radius: 5px; cursor: pointer;">
-    🎵 ATTIVA AUDIO 🎵
+    ATTIVA MUSICA.
   </button>
 </div>
 
@@ -315,11 +251,11 @@ function startCarousel() {
 audioButton.addEventListener('click', function() {
   music.play().then(() => {
     console.log("Audio avviato!");
-    audioButton.textContent = "🎵 AUDIO ATTIVO 🎵";
+    audioButton.textContent = "MUSICA ATTIVA.";
     audioButton.style.background = "#00ff00";
   }).catch(error => {
     console.log("Errore audio:", error);
-    audioButton.textContent = "❌ ERRORE AUDIO";
+    audioButton.textContent = "❌ ERRORE MUSICA. ❌";
     audioButton.style.background = "#ff0000";
   });
 });
