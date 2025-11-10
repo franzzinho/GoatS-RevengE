@@ -16,7 +16,367 @@ img { max-width: 100%; display: block; border-radius: 12px; }
 a { text-decoration: none; color: inherit; transition: 0.3s; }
 
 
+/* INDEX.HTML */
 
+
+* { margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif; }
+    
+    body { background:#0a0a0a; color:#fff; }
+
+    
+    
+    /* NAVBAR */
+    
+    nav {
+    
+      background: linear-gradient(90deg, #111, #1a1a1a);
+      
+      display: flex;
+      
+      justify-content: space-between;
+      
+      align-items: center;
+      
+      padding: 20px;
+      
+      position: sticky;
+      
+      top: 0;
+      
+      z-index: 1000;
+      
+      box-shadow: 0 0 15px #ffcc00;
+    }
+    
+    nav .logo a {
+    
+      font-size: 1.3rem;
+      
+      font-weight: bold;
+      
+      color: #ffcc00;
+      
+      text-shadow: 0 0 5px #ffcc00, 0 0 15px #ffcc00, 0 0 30px #ffcc00;
+      
+      animation: neon-yellow 1.5s infinite alternate;
+      
+      text-decoration: none;
+    }
+    
+    nav .logo .arrow {
+    
+      font-size: 1.5rem;
+      
+      margin-left: 10px;
+      
+      color: #ff00ff;
+      
+      text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff, 0 0 30px #ff00ff;
+      
+      animation: neon-purple 1.5s infinite alternate;
+    }
+    
+    @keyframes neon-yellow {
+    
+      from { text-shadow: 0 0 5px #ffcc00, 0 0 15px #ffcc00; }
+      
+      to   { text-shadow: 0 0 10px #ffcc00, 0 0 25px #ffcc00, 0 0 40px #ffaa00; }
+    }
+    
+    @keyframes neon-purple {
+    
+      from { text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff; }
+      
+      to   { text-shadow: 0 0 10px #ff00ff, 0 0 25px #ff00ff, 0 0 40px #cc00ff; }
+    }
+
+
+    
+    /* HERO */
+
+header.hero {
+    
+      height:100vh;
+      
+      display:flex;
+      
+      flex-direction:column;
+      
+      justify-content:center;
+      
+      align-items:center;
+      
+      text-align:center;
+      
+      background:#111;
+      
+      position:relative;
+      
+      overflow:hidden;
+    }
+    
+    header.hero h1 {
+    
+      font-size:3.5rem;
+      
+      color:#00e6ff;
+      
+      text-shadow:0 0 15px #00e6ff;
+      
+      margin-bottom:20px;
+    }
+    
+    header.hero p {
+    
+      font-size:1.3rem;
+      
+      font-weight:600;
+      
+      color:#000;
+      
+      background:#FFD700;
+      
+      padding:15px 20px;
+      
+      border-radius:10px;
+      
+      display:inline-block;
+      
+      text-align:center;
+    }
+
+
+.hero-btn {
+    
+      margin-top:30px;
+      
+      padding:15px 35px;
+      
+      font-size:1.2rem;
+      
+      font-weight:bold;
+      
+      border-radius:10px;
+      
+      text-decoration:none;
+      
+      background:#FFD700;
+      
+      color:#111;
+      
+      box-shadow:0 0 20px #FFD700;
+      
+      transition:0.3s;
+    }
+    
+    .hero-btn:hover {      /* STYLE DEDICATO AI PULSANTI */
+    
+      background:#00e6ff;
+      
+      color:#111;      /* COLORE TESTO ALL'INTERNO DEL PULSANTE */
+      
+      box-shadow:0 0 25px #00e6ff;
+      
+      transform:scale(1.05);
+    }
+
+
+    
+    /* INTRO + PANORAMICA */
+    
+    section.intro {
+      
+      padding:100px 20px;
+      
+      text-align:center;
+      
+      max-width:1200px;
+      
+      margin:auto;
+      
+      background:#000;
+    }
+    
+    section.intro h2 {
+    
+      font-size:2.5rem;
+      
+      margin-bottom:20px;
+      
+      color:#ff4500;
+      
+      text-shadow:0 0 12px #ff4500;
+    }
+    
+    section.intro p {
+      
+      font-size:1.2rem;
+      
+      color:#ddd;
+      
+      margin-bottom:50px;
+    }
+    
+    .overview {
+     
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+      
+      gap:30px;
+    }
+    
+    .overview-card {
+    
+      background:#111;
+      
+      padding:40px 20px;
+      
+      border-radius:15px;
+      
+      text-align:center;
+      
+      box-shadow:0 0 15px #222;
+      
+      transition:0.3s;
+    }
+    
+    .overview-card:hover {
+    
+      transform:translateY(-10px) scale(1.02);
+      
+      box-shadow:0 0 25px #ff0000;
+    }
+    
+    .overview-card i {
+    
+      font-size:2.5rem;
+      
+      margin-bottom:15px;
+      
+      color:#00e6ff;
+      
+      text-shadow:0 0 15px #00e6ff;
+    }
+
+
+
+
+
+    .overview-card h3 {   /* STYLE PER LE EMOJI */
+      
+      margin-bottom:10px; 
+      
+      font-size:1.4rem; 
+
+      color: #fff;    /* COLORE BIANCO PER LE EMOJI */
+    }
+    
+    .overview-card p {
+    
+      font-size:0.95rem;
+      color:#bbb;
+      
+      margin-bottom:20px;
+    }
+    
+    .overview-card a {
+    
+      display:inline-block;
+      
+      padding:10px 20px;
+      
+      background:#ffd700;
+      
+      color:#111;
+      
+      font-weight:bold;
+      
+      border-radius:8px;
+      
+      text-decoration:none;
+      
+      transition:0.3s;
+    }
+    
+    .overview-card a:hover {
+      
+      background:#00e6ff;
+    
+      color:#111;
+      
+      box-shadow:0 0 15px #00e6ff;
+    }
+
+
+    .titolo-testo {   /* STYLE PER I TITOLI: about, social, utility, ecc.. */
+      
+  background: linear-gradient(90deg, #00C9A7, #92FE9D);
+  
+ -webkit-background-clip: text;
+ 
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: 0 0 10px #00C9A7;
+  
+  font-weight: bold;
+    }
+    
+
+    
+
+    /* CTA */
+    
+    section.cta {      /*TITOLO CTA */
+      
+      text-align:center;
+      
+      padding:70px 20px;
+      
+      background:#1a1a1a;
+      
+      color:#111;
+    }
+    
+    section.cta h2 {      /*TITOLO CTA */
+    
+      font-size:2rem;
+      
+      margin-bottom:25px;
+      
+      color:#00e6ff;
+      
+      text-shadow:0 0 12px #00e6ff;
+    }
+
+section.cta a {      /* PULSANTI CTA */
+    
+      display:inline-block;
+      
+      padding:15px 30px;
+      
+      background:#ffd700;
+      
+      color:#111;
+      
+      font-weight:bold;
+      
+      border-radius:10px;
+      
+      font-size:1.1rem;
+      
+      text-decoration:none;
+      
+      transition:0.3s;
+    }
+    
+    section.cta a:hover {    /* PULSANTI CTA AL PASSAGGIO DEL MOUSE */
+    
+      background:#00e6ff;
+      
+      color:#111;
+      
+      box-shadow:0 0 20px #00e6ff;
+    }
 
 /* NAVBAR BASE */
 nav {
