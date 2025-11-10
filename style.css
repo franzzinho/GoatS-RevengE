@@ -749,6 +749,23 @@ section h1, section h2 { margin-bottom: 20px; font-weight: bold; } /* GRASSETTO 
   box-shadow: 0 0 25px #ffcc00, 0 0 40px #ff00ff; 
 }
 
+/* ✅ FIX SPAZIO NERO SOTTO IL PLAYER SPOTIFY */
+  
+    .spotify-player iframe {
+      
+     display: block;
+     
+      width: 100%;
+      
+      height: 370px; /* REGOLABILE */
+      
+      border: none;
+      
+      margin: 0;
+      
+      padding: 0;
+    }
+
 .spotify-player {
   
   max-width: 600px;
