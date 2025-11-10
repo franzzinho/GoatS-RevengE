@@ -1,3 +1,203 @@
+/* ------------- PROPRIETÀ COMUNI IN TUTTE LE PAGINE ( o quasi ). ------------- */
+
+
+/* NAVBAR. */
+
+nav 
+
+{
+
+  background: linear-gradient(90deg, #111, #1a1a1a);
+  
+  display: flex;
+  
+  justify-content: space-between;
+  
+  align-items: center;
+  
+  padding: 20px;
+  
+  position: sticky;
+  
+  top: 0;
+  
+  z-index: 1000;
+  
+  box-shadow: 0 0 15px #ffcc00;
+  
+}
+
+
+/* GOATS REVENGE ( nome nella navbar ). */
+
+nav .logo a 
+
+{
+
+  font-size: 1.3rem;
+  
+  font-weight: bold;
+  
+  color: #ffcc00;
+  
+  text-shadow: 0 0 5px #ffcc00, 0 0 15px #ffcc00, 0 0 30px #ffcc00;
+  
+  animation: neon-yellow 1.5s infinite alternate;
+  
+}
+
+
+/* FRECCIA VIOLA ( nella navbar vicino al nome ). */
+
+nav .logo .arrow 
+
+{
+  
+  font-size: 1.5rem;
+  
+  margin-left: 10px;
+  
+  color: #ff00ff;
+  
+  text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff, 0 0 30px #ff00ff;
+  
+  animation: neon-purple 1.5s infinite alternate;
+
+}
+
+
+/* PULSAZIONE NEON ( del nome e della freccia ). */
+
+@keyframes neon-yellow 
+
+{
+  
+  from { text-shadow: 0 0 5px #ffcc00, 0 0 15px #ffcc00; }
+  
+  to { text-shadow: 0 0 10px #ffcc00, 0 0 25px #ffcc00, 0 0 40px #ffaa00; }
+
+}
+
+@keyframes neon-purple 
+
+{
+
+  from { text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff; }
+  
+  to { text-shadow: 0 0 10px #ff00ff, 0 0 25px #ff00ff, 0 0 40px #cc00ff; }
+
+}
+
+
+/* LINEA RGB. */
+
+.neon-line 
+
+{
+      
+      border: none;
+    
+      height: 3px;
+      
+      margin: 50px auto;
+     
+      width: 80%;
+     
+      background: linear-gradient(90deg, red, green, blue, yellow);
+    
+      background-size: 400% 100%;
+     
+      animation: rgb-flow 5s linear infinite;
+    
+      box-shadow: 0 0 20px lime, 0 0 40px cyan;
+   
+}
+
+@keyframes rgb-flow 
+
+{
+      
+      0% {background-position: 0 0;}
+      
+      100% {background-position: 400% 0;}
+  
+}
+
+
+/* LINEA ARANCIONE. */
+
+.orange-line 
+
+{          
+
+  border: none;
+  
+  height: 3px;
+  
+  margin: 10px auto 20px auto;
+  
+  width: 60%; /* LUNGHEZZA. */
+  
+  background: linear-gradient(90deg, #ff9900, #ff6600, #ffaa00);
+  
+  box-shadow: 0 0 15px #ff9900, 0 0 30px #ff6600;
+  
+  border-radius: 3px;
+  
+  animation: orange-glow 3s ease-in-out infinite;
+
+}
+
+@keyframes orange-glow
+
+{            
+  
+  0%, 100% 
+  
+  {
+    
+    box-shadow: 0 0 10px #ff6600, 0 0 25px #ff9900;
+  
+  }
+  
+  50% 
+  
+  {
+    
+    box-shadow: 0 0 25px #ff6600, 0 0 40px #ffaa00;
+
+  }
+}
+
+
+/* FOOTER. */
+
+footer 
+
+{ 
+
+  text-align: center; 
+  
+  padding: 30px;
+  
+  background: linear-gradient(90deg, #111, #1a0033); 
+  
+  margin-top: 50px; 
+  
+  color:#fff; 
+  
+  box-shadow: 0 0 20px #ff00ff; 
+  
+}
+
+footer a { color: #ffcc00; margin: 0 10px; font-weight: bold; } /* GRASSETTO ( per link footer ). */
+
+footer a:hover { color:#ff00ff; }
+
+
+/* ---------------------------------------------------------------- */
+
+
 { margin: 0; padding: 0; box-sizing: border-box; }
 
 body { 
@@ -25,71 +225,7 @@ a { text-decoration: none; color: inherit; transition: 0.3s; }
 
     
     
-    /* NAVBAR */
     
-    nav {
-    
-      background: linear-gradient(90deg, #111, #1a1a1a);
-      
-      display: flex;
-      
-      justify-content: space-between;
-      
-      align-items: center;
-      
-      padding: 20px;
-      
-      position: sticky;
-      
-      top: 0;
-      
-      z-index: 1000;
-      
-      box-shadow: 0 0 15px #ffcc00;
-    }
-    
-    nav .logo a {
-    
-      font-size: 1.3rem;
-      
-      font-weight: bold;
-      
-      color: #ffcc00;
-      
-      text-shadow: 0 0 5px #ffcc00, 0 0 15px #ffcc00, 0 0 30px #ffcc00;
-      
-      animation: neon-yellow 1.5s infinite alternate;
-      
-      text-decoration: none;
-    }
-    
-    nav .logo .arrow {
-    
-      font-size: 1.5rem;
-      
-      margin-left: 10px;
-      
-      color: #ff00ff;
-      
-      text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff, 0 0 30px #ff00ff;
-      
-      animation: neon-purple 1.5s infinite alternate;
-    }
-    
-    @keyframes neon-yellow {
-    
-      from { text-shadow: 0 0 5px #ffcc00, 0 0 15px #ffcc00; }
-      
-      to   { text-shadow: 0 0 10px #ffcc00, 0 0 25px #ffcc00, 0 0 40px #ffaa00; }
-    }
-    
-    @keyframes neon-purple {
-    
-      from { text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff; }
-      
-      to   { text-shadow: 0 0 10px #ff00ff, 0 0 25px #ff00ff, 0 0 40px #cc00ff; }
-    }
-
 
     
     /* HERO */
@@ -377,81 +513,6 @@ section.cta a {      /* PULSANTI CTA */
       
       box-shadow:0 0 20px #00e6ff;
     }
-
-/* NAVBAR BASE */
-nav {
-
-  background: linear-gradient(90deg, #111, #1a1a1a);
-  
-  display: flex;
-  
-  justify-content: space-between;
-  
-  align-items: center;
-  
-  padding: 20px;
-  
-  position: sticky;
-  
-  top: 0;
-  
-  z-index: 1000;
-  
-  box-shadow: 0 0 15px #ffcc00;
-}
-
-
-
-/* NOME: GOATS REVENGE NEON */
-
-nav .logo a {
-
-  font-size: 1.3rem;
-  
-  font-weight: bold;
-  
-  color: #ffcc00;
-  
-  text-shadow: 0 0 5px #ffcc00, 0 0 15px #ffcc00, 0 0 30px #ffcc00;
-  
-  animation: neon-yellow 1.5s infinite alternate;
-}
-
-
-
-/* FRECCIA NEON VIOLA, VICINO AL NOOME: GOATS REVENGE */
-
-nav .logo .arrow {
-  
-  font-size: 1.5rem;
-  
-  margin-left: 10px;
-  
-  color: #ff00ff;
-  
-  text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff, 0 0 30px #ff00ff;
-  
-  animation: neon-purple 1.5s infinite alternate;
-}
-
-
-
-/* Animazioni lampeggio */
-
-@keyframes neon-yellow {
-  
-  from { text-shadow: 0 0 5px #ffcc00, 0 0 15px #ffcc00; }
-  
-  to { text-shadow: 0 0 10px #ffcc00, 0 0 25px #ffcc00, 0 0 40px #ffaa00; }
-}
-
-@keyframes neon-purple {
-
-  from { text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff; }
-  
-  to { text-shadow: 0 0 10px #ff00ff, 0 0 25px #ff00ff, 0 0 40px #cc00ff; }
-}
-
 
 
 /* HERO */
@@ -990,34 +1051,9 @@ section h1, section h2 { margin-bottom: 20px; font-weight: bold; } /* GRASSETTO 
       transform: scale(1.05);
     }
 
-        /* LINEA NEON RGB */
+        
     
-    .neon-line {
-      
-      border: none;
     
-      height: 3px;
-      
-      margin: 50px auto;
-     
-      width: 80%;
-     
-      background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, violet, red);
-    
-      background-size: 400% 100%;
-     
-      animation: rgb-flow 5s linear infinite;
-    
-      box-shadow: 0 0 20px lime, 0 0 40px cyan;
-    }
-
-@keyframes rgb-flow 
-{
-      
-      0% {background-position: 0 0;}
-      
-      100% {background-position: 400% 0;}
-}
 
 
 /* ------------- SOCIAL SECTION ------------- */
@@ -1261,37 +1297,8 @@ section h1, section h2 { margin-bottom: 20px; font-weight: bold; } /* GRASSETTO 
   margin-botton: 20px;
 }
 
-.orange-line {          /* LINEA ARANCIONE SOTTO I TITOLI (📈 MARKETING TEAM 📈, 🎥 CONTENT TEAM 🎥, 🔧 BACK OFFICE TEAM 🔧). */
-  
-  border: none;
-  
-  height: 3px;
-  
-  margin: 10px auto 20px auto;
-  
-  width: 60%; /* LUNGHEZZA */
-  
-  background: linear-gradient(90deg, #ff9900, #ff6600, #ffaa00);
-  
-  box-shadow: 0 0 15px #ff9900, 0 0 30px #ff6600;
-  
-  border-radius: 3px;
-  
-  animation: orange-glow 3s ease-in-out infinite;
-}
 
-@keyframes orange-glow {            /* EFFETTO NEON PULSANTE */
-  
-  0%, 100% {
-    
-    box-shadow: 0 0 10px #ff6600, 0 0 25px #ff9900;
-  }
-  
-  50% {
-    
-    box-shadow: 0 0 25px #ff6600, 0 0 40px #ffaa00;
-  }
-}
+
 
 .team-card {          /* PER ASSICURARSI CHE LA LINEA STIA ALL'INTERNO DEL QUADRATO */
   
@@ -1584,40 +1591,6 @@ section h1, section h2 { margin-bottom: 20px; font-weight: bold; } /* GRASSETTO 
       .video-box, .project-card { width: 80%; }
     }
 
-.orange-line {
-  
-  border: none;
-  
-  height: 3px;
-  
-  margin: 10px auto 20px auto;
-  
-  width: 60%; /* LUNGHEZZA */
-  
-  background: linear-gradient(90deg, #ff9900, #ff6600, #ffaa00);
-  
-  box-shadow: 0 0 15px #ff9900, 0 0 30px #ff6600;
-  
-  border-radius: 3px;
-  
-  animation: orange-glow 3s ease-in-out infinite;
-}
-
-@keyframes orange-glow {            /* EFFETTO NEON PULSANTE */
-  
-  0%, 100% {
-    
-    box-shadow: 0 0 10px #ff6600, 0 0 25px #ff9900;
-  }
-  
-  50% {
-    
-    box-shadow: 0 0 25px #ff6600, 0 0 40px #ffaa00;
-  }
-}
-
-
-
 
 
 .team-card {          /* PER ASSICURARSI CHE LA LINEA STIA ALL'INTERNO DEL QUADRATO */
@@ -1815,26 +1788,3 @@ button:hover {
   margin-bottom: 15px;
   font-size: 22px;
 }
-
-
-
-/* FOOTER */
-
-footer { 
-
-  text-align: center; 
-  
-  padding: 30px;
-  
-  background: linear-gradient(90deg, #111, #1a0033); 
-  
-  margin-top: 50px; 
-  
-  color:#fff; 
-  
-  box-shadow: 0 0 20px #ff00ff; 
-}
-
-footer a { color: #ffcc00; margin: 0 10px; font-weight: bold; } /* GRASSETTO link footer */
-
-footer a:hover { color:#ff00ff; }
