@@ -1,6 +1,32 @@
 /* ------------- PROPRIETÀ COMUNI IN TUTTE LE PAGINE ( o quasi ). ------------- */
 
 
+/* RESET GLOBALE ( per uniformare lo stile nel sito). */
+
+{
+  
+  margin: 0; padding: 0; box-sizing: border-box; }
+
+
+body 
+
+{ 
+
+  font-family: 'Segoe UI', sans-serif; 
+  
+  line-height: 1.6; 
+  
+  color: #fff; 
+  
+  background: #0d0d0d; 
+  
+}
+
+img { max-width: 100%; display: block; border-radius: 12px; }
+
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+
 /* NAVBAR. */
 
 nav 
@@ -198,25 +224,11 @@ footer a:hover { color:#ff00ff; }
 /* ---------------------------------------------------------------- */
 
 
-{ margin: 0; padding: 0; box-sizing: border-box; }
-
-body { 
-
-  font-family: 'Segoe UI', sans-serif; 
-  
-  line-height: 1.6; 
-  
-  color: #fff; 
-  
-  background: #0d0d0d; 
-}
-
-img { max-width: 100%; display: block; border-radius: 12px; }
-
-a { text-decoration: none; color: inherit; transition: 0.3s; }
 
 
-/* INDEX.HTML */
+/* ------------- STYLE SEZIONE: HOME ( index.html ). ------------- */
+
+
 
 
 * { margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif; }
