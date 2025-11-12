@@ -231,18 +231,26 @@ footer a:hover { color:#ff00ff; }
 
 
 
-* { margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif; }
-    
-    body { background:#0a0a0a; color:#fff; }
+* {
+  
+  margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif; 
 
+}
     
-    
-    
+    body 
 
-    
-    /* HERO */
+{
+  
+      background:#0a0a0a; color:#fff;
 
-header.hero {
+}
+
+
+/* HERO ( prima parte in alto ). */
+
+header.hero 
+
+{
     
       height:100vh;
       
@@ -261,9 +269,13 @@ header.hero {
       position:relative;
       
       overflow:hidden;
+  
     }
     
-    header.hero h1 {
+   
+header.hero h1 
+
+{
     
       font-size:3.5rem;
       
@@ -272,9 +284,13 @@ header.hero {
       text-shadow:0 0 15px #00e6ff;
       
       margin-bottom:20px;
+  
     }
     
-    header.hero p {
+    
+header.hero p
+
+{
     
       font-size:1.3rem;
       
@@ -291,10 +307,13 @@ header.hero {
       display:inline-block;
       
       text-align:center;
+  
     }
 
 
-.hero-btn {
+.hero-btn 
+
+{
     
       margin-top:30px;
       
@@ -315,24 +334,32 @@ header.hero {
       box-shadow:0 0 20px #FFD700;
       
       transition:0.3s;
+  
     }
     
-    .hero-btn:hover {      /* STYLE DEDICATO AI PULSANTI */
+
+/* PULSANTI: SCOPRI DI PIÙ ( in panoramica sito ).*/
+
+.hero-btn:hover 
+
+{
     
       background:#00e6ff;
       
-      color:#111;      /* COLORE TESTO ALL'INTERNO DEL PULSANTE */
+      color:#111;  /* COLORE TESTO ( nero ) ALL'INTERNO DEI PULSANTI. */
       
       box-shadow:0 0 25px #00e6ff;
       
       transform:scale(1.05);
+  
     }
 
 
+/* PANORAMICA + CARD. */
     
-    /* INTRO + PANORAMICA */
-    
-    section.intro {
+section.intro 
+
+{
       
       padding:100px 20px;
       
@@ -343,9 +370,13 @@ header.hero {
       margin:auto;
       
       background:#000;
+  
     }
+
     
-    section.intro h2 {
+section.intro h2 
+
+{
     
       font-size:2.5rem;
       
@@ -354,26 +385,39 @@ header.hero {
       color:#ff4500;
       
       text-shadow:0 0 12px #ff4500;
+  
     }
-    
-    section.intro p {
+
+
+section.intro p 
+
+{
       
       font-size:1.2rem;
       
       color:#ddd;
       
       margin-bottom:50px;
+  
     }
-    
-    .overview {
+
+
+    .overview 
+
+{
      
       display:grid;
+  
       grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
       
       gap:30px;
+  
     }
-    
-    .overview-card {
+
+
+    .overview-card 
+
+{
     
       background:#111;
       
@@ -386,9 +430,13 @@ header.hero {
       box-shadow:0 0 15px #222;
       
       transition:0.3s;
+  
     }
+
     
-    .overview-card:hover {
+    .overview-card:hover 
+
+{
     
       transform:translateY(-10px) scale(1.02);
       
