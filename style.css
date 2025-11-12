@@ -224,20 +224,19 @@ footer a:hover { color:#ff00ff; }
 /* ---------------------------------------------------------------- */
 
 
-
-
 /* ------------- STYLE SEZIONE: HOME ( index.html ). ------------- */
 
 
+* 
 
-
-* {
+{
   
   margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif; 
 
 }
-    
-    body 
+
+
+body 
 
 {
   
@@ -270,7 +269,7 @@ header.hero
       
       overflow:hidden;
   
-    }
+}
     
    
 header.hero h1 
@@ -285,7 +284,7 @@ header.hero h1
       
       margin-bottom:20px;
   
-    }
+}
     
     
 header.hero p
@@ -308,7 +307,7 @@ header.hero p
       
       text-align:center;
   
-    }
+}
 
 
 .hero-btn 
@@ -335,7 +334,7 @@ header.hero p
       
       transition:0.3s;
   
-    }
+}
     
 
 /* PULSANTI: SCOPRI DI PIÙ ( in panoramica sito ).*/
@@ -352,7 +351,7 @@ header.hero p
       
       transform:scale(1.05);
   
-    }
+}
 
 
 /* PANORAMICA + CARD. */
@@ -371,7 +370,7 @@ section.intro
       
       background:#000;
   
-    }
+}
 
     
 section.intro h2 
@@ -386,7 +385,7 @@ section.intro h2
       
       text-shadow:0 0 12px #ff4500;
   
-    }
+}
 
 
 section.intro p 
@@ -544,7 +543,7 @@ section.intro p
 }
 
 
-/* CTA. */
+/* CTA ( call to action ) ( spinge l'utente a fare una certa azione, tipo un pulsante ). */
     
 section.cta 
 
@@ -559,8 +558,13 @@ section.cta
       color:#111;
 
 }
-    
-    section.cta h2 {      /*TITOLO CTA */
+
+
+/*TITOLI CTA. */
+
+section.cta h2
+
+{
     
       font-size:2rem;
       
@@ -569,9 +573,15 @@ section.cta
       color:#00e6ff;
       
       text-shadow:0 0 12px #00e6ff;
-    }
+  
+}
 
-section.cta a {      /* PULSANTI CTA */
+
+/* PULSANTI CTA. */
+
+section.cta a 
+
+{      
     
       display:inline-block;
       
@@ -590,16 +600,22 @@ section.cta a {      /* PULSANTI CTA */
       text-decoration:none;
       
       transition:0.3s;
-    }
+
+}
+
+
+/* PULSANTI CTA ( al passaggio del mouse ). */
     
-    section.cta a:hover {    /* PULSANTI CTA AL PASSAGGIO DEL MOUSE */
+section.cta a:hover 
+
+{
     
       background:#00e6ff;
       
       color:#111;
       
       box-shadow:0 0 20px #00e6ff;
-    }
+}
 
 
 /* HERO */
@@ -756,16 +772,10 @@ header.hero p {
   box-shadow: 9px 9px 0 #111;
 }
 
+/* ---------------------------------------------------------------- */
 
 
-
-/* ELENCO SEZIONI */
-
-
-section { padding: 80px 20px; max-width: 1200px; margin: auto; }
-
-section h1, section h2 { margin-bottom: 20px; font-weight: bold; } /* GRASSETTO TITOLI */
-
+/* ------------- STYLE SEZIONE: HOME ( index.html ). ------------- */
 
 
 /* ------------- ABOUT SECTION ------------- */
