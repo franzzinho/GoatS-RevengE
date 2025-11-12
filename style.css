@@ -399,10 +399,10 @@ section.intro p
       
       margin-bottom:50px;
   
-    }
+}
 
 
-    .overview 
+.overview 
 
 {
      
@@ -412,10 +412,10 @@ section.intro p
       
       gap:30px;
   
-    }
+}
 
 
-    .overview-card 
+.overview-card 
 
 {
     
@@ -431,19 +431,23 @@ section.intro p
       
       transition:0.3s;
   
-    }
+}
 
     
-    .overview-card:hover 
+.overview-card:hover 
 
 {
     
       transform:translateY(-10px) scale(1.02);
       
       box-shadow:0 0 25px #ff0000;
-    }
+  
+ }
     
-    .overview-card i {
+
+.overview-card i 
+
+{
     
       font-size:2.5rem;
       
@@ -452,30 +456,41 @@ section.intro p
       color:#00e6ff;
       
       text-shadow:0 0 15px #00e6ff;
-    }
+  
+}
 
 
+/* EMOJI ( nelle card ). */
 
+.overview-card h3 
 
-
-    .overview-card h3 {   /* STYLE PER LE EMOJI */
+{
       
       margin-bottom:10px; 
       
       font-size:1.4rem; 
 
-      color: #fff;    /* COLORE BIANCO PER LE EMOJI */
-    }
+      color: #fff; /* COLORE BIANCO. */
     
-    .overview-card p {
+}
+
+
+.overview-card p 
+
+{
     
       font-size:0.95rem;
+  
       color:#bbb;
       
       margin-bottom:20px;
-    }
-    
-    .overview-card a {
+  
+}
+
+
+.overview-card a 
+
+{
     
       display:inline-block;
       
@@ -492,19 +507,29 @@ section.intro p
       text-decoration:none;
       
       transition:0.3s;
-    }
+  
     
-    .overview-card a:hover {
+}
+
+    
+.overview-card a:hover
+
+{
       
       background:#00e6ff;
     
       color:#111;
       
       box-shadow:0 0 15px #00e6ff;
-    }
+  
+}
 
 
-    .titolo-testo {   /* STYLE PER I TITOLI: about, social, utility, ecc.. */
+/* TITOLI: about, social, utility, ecc.. ( nelle card ). */
+
+.titolo-testo 
+
+{
       
   background: linear-gradient(90deg, #00C9A7, #92FE9D);
   
@@ -515,14 +540,15 @@ section.intro p
   text-shadow: 0 0 10px #00C9A7;
   
   font-weight: bold;
-    }
-    
+  
+}
 
-    
 
-    /* CTA */
+/* CTA. */
     
-    section.cta {      /*TITOLO CTA */
+section.cta 
+
+{
       
       text-align:center;
       
@@ -531,7 +557,8 @@ section.intro p
       background:#1a1a1a;
       
       color:#111;
-    }
+
+}
     
     section.cta h2 {      /*TITOLO CTA */
     
@@ -577,7 +604,9 @@ section.cta a {      /* PULSANTI CTA */
 
 /* HERO */
 
-header.hero {
+header.hero 
+
+{
 
   height: 100vh;
   
