@@ -1,11 +1,13 @@
 /* ------------- PROPRIETÀ COMUNI IN TUTTE LE PAGINE ( o quasi ). ------------- */
 
 
-/* RESET GLOBALE ( per uniformare lo stile nel sito). */
+/* RESET GLOBALE DEL SITO ( per uniformare lo stile nel sito ). */
 
 {
   
-  margin: 0; padding: 0; box-sizing: border-box; }
+  margin: 0; padding: 0; box-sizing: border-box; 
+
+}
 
 
 body 
@@ -22,9 +24,57 @@ body
   
 }
 
-img { max-width: 100%; display: block; border-radius: 12px; }
 
-a { text-decoration: none; color: inherit; transition: 0.3s; }
+img 
+
+{ 
+  
+  max-width: 100%; 
+  
+  display: block; 
+  
+  border-radius: 12px; 
+
+}
+
+
+a 
+
+{ 
+  
+  text-decoration: none; 
+  
+  color: inherit; 
+  
+  transition: 0.3s; 
+
+}
+
+
+/* ELENCO SEZIONI. */
+
+section 
+
+{ 
+  
+  padding: 80px 20px; 
+  
+  max-width: 1200px; 
+  
+  margin: auto; 
+
+}
+
+
+section h1, section h2 
+
+{ 
+  
+  margin-bottom: 20px; 
+  
+  font-weight: bold; 
+
+}
 
 
 /* NAVBAR. */
