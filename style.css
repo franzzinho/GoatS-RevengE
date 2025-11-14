@@ -862,6 +862,7 @@ section.cta a:hover
   
 }
 
+
 .about img { flex: 1 1 400px; border-radius: 20px; box-shadow: 0 0 20px #ff00ff; }
 
 .about div { flex: 1 1 500px; }
@@ -869,8 +870,7 @@ section.cta a:hover
 .about ul { list-style: none; margin-top: 15px; }
 
 
-
-/* STYLE PER LA SCRITTA: 🔞 FRANZZINHO 🔞 */
+/* SCRITTA: 🔞 FRANZZINHO 🔞 ( nel carosello ).*/
 
 .neon-title.pink 
 
@@ -890,8 +890,7 @@ section.cta a:hover
     
 }
     
-
-    @keyframes neon-pink 
+@keyframes neon-pink 
 
 {
       
@@ -902,10 +901,10 @@ section.cta a:hover
 }
     
 
+/* CAROSELLO. */
     
-    /* STYLE PER IL CAROSELLO */
-    
-    .carousel-container 
+.carousel-container
+
 {
       
       position: relative;
@@ -919,10 +918,13 @@ section.cta a:hover
       border-radius: 12px;
    
 }
-    
-    .carousel-container.vertical { max-width: 40%; }
 
-    .carousel-slide 
+
+.carousel-container.vertical { max-width: 40%; }
+
+
+.carousel-slide
+
 {
       
       display: flex;
@@ -934,7 +936,7 @@ section.cta a:hover
 }
 
 
-    .carousel-slide img 
+.carousel-slide img 
 
 {
       
@@ -949,10 +951,10 @@ section.cta a:hover
 }
 
 
+/* ---------------------------------------------------------------- */
 
 
-
-/* ------------- UTILITY SECTION ------------- */
+/* ------------- STYLE SEZIONE: UTILITY ( UTILITY.html ). ------------- */
 
 
 .services-section 
