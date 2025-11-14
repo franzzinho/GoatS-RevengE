@@ -889,7 +889,7 @@ section.cta a:hover
       animation: neon-pink 1.5s infinite alternate;
     
 }
-    
+
 @keyframes neon-pink 
 
 {
@@ -899,7 +899,7 @@ section.cta a:hover
       to { text-shadow: 0 0 15px #ff00ff, 0 0 35px #cc00ff; }
     
 }
-    
+
 
 /* CAROSELLO. */
     
@@ -920,7 +920,13 @@ section.cta a:hover
 }
 
 
-.carousel-container.vertical { max-width: 40%; }
+.carousel-container.vertical 
+
+{ 
+  
+  max-width: 40%; 
+
+}
 
 
 .carousel-slide
@@ -971,9 +977,11 @@ section.cta a:hover
 
 
 
-/* TITOLI CON EFFETTO NEON */
+/* TITOLI ( Dj Services, Beat Production, Social Content ) NEON. */
 
-.services-title {
+.services-title 
+
+{
 
   font-size: 2.5rem;
   
@@ -985,19 +993,22 @@ section.cta a:hover
   
   font-family: 'Segoe UI', sans-serif;
   
-  font-weight: bold;         /* GRASSETTO */
+  font-weight: bold;
   
   text-shadow: 0 0 10px #ff00ff, 0 0 20px #ffcc00, 0 0 30px #ff00ff;
   
   animation: neon-flicker 2s infinite alternate;
   
   position: relative;
+  
 }
 
 
-/* LINEA DIVISORIA TRA I TITOLI */
+/* LINEA ( gradient pink - orange ) DIVISORIA TRA I TITOLI. */
 
-.services-title::after {
+.services-title::after 
+
+{
 
   content: "";
   
@@ -1014,33 +1025,43 @@ section.cta a:hover
   border-radius: 10px;
   
   box-shadow: 0 0 10px #ff00ff;
+  
 }
 
 
-/* EFFETTO FLICKER NEON */
+/* EFFETTO FLICKER TITOLI. */
 
-@keyframes neon-flicker {
+@keyframes neon-flicker 
 
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+{
+
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% 
+  
+  {
   
     text-shadow: 0 0 5px #ff00ff, 0 0 10px #ffcc00, 0 0 20px #ff00ff;
     
     opacity: 1;
+    
   }
   
-  20%, 24%, 55% {
+  20%, 24%, 55% 
+  
+  {
     
     text-shadow: none;
   
     opacity: 0.6;
+    
   }
-}
+  }
 
 
+/* SERVIZI. */
 
-/* GRIGLIA SERVIZI */
+.services 
 
-.services { 
+{ 
 
   display: grid; 
   
@@ -1049,13 +1070,13 @@ section.cta a:hover
   gap: 30px; 
   
   margin-top: 30px;
+  
 }
 
 
+.service 
 
-/* CARD */
-
-.service { 
+{ 
 
   background: #111;
   
@@ -1072,25 +1093,36 @@ section.cta a:hover
   transition: transform 0.3s, box-shadow 0.3s; 
   
   border: 2px solid #6600ff;
+  
 }
 
-.service:hover { 
+
+.service:hover 
+
+{ 
 
   transform: translateY(-10px) scale(1.03); 
   
   box-shadow: 0 0 30px #ff00ff, 0 0 50px #ffcc00;
 }
 
-.service img {
+
+.service img 
+
+{
 
   border-radius: 15px;
   
   margin-bottom: 15px;
   
   box-shadow: 0 0 15px #000;
+  
 }
 
-.service h3 {
+
+.service h3 
+
+{
 
   color: #ffcc00;
   
@@ -1098,23 +1130,29 @@ section.cta a:hover
   
   font-size: 1.4rem;
   
-  font-weight: bold; /* GRASSETTO */
+  font-weight: bold;
   
   text-shadow: 0 0 10px #ff00ff;
+  
 }
 
-.service p {
+
+.service p 
+
+{
 
   font-size: 1rem;
   
   margin-bottom: 20px;
+  
 }
 
 
+/* PULSANTI ( scopri di più ) NEON. */
 
-/* PULSANTI NEON */
+.service-btn 
 
-.service-btn {
+{
   
   display: inline-block;
   
@@ -1133,49 +1171,13 @@ section.cta a:hover
   box-shadow: 0 0 15px #ff00ff, 0 0 25px #ffcc00;
   
   transition: 0.3s;
+  
 }
 
-.service-btn:hover {
-  
-  background: #ff7300;
-  
-  color: #000;
-  
-  box-shadow: 0 0 20px #ffcc00, 0 0 40px #ff00ff;
-  
-  transform: scale(1.05);
-}
 
-/* TITOLI NEON */
-    
-    .services-title {
-      
-      text-align: center;
-      
-      font-size: 2.5rem;
-      
-      
-      margin: 40px 0 20px;
-      
-      color: #fff;
-      
-      text-shadow: 0 0 5px #00eaff, 0 0 15px #00eaff, 0 0 25px #6f00ff;
-     
-      animation: neonFlash 1.5s infinite alternate;
-    }
+.service-btn 
 
-    @keyframes neonFlash {
-    
-      from { text-shadow: 0 0 5px #00eaff, 0 0 15px #00eaff, 0 0 25px #6f00ff; }
-      
-      to   { text-shadow: 0 0 10px #6f00ff, 0 0 20px #6f00ff, 0 0 30px #00eaff; }
-    }
-
-
-    
-    /* PULSANTI */
-    
-    .service-btn {
+{
     
       display: inline-block;
       
@@ -1200,16 +1202,78 @@ section.cta a:hover
       transition: 0.3s;
   
       box-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff;
-    }
+  
+}
 
-    .service-btn:hover {
+
+.service-btn:hover 
+
+{
+  
+  background: #ff7300;
+  
+  color: #000;
+  
+  box-shadow: 0 0 20px #ffcc00, 0 0 40px #ff00ff;
+  
+  transform: scale(1.05);
+  
+}
+
+
+.service-btn:hover
+
+{
    
       background: #ff7300;
       
       box-shadow: 0 0 15px #ff7300, 0 0 30px #ff7300;
     
       transform: scale(1.05);
-    }
+  
+}
+
+
+.services-title 
+
+{
+      
+      text-align: center;
+      
+      font-size: 2.5rem;
+      
+      
+      margin: 40px 0 20px;
+      
+      color: #fff;
+      
+      text-shadow: 0 0 5px #00eaff, 0 0 15px #00eaff, 0 0 25px #6f00ff;
+     
+      animation: neonFlash 1.5s infinite alternate;
+  
+}
+
+
+@keyframes neonFlash 
+
+{
+    
+      from { text-shadow: 0 0 5px #00eaff, 0 0 15px #00eaff, 0 0 25px #6f00ff; }
+      
+      to   { text-shadow: 0 0 10px #6f00ff, 0 0 20px #6f00ff, 0 0 30px #00eaff; }
+  
+}
+
+
+    
+
+
+
+
+
+
+
+
 
         
     
