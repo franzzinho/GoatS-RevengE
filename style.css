@@ -2146,3 +2146,115 @@ section.cta a:hover
 }
     
 }
+
+
+
+
+
+/* ---------------------------------------------------------------- */
+
+
+/* ------------- STYLE SEZIONE: TERMINI ( TERMINI.html ). ------------- */
+
+.form-group 
+
+{
+            
+    margin-bottom: 15px;
+        
+}
+
+
+/* MESSAGGIO DI COMPILAZIONE ( obbligatoria ). */
+
+.required 
+
+{
+        
+    color: red;
+        
+}
+
+        
+button 
+
+{
+            
+    background-color: #fad900;
+            
+    color: black;
+            
+    padding: 10px 20px;
+            
+    border: none;
+            
+    border-radius: 4px;
+            
+    cursor: pointer;
+            
+    font-size: 16px;
+              
+    transition: none;
+              
+    box-shadow: none;
+              
+    outline: none;
+
+}
+
+        
+button:hover 
+
+{
+            
+    background-color: #fad900 !important;
+              
+    color: black !important;
+              
+    box-shadow: none !important;
+              
+    outline: none !important;
+              
+    border: none !important;
+              
+    transform: none !important;
+              
+    filter: none !important;
+  
+}
+    
+
+/* BOX CONTENENTE I TERMINI E LE CONDIZIONI ( del sito ). */  
+
+.terms-box 
+
+{
+            
+    border: 15px solid #ddd;
+            
+    padding: 15px;
+           
+    margin: 15px 0;
+            
+    max-height: 200px;
+            
+    overflow-y: auto;
+        
+}
+
+
+/* PULSANTE INVIA ( input ) . */     
+
+input[type="checkbox"] 
+    
+{
+            
+    width: 25px;   /* LARGHEZZA. */
+            
+    height: 25px;  /* ALTEZZA. */
+            
+    margin-right: 10px;
+            
+    transform: scale(1.5);   /* SCALA L'ELEMENTO. */
+    
+}
