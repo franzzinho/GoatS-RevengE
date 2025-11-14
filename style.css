@@ -1654,17 +1654,6 @@ section.cta a:hover
   box-shadow: 0 0 10px #ff00ff;
   
 }
-
-
-.team-card 
-
-{         
-  
-  position: relative;     /* PER ASSICURARSI CHE LA MINI LINEA STIA ALL'INTERNO DEL QUADRATO. */
-  
-  overflow: hidden;
-  
-} 
       
       
 /* PULSANTI. */
@@ -1710,7 +1699,18 @@ section.cta a:hover
 
       
 /* CARD ( ruoli ). */
-      
+
+.team-card 
+
+{         
+  
+  position: relative;     /* PER ASSICURARSI CHE LA MINI LINEA STIA ALL'INTERNO DEL QUADRATO. */
+  
+  overflow: hidden;
+  
+} 
+
+
 .team-cards 
 
 { 
@@ -1804,29 +1804,27 @@ section.cta a:hover
 {
     
     flex-direction:column;
+  
     align-items:center;
   
 } 
   
 
-.team-card
+  .team-card
   
 {
     width:80%;
   
 } 
+  
 }
 
 
+/* ---------------------------------------------------------------- */
 
 
+/* ------------- STYLE SEZIONE: COMING SOON ( COMING SOON.html ). ------------- */
 
-
-/* ------------------------/
-
-
-/* COMING SOON SECTION */
-    
     .coming-soon {
       
       padding: 100px 20px;
