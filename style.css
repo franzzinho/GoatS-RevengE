@@ -312,7 +312,7 @@ header.hero
       
       text-align:center;
       
-      background:#111; /*radial-gradient(circle at top left, #ff0066, #ffcc00, #00e6ff).*/
+      background:radial-gradient(circle at top left, #ff0066, #ffcc00, #00e6ff); /* OPPURE: #111. */
       
       position:relative;
       
