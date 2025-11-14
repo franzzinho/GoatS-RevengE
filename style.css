@@ -1433,7 +1433,7 @@ section.cta a:hover
 }
 
 
-/* ✅ FIX ( spazio nero ) PLAYER SPOTIFY. ✅ */
+/* ✅ FIX ( spazio nero ) PLAYER SPOTIFY ✅. */
   
 .spotify-player iframe 
 
@@ -1465,15 +1465,14 @@ section.cta a:hover
 }
 
 
+/* ---------------------------------------------------------------- */
 
 
+/* ------------- STYLE SEZIONE: VIDEO IDEAS ( VIDEO IDEAS.html ). ------------- */
 
+.contact 
 
-/*-----------------------------------------
-
-/* VIDEO IDEAS SECTION */
-
-.contact { 
+{ 
 
   background: linear-gradient(135deg, #001a33, #000); 
   
@@ -1482,11 +1481,28 @@ section.cta a:hover
   border-radius: 20px; 
   
   box-shadow: 0 0 25px #00ccff; 
+  
 }
 
-.contact form { display: grid; gap: 20px; max-width: 600px; margin: auto; }
 
-.contact input, .contact textarea { 
+.contact form
+
+{ 
+  
+  display: grid; 
+  
+  gap: 20px; 
+  
+  max-width: 600px; 
+  
+  margin: auto; 
+  
+}
+
+
+.contact input, .contact textarea 
+
+{ 
 
   padding: 12px; 
   
@@ -1499,9 +1515,13 @@ section.cta a:hover
   color: #fff; 
   
   box-shadow: 0 0 10px #00ccff; 
+  
 }
 
-.contact button { 
+
+.contact button 
+
+{ 
 
   padding: 15px; 
   
@@ -1516,14 +1536,22 @@ section.cta a:hover
   font-weight: bold; 
   
   cursor: pointer; 
+  
 }
 
-.contact button:hover { background: #0099cc; }
+
+.contact button:hover 
+
+{ 
+  
+  background: #0099cc; 
+
+}
 
 
 
 
-/* TEAM SECTION *    +    /* LINEA DIVISORIA TRA I TITOLI */
+/* TEAM SECTION */
 
 .team-title::after {
 
