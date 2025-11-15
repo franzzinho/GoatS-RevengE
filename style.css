@@ -1,6 +1,3 @@
-/* ------------- PROPRIETÀ COMUNI IN TUTTE LE PAGINE ( o quasi ). ------------- */
-
-
 /* RESET GLOBALE DEL SITO ( per uniformare lo stile nel sito ). */
 
 {
@@ -50,6 +47,14 @@ a
 
 }
 
+
+
+
+
+/* ---------------------------------------------------------------- */
+
+
+/* ------------- PROPRIETÀ COMUNI IN TUTTE LE PAGINE ( o quasi ). ------------- */
 
 /* ELENCO SEZIONI. */
 
@@ -269,6 +274,9 @@ footer
 footer a { color: #ffcc00; margin: 0 10px; font-weight: bold; } /* GRASSETTO ( per link footer ). */
 
 footer a:hover { color:#ff00ff; }
+
+
+
 
 
 /* ---------------------------------------------------------------- */
