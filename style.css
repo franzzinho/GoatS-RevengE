@@ -2267,20 +2267,21 @@ input[type="checkbox"]
 
 
 /* ------------- STYLE SEZIONE: SEARCH ( search_function / SEARCH.html ). ------------- */
-
-
-
-/* === NEON EFFECTS === */
     
-    @keyframes neonPulse {
+@keyframes neonPulse 
+
+{
     
       0%, 100% { box-shadow: 0 0 10px #00ff91, inset 0 0 5px #00ff91; }
       
       50% { box-shadow: 0 0 20px #00ff91, inset 0 0 10px #00ff91; }
-    }
+    
+}
 
+   
+body 
 
-    body {
+{
       
       background-color: #0b0b0b;
       
@@ -2293,89 +2294,33 @@ input[type="checkbox"]
       padding: 0;
 
       box-sizing: border-box;
-    }
+    
+}
+
+
+
+
 
 
     
-    /* NAVBAR */
+/* CASELLA DI RICERCA. */
     
-    nav {
-    
-      background: linear-gradient(90deg, #111, #1a1a1a);
-      
-      display: flex;
-      
-      justify-content: space-between;
-      
-      align-items: center;
-      
-      padding: 20px;
-      
-      position: sticky;
-      
-      top: 0;
-      
-      z-index: 1000;
-      
-      box-shadow: 0 0 15px #ffcc00;
-    }
-    
-    nav .logo a {
-    
-      font-size: 1.3rem;
-      
-      font-weight: bold;
-      
-      color: #ffcc00;
-      
-      text-shadow: 0 0 5px #ffcc00, 0 0 15px #ffcc00, 0 0 30px #ffcc00;
-      
-      animation: neon-yellow 1.5s infinite alternate;
-      
-      text-decoration: none;
-    }
-    
-    nav .logo .arrow {
-    
-      font-size: 1.5rem;
-      
-      margin-left: 10px;
-      
-      color: #ff00ff;
-      
-      text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff, 0 0 30px #ff00ff;
-      
-      animation: neon-purple 1.5s infinite alternate;
-    }
-    
-    @keyframes neon-yellow {
-    
-      from { text-shadow: 0 0 5px #ffcc00, 0 0 15px #ffcc00; }
-      
-      to   { text-shadow: 0 0 10px #ffcc00, 0 0 25px #ffcc00, 0 0 40px #ffaa00; }
-    }
-    
-    @keyframes neon-purple {
-    
-      from { text-shadow: 0 0 5px #ff00ff, 0 0 15px #ff00ff; }
-      
-      to   { text-shadow: 0 0 10px #ff00ff, 0 0 25px #ff00ff, 0 0 40px #cc00ff; }
-    }
+.search-bar 
 
-
-    
-    /* === SEARCH BAR === */
-    
-    .search-bar {
+{
    
       display: flex;
       
       align-items: center;
       
       gap: 8px;
-    }
+    
+}
 
-    #searchQuery {
+    
+#searchQuery 
+
+{
       
       background-color: transparent;
       
@@ -2394,14 +2339,22 @@ input[type="checkbox"]
       text-shadow: 0 0 10px #00ff91;
       
       animation: neonPulse 2s infinite alternate;
-    }
+    
+}
 
-    #searchQuery::placeholder {
+    
+#searchQuery::placeholder 
+
+{
      
       color: #aaa;
-    }
+    
+}
 
-    button {
+    
+button 
+
+{
       
       background: #00ff91;
       
@@ -2420,19 +2373,26 @@ input[type="checkbox"]
       box-shadow: 0 0 10px #00ff91;
       
       transition: 0.3s;
-    }
+    
+}
 
-    button:hover {
+    
+button:hover 
+
+{
       
       box-shadow: 0 0 20px #00ff91, inset 0 0 10px #00ff91;
       
       transform: scale(1.05);
-    }
-
-
     
-    /* === PAGE HEADER === */
-    h1 {
+}
+
+   
+/* INTESTAZIONE PAGINA ( sezione situata nella parte superiore della pagina ). */
+    
+h1 
+
+{
     
       text-shadow: 0 0 15px #00ff91;
       
@@ -2441,18 +2401,26 @@ input[type="checkbox"]
       font-size: 28px;
       
       animation: neonPulse 2s infinite alternate;
-    }
+    
+}
 
-    #results-count {
+    
+#results-count 
+
+{
       
       color: #aaa;
       
       margin-bottom: 25px;
-    }
+    
+}
 
     
-    /* === RESULTS BOX === */
-    .result {
+/* RISULTATI. */
+    
+.result 
+
+{
     
       background: rgba(0, 255, 145, 0.05);
       
@@ -2469,16 +2437,24 @@ input[type="checkbox"]
       transition: 0.3s;
       
       position: relative;
-    }
+    
+}
 
-    .result:hover {
+    
+.result:hover 
+
+{
       
       transform: scale(1.02);
       
       box-shadow: 0 0 20px #00ff9160;
-    }
+    
+}
 
-    .result::after {
+    
+.result::after 
+
+{
       
       content: "";
       
@@ -2495,30 +2471,49 @@ input[type="checkbox"]
       background: linear-gradient(90deg, transparent, #00ff91, transparent);
       
       box-shadow: 0 0 10px #00ff91;
-    }
+    
+}
 
-    .result h3 a {
+    
+.result h3 a 
+
+{
       
       color: #00ff91;
       
       text-decoration: none;
-    }
+    
+}
 
-    /* === HIGHLIGHTED WORD === */
-    mark {
+    
+/* PAROLE SOTTOLINEATE. */
+
+mark 
+
+{
       background: #00ff91;
+  
       color: #000;
+  
       font-weight: bold;
+  
       border-radius: 3px;
+  
       padding: 1px 3px;
+  
       text-decoration: underline;
-    }
+    
+}
 
-    .snippet {
+    
+.snippet 
+
+{
       
       color: #fff;
       
       margin-top: 10px;
       
       line-height: 1.4;
-    }
+    
+}
