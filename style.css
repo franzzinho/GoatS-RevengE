@@ -2298,11 +2298,6 @@ body
 }
 
 
-
-
-
-
-    
 /* CASELLA DI RICERCA. */
     
 .search-bar 
@@ -2491,6 +2486,7 @@ h1
 mark 
 
 {
+  
       background: #00ff91;
   
       color: #000;
