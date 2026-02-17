@@ -17,46 +17,35 @@
 </head>
 
 <body>
-  
+
   
   <!-- NAVBAR -->
-  
   <nav class="navbar">
-    
     <div class="logo">
-      
       <a href="index.html">🐐 GoatS RevengE 🧠</a>
-      
       <span class="arrow">⬅️</span>
-      
     </div>
-    
     <ul></ul>
-    
   </nav>
+
   
-  <!-- ABOUT STORY -->
-  
+  <!-- ABOUT -->
   <section class="about">
-    
     <div class="about-wrap">
-      
       <div class="about-card">
-        
         <ul class="about-list">
           
           <li>
             <div>
               <h3>• Il Gaming.</h3>
               <p>
-                <br><br>
+                <br>
                 Franzzinho, fin da piccolo coltiva la passione per i videogiochi e ( finalmente dopo tanta attesa ) all'età di 10 anni riceve in regalo ( da suo zio ) una Nintendo Switch.
                 <br>
                 Da allora decide di iniziare a fare video ( principalmente di Fortnite ) su YouTube, condividendo con tutti la sua passione e sperando un giorno di diventare famoso.
               </p>
             </div>
           </li>
-          
 
         <li>
             <div>
@@ -100,16 +89,13 @@
             </div>
           </li>
         </ul>
-        
       </div>
-      
     </div>
-    
   </section>
+
   
-  
+  <!--- TITOLO NEON: Franzzinho --->
   <section class="about-showcase">
-    
     <h2 class="neon-title pink">
       <a href="https://www.instagram.com/franzzinho.zbb/" target="_blank">
         🔞  Franzzinho  🔞.
@@ -119,9 +105,7 @@
   
   
   <!-- CONTENITORE CAROSELLO -->  
-  
   <div class="carousel-container">
-    
     <div class="carousel-slide">
       
       <img src="carosello_about/BABY.jpg"  alt="1">
@@ -149,109 +133,97 @@
       <img src="carosello_about/ZBABY 11.JPG" alt="23">
       
     </div>
-    
   </div>
   
   
-  <!-- PULSANTE PER ATTIVARE L'AUDIO -->
-  
+  <!-- PULSANTE: ATTIVA MUSICA -->
   <div style="text-align: center; margin: 20px;">
     
     <button id="audioButton" style="padding: 10px 20px; background: #ff00ff; color: white; border: none; border-radius: 5px; cursor: pointer;">
       ATTIVA MUSICA.
     </button>
-    
   </div>
   
   
-  <!-- AUDIO -->
-  
+  <!-- MUSICA-->
   <audio id="carouselMusic" loop>
     <source src="carosello_about/fein.mp3" type="audio/mpeg">
   </audio>
   
-  
+  <!--- SCRIPT CAROSELLO --->
   <script>
   let slideIndex = 0;
   const carousel = document.querySelector(".carousel-slide");
   const music = document.getElementById("carouselMusic");
   const audioButton = document.getElementById("audioButton");
 
-  // Funzione per scorrere le slide
-  function moveToNextSlide() {
+  //SCORRI FOTO
+  function moveToNextSlide()
+  {
     slideIndex++;
     const totalSlides = document.querySelectorAll(".carousel-slide img").length;
-    if (slideIndex >= totalSlides) slideIndex = 0;
+    if (slideIndex >= totalSlides)
+    {  
+        slideIndex = 0;
+    }
     carousel.style.transform = `translateX(-${slideIndex * 100}%)`;
   }
 
-  // Avvia carosello
-  function startCarousel() {
+  //AVVIA CAROSELLO
+  function startCarousel()
+  {
     setInterval(moveToNextSlide, 3000);
   }
 
-  // Gestione audio
-  audioButton.addEventListener('click', function() {
-    music.play().then(() => {
-      console.log("Audio avviato!");
+  //GESTIONE MUSICA
+  audioButton.addEventListener('click', function()
+  {
+    music.play().then(() => 
+  {
+      console.log("MUSICA PARTITA!");
       audioButton.textContent = "MUSICA ATTIVA.";
       audioButton.style.background = "#00ff00";
-    }).catch(error => {
+    
+    }).catch(error => 
+   {
       console.log("Errore audio:", error);
       audioButton.textContent = "❌ ERRORE MUSICA. ❌";
       audioButton.style.background = "#ff0000";
     });
   });
 
-  // Avvia carosello immediatamente
+  //AVVIA CAROSELLO, ALL'APERTURA DELLA PAGINA
   document.addEventListener('DOMContentLoaded', startCarousel);
   </script>
   
   
   <!-- FOOTER. -->
-  
   <footer style="text-align:center; padding:30px; background:#111; margin-top:50px; color:#fff;">
     
-    <p><a href="TERMINI.html" target="_blank" style="color:00e6ff;">Tutti i diritti riservati.</a> |
+    <p>
       
+      <a href="TERMINI.html" target="_blank" style="color:00e6ff;">Tutti i diritti riservati.</a> |
       <a href="TERMINI.html" target="_blank" style="color:00e6ff;">Termini e condizioni.</a> |
-      
-      <a href="TERMINI.html" target="_blank" style="color:00e6ff;">Cookie policy.</a> |
-      
-      <a href="" target="_blank" style="color:00e6ff;">Newsletter.</a></p>
-    
+      <a href="TERMINI.html" target="_blank" style="color:00e6ff;">Cookie policy.</a>
     
     <br>
     <br>
-    
-    
+      
     <hr class="orange-line">
     
-    
     <br>
     <br>
-    
     
     <p>
       
       <a href="https://www.instagram.com/franzzinho.zbb/" target="_blank" style="color:#fc60f0;">Instagram</a> |
-      
       <a href="https://www.tiktok.com/@franzzinho.zbb?_t=ZN-8z5d1Qutkfe&_r=1" target="_blank" style="color:#64ebf5;">Tik - Tok</a> |
-      
       <a href="https://youtube.com/@franzzinho?si=cJiskLlGq_kUUDew" target="_blank" style="color:#02fa7e;">Youtube</a> |
-      
       <a href="https://www.twitch.tv/franzzinho_GT" target="_blank" style="color:#54b5ff;">Twitch</a> |
-      
       <a href="https://discord.gg/xBj5wgMZH9" target="_blank" style="color:#f982ff;">Discord</a> |
-      
       <a href="https://lnk.bio/franzzinho" target="_blank" style="color:#fae22a;">Followpage</a>
       
     </p>
-    
   </footer>
-  
-  
 </body>
-  
   </html>
-  
