@@ -2057,6 +2057,313 @@ section.cta a:hover
   line-height: 1.4;
 }
 
+/* ===========================
+   UTILITY PAGE - GOAT STYLE
+   =========================== */
+
+
+.utility-hero{
+  padding: 90px 20px 70px;
+  text-align: center;
+  background: radial-gradient(circle at top, rgba(176,38,255,0.25), transparent 60%),
+              radial-gradient(circle at bottom, rgba(0,230,255,0.12), transparent 55%),
+              linear-gradient(180deg, #07070a 0%, #0b0b12 50%, #07070a 100%);
+  border-bottom: 2px solid rgba(176,38,255,0.25);
+}
+
+
+.utility-hero h1{
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(176,38,255,0.6), 0 0 30px rgba(127,0,255,0.45);
+  margin-bottom: 18px;
+}
+
+
+.utility-hero p{
+  max-width: 850px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.82);
+}
+
+
+.utility-hero-btn{
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 28px;
+  padding: 14px 22px;
+  border-radius: 16px;
+  font-weight: 800;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(90deg, #B026FF, #7F00FF);
+  box-shadow: 0 0 12px rgba(176,38,255,0.55), 0 0 30px rgba(127,0,255,0.35);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+
+.utility-hero-btn:hover{
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 18px rgba(176,38,255,0.75), 0 0 45px rgba(127,0,255,0.55);
+}
+
+
+
+/* ===========================
+   UTILITY SECTION LAYOUT
+   =========================== */
+
+
+.utility-section{
+  padding: 60px 18px 40px;
+  background: linear-gradient(180deg, #06060a 0%, #0a0a12 100%);
+}
+
+
+.utility-block{
+  max-width: 1200px;
+  margin: 0 auto 55px;
+}
+
+
+.utility-title{
+  text-align: center;
+  font-size: clamp(1.7rem, 2.8vw, 2.3rem);
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(0,230,255,0.18), 0 0 25px rgba(176,38,255,0.25);
+}
+
+
+.utility-grid{
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+
+@media (max-width: 900px){
+  .utility-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* ===========================
+   UTILITY CARDS - GOAT
+   =========================== */
+
+
+.utility-card{
+  position: relative;
+  overflow: hidden;
+  padding: 26px 22px 22px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 0 18px rgba(0,0,0,0.55);
+  backdrop-filter: blur(10px);
+  transition: transform 0.18s ease, border 0.18s ease, box-shadow 0.18s ease;
+}
+
+
+.utility-card::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(176,38,255,0.22), transparent 55%),
+              radial-gradient(circle at bottom right, rgba(0,230,255,0.14), transparent 60%);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+
+.utility-card:hover{
+  transform: translateY(-5px);
+  border: 1px solid rgba(176,38,255,0.28);
+  box-shadow: 0 0 18px rgba(176,38,255,0.15), 0 0 55px rgba(0,230,255,0.08);
+}
+
+
+.utility-card *{
+  position: relative;
+  z-index: 2;
+}
+
+
+.utility-icon{
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  background: rgba(176,38,255,0.12);
+  border: 1px solid rgba(176,38,255,0.18);
+  margin-bottom: 14px;
+  box-shadow: 0 0 18px rgba(176,38,255,0.12);
+}
+
+
+.utility-icon i{
+  font-size: 1.45rem;
+  color: #e7c9ff;
+  text-shadow: 0 0 12px rgba(176,38,255,0.4);
+}
+
+
+.utility-card h3{
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+
+.utility-card p{
+  color: rgba(255,255,255,0.78);
+  line-height: 1.65;
+  font-size: 0.98rem;
+  margin-bottom: 16px;
+}
+
+
+
+/* ===========================
+   TAGS
+   =========================== */
+
+
+.utility-tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+
+.utility-tags span{
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.85);
+  transition: transform 0.18s ease, border 0.18s ease;
+}
+
+
+.utility-tags span:hover{
+  transform: scale(1.03);
+  border: 1px solid rgba(0,230,255,0.25);
+}
+
+
+
+/* ===========================
+   BUTTONS
+   =========================== */
+
+
+.utility-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 900;
+  padding: 12px 16px;
+  border-radius: 16px;
+  color: #fff;
+  background: linear-gradient(90deg, rgba(176,38,255,0.95), rgba(127,0,255,0.95));
+  box-shadow: 0 0 14px rgba(176,38,255,0.35);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+
+.utility-btn:hover{
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 18px rgba(176,38,255,0.55), 0 0 35px rgba(127,0,255,0.35);
+}
+
+
+
+/* ===========================
+   UTILITY CTA FINALE
+   =========================== */
+
+
+.utility-cta{
+  text-align: center;
+  padding: 65px 18px 75px;
+  background: radial-gradient(circle at center, rgba(176,38,255,0.22), transparent 60%),
+              linear-gradient(180deg, #07070a 0%, #0b0b12 100%);
+  border-top: 2px solid rgba(0,230,255,0.10);
+}
+
+
+.utility-cta h2{
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  font-weight: 950;
+  color: #ffffff;
+  margin-bottom: 12px;
+  text-shadow: 0 0 12px rgba(176,38,255,0.45);
+}
+
+
+.utility-cta p{
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.78);
+}
+
+
+.utility-cta-btn{
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 26px;
+  padding: 14px 22px;
+  border-radius: 18px;
+  font-weight: 950;
+  text-decoration: none;
+  color: #111;
+  background: linear-gradient(90deg, #00e6ff, #02fa7e);
+  box-shadow: 0 0 16px rgba(0,230,255,0.30), 0 0 40px rgba(2,250,126,0.18);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+
+.utility-cta-btn:hover{
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 22px rgba(0,230,255,0.45), 0 0 55px rgba(2,250,126,0.30);
+}
+
+
+
+/* ===========================
+   FIX: NEON LINE (SE MANCANTE)
+   =========================== */
+
+
+.neon-line{
+  border: none;
+  height: 2px;
+  width: min(900px, 85%);
+  margin: 20px auto;
+  background: linear-gradient(90deg, #00e6ff, #B026FF, #02fa7e);
+  box-shadow: 0 0 12px rgba(0,230,255,0.35), 0 0 25px rgba(176,38,255,0.25);
+  border-radius: 999px;
+}
 
 
 .so
