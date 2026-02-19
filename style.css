@@ -5,6 +5,12 @@
     box-sizing: border-box;
 }
 
+/* PULSANTE (scopri di piú) HOME SCORREVOLE */
+html
+{
+  scroll-behavior: smooth;
+}
+
 body
 {
     font-family: 'Segoe UI', sans-serif;
@@ -257,12 +263,22 @@ header.hero::before
     opacity: 0.22;
     animation: moveDots 20s linear infinite;
     filter: contrast(1.1) saturate(1.2);
+    z-index: 0;
 }
 
 @keyframes moveDots
 {
     from { background-position: 0 0; }
     to { background-position: 1000px 1000px; }
+}
+
+header.hero::after
+{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 0;
 }
 
 header.hero h1
@@ -272,7 +288,8 @@ header.hero h1
     font-weight: 900;
     font-family: 'Comic Sans MS', cursive, sans-serif;
     text-shadow: 0 0 18px rgba(0, 230, 255, 0.55), 0 0 32px rgba(255, 77, 255, 0.35);
-    z-index: 1;
+    z-index: 2;
+    position: relative;
     letter-spacing: 1px;
 }
 
@@ -287,7 +304,11 @@ header.hero p
     display: inline-block;
     text-align: center;
     box-shadow: 0 0 22px rgba(255, 216, 77, 0.45);
-    z-index: 1;
+    z-index: 2;
+    position: relative;
+    border: 2px solid rgba(255,255,255,0.35);
+    text-shadow: none;
+    box-shadow: 0 0 28px rgba(255, 216, 77, 0.65), 0 0 55px rgba(0,0,0,0.35);
 }
 
 /* PULSANTI: SCOPRI DI PIÙ ( in panoramica sito )*/
@@ -320,7 +341,8 @@ header.hero p
     gap: 25px;
     flex-wrap: wrap;
     justify-content: center;
-    z-index: 1;
+    z-index: 2;
+    position: relative;
 }
 
 .hero-buttons a
