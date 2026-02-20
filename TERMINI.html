@@ -1,39 +1,33 @@
 <!DOCTYPE html>
 
 <html lang="it">
+  
 <head>
   
   <meta charset="UTF-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <title>GoatS  RevengE  •  Termini</title>
   
-  <link rel="stylesheet" href="style.css">  <!-- STYLE ESTERNO -->
+  <link rel="stylesheet" href="style.css">
     
-  <link rel="icon" type="image/png" href="icona_sito.png">      <!-- ICONA SITO -->
+  <link rel="icon" type="image/png" href="icona_sito.png">
   
 </head>
-  
 <body>
 
-  
   <!-- NAVBAR -->
-  
   <nav class="navbar">
-  
     <div class="logo">
-    
       <a href="index.html">🐐 GoatS RevengE 🧠</a>
-    
       <span class="arrow">⬅️</span>
-  
     </div>
-  
     <ul>
-      
   </ul>
-    
 </nav>
 
+  <!--- TERMINI & CONDIZIONI --->
   1️⃣• FINALITÀ DEL SITO:
 
   <br>
@@ -156,7 +150,6 @@
 <br>
 
   <hr style="height: 20px; border: none; background-color: rgb(0, 255, 34);">
-
   <h1 style="background-color: rgb(168, 49, 49);">
 
   <br>
@@ -175,25 +168,23 @@
 
        <br>
        <br>
-        
+   
         <button type="submit">Invia.</button>
     </form>
 
     <script>
-        document.getElementById('terms-form').addEventListener('submit', function(e) {
+        document.getElementById('terms-form').addEventListener('submit', function(e) 
+        {
             const termsRead = document.getElementById('terms-read').checked;
             const termsAccept = document.getElementById('terms-accept').checked;
             
-            if (!termsRead || !termsAccept) {
+            if (!termsRead || !termsAccept) 
+            {
                 e.preventDefault();
-                alert('Devi leggere e accettare i termini e condizioni per procedere.');
+                alert('Devi leggere e accettare i termini e condizioni.');
             }
         });
     </script>
-
     <hr style="height: 20px; border: none; background-color: rgb(0, 255, 34);">
-
-    
 </body>
-  
 </html>
