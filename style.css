@@ -285,12 +285,11 @@ header.hero p
     border-radius: 14px;
     display: inline-block;
     text-align: center;
-    box-shadow: 0 0 22px rgba(255, 216, 77, 0.45);
+    box-shadow: 0 0 28px rgba(255, 216, 77, 0.65), 0 0 55px rgba(0,0,0,0.35);
     z-index: 2;
     position: relative;
     border: 2px solid rgba(255,255,255,0.35);
     text-shadow: none;
-    box-shadow: 0 0 28px rgba(255, 216, 77, 0.65), 0 0 55px rgba(0,0,0,0.35);
 }
 
 /* PULSANTE: SCOPRI DI PIÙ (home) */
@@ -540,7 +539,7 @@ section.cta a:hover
 {
     text-align: center;
     font-size: 2rem;
-    margin-botton: 20px;
+    margin-bottom: 20px;
     color: #ff4dff;
     text-shadow: 0 0 10px rgba(255, 77, 255, 0.75), 0 0 25px rgba(204, 0, 255, 0.55);
     animation: neon-pink 1.5s infinite alternate;
@@ -562,18 +561,6 @@ section.cta a:hover
     border-radius: 14px;
     box-shadow: 0 0 22px rgba(0, 229, 255, 0.10);
 }
-
-/*.carousel-container.vertical*
-{
-    max-width: 40%;
-}
-
-.carousel-slide
-{
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 100%;
-}*/
 
 .carousel-slide img
 {
@@ -617,7 +604,6 @@ section.cta a:hover
 .about-list li 
 {
   display: grid;
-  display: block;
   gap: 12px;
   padding: 16px 14px;
   border-radius: 16px;
@@ -1042,12 +1028,12 @@ section.cta a:hover
   box-shadow: 0 0 18px rgba(0,0,0,0.45);
   backdrop-filter: blur(8px);
 
-  /* FIX CARD */
+  /* FIX CARD 
   opacity: 1 !important;
   display: block !important;
   visibility: visible !important;
   transform: none !important;
-  position: relative !important;
+  position: relative !important; */
 }
 
 .team-card h3 
@@ -1135,12 +1121,12 @@ section.cta a:hover
   box-shadow: 0 0 18px rgba(0,0,0,0.45);
   backdrop-filter: blur(8px);
 
-  /* FIX CARD  */
+  /* FIX CARD
   opacity: 1 !important;
   display: block !important;
   visibility: visible !important;
   transform: none !important;
-  position: relative !important;
+  position: relative !important; */
 }
 
 .project-tag 
