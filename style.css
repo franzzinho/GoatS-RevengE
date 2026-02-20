@@ -636,7 +636,7 @@ section.cta a:hover
 .about-list li 
 {
   display: grid;
-  grid-template-columns: 44px 1fr;
+  display: block;
   gap: 12px;
   padding: 16px 14px;
   border-radius: 16px;
