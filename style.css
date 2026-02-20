@@ -1,11 +1,11 @@
-/* RESET GLOBALE DEL SITO (per uniformare lo stile nel sito) */
+/* RESET SITO */
 {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* PULSANTE (scopri di piú) HOME SCORREVOLE */
+/* PULSANTE (scopri di piú) HOME */
 html
 {
   scroll-behavior: smooth;
@@ -40,8 +40,6 @@ a
     color: inherit;
     transition: 0.3s;
 }
-
-
 /* ---------------------------------------------------------------- */
 /* ------------- PROPRIETÀ COMUNI IN TUTTE LE PAGINE (o quasi) ------------- */
 section
@@ -128,7 +126,7 @@ nav
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* GOATS REVENGE */
+/* GOATS REVENGE (navbar) */
 nav .logo a
 {
     font-size: 1.35rem;
@@ -148,7 +146,7 @@ nav .logo .arrow
     animation: neon-purple 1.5s infinite alternate;
 }
 
-/* PULSAZIONE NEON (goats revenge) */
+/* PULSAZIONE NEON (navbar) */
 @keyframes neon-yellow
 {
     from { text-shadow: 0 0 5px rgba(255, 204, 0, 0.65), 0 0 14px rgba(255, 204, 0, 0.55); }
@@ -161,7 +159,7 @@ nav .logo .arrow
     to { text-shadow: 0 0 10px rgba(255, 0, 255, 0.9), 0 0 25px rgba(204, 0, 255, 0.75), 0 0 45px rgba(111, 0, 255, 0.55); }
 }
 
-/* LINEA RGB. */
+/* LINEA RGB */
 .neon-line
 {
   border: none;
@@ -173,7 +171,7 @@ nav .logo .arrow
   border-radius: 999px;
 }
 
-/* LINEA ARANCIONE. */
+/* LINEA ARANCIONE */
 .orange-line
 {
     border: none;
@@ -199,7 +197,7 @@ nav .logo .arrow
     }
 }
 
-/* FOOTER. */
+/* FOOTER */
 footer
 {
     text-align: center;
@@ -222,8 +220,6 @@ footer a:hover
 {
     color: #ff4dff;
 }
-
-
 /* ---------------------------------------------------------------- */
 /* ------------- STYLE SEZIONE: HOME ------------- */
 *
@@ -311,7 +307,7 @@ header.hero p
     box-shadow: 0 0 28px rgba(255, 216, 77, 0.65), 0 0 55px rgba(0,0,0,0.35);
 }
 
-/* PULSANTI: SCOPRI DI PIÙ ( in panoramica sito )*/
+/* PULSANTE: SCOPRI DI PIÙ (home) */
 .hero-btn 
 {
   display: inline-block;
@@ -376,7 +372,7 @@ header.hero p
     box-shadow: 0 0 30px rgba(255, 0, 102, 0.55);
 }
 
-/* PANORAMICA + CARD */
+/* PANORAMICA + CARDS */
 section.intro
 {
     padding: 100px 20px;
@@ -470,7 +466,7 @@ section.intro p
     box-shadow: 0 0 18px rgba(0, 230, 255, 0.35);
 }
 
-/* TITOLI CARD: about, social, utility, ecc.. */
+/* TITOLI CARDS */
 .titolo-testo
 {
     background: linear-gradient(90deg, #00C9A7, #92FE9D);
@@ -480,7 +476,7 @@ section.intro p
     font-weight: 900;
 }
 
-/* CTA ( call to action ) */
+/* CTA */
 section.cta
 {
     text-align: center;
@@ -520,7 +516,6 @@ section.cta a:hover
     color: #070816;
     box-shadow: 0 0 22px rgba(0, 230, 255, 0.45);
 }
-
 /* ---------------------------------------------------------------- */
 /* ------------- STYLE SEZIONE: ABOUT ------------- */
 .about
@@ -720,7 +715,6 @@ section.cta a:hover
   object-fit: cover;
   aspect-ratio: 16 / 9;
 }
-
 /* ---------------------------------------------------------------- */
 /* ------------- STYLE SEZIONE: UTILITY ------------- */
 .utility-hero
@@ -774,7 +768,7 @@ section.cta a:hover
   box-shadow: 0 0 18px rgba(176,38,255,0.75), 0 0 45px rgba(127,0,255,0.55);
 }
 
-/* SECTION LAYOUT */
+/* LAYOUT */
 .utility-section
 {
   padding: 60px 18px 40px;
@@ -984,7 +978,6 @@ section.cta a:hover
   transform: translateY(-2px) scale(1.02);
   box-shadow: 0 0 22px rgba(0,230,255,0.45), 0 0 55px rgba(2,250,126,0.30);
 }
-
 /* ---------------------------------------------------------------- */
 /* ------------- STYLE SEZIONE: TEAM ------------- */
 .team 
@@ -1095,8 +1088,6 @@ section.cta a:hover
 {
   line-height: 1.4;
 }
-
-
 /* ---------------------------------------------------------------- */
 /* ------------- STYLE SEZIONE: COMING SOON ------------- */
 .coming-soon 
