@@ -1805,109 +1805,1559 @@ header.hero p
   object-fit: cover;
   aspect-ratio: 16 / 9;
 }
-/* ---------------------------------------------------------------- */
-/* ------------- STYLE SEZIONE: TEAM ------------- */
-.team 
+
+
+/* ========================================================= */
+/* ==================== TEAM / G-SHARE ===================== */
+/* ========================================================= */
+
+
+/* ========================================================= */
+/* PALETTE TEAM - FISSA PER TUTTA LA PAGINA */
+/* ========================================================= */
+
+.team-page
 {
-  padding: 25px 18px 60px;
-  max-width: 1150px;
-  margin: 0 auto;
+    --team-cyan: #00e6ff;
+    --team-purple: #B026FF;
+    --team-pink: #ff4dff;
+    --team-yellow: #ffd84d;
+    --team-green: #02fa7e;
+
+    position: relative;
+    overflow: hidden;
 }
 
-.team-part 
+
+
+/* ========================================================= */
+/* ======================== HERO =========================== */
+/* ========================================================= */
+
+.team-hero
 {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 18px;
-  padding: 22px 16px;
-  text-align: center;
+    position: relative;
+
+    max-width: none;
+
+    margin: 0;
+
+    padding:
+        100px 20px 90px;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 20% 15%,
+            rgba(0,230,255,0.14),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(176,38,255,0.20),
+            transparent 38%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(255,77,255,0.07),
+            transparent 40%
+        ),
+
+        linear-gradient(
+            180deg,
+            rgba(7,8,22,0.30),
+            rgba(5,5,17,0.90)
+        );
 }
 
-.team-title 
+
+/* LINEA SUPERIORE */
+
+.team-hero::after
 {
-  font-size: 1.55rem;
-  font-weight: 1000;
-  margin-bottom: 12px;
-  text-shadow: 0 0 14px rgba(176,38,255,0.45);
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 15%;
+    right: 15%;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--team-cyan),
+            var(--team-purple),
+            var(--team-pink),
+            transparent
+        );
+
+    box-shadow:
+        0 0 20px rgba(176,38,255,0.45);
 }
 
-.team a 
+
+/* GLOWS */
+
+.team-hero-glow
 {
-  color: #00e6ff;
-  font-weight: 900;
-  text-decoration: none;
+    position: absolute;
+
+    width: 380px;
+    height: 380px;
+
+    border-radius: 50%;
+
+    filter: blur(110px);
+
+    pointer-events: none;
 }
 
-.team a:hover 
+
+.team-glow-left
 {
-  text-decoration: underline;
+    top: -240px;
+    left: -150px;
+
+    background:
+        rgba(0,230,255,0.20);
 }
 
-.team p 
+
+.team-glow-right
 {
-  opacity: 0.85;
-  line-height: 1.7;
-  margin-bottom: 10px;
+    top: -250px;
+    right: -150px;
+
+    background:
+        rgba(176,38,255,0.24);
 }
 
-.team-btn 
+
+
+/* ========================================================= */
+/* HERO CONTENT */
+/* ========================================================= */
+
+.team-hero-inner
 {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 14px;
-  padding: 12px 18px;
-  border-radius: 14px;
-  text-decoration: none;
-  font-weight: 1000;
-  color: #000 !important;
-  background: linear-gradient(90deg, #00e6ff, #B026FF);
-  transition: transform 0.18s ease;
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 900px;
+
+    margin: 0 auto;
 }
 
-.team-btn:hover 
+
+.team-hero-kicker
 {
-  transform: translateY(-3px);
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    font-size: 0.73rem;
+
+    font-weight: 950;
+
+    letter-spacing: 1.8px;
+
+    color:
+        var(--team-yellow);
 }
 
-.team-cards 
+
+.team-hero h1
 {
-  margin-top: 22px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 18px;
+    margin-bottom: 18px;
+
+    font-size:
+        clamp(2.8rem, 7vw, 5rem);
+
+    line-height: 1;
+
+    font-weight: 1000;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 15px rgba(176,38,255,0.60),
+        0 0 35px rgba(0,230,255,0.18);
 }
 
-.team-card 
+
+.team-hero-description
 {
-  text-align: left;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 18px;
-  padding: 18px 16px;
-  box-shadow: 0 0 18px rgba(0,0,0,0.45);
-  backdrop-filter: blur(8px);
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    font-size: 1.08rem;
+
+    line-height: 1.8;
+
+    color:
+        rgba(246,247,255,0.72);
 }
 
-.team-card h3 
+
+
+/* ========================================================= */
+/* HERO BUTTONS */
+/* ========================================================= */
+
+.team-hero-actions
 {
-  font-size: 1.1rem;
-  font-weight: 1000;
-  margin-bottom: 10px;
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 32px;
 }
 
-.team-card ul 
+
+.team-hero-btn
 {
-  margin-left: 18px;
-  display: grid;
-  gap: 8px;
-  opacity: 0.9;
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    padding:
+        13px 20px;
+
+    border-radius: 15px;
+
+    font-size: 0.9rem;
+
+    font-weight: 950;
+
+    border:
+        1px solid rgba(255,255,255,0.13);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
-.team-card li 
+
+.team-hero-btn-primary
 {
-  line-height: 1.4;
+    color: #071016;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--team-cyan),
+            var(--team-green)
+        );
+
+    box-shadow:
+        0 0 22px rgba(0,230,255,0.20);
 }
+
+
+.team-hero-btn-secondary
+{
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--team-purple),
+            #7F00FF
+        );
+
+    box-shadow:
+        0 0 22px rgba(176,38,255,0.22);
+}
+
+
+.team-hero-btn:hover
+{
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 10px 28px rgba(0,0,0,0.28),
+        0 0 28px rgba(176,38,255,0.20);
+}
+
+
+
+/* ========================================================= */
+/* ===================== PATHS ============================= */
+/* ========================================================= */
+
+.team-paths
+{
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding:
+        80px 20px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0,1fr));
+
+    gap: 25px;
+}
+
+
+
+/* ========================================================= */
+/* PATH CARD */
+/* ========================================================= */
+
+.team-path-card
+{
+    --path-color: var(--team-cyan);
+    --path-rgb: 0,230,255;
+
+    position: relative;
+
+    scroll-margin-top: 100px;
+
+    overflow: hidden;
+
+    padding:
+        32px;
+
+    border-radius: 26px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.055),
+            rgba(255,255,255,0.018)
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.28);
+
+    backdrop-filter:
+        blur(12px);
+
+    transition:
+        transform 0.32s ease,
+        border-color 0.32s ease,
+        box-shadow 0.32s ease;
+}
+
+
+.team-path-collab
+{
+    --path-color: var(--team-cyan);
+    --path-rgb: 0,230,255;
+}
+
+
+.team-path-join
+{
+    --path-color: var(--team-purple);
+    --path-rgb: 176,38,255;
+}
+
+
+
+/* TOP LINE */
+
+.team-path-card::before
+{
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 30px;
+    right: 30px;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--path-color),
+            transparent
+        );
+
+    opacity: 0.75;
+
+    box-shadow:
+        0 0 18px rgba(var(--path-rgb),0.45);
+}
+
+
+
+/* GLOW */
+
+.team-path-glow
+{
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    top: -190px;
+    right: -160px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(var(--path-rgb),0.18);
+
+    filter:
+        blur(75px);
+
+    pointer-events: none;
+
+    transition:
+        transform 0.45s ease,
+        opacity 0.45s ease;
+}
+
+
+
+/* HOVER */
+
+.team-path-card:hover
+{
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(var(--path-rgb),0.25);
+
+    box-shadow:
+        0 25px 55px rgba(0,0,0,0.33),
+        0 0 30px rgba(var(--path-rgb),0.09);
+}
+
+
+.team-path-card:hover .team-path-glow
+{
+    transform:
+        scale(1.35);
+
+    opacity: 1;
+}
+
+
+
+/* NUMBER */
+
+.team-path-number
+{
+    position: absolute;
+
+    top: 25px;
+    right: 27px;
+
+    font-size: 2.4rem;
+
+    line-height: 1;
+
+    font-weight: 1000;
+
+    color:
+        rgba(var(--path-rgb),0.10);
+
+    user-select: none;
+}
+
+
+
+/* ICON */
+
+.team-path-icon
+{
+    position: relative;
+
+    z-index: 2;
+
+    width: 66px;
+    height: 66px;
+
+    display: grid;
+
+    place-items: center;
+
+    margin-bottom: 23px;
+
+    border-radius: 19px;
+
+    background:
+        rgba(var(--path-rgb),0.09);
+
+    border:
+        1px solid rgba(var(--path-rgb),0.20);
+
+    box-shadow:
+        0 0 22px rgba(var(--path-rgb),0.10);
+}
+
+
+.team-path-icon i
+{
+    font-size: 1.6rem;
+
+    color:
+        var(--path-color);
+
+    text-shadow:
+        0 0 14px rgba(var(--path-rgb),0.60);
+}
+
+
+
+/* CONTENT */
+
+.team-path-content
+{
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.team-path-eyebrow
+{
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 0.68rem;
+
+    font-weight: 950;
+
+    letter-spacing: 1.6px;
+
+    color:
+        var(--path-color);
+}
+
+
+.team-path-content h2
+{
+    margin-bottom: 13px;
+
+    font-size:
+        clamp(1.6rem,3vw,2rem);
+
+    color: #ffffff;
+}
+
+
+.team-path-content > p
+{
+    margin-bottom: 22px;
+
+    line-height: 1.75;
+
+    color:
+        rgba(246,247,255,0.70);
+}
+
+
+
+/* ========================================================= */
+/* PATH INFO */
+/* ========================================================= */
+
+.team-path-info
+{
+    display: grid;
+
+    gap: 10px;
+
+    margin-bottom: 27px;
+}
+
+
+.team-path-info > div
+{
+    display: grid;
+
+    grid-template-columns:
+        27px 1fr;
+
+    gap: 10px;
+
+    align-items: start;
+
+    padding:
+        12px 14px;
+
+    border-radius: 13px;
+
+    background:
+        rgba(0,0,0,0.17);
+
+    border:
+        1px solid rgba(255,255,255,0.05);
+}
+
+
+.team-path-info i
+{
+    margin-top: 4px;
+
+    color:
+        var(--path-color);
+}
+
+
+.team-path-info span
+{
+    font-size: 0.9rem;
+
+    line-height: 1.6;
+
+    color:
+        rgba(246,247,255,0.68);
+}
+
+
+
+/* ========================================================= */
+/* MAIN BUTTON */
+/* ========================================================= */
+
+.team-main-btn
+{
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    width: 100%;
+
+    padding:
+        13px 16px;
+
+    border-radius: 14px;
+
+    font-size: 0.88rem;
+
+    font-weight: 950;
+
+    color: #ffffff;
+
+    background:
+        rgba(var(--path-rgb),0.10);
+
+    border:
+        1px solid rgba(var(--path-rgb),0.22);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.team-main-btn span
+{
+    margin-left: auto;
+
+    color:
+        var(--path-color);
+
+    font-size: 1.1rem;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.team-main-btn:hover
+{
+    transform:
+        translateY(-3px);
+
+    background:
+        rgba(var(--path-rgb),0.17);
+
+    box-shadow:
+        0 0 22px rgba(var(--path-rgb),0.15);
+}
+
+
+.team-main-btn:hover span
+{
+    transform:
+        translateX(4px);
+}
+
+
+
+/* ========================================================= */
+/* ================= SHARED SECTION ======================== */
+/* ========================================================= */
+
+.team-roles-section,
+.team-roster-section,
+.team-collaborations-section
+{
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding:
+        80px 20px;
+}
+
+
+.team-section-heading
+{
+    max-width: 760px;
+
+    margin:
+        0 auto 45px;
+
+    text-align: center;
+}
+
+
+.team-section-kicker
+{
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-size: 0.70rem;
+
+    font-weight: 950;
+
+    letter-spacing: 1.8px;
+
+    color:
+        var(--team-cyan);
+}
+
+
+.team-section-heading h2
+{
+    margin-bottom: 12px;
+
+    font-size:
+        clamp(2rem,5vw,3rem);
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 14px rgba(176,38,255,0.35);
+}
+
+
+.team-section-heading p
+{
+    line-height: 1.75;
+
+    color:
+        rgba(246,247,255,0.68);
+}
+
+
+
+/* ========================================================= */
+/* ==================== ROLES ============================== */
+/* ========================================================= */
+
+.team-roles-grid
+{
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap: 20px;
+}
+
+
+.team-role-card
+{
+    position: relative;
+
+    padding:
+        27px 23px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.05),
+            rgba(255,255,255,0.017)
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.075);
+
+    box-shadow:
+        0 17px 38px rgba(0,0,0,0.24);
+
+    transition:
+        transform 0.28s ease,
+        border-color 0.28s ease,
+        box-shadow 0.28s ease;
+}
+
+
+.team-role-card:hover
+{
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(0,230,255,0.20);
+
+    box-shadow:
+        0 22px 45px rgba(0,0,0,0.30),
+        0 0 24px rgba(176,38,255,0.08);
+}
+
+
+.team-role-icon
+{
+    width: 58px;
+    height: 58px;
+
+    display: grid;
+
+    place-items: center;
+
+    margin-bottom: 18px;
+
+    border-radius: 17px;
+
+    background:
+        rgba(176,38,255,0.09);
+
+    border:
+        1px solid rgba(176,38,255,0.18);
+}
+
+
+.team-role-icon i
+{
+    font-size: 1.4rem;
+
+    color:
+        var(--team-cyan);
+
+    text-shadow:
+        0 0 12px rgba(0,230,255,0.50);
+}
+
+
+.team-role-card h3
+{
+    margin-bottom: 8px;
+
+    font-size: 1.35rem;
+
+    color: #ffffff;
+}
+
+
+.team-role-description
+{
+    min-height: 55px;
+
+    margin-bottom: 19px;
+
+    font-size: 0.91rem;
+
+    line-height: 1.65;
+
+    color:
+        rgba(246,247,255,0.62);
+}
+
+
+.team-role-card ul
+{
+    display: grid;
+
+    gap: 8px;
+
+    margin: 0;
+
+    list-style: none;
+}
+
+
+.team-role-card li
+{
+    display: flex;
+
+    gap: 9px;
+
+    align-items: center;
+
+    padding:
+        8px 10px;
+
+    border-radius: 10px;
+
+    font-size: 0.88rem;
+
+    color:
+        rgba(246,247,255,0.74);
+
+    background:
+        rgba(0,0,0,0.14);
+}
+
+
+.team-role-card li i
+{
+    color:
+        var(--team-yellow);
+
+    font-size: 0.72rem;
+}
+
+
+
+/* ========================================================= */
+/* ================= TEAM ROSTER =========================== */
+/* ========================================================= */
+
+.team-roster-section
+{
+    position: relative;
+
+    border-radius: 30px;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(0,230,255,0.075),
+            transparent 35%
+        );
+}
+
+
+.team-roster-grid
+{
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(250px,1fr));
+
+    gap: 20px;
+}
+
+
+
+/* ========================================================= */
+/* ================= EMPTY STATE =========================== */
+/* ========================================================= */
+
+.team-empty-state
+{
+    grid-column:
+        1 / -1;
+
+    max-width: 650px;
+
+    width: 100%;
+
+    margin: 0 auto;
+
+    padding:
+        50px 30px;
+
+    text-align: center;
+
+    border-radius: 24px;
+
+    background:
+        rgba(255,255,255,0.025);
+
+    border:
+        1px dashed rgba(0,230,255,0.20);
+
+    box-shadow:
+        0 0 30px rgba(0,230,255,0.04);
+}
+
+
+.team-empty-icon
+{
+    width: 70px;
+    height: 70px;
+
+    display: grid;
+
+    place-items: center;
+
+    margin:
+        0 auto 20px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(0,230,255,0.08);
+
+    border:
+        1px solid rgba(0,230,255,0.18);
+
+    box-shadow:
+        0 0 22px rgba(0,230,255,0.10);
+}
+
+
+.team-empty-icon i
+{
+    font-size: 1.7rem;
+
+    color:
+        var(--team-cyan);
+
+    text-shadow:
+        0 0 14px rgba(0,230,255,0.55);
+}
+
+
+.team-empty-state h3
+{
+    margin-bottom: 9px;
+
+    font-size: 1.4rem;
+
+    color: #ffffff;
+}
+
+
+.team-empty-state p
+{
+    max-width: 500px;
+
+    margin:
+        0 auto 20px;
+
+    line-height: 1.7;
+
+    color:
+        rgba(246,247,255,0.62);
+}
+
+
+.team-empty-state a
+{
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-weight: 900;
+
+    color:
+        var(--team-cyan);
+}
+
+
+.team-empty-state a span
+{
+    transition:
+        transform 0.25s ease;
+}
+
+
+.team-empty-state a:hover span
+{
+    transform:
+        translateX(4px);
+}
+
+
+
+/* ========================================================= */
+/* ================= MEMBER CARD =========================== */
+/* ========================================================= */
+
+.team-member-card,
+.collaboration-card
+{
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.05),
+            rgba(255,255,255,0.017)
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,0.27);
+
+    transition:
+        transform 0.30s ease,
+        border-color 0.30s ease,
+        box-shadow 0.30s ease;
+}
+
+
+.team-member-card:hover
+{
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(0,230,255,0.24);
+
+    box-shadow:
+        0 23px 48px rgba(0,0,0,0.33),
+        0 0 28px rgba(0,230,255,0.08);
+}
+
+
+
+/* IMAGE */
+
+.team-member-image,
+.collaboration-image
+{
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio:
+        1 / 1;
+
+    overflow: hidden;
+
+    background:
+        rgba(255,255,255,0.03);
+}
+
+
+.team-member-image img,
+.collaboration-image img
+{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 0;
+
+    box-shadow: none;
+
+    transition:
+        transform 0.40s ease;
+}
+
+
+.team-member-card:hover .team-member-image img,
+.collaboration-card:hover .collaboration-image img
+{
+    transform:
+        scale(1.045);
+}
+
+
+
+/* CONTENT */
+
+.team-member-content,
+.collaboration-content
+{
+    padding:
+        22px 20px;
+}
+
+
+.team-member-content h3,
+.collaboration-content h3
+{
+    margin-bottom: 4px;
+
+    font-size: 1.3rem;
+
+    color: #ffffff;
+}
+
+
+.team-member-role,
+.collaboration-role
+{
+    margin-bottom: 13px;
+
+    font-size: 0.82rem;
+
+    font-weight: 900;
+
+    color:
+        var(--team-yellow);
+}
+
+
+.team-member-description,
+.collaboration-description
+{
+    margin-bottom: 18px;
+
+    font-size: 0.9rem;
+
+    line-height: 1.7;
+
+    color:
+        rgba(246,247,255,0.65);
+}
+
+
+
+/* ========================================================= */
+/* SOCIALS */
+/* ========================================================= */
+
+.team-member-socials,
+.collaboration-socials
+{
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+
+.team-member-socials a,
+.collaboration-socials a
+{
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 11px;
+
+    color:
+        rgba(255,255,255,0.70);
+
+    background:
+        rgba(255,255,255,0.04);
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    transition:
+        transform 0.24s ease,
+        color 0.24s ease,
+        border-color 0.24s ease,
+        background 0.24s ease,
+        box-shadow 0.24s ease;
+}
+
+
+.team-member-socials a:hover,
+.collaboration-socials a:hover
+{
+    transform:
+        translateY(-3px);
+
+    color:
+        var(--team-cyan);
+
+    background:
+        rgba(0,230,255,0.08);
+
+    border-color:
+        rgba(0,230,255,0.24);
+
+    box-shadow:
+        0 0 18px rgba(0,230,255,0.12);
+}
+
+
+
+/* ========================================================= */
+/* ================= COLLABORATIONS ======================== */
+/* ========================================================= */
+
+.team-collaborations-section
+{
+    position: relative;
+
+    margin-top: 25px;
+
+    margin-bottom: 40px;
+
+    border-radius: 30px;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255,77,255,0.075),
+            transparent 35%
+        );
+}
+
+
+.team-collaborations-section
+.team-section-kicker
+{
+    color:
+        var(--team-pink);
+}
+
+
+.team-collaborations-grid
+{
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(250px,1fr));
+
+    gap: 20px;
+}
+
+
+.collaboration-empty
+{
+    border-color:
+        rgba(255,77,255,0.20);
+
+    box-shadow:
+        0 0 30px rgba(255,77,255,0.04);
+}
+
+
+.collaboration-empty .team-empty-icon
+{
+    background:
+        rgba(255,77,255,0.08);
+
+    border-color:
+        rgba(255,77,255,0.18);
+
+    box-shadow:
+        0 0 22px rgba(255,77,255,0.10);
+}
+
+
+.collaboration-empty .team-empty-icon i,
+.collaboration-empty a
+{
+    color:
+        var(--team-pink);
+}
+
+
+.collaboration-card:hover
+{
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(255,77,255,0.24);
+
+    box-shadow:
+        0 23px 48px rgba(0,0,0,0.33),
+        0 0 28px rgba(255,77,255,0.08);
+}
+
+
+.collaboration-socials a:hover
+{
+    color:
+        var(--team-pink);
+
+    background:
+        rgba(255,77,255,0.08);
+
+    border-color:
+        rgba(255,77,255,0.24);
+
+    box-shadow:
+        0 0 18px rgba(255,77,255,0.12);
+}
+
+
+
+/* ========================================================= */
+/* ===================== TABLET ============================ */
+/* ========================================================= */
+
+@media (max-width: 950px)
+{
+    .team-paths
+    {
+        grid-template-columns: 1fr;
+    }
+
+
+    .team-roles-grid
+    {
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+
+    .team-role-card:last-child
+    {
+        grid-column:
+            1 / -1;
+
+        max-width: 570px;
+
+        width: 100%;
+
+        justify-self: center;
+    }
+}
+
+
+
+/* ========================================================= */
+/* ====================== MOBILE =========================== */
+/* ========================================================= */
+
+@media (max-width: 650px)
+{
+    .team-hero
+    {
+        padding:
+            70px 15px 65px;
+    }
+
+
+    .team-hero-actions
+    {
+        display: grid;
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .team-hero-btn
+    {
+        width: 100%;
+    }
+
+
+    .team-paths,
+    .team-roles-section,
+    .team-roster-section,
+    .team-collaborations-section
+    {
+        padding:
+            50px 12px;
+    }
+
+
+    .team-path-card
+    {
+        padding:
+            25px 18px;
+
+        border-radius: 22px;
+    }
+
+
+    .team-path-number
+    {
+        font-size: 2rem;
+    }
+
+
+    .team-roles-grid
+    {
+        grid-template-columns: 1fr;
+    }
+
+
+    .team-role-card:last-child
+    {
+        grid-column: auto;
+
+        max-width: none;
+    }
+
+
+    .team-role-description
+    {
+        min-height: 0;
+    }
+
+
+    .team-empty-state
+    {
+        padding:
+            38px 18px;
+    }
+
+
+    .team-roster-grid,
+    .team-collaborations-grid
+    {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* ========================================================= */
+/* ================= REDUCED MOTION ======================== */
+/* ========================================================= */
+
+@media (prefers-reduced-motion: reduce)
+{
+    .team-hero-btn,
+    .team-path-card,
+    .team-path-glow,
+    .team-main-btn,
+    .team-main-btn span,
+    .team-role-card,
+    .team-member-card,
+    .collaboration-card,
+    .team-member-image img,
+    .collaboration-image img,
+    .team-member-socials a,
+    .collaboration-socials a
+    {
+        transition: none;
+    }
+}
+
 
 
 
