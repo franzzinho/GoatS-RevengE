@@ -1593,6 +1593,171 @@ header.hero p
     }
 }
 
+    body.intro-active 
+    {
+      overflow: hidden;
+    }
+
+    /* INTRO */
+    #introScreen 
+    {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      width: 100vw;
+      height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at center, #25002f 0%, #0d0012 35%, #000000 75%);
+      z-index: 999999;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+    }
+
+    /* LUCE DI SFONDO */
+    #introScreen::before 
+    {
+      content: "";
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      background: #ff00ff;
+      filter: blur(130px);
+      opacity: 0.20;
+      animation: introGlow 3s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes introGlow 
+    {
+      0% 
+      {
+        transform: scale(0.8);
+        opacity: 0.15;
+      }
+
+      50% 
+      {
+        transform: scale(1.2);
+        opacity: 0.30;
+      }
+
+      100% 
+      {
+        transform: scale(0.8);
+        opacity: 0.15;
+      }
+    }
+
+    /* SPARIZIONE INTRO */
+    #introScreen.hidden 
+    {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    /* ENTER BUTTON */
+    #enterButton
+    {
+      position: relative;
+      z-index: 2;
+      padding: 20px 45px;
+      border: 2px solid rgba(255, 255, 255, 0.35);
+      border-radius: 50px;
+      outline: none;
+      color: white;
+      background: linear-gradient(135deg, #ff00ff, #7a00ff, #006eff);
+      font-size: clamp(17px, 4vw, 23px);
+      font-family: inherit;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      box-shadow: 0 0 15px rgba(255, 0, 255, 0.8), 0 0 35px rgba(255, 0, 255, 0.45), 0 0 70px rgba(122, 0, 255, 0.25);
+      animation: enterPulse 1.5s ease-in-out infinite;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    }
+
+    #enterButton:hover 
+    {
+      transform: scale(1.08);
+      box-shadow: 0 0 25px rgba(255, 0, 255, 1), 0 0 55px rgba(122, 0, 255, 0.75), 0 0 90px rgba(0, 110, 255, 0.35);
+    }
+
+    #enterButton:active 
+    {
+      transform: scale(0.96);
+    }
+
+    #enterButton:disabled 
+    {
+      cursor: default;
+      opacity: 0.85;
+      animation: none;
+    }
+
+    @keyframes enterPulse 
+    {
+      0% 
+      {
+        transform: scale(1);
+      }
+
+      50% 
+      {
+        transform: scale(1.06);
+      }
+
+      100% 
+      {
+        transform: scale(1);
+      }
+    }
+
+    #siteContent 
+    {
+      display: none;
+    }
+
+    #siteContent.visible 
+    {
+      display: block;
+      animation: siteReveal 1s ease forwards;
+    }
+
+    @keyframes siteReveal 
+    {
+      from 
+      {
+        opacity: 0;
+        transform: scale(1.01);
+      }
+
+      to 
+      {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    
+    .carousel-slide img:not([src]) 
+    {
+      visibility: hidden;
+    }
+
+    .carousel-slide img[src] 
+    {
+      visibility: visible;
+    }
+
 /* ---------------------------------------------------------------- */
 /* ------------------ STYLE SEZIONE: TEAM ------------------------ */
 
