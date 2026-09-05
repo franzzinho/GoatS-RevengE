@@ -509,6 +509,176 @@ nav .logo .arrow
 }
 
 /* ---------------------------------------------------------------- */
+/* ------------------ STYLE: GOAT.js ------------------------------ */
+
+/*  GOATS MUSIC CONTROL  */
+.goat-music-control
+{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 12px;
+    border-radius: 16px;
+    background: linear-gradient(145deg, rgba(15,18,36,0.94), rgba(7,8,22,0.94));
+    border: 1px solid rgba(0,230,255,0.18);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35), 0 0 22px rgba(176,38,255,0.10);
+    backdrop-filter: blur(14px);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.goat-music-control:hover
+{
+    transform: translateY(-2px);
+    border-color: rgba(0,230,255,0.32);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.40), 0 0 25px rgba(0,230,255,0.12);
+}
+
+/* MUTE BUTTON */
+.goat-music-mute
+{
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 11px;
+    border: 1px solid rgba(0,230,255,0.17);
+    background: rgba(0,230,255,0.07);
+    color: #00e6ff;
+    font-size: 0.95rem;
+    box-shadow: 0 0 14px rgba(0,230,255,0.08);
+    transition: transform 0.22s ease, color 0.22s ease, background 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.goat-music-mute:hover
+{
+    transform: scale(1.06);
+    color: #ffffff;
+    background: rgba(176,38,255,0.14);
+    border-color: rgba(176,38,255,0.30);
+    box-shadow: 0 0 18px rgba(176,38,255,0.16);
+}
+
+/* LABEL */
+.goat-music-label
+{
+    font-size: 0.68rem;
+    font-weight: 950;
+    letter-spacing: 1.2px;
+    color: rgba(255,255,255,0.65);
+    white-space: nowrap;
+    user-select: none;
+}
+
+/* VOLUME */
+.goat-music-volume
+{
+    --goat-volume: 72%;
+    
+    width: 95px;
+    height: 4px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 999px;
+    outline: none;
+    background: linear-gradient(90deg, #00e6ff 0%, #B026FF var(--goat-volume), rgba(255,255,255,0.12) var(--goat-volume), rgba(255,255,255,0.12) 100%);
+}
+
+/* BROWSER */
+.goat-music-volume::-webkit-slider-thumb
+{
+    width: 14px;
+    height: 14px;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #ffffff;
+    border: 2px solid #00e6ff;
+    box-shadow: 0 0 10px rgba(0,230,255,0.55);
+}
+
+/* MUSIC PLAYING */
+.goat-music-control.goat-music-playing
+.goat-music-mute
+{
+    box-shadow: 0 0 17px rgba(0,230,255,0.18);
+}
+
+/* MUSIC MUTED */
+.goat-music-control.goat-music-muted
+{
+    opacity: 0.78;
+}
+
+.goat-music-control.goat-music-muted
+.goat-music-mute
+{
+    color: #ff4d6d;
+    border-color: rgba(255,77,109,0.24);
+    background: rgba(255,77,109,0.08);
+}
+
+/* AUTOPLAY WAITING */
+.goat-music-control.goat-music-waiting
+{
+    border-color: rgba(255,216,77,0.25);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35), 0 0 22px rgba(255,216,77,0.08);
+}
+
+/* AUDIO ERROR */
+.goat-music-control.goat-music-error
+{
+    border-color: rgba(255,77,109,0.35);
+    opacity: 0.65;
+}
+
+/* MOBILE */
+@media (max-width: 600px)
+{
+    .goat-music-control
+    {
+        right: 12px;
+        bottom: 12px;
+        gap: 7px;
+        padding: 7px 9px;
+    }
+
+    .goat-music-label
+    {
+        display: none;
+    }
+
+    .goat-music-volume
+    {
+        width: 72px;
+    }
+
+    .goat-music-mute
+    {
+        width: 34px;
+        height: 34px;
+    }
+}
+
+/* REDUCED MOTION */
+@media (prefers-reduced-motion: reduce)
+{
+    .goat-music-control,
+    .goat-music-mute
+    {
+        transition: none;
+    }
+}
+
+/* ---------------------------------------------------------------- */
 /* ------------------ STYLE SEZIONE: HOME ------------------------ */
 
 /* HERO */
