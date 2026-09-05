@@ -79,19 +79,19 @@
     </div>
   </div>
   
-  <!-- ATTIVA MUSICA -->
+  <!-- ATTIVA MUSICA
   <div style="text-align: center; margin: 20px;">
     <button id="audioButton" style="padding: 10px 20px; background: #ff00ff; color: white; border: none; border-radius: 5px; cursor: pointer;">
       ATTIVA MUSICA.
     </button>
   </div>
   
-  <!-- MUSICA-->
+  <!-- MUSIC
   <audio id="carouselMusic" loop>
     <source src="carosello_about/fein.mp3" type="audio/mpeg">
   </audio>
   
-  <!--- SCRIPT CAROSELLO --->
+  <!--- SCRIPT CAROSELLO 
   <script>
   let slideIndex = 0;
   const carousel = document.querySelector(".carousel-slide");
@@ -116,7 +116,7 @@
     setInterval(moveToNextSlide, 3000);
   }
 
-  //GESTIONE MUSICA
+  //GESTIONE MUSIC
   audioButton.addEventListener('click', function()
   {
     music.play().then(() => 
@@ -128,17 +128,96 @@
     }).catch(error => 
    {
       console.log("Errore audio:", error);
-      audioButton.textContent = "❌ ERRORE MUSICA. ❌";
+      audioButton.textContent = "❌ ERRORE MUSICA ❌";
       audioButton.style.background = "#ff0000";
     });
   });
+    
 
-  //AVVIA CAROSELLO, ALL'APERTURA DELLA PAGINA
+  //AVVIA CAROSELLO (all'apertura della pagina)
   document.addEventListener('DOMContentLoaded', startCarousel);
   </script>
   
+-->
+
+
+
+
+<!-- MUSIC -->
+<audio id="carouselMusic" loop preload="auto">
+  <source src="carosello_about/fein.mp3" type="audio/mpeg">
+</audio>
+
+<!-- SCRIPT CAROSELLO -->
+<script>
+let slideIndex = 0;
+
+const carousel = document.querySelector(".carousel-slide");
+const music = document.getElementById("carouselMusic");
+
+// =======================
+// MUSICA
+// =======================
+
+function avviaMusica() {
+  music.play()
+    .then(() => {
+      console.log("MUSICA PARTITA!");
+    })
+    .catch(error => {
+      console.log("Autoplay bloccato dal browser:", error);
+    });
+}
+
+// Prova a farla partire SUBITO
+avviaMusica();
+
+// Se il browser blocca l'autoplay,
+// parte al primo click/tocco dell'utente
+function avviaMusicaInterazione() {
+  music.play();
+
+  document.removeEventListener("click", avviaMusicaInterazione);
+  document.removeEventListener("touchstart", avviaMusicaInterazione);
+}
+
+document.addEventListener("click", avviaMusicaInterazione);
+document.addEventListener("touchstart", avviaMusicaInterazione);
+
+
+// =======================
+// CAROSELLO
+// =======================
+
+function moveToNextSlide() {
+  slideIndex++;
+
+  const totalSlides =
+    document.querySelectorAll(".carousel-slide img").length;
+
+  if (slideIndex >= totalSlides) {
+    slideIndex = 0;
+  }
+
+  carousel.style.transform =
+    `translateX(-${slideIndex * 100}%)`;
+}
+
+function startCarousel() {
+  setInterval(moveToNextSlide, 3000);
+}
+
+// NON aspetta che tutte le immagini siano caricate
+document.addEventListener("DOMContentLoaded", startCarousel);
+</script>
+
+
+
+
   
-  <!-- FOOTER -->
+
+  
+<!-- FOOTER. -->
 <footer class="goats-footer">
 
   <div class="goats-footer-glow"></div>
@@ -156,7 +235,7 @@
       </h2>
 
       <p>
-        L'universo di Franzzinho tra: Creazione di Contenuti, Social, Gaming e Streaming.
+        L'universo di Franzzinho tra: Video, Streaming, Social e Gaming.
       </p>
 
       <div class="footer-status">
@@ -175,7 +254,7 @@
         🌐 CONNECT WITH THE GOAT 🌐
       </span>
 
-
+      
       <div class="footer-socials">
         <a
           href="https://www.instagram.com/franzzinho.zbb/"
@@ -268,14 +347,11 @@
       </div>
     </div>
 
-
     <!-- SEPARATORE -->
     <div class="footer-divider"></div>
 
-
     <!-- PARTE FINALE -->
     <div class="footer-bottom">
-
 
       <!-- COPYRIGHT -->
       <div class="footer-copyright">
@@ -292,7 +368,6 @@
           • Franzzinho
         </span>
       </div>
-
 
       <!-- TERMINI - COOKIE -->
       <div class="footer-legal">
@@ -331,11 +406,9 @@
 
         <i class="fa-solid fa-arrow-up"></i>
       </a>
-      
     </div>
   </div>
 </footer>
-      
     </p>
   </footer>
 </body>
