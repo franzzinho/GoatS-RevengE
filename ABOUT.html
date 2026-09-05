@@ -143,21 +143,12 @@
 
 
 
-<!-- MUSIC -->
 <audio id="carouselMusic" loop preload="auto">
   <source src="carosello_about/fein.mp3" type="audio/mpeg">
 </audio>
 
-<!-- SCRIPT CAROSELLO -->
 <script>
-let slideIndex = 0;
-
-const carousel = document.querySelector(".carousel-slide");
 const music = document.getElementById("carouselMusic");
-
-// =======================
-// MUSICA
-// =======================
 
 function avviaMusica() {
   music.play()
@@ -165,52 +156,15 @@ function avviaMusica() {
       console.log("MUSICA PARTITA!");
     })
     .catch(error => {
-      console.log("Autoplay bloccato dal browser:", error);
+      console.log("Errore audio:", error);
     });
 }
 
-// Prova a farla partire SUBITO
-avviaMusica();
-
-// Se il browser blocca l'autoplay,
-// parte al primo click/tocco dell'utente
-function avviaMusicaInterazione() {
-  music.play();
-
-  document.removeEventListener("click", avviaMusicaInterazione);
-  document.removeEventListener("touchstart", avviaMusicaInterazione);
-}
-
-document.addEventListener("click", avviaMusicaInterazione);
-document.addEventListener("touchstart", avviaMusicaInterazione);
-
-
-// =======================
-// CAROSELLO
-// =======================
-
-function moveToNextSlide() {
-  slideIndex++;
-
-  const totalSlides =
-    document.querySelectorAll(".carousel-slide img").length;
-
-  if (slideIndex >= totalSlides) {
-    slideIndex = 0;
-  }
-
-  carousel.style.transform =
-    `translateX(-${slideIndex * 100}%)`;
-}
-
-function startCarousel() {
-  setInterval(moveToNextSlide, 3000);
-}
-
-// NON aspetta che tutte le immagini siano caricate
-document.addEventListener("DOMContentLoaded", startCarousel);
+// Parte al PRIMISSIMO tocco/click sulla pagina
+document.addEventListener("pointerdown", avviaMusica, {
+  once: true
+});
 </script>
-
 
 
 
