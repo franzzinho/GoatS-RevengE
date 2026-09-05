@@ -1,369 +1,1435 @@
+```html
 <!DOCTYPE html>
 
 <html lang="it">
-  
+
 <head>
-  
+
   <meta charset="UTF-8">
-  
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>GoatS  RevengE  •  About</title>
-  
+
+  <title>GoatS RevengE • About</title>
+
+
+  <!-- ========================================= -->
+  <!-- PRECARICA LA MUSICA PRIMA DELLE FOTO -->
+  <!-- ========================================= -->
+
+  <link
+    rel="preload"
+    href="carosello_about/fein.mp3"
+    as="audio"
+    type="audio/mpeg"
+    fetchpriority="high"
+  >
+
+
+  <!-- CSS PRINCIPALE DEL SITO -->
+
   <link rel="stylesheet" href="style.css">
-  
-  <link rel="icon" type="image/png" href="extra_file/icona_sito.png">  
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  
-</head>
-<body>
-  
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="logo">
-      <a href="index.html">🐐 GoatS RevengE 🧠</a>
-      <span class="arrow">⬅️</span>
-    </div>
-    <ul></ul>
-  </nav>
-  
-  <!--- TITOLO: Franzzinho --->
-  <section class="about-showcase">
-    <h2 class="neon-title pink">
-      <a href="https://www.instagram.com/franzzinho.zbb/" target="_blank">
-        🔞  Franzzinho  🔞
-      </a>
-    </h2>
-  </section>
-  
-  <!-- CAROSELLO -->  
-  <div class="carousel-container">
-    <div class="carousel-slide">
-      <img src="carosello_about/BABY.jpg"  alt="1">
-      <img src="carosello_about/BMW 1.JPG" alt="2">
-      <img src="carosello_about/BMW 2.JPG" alt="3">
-      <img src="carosello_about/BMW 3.JPG" alt="4">
-      <img src="carosello_about/BMW 4.JPG" alt="5">
-      <img src="carosello_about/BMW 5.JPG" alt="6">
-      <img src="carosello_about/MOVIELAND 1.JPG" alt="7">
-      <img src="carosello_about/MOVIELAND 2.JPG" alt="8">
-      <img src="carosello_about/MOVIELAND 3.JPG" alt="9">
-      <img src="carosello_about/MOVIELAND 4.JPG" alt="10">
-      <img src="carosello_about/MOVIELAND 5.JPG" alt="11">
-      <img src="carosello_about/MOVIELAND 6.JPG" alt="12">
-      <img src="carosello_about/ZBABY 1.JPG" alt="13">
-      <img src="carosello_about/ZBABY 2.JPG" alt="14">
-      <img src="carosello_about/ZBABY 3.JPG" alt="15">
-      <img src="carosello_about/ZBABY 4.JPG" alt="16">
-      <img src="carosello_about/ZBABY 5.JPG" alt="17">
-      <img src="carosello_about/ZBABY 6.JPG" alt="18">
-      <img src="carosello_about/ZBABY 7.JPG" alt="19">
-      <img src="carosello_about/ZBABY 8.JPG" alt="20">
-      <img src="carosello_about/ZBABY 9.JPG" alt="21">
-      <img src="carosello_about/ZBABY 10.JPG" alt="22">
-      <img src="carosello_about/ZBABY 11.JPG" alt="23">
-      <img src="carosello_about/GARDALAND 1.JPG" alt="24">
-      <img src="carosello_about/GARDALAND 2.JPG" alt="25">
-      <img src="carosello_about/GARDALAND 3.JPG" alt="26">
-      <img src="carosello_about/GARDALAND 4.JPG" alt="27">
-      <img src="carosello_about/VIBES 1.jpg" alt="28">
-      <img src="carosello_about/VIBES 2.jpg" alt="29">
-      <img src="carosello_about/VIBES 3.jpg" alt="30">
-      <img src="carosello_about/VIBES 4.jpg" alt="31">
-      <img src="carosello_about/VIBES 5.jpg" alt="32">
-      <img src="carosello_about/VIBES 6.jpg" alt="33">
-      <img src="carosello_about/VIBES 7.jpg" alt="34">
-      <img src="carosello_about/VIBES 8.jpg" alt="35">
-      <img src="carosello_about/VIBES 9.jpg" alt="36">
-    </div>
-  </div>
-  
-  <!-- ATTIVA MUSICA
-  <div style="text-align: center; margin: 20px;">
-    <button id="audioButton" style="padding: 10px 20px; background: #ff00ff; color: white; border: none; border-radius: 5px; cursor: pointer;">
-      ATTIVA MUSICA.
-    </button>
-  </div>
-  
-  <!-- MUSIC
-  <audio id="carouselMusic" loop>
-    <source src="carosello_about/fein.mp3" type="audio/mpeg">
-  </audio>
-  
-  <!--- SCRIPT CAROSELLO 
-  <script>
-  let slideIndex = 0;
-  const carousel = document.querySelector(".carousel-slide");
-  const music = document.getElementById("carouselMusic");
-  const audioButton = document.getElementById("audioButton");
 
-  //SCORRI FOTO
-  function moveToNextSlide()
-  {
-    slideIndex++;
-    const totalSlides = document.querySelectorAll(".carousel-slide img").length;
-    if (slideIndex >= totalSlides)
-    {  
-        slideIndex = 0;
+  <!-- ICONA SITO -->
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="extra_file/icona_sito.png"
+  >
+
+
+  <!-- FONT AWESOME -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  >
+
+
+
+  <!-- ========================================= -->
+  <!-- CSS SCHERMATA INIZIALE -->
+  <!-- ========================================= -->
+
+  <style>
+
+    /* ========================================= */
+    /* BLOCCA LO SCROLL PRIMA DI ENTRARE */
+    /* ========================================= */
+
+    body.intro-active {
+      overflow: hidden;
     }
-    carousel.style.transform = `translateX(-${slideIndex * 100}%)`;
-  }
-
-  //AVVIA CAROSELLO
-  function startCarousel()
-  {
-    setInterval(moveToNextSlide, 3000);
-  }
-
-  //GESTIONE MUSIC
-  audioButton.addEventListener('click', function()
-  {
-    music.play().then(() => 
-  {
-      console.log("MUSICA PARTITA!");
-      audioButton.textContent = "MUSICA ATTIVA.";
-      audioButton.style.background = "#00ff00";
-    
-    }).catch(error => 
-   {
-      console.log("Errore audio:", error);
-      audioButton.textContent = "❌ ERRORE MUSICA ❌";
-      audioButton.style.background = "#ff0000";
-    });
-  });
-    
-
-  //AVVIA CAROSELLO (all'apertura della pagina)
-  document.addEventListener('DOMContentLoaded', startCarousel);
-  </script>
-  
--->
 
 
 
+    /* ========================================= */
+    /* SCHERMATA INTRO */
+    /* ========================================= */
 
-<audio id="carouselMusic" loop preload="auto">
-  <source src="carosello_about/fein.mp3" type="audio/mpeg">
-</audio>
+    #introScreen {
 
-<script>
-const music = document.getElementById("carouselMusic");
+      position: fixed;
 
-function avviaMusica() {
-  music.play()
-    .then(() => {
-      console.log("MUSICA PARTITA!");
-    })
-    .catch(error => {
-      console.log("Errore audio:", error);
-    });
-}
+      top: 0;
+      left: 0;
 
-// Parte al PRIMISSIMO tocco/click sulla pagina
-document.addEventListener("pointerdown", avviaMusica, {
-  once: true
-});
-</script>
+      width: 100%;
+      height: 100%;
+
+      width: 100vw;
+      height: 100dvh;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      background:
+        radial-gradient(
+          circle at center,
+          #25002f 0%,
+          #0d0012 35%,
+          #000000 75%
+        );
+
+      z-index: 999999;
+
+      opacity: 1;
+
+      visibility: visible;
+
+      transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+
+    }
 
 
 
-  
+    /* EFFETTO LUCE DI SFONDO */
 
-  
-<!-- FOOTER. -->
-<footer class="goats-footer">
+    #introScreen::before {
 
-  <div class="goats-footer-glow"></div>
+      content: "";
 
-  <div class="goats-footer-inner">
+      position: absolute;
 
-    <div class="footer-brand">
-      
-      <span class="footer-badge">
-        💦 THE GOAT VERSE 💦
-      </span>
+      width: 350px;
+      height: 350px;
 
-      <h2>
-        🐐 GoatS RevengE 🧠
-      </h2>
+      border-radius: 50%;
 
-      <p>
-        L'universo di Franzzinho tra: Video, Streaming, Social e Gaming.
-      </p>
+      background: #ff00ff;
 
-      <div class="footer-status">
-        <span class="status-dot"></span>
-        GOATS REVENGE IS ALIVE
+      filter: blur(130px);
+
+      opacity: 0.20;
+
+      animation: introGlow 3s ease-in-out infinite;
+
+      pointer-events: none;
+
+    }
+
+
+
+    @keyframes introGlow {
+
+      0% {
+        transform: scale(0.8);
+        opacity: 0.15;
+      }
+
+      50% {
+        transform: scale(1.2);
+        opacity: 0.30;
+      }
+
+      100% {
+        transform: scale(0.8);
+        opacity: 0.15;
+      }
+
+    }
+
+
+
+    /* ========================================= */
+    /* QUANDO L'INTRO SPARISCE */
+    /* ========================================= */
+
+    #introScreen.hidden {
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      pointer-events: none;
+
+    }
+
+
+
+    /* ========================================= */
+    /* PULSANTE ENTER */
+    /* ========================================= */
+
+    #enterButton {
+
+      position: relative;
+
+      z-index: 2;
+
+      padding: 20px 45px;
+
+      border: 2px solid rgba(255, 255, 255, 0.35);
+
+      border-radius: 50px;
+
+      outline: none;
+
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          #ff00ff,
+          #7a00ff,
+          #006eff
+        );
+
+      font-size: clamp(17px, 4vw, 23px);
+
+      font-family: inherit;
+
+      font-weight: 900;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      cursor: pointer;
+
+      user-select: none;
+
+      -webkit-tap-highlight-color: transparent;
+
+      box-shadow:
+        0 0 15px rgba(255, 0, 255, 0.8),
+        0 0 35px rgba(255, 0, 255, 0.45),
+        0 0 70px rgba(122, 0, 255, 0.25);
+
+      animation:
+        enterPulse 1.5s ease-in-out infinite;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+
+    }
+
+
+
+    #enterButton:hover {
+
+      transform: scale(1.08);
+
+      box-shadow:
+        0 0 25px rgba(255, 0, 255, 1),
+        0 0 55px rgba(122, 0, 255, 0.75),
+        0 0 90px rgba(0, 110, 255, 0.35);
+
+    }
+
+
+
+    #enterButton:active {
+
+      transform: scale(0.96);
+
+    }
+
+
+
+    #enterButton:disabled {
+
+      cursor: default;
+
+      opacity: 0.85;
+
+      animation: none;
+
+    }
+
+
+
+    @keyframes enterPulse {
+
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.06);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+
+    }
+
+
+
+    /* ========================================= */
+    /* CONTENUTO DEL SITO */
+    /* ========================================= */
+
+    #siteContent {
+
+      display: none;
+
+    }
+
+
+
+    #siteContent.visible {
+
+      display: block;
+
+      animation: siteReveal 1s ease forwards;
+
+    }
+
+
+
+    @keyframes siteReveal {
+
+      from {
+        opacity: 0;
+        transform: scale(1.01);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+    }
+
+
+
+    /* ========================================= */
+    /* EVITA ICONE IMMAGINI ROTTE PRIMA DEL LOAD */
+    /* ========================================= */
+
+    .carousel-slide img:not([src]) {
+
+      visibility: hidden;
+
+    }
+
+
+
+    .carousel-slide img[src] {
+
+      visibility: visible;
+
+    }
+
+  </style>
+
+</head>
+
+
+
+<body class="intro-active">
+
+
+  <!-- ========================================= -->
+  <!-- SCHERMATA INIZIALE -->
+  <!-- ========================================= -->
+
+  <div id="introScreen">
+
+    <button
+      id="enterButton"
+      type="button"
+      aria-label="Entra nel Goat Verse"
+    >
+      🐐 ENTER THE GOAT VERSE 🧠
+    </button>
+
+  </div>
+
+
+
+  <!-- ========================================= -->
+  <!-- MUSICA -->
+  <!-- ========================================= -->
+
+  <!--
+    preload="auto":
+    il browser prova a scaricare la musica
+    già mentre viene mostrata l'intro.
+
+    loop:
+    quando finisce ricomincia automaticamente.
+  -->
+
+  <audio
+    id="carouselMusic"
+    loop
+    preload="auto"
+  >
+
+    <source
+      src="carosello_about/fein.mp3"
+      type="audio/mpeg"
+    >
+
+  </audio>
+
+
+
+  <!-- ========================================= -->
+  <!-- TUTTO IL CONTENUTO DEL SITO -->
+  <!-- ========================================= -->
+
+  <div id="siteContent">
+
+
+
+    <!-- ========================================= -->
+    <!-- NAVBAR -->
+    <!-- ========================================= -->
+
+    <nav class="navbar">
+
+      <div class="logo">
+
+        <a href="index.html">
+          🐐 GoatS RevengE 🧠
+        </a>
+
+        <span class="arrow">
+          ⬅️
+        </span>
+
       </div>
-    </div>
 
-    <!-- LINEA RGB -->
-    <div class="footer-rgb-line"></div>
+      <ul></ul>
 
-    <!-- SOCIAL -->
-    <div class="footer-social-section">
+    </nav>
 
-      <span class="footer-small-title">
-        🌐 CONNECT WITH THE GOAT 🌐
-      </span>
 
-      
-      <div class="footer-socials">
+
+    <!-- ========================================= -->
+    <!-- TITOLO: FRANZZINHO -->
+    <!-- ========================================= -->
+
+    <section class="about-showcase">
+
+      <h2 class="neon-title pink">
+
         <a
           href="https://www.instagram.com/franzzinho.zbb/"
           target="_blank"
           rel="noopener noreferrer"
-          class="footer-social social-instagram"
-          aria-label="Instagram">
-          
-          <i class="fa-brands fa-instagram"></i>
+        >
 
-          <span>
-            Instagram
-          </span>
+          🔞 Franzzinho 🔞
+
         </a>
 
-        
-        <a
-          href="https://www.tiktok.com/@franzzinho.zbb?_t=ZN-8z5d1Qutkfe&_r=1"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="footer-social social-tiktok"
-          aria-label="TikTok">
+      </h2>
 
-          <i class="fa-brands fa-tiktok"></i>
+    </section>
 
-          <span>
-            TikTok
-          </span>
-        </a>
 
-        
-        <a
-          href="https://youtube.com/@franzzinho?si=cJiskLlGq_kUUDew"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="footer-social social-youtube"
-          aria-label="YouTube">
 
-          <i class="fa-brands fa-youtube"></i>
+    <!-- ========================================= -->
+    <!-- CAROSELLO -->
+    <!-- ========================================= -->
 
-          <span>
-            YouTube
-          </span>
-        </a>
+    <div class="carousel-container">
 
-        
-        <a
-          href="https://www.twitch.tv/franzzinho_GT"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="footer-social social-twitch"
-          aria-label="Twitch">
+      <div class="carousel-slide">
 
-          <i class="fa-brands fa-twitch"></i>
 
-          <span>
-            Twitch
-          </span>
-        </a>
+        <!--
+          IMPORTANTE:
 
-        
-        <a
-          href="https://discord.gg/YNyzuTKSu8"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="footer-social social-discord"
-          aria-label="Discord">
+          Qui usiamo DATA-SRC e NON SRC.
 
-          <i class="fa-brands fa-discord"></i>
+          In questo modo le immagini NON vengono
+          scaricate mentre l'utente è ancora
+          nella schermata ENTER.
+        -->
 
-          <span>
-            Discord
-          </span>
-        </a>
 
-        
-        <a
-          href="https://lnk.bio/franzzinho"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="footer-social social-follow"
-          aria-label="Followpage">
+        <img
+          data-src="carosello_about/BABY.jpg"
+          alt="1"
+        >
 
-          <i class="fa-solid fa-link"></i>
 
-          <span>
-            Followpage
-          </span>
-        </a>
+        <img
+          data-src="carosello_about/BMW 1.JPG"
+          alt="2"
+        >
+
+
+        <img
+          data-src="carosello_about/BMW 2.JPG"
+          alt="3"
+        >
+
+
+        <img
+          data-src="carosello_about/BMW 3.JPG"
+          alt="4"
+        >
+
+
+        <img
+          data-src="carosello_about/BMW 4.JPG"
+          alt="5"
+        >
+
+
+        <img
+          data-src="carosello_about/BMW 5.JPG"
+          alt="6"
+        >
+
+
+        <img
+          data-src="carosello_about/MOVIELAND 1.JPG"
+          alt="7"
+        >
+
+
+        <img
+          data-src="carosello_about/MOVIELAND 2.JPG"
+          alt="8"
+        >
+
+
+        <img
+          data-src="carosello_about/MOVIELAND 3.JPG"
+          alt="9"
+        >
+
+
+        <img
+          data-src="carosello_about/MOVIELAND 4.JPG"
+          alt="10"
+        >
+
+
+        <img
+          data-src="carosello_about/MOVIELAND 5.JPG"
+          alt="11"
+        >
+
+
+        <img
+          data-src="carosello_about/MOVIELAND 6.JPG"
+          alt="12"
+        >
+
+
+        <img
+          data-src="carosello_about/ZBABY 1.JPG"
+          alt="13"
+        >
+
+
+        <img
+          data-src="carosello_about/ZBABY 2.JPG"
+          alt="14"
+        >
+
+
+        <img
+          data-src="carosello_about/ZBABY 3.JPG"
+          alt="15"
+        >
+
+
+        <img
+          data-src="carosello_about/ZBABY 4.JPG"
+          alt="16"
+        >
+
+
+        <img
+          data-src="carosello_about/ZBABY 5.JPG"
+          alt="17"
+        >
+
+
+        <img
+          data-src="carosello_about/ZBABY 6.JPG"
+          alt="18"
+        >
+
+
+        <img
+          data-src="carosello_about/ZBABY 7.JPG"
+          alt="19"
+        >
+
+
+        <img
+          data-src="carosello_about/ZBABY 8.JPG"
+          alt="20"
+        >
+
+
+        <img
+          data-src="carosello_about/ZBABY 9.JPG"
+          alt="21"
+        >
+
+
+        <img
+          data-src="carosello_about/ZBABY 10.JPG"
+          alt="22"
+        >
+
+
+        <img
+          data-src="carosello_about/ZBABY 11.JPG"
+          alt="23"
+        >
+
+
+        <img
+          data-src="carosello_about/GARDALAND 1.JPG"
+          alt="24"
+        >
+
+
+        <img
+          data-src="carosello_about/GARDALAND 2.JPG"
+          alt="25"
+        >
+
+
+        <img
+          data-src="carosello_about/GARDALAND 3.JPG"
+          alt="26"
+        >
+
+
+        <img
+          data-src="carosello_about/GARDALAND 4.JPG"
+          alt="27"
+        >
+
+
+        <img
+          data-src="carosello_about/VIBES 1.jpg"
+          alt="28"
+        >
+
+
+        <img
+          data-src="carosello_about/VIBES 2.jpg"
+          alt="29"
+        >
+
+
+        <img
+          data-src="carosello_about/VIBES 3.jpg"
+          alt="30"
+        >
+
+
+        <img
+          data-src="carosello_about/VIBES 4.jpg"
+          alt="31"
+        >
+
+
+        <img
+          data-src="carosello_about/VIBES 5.jpg"
+          alt="32"
+        >
+
+
+        <img
+          data-src="carosello_about/VIBES 6.jpg"
+          alt="33"
+        >
+
+
+        <img
+          data-src="carosello_about/VIBES 7.jpg"
+          alt="34"
+        >
+
+
+        <img
+          data-src="carosello_about/VIBES 8.jpg"
+          alt="35"
+        >
+
+
+        <img
+          data-src="carosello_about/VIBES 9.jpg"
+          alt="36"
+        >
+
+
       </div>
+
     </div>
 
-    <!-- SEPARATORE -->
-    <div class="footer-divider"></div>
 
-    <!-- PARTE FINALE -->
-    <div class="footer-bottom">
 
-      <!-- COPYRIGHT -->
-      <div class="footer-copyright">
+    <!-- ========================================= -->
+    <!-- FOOTER -->
+    <!-- ========================================= -->
 
-        <span>
-          © 2026 •
-        </span>
+    <footer class="goats-footer">
 
-        <strong>
-          GoatS RevengE
-        </strong>
 
-        <span>
-          • Franzzinho
-        </span>
+      <div class="goats-footer-glow"></div>
+
+
+      <div class="goats-footer-inner">
+
+
+        <!-- BRAND -->
+
+        <div class="footer-brand">
+
+
+          <span class="footer-badge">
+
+            💦 THE GOAT VERSE 💦
+
+          </span>
+
+
+          <h2>
+
+            🐐 GoatS RevengE 🧠
+
+          </h2>
+
+
+          <p>
+
+            L'universo di Franzzinho tra:
+            Video, Streaming, Social e Gaming.
+
+          </p>
+
+
+          <div class="footer-status">
+
+            <span class="status-dot"></span>
+
+            GOATS REVENGE IS ALIVE
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- ========================================= -->
+        <!-- LINEA RGB -->
+        <!-- ========================================= -->
+
+        <div class="footer-rgb-line"></div>
+
+
+
+        <!-- ========================================= -->
+        <!-- SOCIAL -->
+        <!-- ========================================= -->
+
+        <div class="footer-social-section">
+
+
+          <span class="footer-small-title">
+
+            🌐 CONNECT WITH THE GOAT 🌐
+
+          </span>
+
+
+
+          <div class="footer-socials">
+
+
+            <!-- INSTAGRAM -->
+
+            <a
+              href="https://www.instagram.com/franzzinho.zbb/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer-social social-instagram"
+              aria-label="Instagram"
+            >
+
+              <i class="fa-brands fa-instagram"></i>
+
+              <span>
+                Instagram
+              </span>
+
+            </a>
+
+
+
+            <!-- TIKTOK -->
+
+            <a
+              href="https://www.tiktok.com/@franzzinho.zbb?_t=ZN-8z5d1Qutkfe&_r=1"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer-social social-tiktok"
+              aria-label="TikTok"
+            >
+
+              <i class="fa-brands fa-tiktok"></i>
+
+              <span>
+                TikTok
+              </span>
+
+            </a>
+
+
+
+            <!-- YOUTUBE -->
+
+            <a
+              href="https://youtube.com/@franzzinho?si=cJiskLlGq_kUUDew"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer-social social-youtube"
+              aria-label="YouTube"
+            >
+
+              <i class="fa-brands fa-youtube"></i>
+
+              <span>
+                YouTube
+              </span>
+
+            </a>
+
+
+
+            <!-- TWITCH -->
+
+            <a
+              href="https://www.twitch.tv/franzzinho_GT"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer-social social-twitch"
+              aria-label="Twitch"
+            >
+
+              <i class="fa-brands fa-twitch"></i>
+
+              <span>
+                Twitch
+              </span>
+
+            </a>
+
+
+
+            <!-- DISCORD -->
+
+            <a
+              href="https://discord.gg/YNyzuTKSu8"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer-social social-discord"
+              aria-label="Discord"
+            >
+
+              <i class="fa-brands fa-discord"></i>
+
+              <span>
+                Discord
+              </span>
+
+            </a>
+
+
+
+            <!-- FOLLOWPAGE -->
+
+            <a
+              href="https://lnk.bio/franzzinho"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer-social social-follow"
+              aria-label="Followpage"
+            >
+
+              <i class="fa-solid fa-link"></i>
+
+              <span>
+                Followpage
+              </span>
+
+            </a>
+
+
+          </div>
+
+        </div>
+
+
+
+        <!-- ========================================= -->
+        <!-- SEPARATORE -->
+        <!-- ========================================= -->
+
+        <div class="footer-divider"></div>
+
+
+
+        <!-- ========================================= -->
+        <!-- PARTE FINALE -->
+        <!-- ========================================= -->
+
+        <div class="footer-bottom">
+
+
+
+          <!-- COPYRIGHT -->
+
+          <div class="footer-copyright">
+
+            <span>
+
+              © 2026 •
+
+            </span>
+
+
+            <strong>
+
+              GoatS RevengE
+
+            </strong>
+
+
+            <span>
+
+              • Franzzinho
+
+            </span>
+
+          </div>
+
+
+
+          <!-- TERMINI / PRIVACY / COOKIE -->
+
+          <div class="footer-legal">
+
+
+            <a
+              href="TERMINI.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              Termini
+
+            </a>
+
+
+            <span>•</span>
+
+
+            <a
+              href="TERMINI.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              Privacy
+
+            </a>
+
+
+            <span>•</span>
+
+
+            <a
+              href="TERMINI.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              Cookie
+
+            </a>
+
+
+          </div>
+
+
+
+          <!-- BACK TO TOP -->
+
+          <a
+            href="#"
+            class="footer-top-btn"
+            aria-label="Torna in alto"
+          >
+
+            <i class="fa-solid fa-arrow-up"></i>
+
+          </a>
+
+
+        </div>
+
+
       </div>
 
-      <!-- TERMINI - COOKIE -->
-      <div class="footer-legal">
 
-        <a
-          href="TERMINI.html"
-          target="_blank"
-          rel="noopener noreferrer">
-          Termini
-        </a>
+    </footer>
 
-        <span>•</span>
 
-        <a
-          href="TERMINI.html"
-          target="_blank"
-          rel="noopener noreferrer">
-          Privacy
-        </a>
-
-        <span>•</span>
-
-        <a
-          href="TERMINI.html"
-          target="_blank"
-          rel="noopener noreferrer">
-          Cookie
-        </a>
-      </div>
-
-      <!-- BACK TO TOP -->
-      <a
-        href="#"
-        class="footer-top-btn"
-        aria-label="Torna in alto">
-
-        <i class="fa-solid fa-arrow-up"></i>
-      </a>
-    </div>
   </div>
-</footer>
-    </p>
-  </footer>
+
+
+
+  <!-- ========================================= -->
+  <!-- SCRIPT MUSICA + INTRO + CAROSELLO -->
+  <!-- ========================================= -->
+
+  <script>
+
+    /* ======================================= */
+    /* VARIABILI */
+    /* ======================================= */
+
+    let slideIndex = 0;
+
+    let carouselAvviato = false;
+
+    let esperienzaAvviata = false;
+
+
+
+    const introScreen =
+      document.getElementById("introScreen");
+
+
+    const enterButton =
+      document.getElementById("enterButton");
+
+
+    const siteContent =
+      document.getElementById("siteContent");
+
+
+    const music =
+      document.getElementById("carouselMusic");
+
+
+    const carousel =
+      document.querySelector(".carousel-slide");
+
+
+
+    /* ======================================= */
+    /* MOSTRA IL SITO */
+    /* ======================================= */
+
+    function mostraSito() {
+
+
+      /* MOSTRA IL CONTENUTO */
+
+      siteContent.classList.add("visible");
+
+
+      /* RIATTIVA LO SCROLL */
+
+      document.body.classList.remove("intro-active");
+
+
+      /* NASCONDE L'INTRO */
+
+      introScreen.classList.add("hidden");
+
+
+      /*
+        Rimuove completamente l'intro dopo
+        la fine dell'animazione.
+      */
+
+      setTimeout(function() {
+
+        introScreen.style.display = "none";
+
+      }, 900);
+
+    }
+
+
+
+    /* ======================================= */
+    /* CARICA LE IMMAGINI DEL CAROSELLO */
+    /* ======================================= */
+
+    function caricaImmagini() {
+
+
+      const immagini =
+        document.querySelectorAll(
+          ".carousel-slide img[data-src]"
+        );
+
+
+      immagini.forEach(function(img, index) {
+
+
+        /*
+          Le prime 3 immagini vengono caricate
+          immediatamente.
+
+          Le altre vengono caricate poco alla volta.
+
+          Questo evita che 36 fotografie inizino
+          tutte a scaricarsi nello stesso istante.
+        */
+
+
+        let ritardo = 0;
+
+
+        if (index >= 3) {
+
+          ritardo =
+            250 + ((index - 3) * 90);
+
+        }
+
+
+
+        setTimeout(function() {
+
+
+          /*
+            Le prime immagini hanno priorità
+            maggiore rispetto alle successive.
+          */
+
+          if (index < 3) {
+
+            img.fetchPriority = "high";
+
+          }
+
+          else {
+
+            img.fetchPriority = "low";
+
+          }
+
+
+          /* ATTIVA IL DOWNLOAD */
+
+          img.src = img.dataset.src;
+
+
+          /* NON SERVE PIÙ DATA-SRC */
+
+          img.removeAttribute("data-src");
+
+
+        }, ritardo);
+
+
+      });
+
+    }
+
+
+
+    /* ======================================= */
+    /* PASSA ALLA FOTO SUCCESSIVA */
+    /* ======================================= */
+
+    function moveToNextSlide() {
+
+
+      if (!carousel) {
+
+        return;
+
+      }
+
+
+      const immagini =
+        document.querySelectorAll(
+          ".carousel-slide img"
+        );
+
+
+      const totalSlides =
+        immagini.length;
+
+
+      if (totalSlides === 0) {
+
+        return;
+
+      }
+
+
+
+      slideIndex++;
+
+
+
+      if (slideIndex >= totalSlides) {
+
+        slideIndex = 0;
+
+      }
+
+
+
+      carousel.style.transform =
+        `translateX(-${slideIndex * 100}%)`;
+
+    }
+
+
+
+    /* ======================================= */
+    /* AVVIA CAROSELLO */
+    /* ======================================= */
+
+    function startCarousel() {
+
+
+      /* IMPEDISCE DI AVVIARLO DUE VOLTE */
+
+      if (carouselAvviato) {
+
+        return;
+
+      }
+
+
+      carouselAvviato = true;
+
+
+
+      /*
+        UNA FOTO OGNI 3 SECONDI
+      */
+
+      setInterval(
+        moveToNextSlide,
+        3000
+      );
+
+
+      console.log(
+        "🎠 CAROSELLO AVVIATO!"
+      );
+
+    }
+
+
+
+    /* ======================================= */
+    /* AVVIA TUTTA L'ESPERIENZA */
+    /* ======================================= */
+
+    async function avviaEsperienza() {
+
+
+      /*
+        Impedisce doppi click / doppi avvii.
+      */
+
+      if (esperienzaAvviata) {
+
+        return;
+
+      }
+
+
+      esperienzaAvviata = true;
+
+
+
+      /*
+        Cambia testo mentre la musica
+        sta iniziando.
+      */
+
+      enterButton.textContent =
+        "⚡ LOADING THE GOAT VERSE ⚡";
+
+
+      enterButton.disabled = true;
+
+
+
+      try {
+
+
+        /*
+          ====================================
+          LA PRIMA COSA CHE FACCIAMO È PLAY()
+          ====================================
+
+          Siccome questo codice viene lanciato
+          direttamente dal gesto dell'utente,
+          il browser permette la riproduzione.
+        */
+
+        await music.play();
+
+
+
+        console.log(
+          "🎵 MUSICA PARTITA!"
+        );
+
+
+
+        /*
+          ====================================
+          SOLO ORA MOSTRIAMO IL SITO
+          ====================================
+        */
+
+        mostraSito();
+
+
+
+        /*
+          ====================================
+          SOLO ORA CARICHIAMO LE FOTO
+          ====================================
+        */
+
+        caricaImmagini();
+
+
+
+        /*
+          ====================================
+          AVVIA CAROSELLO
+          ====================================
+        */
+
+        startCarousel();
+
+
+      }
+
+      catch (error) {
+
+
+        /*
+          Se per qualche motivo la musica
+          non riesce a partire, non lasciamo
+          comunque l'utente bloccato
+          nella schermata iniziale.
+        */
+
+        console.error(
+          "❌ ERRORE MUSICA:",
+          error
+        );
+
+
+        mostraSito();
+
+        caricaImmagini();
+
+        startCarousel();
+
+      }
+
+    }
+
+
+
+    /* ======================================= */
+    /* CLICK / TOCCO SUL PULSANTE */
+    /* ======================================= */
+
+
+    /*
+      pointerdown parte PRIMA del normale click.
+
+      Su telefono significa che la funzione parte
+      nel momento in cui il dito TOCCA il pulsante,
+      senza aspettare che venga sollevato.
+    */
+
+    enterButton.addEventListener(
+      "pointerdown",
+      avviaEsperienza,
+      {
+        once: true
+      }
+    );
+
+
+
+    /* ======================================= */
+    /* SUPPORTO TASTIERA */
+    /* ======================================= */
+
+    enterButton.addEventListener(
+      "keydown",
+      function(event) {
+
+
+        if (
+          event.key === "Enter" ||
+          event.key === " "
+        ) {
+
+
+          event.preventDefault();
+
+          avviaEsperienza();
+
+        }
+
+
+      }
+    );
+
+
+
+  </script>
+
+
 </body>
-  </html>
+
+</html>
+```
