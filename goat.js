@@ -370,6 +370,8 @@ function initGoatMusic()
     music.muted = muted;
     /* CREA CONTROLLO AUDIO */
     const controls = createMusicControls(music, currentVolume, muted);
+    /* PLAY + PAUSE + BARRA CANZONE + TITOLO */
+    enhanceGoatMusicControls(controls, music);
     /* AGGRESSIVE AUTOPLAY ATTEMPT */
     let musicStarted = false;
     let interactionFallbackActive = false;
