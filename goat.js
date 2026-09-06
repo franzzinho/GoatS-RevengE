@@ -27,6 +27,8 @@ const GOAT =
     }
 };
 
+let pausedByUser = localStorage.getItem(GOAT.musicStorageKeys.paused) === "true";
+
 /* DOM READY */
 document.addEventListener("DOMContentLoaded", () => 
 {
@@ -362,8 +364,6 @@ function initGoatMusic()
     let currentVolume = storedVolume !== null ? storedVolume : pageVolume;
     /* STATO MUTE */
     let muted = localStorage.getItem(GOAT.musicStorageKeys.muted) === "true";
-    /* STATO PAUSE */
-    let pausedByUser = localStorage.getItem(GOAT.musicStorageKeys.paused) === "true";
     /* CREA AUDIO */
     const music = new Audio();
     music.src = musicSource;
