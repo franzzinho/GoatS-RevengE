@@ -514,9 +514,6 @@ nav .logo .arrow
 /*  GOATS MUSIC CONTROL  */
 .goat-music-control
 {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
     z-index: 9999;
     display: flex;
     align-items: center;
@@ -530,6 +527,12 @@ nav .logo .arrow
     transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
 
+nav .goat-music-control
+{
+    position: static;
+    margin-left: auto;
+}
+
 .goat-music-control:hover
 {
     transform: translateY(-2px);
@@ -537,7 +540,8 @@ nav .logo .arrow
     box-shadow: 0 12px 32px rgba(0,0,0,0.40), 0 0 25px rgba(0,230,255,0.12);
 }
 
-/* MUTE BUTTON */
+/* BUTTON */
+.goat-music-play,
 .goat-music-mute
 {
     width: 36px;
@@ -554,6 +558,14 @@ nav .logo .arrow
     font-size: 0.95rem;
     box-shadow: 0 0 14px rgba(0,230,255,0.08);
     transition: transform 0.22s ease, color 0.22s ease, background 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.goat-music-mute i,
+.goat-music-play i
+{
+    font-size: 1em;
+    width: 1em;
+    text-align: center;
 }
 
 .goat-music-mute:hover
@@ -606,20 +618,20 @@ nav .logo .arrow
 }
 
 /* MUSIC PLAYING */
-.goat-music-control.goat-music-playing
+.goat-music-control.goat-music-playing,
 .goat-music-mute
 {
     box-shadow: 0 0 17px rgba(0,230,255,0.18);
 }
 
-/* MUSIC MUTED */
-.goat-music-control.goat-music-muted
+/* MUSIC MUTED + PAUSED */
+.goat-music-control.goat-music-muted,
+.goat-music-control.goat-music-paused
 {
     opacity: 0.78;
 }
 
-.goat-music-control.goat-music-muted
-.goat-music-mute
+.goat-music-control.goat-music-muted .goat-music-mute
 {
     color: #ff4d6d;
     border-color: rgba(255,77,109,0.24);
@@ -645,8 +657,6 @@ nav .logo .arrow
 {
     .goat-music-control
     {
-        right: 12px;
-        bottom: 12px;
         gap: 7px;
         padding: 7px 9px;
     }
