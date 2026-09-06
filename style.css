@@ -653,7 +653,8 @@ nav .logo .arrow
 
     .goat-music-label
     {
-        display: none;
+        display: block;
+        font-size: 0.60rem;
     }
 
     .goat-music-volume
@@ -676,6 +677,87 @@ nav .logo .arrow
     {
         transition: none;
     }
+}
+
+/* LAYOUT CONTROLLI */
+.goat-music-control 
+{
+    display: grid !important;
+    grid-template-columns: auto auto minmax(0, 1fr);
+    grid-template-areas: "play mute label" "seek seek seek" "volume volume volume";
+    align-items: center;
+    column-gap: 8px;
+    row-gap: 7px;
+}
+
+/* PLAY + PAUSE */
+.goat-music-play 
+{
+    grid-area: play;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #dc2626 !important;
+    color: #ffffff !important;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.goat-music-control.goat-music-playing .goat-music-play 
+{
+    background-color: #16a34a !important;
+}
+
+.goat-music-play:hover 
+{
+    transform: scale(1.06);
+}
+
+.goat-music-mute 
+{
+    grid-area: mute;
+    background-color: #16a34a !important;
+    color: #ffffff !important;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.goat-music-control.goat-music-muted .goat-music-mute 
+{
+    background-color: #dc2626 !important;
+    color: #ffffff !important;
+}
+
+/* TITOLO CANZONE */
+.goat-music-label 
+{
+    grid-area: label;
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* BARRA AVANZAMENTO CANZONE */
+.goat-music-seek 
+{
+    grid-area: seek;
+    width: 100% !important;
+    margin: 0 !important;
+    cursor: pointer;
+}
+
+.goat-music-seek:disabled 
+{
+    cursor: default;
+    opacity: 0.45;
+}
+
+/* BARRA VOLUME */
+.goat-music-volume:not(.goat-music-seek) 
+{
+    grid-area: volume;
+    width: 100% !important;
+    margin: 0 !important;
 }
 
 /* ---------------------------------------------------------------- */
