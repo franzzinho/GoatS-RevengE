@@ -22,7 +22,8 @@ const GOAT =
     musicStorageKeys: 
     {
         muted: "goatMusicMuted",
-        volume: "goatMusicVolume"
+        volume: "goatMusicVolume",
+        paused: "goatMusicPaused"
     }
 };
 
@@ -361,6 +362,8 @@ function initGoatMusic()
     let currentVolume = storedVolume !== null ? storedVolume : pageVolume;
     /* STATO MUTE */
     let muted = localStorage.getItem(GOAT.musicStorageKeys.muted) === "true";
+    /* STATO PAUSE */
+    let pausedByUser = localStorage.getItem(GOAT.musicStorageKeys.paused) === "true";
     /* CREA AUDIO */
     const music = new Audio();
     music.src = musicSource;
@@ -453,8 +456,11 @@ function initGoatMusic()
         tryStartMusic();
     }
 
-    /* AUTOPLAY SUBITO */
-    tryStartMusic();
+    /* AUTOPLAY (solo se l'utente non aveva messo in pausa) */
+    if (!pausedByUser)
+    {
+        tryStartMusic();
+    }
 
     /* MUTE BUTTON */
     controls.muteButton.addEventListener("click", event =>
@@ -466,7 +472,7 @@ function initGoatMusic()
         localStorage.setItem(GOAT.musicStorageKeys.muted, String(muted));
         updateMusicMuteUI(controls, muted);
 
-        if (!musicStarted)
+        if (!musicStarted && !pausedByUser)
         {
             tryStartMusic();
         }
@@ -491,7 +497,7 @@ function initGoatMusic()
         updateMusicMuteUI(controls, music.muted);
         updateVolumeVisual(controls.volumeSlider, currentVolume);
 
-        if (!musicStarted)
+        if (!musicStarted && !pausedByUser)
         {
             tryStartMusic();
         }
@@ -546,7 +552,18 @@ function createMusicControls(music, volume, muted)
     container.appendChild(muteButton);
     container.appendChild(label);
     container.appendChild(volumeSlider);
-    document.body.appendChild(container);
+    
+    const navbar = document.querySelector(".navbar");
+
+    if (navbar)
+    {
+        navbar.appendChild(container);
+    }
+        
+    else
+    {
+        document.body.appendChild(container);
+    }
 
     const controls =
     {
@@ -578,12 +595,15 @@ function enhanceGoatMusicControls(controls, music)
     const playButton = document.createElement("button");
     playButton.type = "button";
     playButton.className = "goat-music-play";
-    playButton.textContent = "⏯️";
+    const playIcon = document.createElement("i");
+    playIcon.className = "fa-solid fa-play";
+    playButton.appendChild(playIcon);
     playButton.setAttribute("aria-label", "Riproduci musica");
     playButton.setAttribute("aria-pressed", "false");
     /* A SINISTRA DEL PULSANTE MUTE */
     controls.container.insertBefore(playButton, controls.muteButton);
     controls.playButton = playButton;
+    controls.playIcon = playIcon;
     /* BARRA AVANZAMENTO CANZONE */
     const seekSlider = document.createElement("input");
     seekSlider.type = "range";
@@ -623,6 +643,8 @@ function enhanceGoatMusicControls(controls, music)
             try 
             {
                 await music.play();
+                pausedByUser = false;
+                localStorage.setItem(GOAT.musicStorageKeys.paused, "false");
             } catch (error) 
             {
                 console.log("❌ Riproduzione musica bloccata ❌:", error);
@@ -631,6 +653,8 @@ function enhanceGoatMusicControls(controls, music)
         else 
         {
             music.pause();
+            pausedByUser = true;
+            localStorage.setItem(GOAT.musicStorageKeys.paused, "true");
         }
     });
 
@@ -724,6 +748,7 @@ function enhanceGoatMusicControls(controls, music)
     function updatePlayButton() 
     {
         const playing = !music.paused;
+        controls.playIcon.className = playing ? "fa-solid fa-pause" : "fa-solid fa-play";
         playButton.setAttribute("aria-label", playing ? "Metti in pausa la musica" : "Riproduci musica");
         playButton.setAttribute("aria-pressed", String(playing));
         controls.container.classList.toggle("goat-music-paused", !playing);
