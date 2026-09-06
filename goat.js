@@ -562,6 +562,198 @@ function createMusicControls(music, volume, muted)
     return controls;
 }
 
+/* GOATS MUSIC - PLAY + PAUSE + SEEK + TRACK TITLE */
+function enhanceGoatMusicControls(controls, music) 
+{
+    /* TITOLO CANZONE PRESO DALL'HTML */
+    const musicTitle = (document.body.dataset.musicTitle || "").trim();
+
+    if (musicTitle) 
+    {
+        controls.label.textContent = musicTitle;
+        controls.label.setAttribute("title", musicTitle);
+    }
+
+    /* PULSANTE PLAY + PAUSE */
+    const playButton = document.createElement("button");
+    playButton.type = "button";
+    playButton.className = "goat-music-play";
+    playButton.textContent = "⏯️";
+    playButton.setAttribute("aria-label", "Riproduci musica");
+    playButton.setAttribute("aria-pressed", "false");
+    /* A SINISTRA DEL PULSANTE MUTE */
+    controls.container.insertBefore(playButton, controls.muteButton);
+    controls.playButton = playButton;
+    /* BARRA AVANZAMENTO CANZONE */
+    const seekSlider = document.createElement("input");
+    seekSlider.type = "range";
+    seekSlider.className = "goat-music-seek goat-music-volume";
+    seekSlider.min = "0";
+    seekSlider.max = "1";
+    seekSlider.step = "0.01";
+    seekSlider.value = "0";
+    seekSlider.setAttribute("aria-label", "Posizione della canzone");
+    seekSlider.disabled = true;
+    /* INSERISCE LA BARRA PRIMA DEL VOLUME */
+    controls.container.insertBefore(seekSlider, controls.volumeSlider);
+    controls.seekSlider = seekSlider;
+    /* STATO INIZIALE SEEK */
+    updateGoatMusicSeek();
+    /* GESTIONE CLICK PLAY + PAUSE */
+    let pausedBeforePointer = null;
+
+    function rememberPlaybackState(event) 
+    {
+        if (event.target === playButton || playButton.contains(event.target)) 
+        {
+            pausedBeforePointer = music.paused;
+        }
+    }
+
+    document.addEventListener("pointerdown", rememberPlaybackState, true);
+
+    playButton.addEventListener("click", async event => 
+    {
+        event.stopPropagation();
+        const shouldPlay = pausedBeforePointer !== null ? pausedBeforePointer: music.paused;
+        pausedBeforePointer = null;
+
+        if (shouldPlay) 
+        {
+            try 
+            {
+                await music.play();
+            } catch (error) 
+            {
+                console.log("❌ Riproduzione musica bloccata ❌:", error);
+            }
+        } 
+        else 
+        {
+            music.pause();
+        }
+    });
+
+    /* SPOSTAMENTO AVANTI + INDIETRO NELLA CANZONE */
+    seekSlider.addEventListener("input", event => 
+    {
+        const duration = music.duration;
+
+        if (!Number.isFinite(duration) || duration <= 0) 
+        {
+            return;
+        }
+
+        const requestedTime = clamp(Number(event.target.value), 0, duration);
+        music.currentTime = requestedTime;
+        updateGoatMusicSeek();
+    });
+
+    /* AGGIORNA DURATA QUANDO L'MP3 È PRONTO */
+    function updateSeekDuration() 
+    {
+        const duration = music.duration;
+
+        if (!Number.isFinite(duration) || duration <= 0) 
+        {
+            seekSlider.disabled = true;
+            seekSlider.max = "1";
+            seekSlider.value = "0";
+            updateVolumeVisual(seekSlider, 0);
+            return;
+        }
+
+        seekSlider.disabled = false;
+        seekSlider.max = String(duration);
+        updateGoatMusicSeek();
+    }
+
+    /* AGGIORNA VISIVAMENTE LA BARRA */
+    function updateGoatMusicSeek() 
+    {
+        const duration = music.duration;
+
+        if (!Number.isFinite(duration) || duration <= 0) 
+        {
+            seekSlider.value = "0";
+            updateVolumeVisual(seekSlider, 0);
+            return;
+        }
+
+        const currentTime = clamp(music.currentTime, 0, duration);
+        const progress = currentTime / duration;
+        seekSlider.value = String(currentTime);
+        updateVolumeVisual(seekSlider, progress);
+    }
+
+    /* AGGIORNAMENTO FLUIDO DELLA BARRA */
+    let seekAnimationFrame = null;
+
+    function animateSeek() 
+    {
+        updateGoatMusicSeek();
+
+        if (!music.paused) 
+        {
+            seekAnimationFrame = requestAnimationFrame(animateSeek);
+        }
+    }
+
+    function startSeekAnimation() 
+    {
+        if (seekAnimationFrame !== null) 
+        {
+            cancelAnimationFrame(seekAnimationFrame);
+        }
+
+        seekAnimationFrame = requestAnimationFrame(animateSeek);
+    }
+
+    function stopSeekAnimation() 
+    {
+        if (seekAnimationFrame !== null) 
+        {
+            cancelAnimationFrame(seekAnimationFrame);
+            seekAnimationFrame = null;
+        }
+
+        updateGoatMusicSeek();
+    }
+
+    /* STATO PLAY + PAUSE */
+    function updatePlayButton() 
+    {
+        const playing = !music.paused;
+        playButton.setAttribute("aria-label", playing ? "Metti in pausa la musica" : "Riproduci musica");
+        playButton.setAttribute("aria-pressed", String(playing));
+        controls.container.classList.toggle("goat-music-paused", !playing);
+    }
+
+    /* EVENTI AUDIO */
+    music.addEventListener("loadedmetadata", updateSeekDuration);
+    music.addEventListener("durationchange", updateSeekDuration);
+    music.addEventListener("timeupdate", updateGoatMusicSeek);
+    music.addEventListener("play", () => 
+    {
+        updatePlayButton();
+        startSeekAnimation();
+    });
+
+    music.addEventListener("pause", () => 
+    {
+        updatePlayButton();
+        stopSeekAnimation();
+    });
+
+    music.addEventListener("ended", () => 
+    {
+        updatePlayButton();
+        updateGoatMusicSeek();
+    });
+
+    updatePlayButton();
+}
+
 /* UPDATE MUTE UI */
 function updateMusicMuteUI(controls,muted)
 {
