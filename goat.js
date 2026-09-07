@@ -142,9 +142,9 @@ function initScrollReveal()
         ".team-member-card",
         ".collaboration-card",
 
-        /* FUTURE STORE */
-        ".product-card",
-        ".store-product-card",
+        /* PROJECT */
+        ".project-card",
+        ".project-end-inner",
 
         /* FOOTER */
         ".footer-brand",
