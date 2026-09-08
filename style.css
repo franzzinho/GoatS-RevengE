@@ -4413,12 +4413,37 @@ header.hero p
     --card-rgb: 0,230,255;
 }
 
+/* CARD 2 
+.project-card-two
+{
+    --card-color: var(--project-green);
+    --card-rgb: 38, 255, 67
+} */
+ 
+
+
+
+
+
 /* CARD 2 */
 .project-card-two
 {
-    --card-color: var(--project-purple);
-    --card-rgb: 38, 255, 67
+    --card-color: var(--project-green);
+    --card-rgb: 2, 250, 126;
 }
+
+/* CARD 2 - TESTI E ICONA VERDI */
+.project-card-two .project-card-type,
+.project-card-two .project-card-icon,
+.project-card-two .project-card-number
+{
+    color: var(--project-green);
+}
+
+
+
+
+
 
 /* TOP NEON */
 .project-card::before
