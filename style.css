@@ -4570,7 +4570,8 @@ header.hero p
     margin-bottom: 22px;
 }
 
-.project-features span
+.project-features .project-feature-box,
+.project-features > span
 {
     display: flex;
     align-items: center;
@@ -4582,10 +4583,9 @@ header.hero p
     background: rgba(0,0,0,0.14);
 }
 
-.project-features i
+.project-features .fa-check
 {
-    font-size: 0.72rem;
-    color: var(--project-green);
+    display: none;
 }
 
 /* FOOTER CARD */
