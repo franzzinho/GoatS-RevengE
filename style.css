@@ -4745,13 +4745,13 @@ header.hero p
 
 .project-section-label 
 {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  color: #00eaff;
-  text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: var(--card-color);
+    text-transform: uppercase;
 }
 
 .project-info-block .project-card-description 
