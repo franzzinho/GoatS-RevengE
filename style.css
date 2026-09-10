@@ -4413,18 +4413,6 @@ header.hero p
     --card-rgb: 0,230,255;
 }
 
-/* CARD 2 
-.project-card-two
-{
-    --card-color: var(--project-green);
-    --card-rgb: 38, 255, 67
-} */
- 
-
-
-
-
-
 /* CARD 2 */
 .project-card-two
 {
@@ -4439,11 +4427,6 @@ header.hero p
 {
     color: var(--project-green);
 }
-
-
-
-
-
 
 /* TOP NEON */
 .project-card::before
@@ -4751,4 +4734,33 @@ header.hero p
     {
         transition: none;
     }
+}
+
+/* TITOLI SEZIONI PRODUCT CARD */
+.project-info-block 
+{
+  width: 100%;
+  margin-top: 18px;
+}
+
+.project-section-label 
+{
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #00eaff;
+  text-transform: uppercase;
+}
+
+.project-info-block .project-card-description 
+{
+  margin-top: 0;
+}
+
+.project-feature-box 
+{
+  display: block;
+  width: 100%;
 }
