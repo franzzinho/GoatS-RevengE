@@ -1,5 +1,4 @@
 /* ------------- PROPRIETÀ COMUNI IN TUTTE LE PAGINE ------------- */
-
 /* RESET SITO */
 *,
 *::before,
@@ -108,13 +107,7 @@ nav .logo .arrow
     padding: 0 20px 30px;
     overflow: hidden;
     color: #f6f7ff;
-    background: radial-gradient(circle at 50% 0%, rgba(176, 38, 255, 0.17), transparent 35%),
-
-        radial-gradient(circle at 15% 80%, rgba(0, 230, 255, 0.07), transparent 30% ),
-
-        radial-gradient(circle at 85% 80%, rgba(255, 77, 255, 0.07), transparent 30%),
-
-        linear-gradient(180deg, #080816 0%, #05050d 100%);
+    background: radial-gradient(circle at 50% 0%, rgba(176, 38, 255, 0.17), transparent 35%), radial-gradient(circle at 15% 80%, rgba(0, 230, 255, 0.07), transparent 30% ), radial-gradient(circle at 85% 80%, rgba(255, 77, 255, 0.07), transparent 30%), linear-gradient(180deg, #080816 0%, #05050d 100%);
 
     border-top: 1px solid rgba(255, 255, 255, 0.06);
 
@@ -429,7 +422,7 @@ nav .logo .arrow
     box-shadow: 0 0 25px rgba(176, 38, 255, 0.25);
 }
 
-/* LAYOUT TABLET */
+/* LAYOUT: TABLET */
 @media (max-width: 850px)
 {
     .footer-bottom
@@ -513,7 +506,6 @@ nav .logo .arrow
 
 /* ---------------------------------------------------------------- */
 /* ------------------ STYLE: GOAT.js ------------------------------ */
-
 /*  GOATS MUSIC CONTROL  */
 .goat-music-control
 {
@@ -655,7 +647,7 @@ nav .goat-music-control
     opacity: 0.65;
 }
 
-/* MOBILE */
+/* LAYOUT: MOBILE */
 @media (max-width: 600px)
 {
     .goat-music-control
@@ -775,7 +767,6 @@ nav .goat-music-control
 
 /* ---------------------------------------------------------------- */
 /* ------------------ STYLE SEZIONE: HOME ------------------------ */
-
 /* HERO */
 header.hero
 {
@@ -853,7 +844,7 @@ header.hero p
     text-shadow: none;
 }
 
-/* PULSANTE: SCOPRI DI PIÙ (home) */
+/* PULSANTE: SCOPRI DI PIÙ */
 .hero-btn 
 {
   display: inline-block;
@@ -925,12 +916,7 @@ header.hero p
     max-width: 1200px;
     margin: 70px auto;
     padding: 100px 25px;
-    background: radial-gradient( circle at 20% 10%,rgba(176, 38, 255, 0.12),transparent 35%),
-        
-        radial-gradient(circle at 85% 80%,rgba(0, 230, 255, 0.08),transparent 38%),
-        
-        rgba(255, 255, 255, 0.018);
-
+    background: radial-gradient( circle at 20% 10%,rgba(176, 38, 255, 0.12),transparent 35%), radial-gradient(circle at 85% 80%,rgba(0, 230, 255, 0.08),transparent 38%), rgba(255, 255, 255, 0.018);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 30px;
     box-shadow:0 0 40px rgba(0, 0, 0, 0.35), 0 0 60px rgba(176, 38, 255, 0.05);
@@ -1355,11 +1341,7 @@ header.hero p
     padding: 90px 25px;
     overflow: hidden;
     border-radius: 30px;
-    background:radial-gradient(circle at 50% 0%, rgba(176, 38, 255, 0.15), transparent 38%),
-
-        radial-gradient(circle at 10% 90%, rgba(0, 230, 255, 0.07), transparent 35%),
-        radial-gradient(circle at 90% 90%, rgba(255, 0, 102, 0.07), transparent 35%), rgba(255, 255, 255, 0.018);
-    
+    background:radial-gradient(circle at 50% 0%, rgba(176, 38, 255, 0.15), transparent 38%), radial-gradient(circle at 10% 90%, rgba(0, 230, 255, 0.07), transparent 35%), radial-gradient(circle at 90% 90%, rgba(255, 0, 102, 0.07), transparent 35%), rgba(255, 255, 255, 0.018);
     border: 1px solid rgba(255, 255, 255, 0.07);
     box-shadow: 0 25px 70px rgba(0, 0, 0, 0.32), 0 0 50px rgba(176, 38, 255, 0.06);
 }
@@ -1452,6 +1434,7 @@ header.hero p
 {
     --action-color: #00e6ff;
     --action-rgb: 0, 230, 255;
+    
     position: relative;
     min-height: 400px;
     display: flex;
@@ -1475,7 +1458,7 @@ header.hero p
     left: 25px;
     right: 25px;
     height: 2px;
-    background:linear-gradient(90deg, transparent, var(--action-color), transparent);
+    background: linear-gradient(90deg, transparent, var(--action-color), transparent);
     opacity: 0.7;
     transition: 0.35s ease;
 }
@@ -1770,7 +1753,6 @@ header.hero p
 
 /* ---------------------------------------------------------------- */
 /* ------------------ STYLE SEZIONE: ABOUT ------------------------ */
-
 /* SCRITTA: FRANZZINHO */
 .about-showcase
 {
@@ -2024,8 +2006,7 @@ header.hero p
 
 /* ---------------------------------------------------------------- */
 /* ------------------ STYLE SEZIONE: TEAM ------------------------ */
-
-/* PALETTE TEAM (fissa per tutta la pagina) */
+/* PALETTE TEAM */
 .team-page
 {
     --team-cyan: #00e6ff;
@@ -2047,13 +2028,7 @@ header.hero p
     padding: 100px 20px 90px;
     overflow: hidden;
     text-align: center;
-    background: radial-gradient(circle at 20% 15%, rgba(0,230,255,0.14), transparent 35%),
-
-        radial-gradient(circle at 80% 20%, rgba(176,38,255,0.20), transparent 38%),
-
-        radial-gradient(circle at 50% 100%, rgba(255,77,255,0.07), transparent 40%),
-
-        linear-gradient(180deg, rgba(7,8,22,0.30), rgba(5,5,17,0.90));
+    background: radial-gradient(circle at 20% 15%, rgba(0,230,255,0.14), transparent 35%), radial-gradient(circle at 80% 20%, rgba(176,38,255,0.20), transparent 38%), radial-gradient(circle at 50% 100%, rgba(255,77,255,0.07), transparent 40%), linear-gradient(180deg, rgba(7,8,22,0.30), rgba(5,5,17,0.90));
 }
 
 /* LINEA SUPERIORE */
@@ -2217,7 +2192,6 @@ header.hero p
     --path-color: var(--team-purple);
     --path-rgb: 176,38,255;
 }
-
 
 /* LINEA IN ALTO */
 .team-path-card::before
@@ -2908,13 +2882,7 @@ header.hero p
     padding: 100px 20px 85px;
     overflow: hidden;
     text-align: center;
-    background: radial-gradient(circle at 20% 20%, rgba(255, 106, 0, 0.13), transparent 35%),
-
-        radial-gradient(circle at 80% 25%, rgba(176, 38, 255, 0.18), transparent 37%),
-
-        radial-gradient(circle at 50% 100%, rgba(0, 230, 255, 0.07), transparent 38%),
-
-        linear-gradient(180deg, rgba(7, 8, 22, 0.3), rgba(5, 5, 17, 0.85));
+    background: radial-gradient(circle at 20% 20%, rgba(255, 106, 0, 0.13), transparent 35%), radial-gradient(circle at 80% 25%, rgba(176, 38, 255, 0.18), transparent 37%), radial-gradient(circle at 50% 100%, rgba(0, 230, 255, 0.07), transparent 38%), linear-gradient(180deg, rgba(7, 8, 22, 0.3), rgba(5, 5, 17, 0.85));
 }
 
 /* LINEA SUPERIORE */
@@ -2937,10 +2905,7 @@ header.hero p
     position: absolute;
     inset: 0;
     opacity: 0.025;
-    background-image: linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px),
-
-        linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px);
-
+    background-image: linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px);
     background-size: 45px 45px;
     pointer-events: none;
 }
@@ -3451,8 +3416,6 @@ header.hero p
 
 /* ---------------------------------------------------------------- */
 /* ------------------ STYLE SEZIONE: TERMINI ------------------------ */
-
-/* PAGINA */
 .legal-page
 {
     position: relative;
@@ -3468,13 +3431,7 @@ header.hero p
     padding: 100px 20px 85px;
     overflow: hidden;
     text-align: center;
-    background: radial-gradient(circle at 20% 15%, rgba(0, 230, 255, 0.12), transparent 35%),
-
-        radial-gradient(circle at 80% 20%, rgba(176, 38, 255, 0.18), transparent 37%),
-
-        radial-gradient(circle at 50% 100%, rgba(255, 216, 77, 0.06), transparent 35%),
-
-        linear-gradient(180deg, rgba(7, 8, 22, 0.30), rgba(5, 5, 17, 0.90));
+    background: radial-gradient(circle at 20% 15%, rgba(0, 230, 255, 0.12), transparent 35%), radial-gradient(circle at 80% 20%, rgba(176, 38, 255, 0.18), transparent 37%), radial-gradient(circle at 50% 100%, rgba(255, 216, 77, 0.06), transparent 35%), linear-gradient(180deg, rgba(7, 8, 22, 0.30), rgba(5, 5, 17, 0.90));
 }
 
 /* RGB TOP LINE */
@@ -3497,10 +3454,7 @@ header.hero p
     position: absolute;
     inset: 0;
     opacity: 0.022;
-    background-image: linear-gradient(rgba(255,255,255,0.45) 1px,transparent 1px),
-
-        linear-gradient(90deg, rgba(255,255,255,0.45) 1px, transparent 1px);
-
+    background-image: linear-gradient(rgba(255,255,255,0.45) 1px,transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.45) 1px, transparent 1px);
     background-size: 45px 45px;
     pointer-events: none;
 }
@@ -4191,9 +4145,7 @@ header.hero p
 }
 
 /* ---------------------------------------------------------------- */
-/* ------------------ STYLE SEZIONE: PROJECT (general) ------------ */
-
-/* PROJECT PAGE */
+/* ------------------ STYLE SEZIONE: PROJECT (general page) ------------ */
 .project-page
 {
     --project-cyan: #00e6ff;
@@ -4215,10 +4167,7 @@ header.hero p
     padding: 105px 20px 90px;
     overflow: hidden;
     text-align: center;
-    background: radial-gradient(circle at 20% 15%, rgba(0,230,255,0.12), transparent 35%),
-        
-        radial-gradient(circle at 80% 15%, rgba(176,38,255,0.18), transparent 38%),
-        linear-gradient(180deg, rgba(7,8,22,0.30),rgba(5,5,17,0.92));
+    background: radial-gradient(circle at 20% 15%, rgba(0,230,255,0.12), transparent 35%), radial-gradient(circle at 80% 15%, rgba(176,38,255,0.18), transparent 38%), linear-gradient(180deg, rgba(7,8,22,0.30),rgba(5,5,17,0.92));
 }
 
 /* LINEA SUPERIORE */
@@ -4242,10 +4191,7 @@ header.hero p
     inset: 0;
     opacity: 0.022;
     pointer-events: none;
-    background-image: linear-gradient(rgba(255,255,255,0.45) 1px, transparent 1px),
-        
-        linear-gradient(90deg, rgba(255,255,255,0.45) 1px, transparent 1px);
-    
+    background-image: linear-gradient(rgba(255,255,255,0.45) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.45) 1px, transparent 1px);
     background-size: 50px 50px;
 }
 
@@ -4396,6 +4342,7 @@ header.hero p
 {
     --card-color: var(--project-cyan);
     --card-rgb: 0,230,255;
+    
     position: relative;
     overflow: hidden;
     border-radius: 27px;
@@ -4663,7 +4610,7 @@ header.hero p
     color: #ffffff;
 }
 
-/* TABLET */
+/* LAYOUT: TABLET */
 @media (max-width: 850px)
 {
     .projects-grid
@@ -4684,7 +4631,7 @@ header.hero p
     }
 }
 
-/* MOBILE */
+/* LAYOUT: MOBILE */
 @media (max-width: 600px)
 {
     .project-hero
@@ -4774,8 +4721,8 @@ header.hero p
     --product-secondary-rgb: 176, 38, 255;
     --product-accent: #ffd84d;
     --product-green: #02fa7e;
-    position: relative;
     
+    position: relative;
     overflow: hidden;
 }
 
@@ -5519,7 +5466,8 @@ header.hero p
     color: var(--product-primary);
 }
 
-.product-spec-grid span {
+.product-spec-grid span 
+{
     font-size: 0.84rem;
     color: rgba(255, 255, 255, 0.68);
 }
@@ -5551,7 +5499,8 @@ header.hero p
 }
 
 .product-compatibility-columns h3,
-.product-support-columns h3 {
+.product-support-columns h3 
+{
     margin-bottom: 10px;
     color: var(--product-primary);
 }
@@ -5794,7 +5743,8 @@ header.hero p
 /* LAYOUT: TABLET */
 @media (max-width: 950px) 
 {
-    .product-hero-grid {
+    .product-hero-grid 
+    {
         grid-template-columns: 1fr;
         max-width: 720px;
     }
