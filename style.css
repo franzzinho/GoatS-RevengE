@@ -1839,25 +1839,6 @@ header.hero p
     aspect-ratio: 16 / 9;
 }
 
-/* LAYOUT: RESPONSIVE */
-@media (max-width: 768px)
-{
-    .about-showcase
-    {
-        padding: 10px 12px 0;
-    }
-
-    .neon-title.pink
-    {
-        font-size: 1.6rem;
-    }
-
-    .carousel-container
-    {
-        width: 94vw;
-    }
-}
-
     body.intro-active 
     {
       overflow: hidden;
@@ -2021,6 +2002,25 @@ header.hero p
     {
       visibility: visible;
     }
+
+/* LAYOUT: RESPONSIVE */
+@media (max-width: 768px)
+{
+    .about-showcase
+    {
+        padding: 10px 12px 0;
+    }
+
+    .neon-title.pink
+    {
+        font-size: 1.6rem;
+    }
+
+    .carousel-container
+    {
+        width: 94vw;
+    }
+}
 
 /* ---------------------------------------------------------------- */
 /* ------------------ STYLE SEZIONE: TEAM ------------------------ */
