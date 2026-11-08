@@ -1096,22 +1096,10 @@ header.hero p
     --card-rgb: 255, 216, 77;
 }
 
-.card-donation
+.card-coming
 {
     --card-color: #02fa7e;
     --card-rgb: 2, 250, 126;
-}
-
-.card-coming
-{
-    --card-color: #ff0000;
-    --card-rgb: 176, 38, 255;
-}
-
-.card-team
-{
-    --card-color: #fc941c;
-    --card-rgb: 252, 148, 28;
 }
 
 /* ICON */
