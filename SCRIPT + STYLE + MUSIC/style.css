@@ -6500,3 +6500,173 @@ header.hero p
     transition: none; 
   }
 }
+
+/* ---------------------------------------------------------------- */
+/* ------------------ STYLE SEZIONE: DOPO ACQUISTO ------------ */
+.stripe-return-page 
+{ 
+  min-height: min(78vh, 800px);
+  display: grid; 
+  place-items: center; 
+  padding: 76px 20px 88px; 
+}
+
+.stripe-return-panel 
+{ 
+  width: min(100%, 780px); 
+  padding: clamp(24px, 5vw, 54px); 
+  background: #151927; 
+  border: 1px solid #343b4b; 
+  border-radius: 22px; 
+  color: #f7f8fc;
+  box-shadow: 0 24px 64px rgba(0,0,0,.26); 
+}
+
+.stripe-return-symbol 
+{
+  width: 64px; 
+  height: 64px; 
+  border-radius: 18px; 
+  display:grid; 
+  place-items:center; 
+  font-size: 27px; 
+  color:#102219; 
+  background:#b2f0cc;
+  margin-bottom: 26px; 
+}
+
+.stripe-return-overline 
+{ 
+  color:#b9c4d2; 
+  letter-spacing:.12em; 
+  font-size:.7rem;
+  font-weight:800; 
+}
+
+.stripe-return-panel h1 
+{ 
+  font-size:clamp(2rem, 5vw, 3.2rem); 
+  line-height:1.1; 
+  margin:12px 0 15px; 
+  color:#fff; 
+}
+
+.stripe-return-lead 
+{ 
+  max-width:62ch; 
+  font-size:1.05rem; 
+  color:#d5dce7; 
+  line-height:1.75; 
+}
+
+.stripe-return-info 
+{ 
+  margin-top:30px; 
+  padding:25px; 
+  border-radius:15px; 
+  background:#1f2535; 
+  border:1px solid #353e52; 
+}
+
+.stripe-return-info h2 
+{ 
+  font-size:1.2rem; 
+  color:#fff; 
+  margin-bottom:12px; 
+}
+
+.stripe-return-info p 
+{ 
+  color:#d2dbe7; 
+  line-height:1.75;
+  margin:12px 0; 
+}
+
+.stripe-return-actions 
+{ 
+  display:flex; 
+  gap:11px;
+  flex-wrap:wrap; 
+  margin-top:28px; 
+}
+
+.stripe-return-actions a 
+{ 
+  display:inline-flex;
+  align-items:center; 
+  gap:9px; 
+  padding:13px 19px; 
+  border-radius:11px; 
+  font-weight:800; 
+  text-decoration:none; 
+  transition:transform .2s ease; 
+}
+
+.stripe-return-actions a:hover 
+{ 
+  transform:translateY(-2px); 
+}
+
+.stripe-return-primary 
+{ 
+  color:#131a24; 
+  background:#d9f6e6; 
+}
+
+.stripe-return-secondary 
+{
+  color:#fff;
+  border:1px solid #647185; 
+}
+
+.stripe-return-footnote 
+{ 
+  font-size:.79rem; 
+  color:#b8c3d3; 
+  margin-top:28px; 
+}
+
+.stripe-return-footer 
+{ 
+  text-align:center; 
+  color:#b1bece;
+  padding:20px 12px 40px; 
+  font-size:.85rem;
+}
+
+.stripe-return-footer a 
+{ 
+  color:inherit;
+  text-decoration:underline; 
+}
+
+@media (max-width:580px)
+{ 
+    .stripe-return-page 
+    { 
+        padding:45px 12px; 
+    } 
+    
+    .stripe-return-info 
+    { 
+        padding:17px; 
+    } 
+    
+    .stripe-return-actions 
+    { 
+        flex-direction:column; 
+    } 
+    
+    .stripe-return-actions a 
+    { 
+        justify-content:center; 
+    } 
+}
+
+@media (prefers-reduced-motion:reduce) 
+{ 
+    .stripe-return-actions a 
+    { 
+        transition:none; 
+    } 
+}
