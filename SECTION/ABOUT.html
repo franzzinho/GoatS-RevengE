@@ -226,152 +226,152 @@
 
   <!-- SCRIPT: MUSICA + INTRO + CAROSELLO -->
   <script>
-    
-    let slideIndex = 0;
-    let carouselAvviato = false;
-    let esperienzaAvviata = false;
-    const introScreen = document.getElementById("introScreen");
-    const enterButton = document.getElementById("enterButton");
-    const siteContent = document.getElementById("siteContent");
-    const music = document.getElementById("carouselMusic");
-    const carousel = document.querySelector(".carousel-slide");
 
-    /* MOSTRA IL CONTENUTO DEL SITO */
-    function mostraSito() 
+
+
+
+
+
+let slideIndex = 0;
+let carouselAvviato = false;
+let esperienzaAvviata = false;
+
+const introScreen = document.getElementById("introScreen");
+const enterButton = document.getElementById("enterButton");
+const siteContent = document.getElementById("siteContent");
+const music = document.getElementById("carouselMusic");
+const carousel = document.querySelector(".carousel-slide");
+
+/* MOSTRA IL CONTENUTO DEL SITO */
+function mostraSito()
+{
+  siteContent.classList.add("visible");
+
+  /* RIATTIVA LO SCROLL */
+  document.body.classList.remove("intro-active");
+
+  /* NASCONDE L'INTRO */
+  introScreen.classList.add("hidden");
+
+  setTimeout(function()
+  {
+    introScreen.style.display = "none";
+  }, 900);
+}
+
+/* CARICA LE IMMAGINI DEL CAROSELLO */
+function caricaImmagini()
+{
+  const immagini = document.querySelectorAll(".carousel-slide img[data-src]");
+
+  immagini.forEach(function(img, index)
+  {
+    function carica()
     {
-      siteContent.classList.add("visible");
-
-      /* RIATTIVA LO SCROLL */
-      document.body.classList.remove("intro-active");
-
-      /* NASCONDE L'INTRO */
-      introScreen.classList.add("hidden");
-
-      setTimeout(function() 
-      {
-        introScreen.style.display = "none";
-      }, 900);
+      img.fetchPriority = index < 3 ? "high" : "low";
+      img.src = img.dataset.src;
+      img.removeAttribute("data-src");
     }
 
-    /* CARICA LE IMMAGINI DEL CAROSELLO */
-    function caricaImmagini() 
+    /* PRIME 3 IMMAGINI IMMEDIATE */
+    if (index < 3)
     {
-      const immagini = document.querySelectorAll(".carousel-slide img[data-src]");
-      immagini.forEach(function(img, index) 
-      {
-        let ritardo = 0;
-        
-        if (index >= 3) 
-        {
-          ritardo = 250 + ((index - 3) * 90);
-        }
-
-        setTimeout(function() 
-        {
-          if (index < 3) 
-          {
-            img.fetchPriority = "high";
-          }
-
-          else 
-          {
-            img.fetchPriority = "low";
-          }
-
-          /* ATTIVA IL CARICAMENTO DELLE IMMAGINI */
-          img.src = img.dataset.src;
-          img.removeAttribute("data-src");
-        }, ritardo);
-      });
+      carica();
     }
 
-    /* FOTO SUCCESSIVA */
-    function moveToNextSlide() 
+    /* ALTRE IMMAGINI PROGRESSIVE */
+    else
     {
-      if (!carousel) 
-      {
-        return;
-      }
-
-      const immagini = document.querySelectorAll(".carousel-slide img");
-      const totalSlides = immagini.length;
-
-      if (totalSlides === 0) 
-      {
-        return;
-      }
-      
-      slideIndex++;
-
-      if (slideIndex >= totalSlides) 
-      {
-        slideIndex = 0;
-      }
-
-      carousel.style.transform = `translateX(-${slideIndex * 100}%)`;
+      const ritardo = 250 + ((index - 3) * 90);
+      setTimeout(carica, ritardo);
     }
+  });
+}
 
-    /* AVVIA CAROSELLO */
-    function startCarousel() 
+/* FOTO SUCCESSIVA */
+function moveToNextSlide()
+{
+  if (!carousel)
+  {
+    return;
+  }
+
+  const immagini = carousel.querySelectorAll("img");
+  const totalSlides = immagini.length;
+
+  if (totalSlides === 0)
+  {
+    return;
+  }
+
+  slideIndex = (slideIndex + 1) % totalSlides;
+
+  carousel.style.transform = `translateX(-${slideIndex * 100}%)`;
+}
+
+/* AVVIA CAROSELLO */
+function startCarousel()
+{
+  if (carouselAvviato)
+  {
+    return;
+  }
+
+  carouselAvviato = true;
+
+  setInterval(moveToNextSlide, 3000);
+
+  console.log("✅ CAROSELLO AVVIATO ✅");
+}
+
+/* AVVIA ESPERIENZA */
+function avviaEsperienza()
+{
+  /* IMPEDISCE DOPPI AVVII */
+  if (esperienzaAvviata)
+  {
+    return;
+  }
+
+  esperienzaAvviata = true;
+
+  enterButton.textContent = "🐐 LOADING FRANZZINHO'S SWAG 🐐";
+  enterButton.disabled = true;
+
+  /* MOSTRA SUBITO IL SITO */
+  mostraSito();
+
+  /* CARICA LE IMMAGINI */
+  caricaImmagini();
+
+  /* AVVIA IL CAROSELLO */
+  startCarousel();
+
+  /* AVVIA LA MUSICA SENZA BLOCCARE IL SITO */
+  music.play()
+    .then(function()
     {
-      /* IMPEDISCE L'AVVIO 2 VOLTE */
-      if (carouselAvviato) 
-      {
-        return;
-      }
-
-      carouselAvviato = true;
-      setInterval(moveToNextSlide, 3000);
-      console.log("✅ CAROSELLO AVVIATO ✅");
-    }
-
-    async function avviaEsperienza() 
+      console.log("✅ MUSICA PARTITA ✅");
+    })
+    .catch(function(error)
     {
-      /* IMPEDISCE DOPPI CLICK / DOPPI AVVII */
-      if (esperienzaAvviata) 
-      {
-        return;
-      }
-
-      esperienzaAvviata = true;
-      enterButton.textContent = "🐐 LOADING FRANZZINHO'S SWAG 🐐";
-      enterButton.disabled = true;
-
-      try
-      {
-        await music.play();
-        console.log("✅ MUSICA PARTITA ✅");
-        mostraSito();
-        caricaImmagini();
-        startCarousel();
-      }
-
-      /* NEL CASO DI ERRORE, IL SITO MOSTRERA' COMUNQUE LE IMMAGINI NEL CAROSELLO (senza music) */
-      catch (error) 
-      {
-        console.error("❌ ERRORE MUSICA ❌:", error);
-        mostraSito();
-        caricaImmagini();
-        startCarousel();
-      }
-    }
-
-    /* CLICK / TOCCO SUL PULSANTE */
-    enterButton.addEventListener("pointerdown", avviaEsperienza,
-    {
-        once: true
+      console.error("❌ ERRORE MUSICA ❌:", error);
     });
+}
 
-    /* SUPPORTO TASTIERA */
-    enterButton.addEventListener("keydown", function(event) 
-    {
-        if (event.key === "Enter" || event.key === " ") 
-        {
-          event.preventDefault();
-          avviaEsperienza();
-        }
-      }
-    );
+/* CLICK, TOUCH E TASTIERA */
+enterButton.addEventListener("click", avviaEsperienza);
+
+
+
+
+
+
+
+
+
+    
+    
   </script>
 </body>
 </html>
