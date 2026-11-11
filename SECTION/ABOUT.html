@@ -10,12 +10,12 @@
   
   <title>About</title>
 
-  <link rel="icon" type="image/png" href="extra_file/icona_sito.png">
+  <link rel="icon" type="image/png" href="../icona_sito.png?v=2">
   
   <!-- PRE-LOAD MUSIC -->
   <link rel="preload" href="carosello_about/fein.mp3" as="audio" type="audio/mpeg" fetchpriority="high">
   
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="SCRIPT + STYLE + MUSIC/style.css">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
@@ -49,12 +49,12 @@
   <div id="siteContent">
 
     <!-- NAVBAR -->
-    <nav class="navbar">
-      <div class="logo">
-      <a href="index.html">🐐 GoatS RevengE 🧠</a>
-      <span class="arrow">⬅️</span>      
+    <nav class="navbar" aria-label="Navigazione principale">
+  <div class="logo">
+    <a href="../index.html">🐐 GoatS RevengE 🧠</a>
+    <span class="arrow">⬅️</span>      
   </div>
-    <ul>
+  <ul>
   </ul>
   </nav>
 
@@ -64,11 +64,9 @@
       <h2 class="neon-title pink">
 
         <a
-          href="https://www.instagram.com/franzzinho.zbb/"
+          href="https://www.instagram.com/franzzinho.real/"
           target="_blank"
-          rel="noopener noreferrer">
-          
-          🔞 Franzzinho 🔞
+          rel="noopener noreferrer"> 🔞 Franzzinho 🔞
         </a>
       </h2>
     </section>
@@ -228,6 +226,7 @@
 
   <!-- SCRIPT: MUSICA + INTRO + CAROSELLO -->
   <script>
+    
     let slideIndex = 0;
     let carouselAvviato = false;
     let esperienzaAvviata = false;
@@ -347,7 +346,7 @@
         startCarousel();
       }
 
-      /* NEL CASO DI ERRORE, IL SITO MOSTRERA' COMUNQUE LE IMMAGINI NEL CAROSELLO */
+      /* NEL CASO DI ERRORE, IL SITO MOSTRERA' COMUNQUE LE IMMAGINI NEL CAROSELLO (senza music) */
       catch (error) 
       {
         console.error("❌ ERRORE MUSICA ❌:", error);
