@@ -351,11 +351,10 @@ function initGoatMusic()
     }
 
     /* TRACK DELLA PAGINA */
-    const musicSource = (document.body.dataset.musicSrc || "").trim();
+    const musicSource = document.body.dataset.musicSrc;
 
     if (!musicSource)
     {
-        console.info("ℹ️ GOAT FM: nessun data-music-src configurato in questa pagina.");
         return;
     }
 
@@ -368,7 +367,6 @@ function initGoatMusic()
     /* CREA AUDIO */
     const music = new Audio();
     music.src = musicSource;
-    console.info("🎵 GOAT FM - sorgente audio:", music.src);
     music.loop = true;
     music.preload = "auto";
     music.volume = currentVolume;
@@ -402,26 +400,9 @@ function initGoatMusic()
 
         catch (error)
         {
-            if (error.name === "NotAllowedError")
-            {
-                /* Il browser richiede un'interazione dell'utente */
-                controls.container.classList.add("goat-music-waiting");
-                armInteractionFallback();
-                console.info("🐐 Autoplay non consentito: attendo la prima interazione.");
-            }
-            else
-            {
-                /* Nessuna interazione puo' risolvere un file mancante/non valido */
-                controls.container.classList.remove("goat-music-waiting");
-                controls.container.classList.add("goat-music-error");
-                removeInteractionFallback();
-                console.error("❌ GOAT FM - errore sorgente/riproduzione:", {
-                    nome: error.name,
-                    messaggio: error.message,
-                    url: music.src,
-                    codiceMedia: music.error?.code ?? null
-                });
-            }
+            controls.container.classList.add("goat-music-waiting");
+            armInteractionFallback();
+            console.log("🐐 Autoplay bloccato: musica armata sulla prima interazione.");
             return false;
         }
     }
@@ -536,20 +517,7 @@ function initGoatMusic()
 
     music.addEventListener("error", () =>
     {
-        const mediaError = music.error;
-        const meanings = {
-            1: "Caricamento interrotto",
-            2: "Errore di rete o caricamento",
-            3: "Errore di decodifica audio",
-            4: "Sorgente non supportata o non disponibile"
-        };
-        console.error("❌ GOAT FM - MUSIC ERROR:", {
-            codice: mediaError?.code ?? null,
-            significato: meanings[mediaError?.code] || "Errore non identificato",
-            messaggio: mediaError?.message || "",
-            url: music.src,
-            currentSrc: music.currentSrc
-        });
+        console.error("❌ MUSIC ERROR ❌:", music.error);
         controls.container.classList.add("goat-music-error");
     });
 }
@@ -679,11 +647,7 @@ function enhanceGoatMusicControls(controls, music)
                 localStorage.setItem(GOAT.musicStorageKeys.paused, "false");
             } catch (error) 
             {
-                console.error("❌ Riproduzione GOAT FM non riuscita ❌:", {
-                    nome: error.name,
-                    messaggio: error.message,
-                    url: music.src
-                });
+                console.log("❌ Riproduzione musica bloccata ❌:", error);
             }
         } 
         else 
