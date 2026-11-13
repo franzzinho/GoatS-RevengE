@@ -858,7 +858,7 @@ function clamp(value, min,max)
     
       "am.006": "Explore features",
     
-      am.007": "View previews",
+      "am.007": "View previews",
     
       "am.008": "Insert an actual screenshot",
     
