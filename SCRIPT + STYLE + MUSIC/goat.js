@@ -1303,3 +1303,97 @@ function clamp(value, min,max)
     init();
   }
 })();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* GOATS HOME | Additional editorial copy IT/EN.
+   goat.js keeps control of the language selector and localStorage.
+   This module only translates NEW copy from the redesigned Home. */
+(() => {
+  'use strict';
+  const textNodes = [...document.querySelectorAll('.gh-root [data-it][data-en]')];
+  const attrNodes = [...document.querySelectorAll('.gh-root [data-gh-alt-en], .gh-root [data-gh-aria-en], meta[data-gh-content-en]')];
+  const originalAttributes = new WeakMap();
+  const lang = () => {
+    try { return localStorage.getItem('goatSiteLanguage') === 'en' ? 'en' : 'it'; }
+    catch (_) { return document.documentElement.lang === 'en' ? 'en' : 'it'; }
+  };
+  function apply(current) {
+    const key = current === 'en' ? 'en' : 'it';
+    // Only site-authored static strings are used; no external/user input is inserted.
+    textNodes.forEach(el => { el.innerHTML = el.getAttribute('data-'+key); });
+    const rules = [['data-gh-alt-en','alt'],['data-gh-aria-en','aria-label'],['data-gh-content-en','content']];
+    attrNodes.forEach(el => {
+      if (!originalAttributes.has(el)) originalAttributes.set(el, {});
+      const originals = originalAttributes.get(el);
+      rules.forEach(([source, target]) => {
+        if (!el.hasAttribute(source)) return;
+        if (!(target in originals)) originals[target] = el.getAttribute(target);
+        const val = key === 'en' ? el.getAttribute(source) : originals[target];
+        if (val == null) el.removeAttribute(target); else el.setAttribute(target,val);
+      });
+    });
+  }
+  function init() {
+    const imgs = document.querySelectorAll('.gh-root .gh-portrait-img,.gh-root .gh-evidence-photo');
+    imgs.forEach(img => {
+      const mark = () => { if(img.naturalWidth > 0) img.parentElement.classList.add('gh-image-loaded'); };
+      if (img.complete) mark();
+      else img.addEventListener('load', mark, {once:true});
+    });
+    apply(lang());
+    document.addEventListener('goat:languagechange', e => {
+      apply(e.detail?.language === 'en' ? 'en' : 'it');
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, {once:true});
+  else init();
+})();
