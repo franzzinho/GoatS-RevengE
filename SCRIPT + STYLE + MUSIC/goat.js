@@ -836,3 +836,470 @@ function clamp(value, min,max)
 {
     return Math.min(Math.max(value, min),max);
 }
+
+/* GOATS REVENGE | BILINGUAL LANGUAGE ENGINE */
+(() => 
+{
+  "use strict";
+
+  const STORAGE_KEY = "goatSiteLanguage";
+  const SUPPORTED_LANGUAGES = new Set(["it", "en"]);
+  const GOAT_I18N_EN = 
+  {
+      "am.001": "Manage offers from your phone. Organize publishing through the Windows backend.",
+    
+      "am.002": "An Android app paired with a Windows backend. Create and manage offers, review drafts and published posts, configure Telegram channels, and set up automation and publishing schedules.",
+    
+      "am.003": "Android app",
+    
+      "am.004": "Windows backend",
+    
+      "am.005": "Telegram channels",
+    
+      "am.006": "Explore features",
+    
+      am.007": "View previews",
+    
+      "am.008": "Insert an actual screenshot",
+    
+      "am.009": "Two components, one connected workflow.",
+    
+      "am.010": "Create and edit",
+    
+      "am.011": "Drafts and published",
+    
+      "am.012": "Scheduling",
+    
+      "am.013": "Rules and categories",
+    
+      "am.014": "CONTROL AND AUTOMATION",
+    
+      "am.015": "Affiliate Manager features",
+    
+      "am.016": "From preparing offers to managing publishing.",
+    
+      "am.017": "Published offers and drafts",
+    
+      "am.018": "Browse offers that have already been published and those still in draft.",
+    
+      "am.019": "Full offer management",
+    
+      "am.020": "Create new offers, edit existing information, and delete offers you no longer need.",
+    
+      "am.021": "Publishing schedules",
+    
+      "am.022": "Schedule posts for your configured Telegram channels.",
+    
+      "am.023": "Set categories and criteria for automated offer searches, subject to available authorized integrations.",
+    
+      "am.024": "Telegram channels and bots",
+    
+      "am.025": "Configure channel identifiers and connection settings for the publishing bot.",
+    
+      "am.026": "Backend connection",
+    
+      "am.027": "Manage the IP address, port and bind address of the Windows service to connect the app to its backend.",
+    
+      "am.028": "ONE SYSTEM, TWO COMPONENTS",
+    
+      "am.029": "How it works",
+    
+      "am.030": "The Android app provides the control interface; the Windows backend runs the configured processes.",
+    
+      "am.031": "Start the backend",
+    
+      "am.032": "Configure and run the service on a Windows PC.",
+    
+      "am.033": "Connect Android",
+    
+      "am.034": "Set up the network connection between your phone and the backend.",
+    
+      "am.035": "Set your rules",
+    
+      "am.036": "Manage offers, categories, channels and publishing time windows.",
+    
+      "am.037": "Monitor",
+    
+      "am.038": "Review drafts and published offers from the Android app.",
+    
+      "am.039": "PACKAGE CONTENTS",
+    
+      "am.040": "What you get",
+    
+      "am.041": "Android application",
+    
+      "am.042": "Windows backend program",
+    
+      "am.043": "Offer and draft management",
+    
+      "am.044": "Publishing scheduler",
+    
+      "am.045": "Rules and category settings",
+    
+      "am.046": "Bot and channel settings",
+    
+      "am.047": "Network settings",
+    
+      "am.048": "Configuration files",
+    
+      "am.049": "Installation instructions",
+    
+      "am.050": "Quick-start guide",
+    
+      "am.051": "Personal-use license",
+    
+      "am.052": "Basic support",
+    
+      "am.053": "BEFORE INSTALLING",
+    
+      "am.054": "Requirements and details",
+    
+      "am.055": "An Android app and a Windows backend have different requirements.",
+    
+      "am.056": "Windows and Android",
+    
+      "am.057": "Backend PC",
+    
+      "am.058": "Windows 11, 64-bit",
+    
+      "am.059": "Smartphone",
+    
+      "am.060": "Android; minimum version to be confirmed",
+    
+      "am.061": "Processor",
+    
+      "am.062": "Modern Intel or AMD CPU on the PC",
+    
+      "am.063": "PC RAM",
+    
+      "am.064": "16 GB recommended; final specifications to be verified",
+    
+      "am.065": "Network",
+    
+      "am.066": "Network connectivity between the Android app and the Windows backend",
+    
+      "am.067": "External services",
+    
+      "am.068": "Telegram and authorized access to the relevant Amazon services",
+    
+      "am.069": "Python, FFmpeg and other dependencies are not listed as required until they have been verified against the actual Affiliate Manager build.",
+    
+      "am.070": "Configuration and security",
+    
+      "am.071": "The Android app must be able to reach the backend at the configured address and port. Bind-address settings determine which network interfaces the service listens on.",
+    
+      "am.072": "To publish in a Telegram channel, the bot needs the appropriate permissions.",
+    
+      "am.073": "The bot secret token is not the same as its ID:",
+    
+      "am.074": "it must be protected and never published in screenshots, client-side code or web pages.",
+    
+      "am.075": "Do not expose the backend directly to the Internet without authentication, connection protection and appropriate security safeguards.",
+    
+      "am.076": "License, updates and support",
+    
+      "am.077": "The package is intended for the purchaser’s personal use unless the license states otherwise.",
+    
+      "am.078": "Basic support covers installation and operational issues, and corrective updates for the purchased version may be supplied when available. Free lifetime updates, individual configurations and unlimited support are not promised.",
+    
+      "am.079": "IMPORTANT INFORMATION",
+    
+      "am.080": "Automation and third-party platforms",
+    
+      "am.081": "Affiliate Manager is independent software and is not an official Amazon or Telegram product. Data availability, search and publishing features depend on permissions, approved integrations and the rules of the services used. Users must verify that their channels and affiliate activities are authorized and clearly disclose the promotional nature of affiliate links.",
+    
+      "am.082": "AFFILIATE MANAGER",
+    
+      "am.083": "A control center for offers and publishing.",
+    
+      "am.084": "A digital package comprising the Android app, Windows backend and instructions. Pricing, release version and delivery method will be confirmed before sales open.",
+    
+      "am.085": "Guide included",
+    
+      "am.086": "AVAILABILITY",
+    
+      "am.087": "Price to be determined",
+    
+      "am.088": "Sales are not yet open.",
+    
+      "am.089": "Request information",
+    
+      "am.090": "No payment is taken on this page.",
+    
+      "am.meta.title": "Affiliate Manager • GoatS RevengE",
+    
+      "am.meta.description": "Affiliate Manager: Android app and Windows backend for managing offers, drafts, publishing schedules and Telegram channel posts.",
+    
+      "am.aria.92": "Affiliate Manager previews",
+    
+      "am.aria.93": "Key features",
+    
+      "after.001": "GOATS REVENGE / DIGITAL PRODUCTS",
+    
+      "after.002": "Thank you for your order.",
+    
+      "after.003": "If you have successfully completed your payment, a confirmation will be sent to the email address used at checkout.",
+    
+      "after.004": "How you will receive your product",
+    
+      "after.005": "Once payment is confirmed, the digital delivery system will send instructions for accessing the software you purchased. Please also check your Spam or Promotions folder.",
+    
+      "after.006": "Payment and download access are verified separately:",
+    
+      "after.007": "this page does not prove that payment was completed and does not grant download access.",
+    
+      "after.008": "Back to projects",
+    
+      "after.009": "Purchase support",
+    
+      "after.010": "Important: publish this page only after the download delivery system has been configured and tested.",
+    
+      "after.011": "Terms of Sale",
+    
+      "after.meta.title": "Thank you for your order • GoatS RevengE",
+    
+      "after.meta.description": "Information following the purchase of a GoatS RevengE digital product.",
+    
+      "after.aria.107": "Main navigation",
+    
+      "project2.001": "ANDROID + WINDOWS • DIGITAL SOFTWARE",
+    
+      "project2.002": "Manage offers, drafts, schedules and Telegram automation from the Android app, powered by a dedicated Windows backend.",
+    
+      "project2.003": "Offer and draft management",
+    
+      "project2.004": "Publishing rules and schedules",
+    
+      "project2.005": "Android app + Windows backend",
+    
+      "project2.006": "Explore the project",
+    
+      "project2.aria.114": "Explore Affiliate Manager",
+    
+      "project2.alt.115": "Affiliate Manager: Android app and Windows backend",
+    
+      "shared.nav.home": "Home",
+    
+      "shared.cta.discover": "Explore",
+    
+      "shared.cta.buy": "Buy now",
+    
+      "shared.nav.projects": "Projects",
+    
+      "shared.lang.label": "Website language"
+};
+
+  const originals = new WeakMap();
+    
+  const ATTRIBUTES = 
+  [
+    ["data-i18n", "textContent"],
+    ["data-i18n-alt", "alt"],
+    ["data-i18n-title", "title"],
+    ["data-i18n-placeholder", "placeholder"],
+    ["data-i18n-aria-label", "aria-label"],
+    ["data-i18n-content", "content"]
+  ];
+    
+  const ALL_SELECTORS = ATTRIBUTES.map(([key]) => `[${key}]`).join(",");
+  let currentLanguage = "it";
+  let chooser = null;
+
+  function readLanguage() 
+  {
+    try 
+    {
+      const saved = window.localStorage.getItem(STORAGE_KEY);
+      
+        if (SUPPORTED_LANGUAGES.has(saved))
+        {
+            return saved;
+        }
+    }
+    
+    catch (error) 
+    {
+    }
+      
+    return "it";
+  }
+
+  function saveLanguage(language) 
+  {
+    try 
+    { 
+        window.localStorage.setItem(STORAGE_KEY, language); 
+    }
+        
+    catch (error) 
+    {
+    }
+  }
+
+  function rememberOriginal(element, attributeName) 
+  {
+    let record = originals.get(element);
+      
+    if (!record) 
+    {
+      record = {};
+      originals.set(element, record);
+    }
+      
+    if (!(attributeName in record)) 
+    {
+      record[attributeName] = attributeName === "textContent" ? element.textContent : element.getAttribute(attributeName);
+    }
+      
+    return record[attributeName];
+  }
+
+  function applyTranslations(language) 
+  {
+    currentLanguage = SUPPORTED_LANGUAGES.has(language) ? language : "it";
+    document.documentElement.lang = currentLanguage;
+    document.documentElement.dataset.goatLanguage = currentLanguage;
+
+    document.querySelectorAll(ALL_SELECTORS).forEach(element => 
+    {
+        for (const [marker, attribute] of ATTRIBUTES) 
+      {
+          if (!element.hasAttribute(marker))
+          {
+              continue;
+          }
+        
+          const key = element.getAttribute(marker);
+          const original = rememberOriginal(element, attribute);
+        
+          if (attribute === "textContent" && element.children.length > 0) 
+          {
+              console.warn("GOAT i18n: put data-i18n on a child <span>, not on a parent containing icons/markup:", key);
+              continue;
+          }
+          
+          const translated = currentLanguage === "en" ? GOAT_I18N_EN[key] : null;
+          const value = typeof translated === "string" ? translated : original;
+        
+          if (attribute === "textContent")
+          {
+              element.textContent = value;
+          }
+        
+          else if (value === null) 
+          {
+              element.removeAttribute(attribute);
+          }    
+        
+          else
+          {
+              element.setAttribute(attribute, value);
+          }
+      }
+    });
+
+    translateMusicControlLabels();
+
+    if (chooser) 
+    {
+      chooser.select.value = currentLanguage;
+      chooser.flag.textContent = currentLanguage === "it" ? "🇮🇹" : "🇺🇸";
+      chooser.select.setAttribute("aria-label", currentLanguage === "it" ? "Lingua del sito" : "Website language");
+    }
+      
+    document.dispatchEvent(new CustomEvent("goat:languagechange", 
+    {
+      detail: { language: currentLanguage }
+    }));
+  }
+
+  function translateMusicControlLabels() 
+  {
+      const slider = document.querySelector(".goat-music-volume");
+    
+      if (slider) 
+      {
+          slider.setAttribute("aria-label", currentLanguage === "en" ? "Music volume" : "Volume musica");
+      }
+    
+      const muteButton = document.querySelector(".goat-music-mute");
+    
+      if (!muteButton)
+      {
+          return;
+      }
+    
+      const muted = muteButton.closest(".goat-music-control")?.classList.contains("goat-music-muted");
+      muteButton.setAttribute("aria-label", currentLanguage === "en"? (muted ? "Enable music" : "Mute music"): (muted ? "Attiva musica" : "Disattiva musica"));
+  }
+
+  function injectLanguageSelector() 
+  {
+      const navbar = document.querySelector(".navbar");
+    
+      if (!navbar || navbar.querySelector(".goat-language-picker"))
+      {
+          return;
+      }
+
+      const wrapper = document.createElement("div");
+      wrapper.className = "goat-language-picker";
+      const flag = document.createElement("span");
+      flag.className = "goat-language-flag";
+      flag.setAttribute("aria-hidden", "true");
+      const select = document.createElement("select");
+      select.className = "goat-language-select";
+      select.id = "goat-language-select";
+      select.setAttribute("aria-label", "Lingua del sito");
+      select.add(new Option("🇮🇹 Italiano", "it"));
+      select.add(new Option("🇺🇸 English", "en"));
+      wrapper.append(flag, select);
+      navbar.appendChild(wrapper);
+      chooser = { select, flag };
+      
+      select.addEventListener("change", () => 
+      {
+          const language = select.value;
+      
+          if (!SUPPORTED_LANGUAGES.has(language))
+          {
+              return;
+          }
+      
+          saveLanguage(language);
+          applyTranslations(language);
+      });
+  }
+
+  function init() 
+  {
+      injectLanguageSelector();
+      applyTranslations(readLanguage());
+
+      document.addEventListener("click", event => 
+      {
+          if (event.target.closest?.(".goat-music-mute")) 
+          {
+              queueMicrotask(translateMusicControlLabels);
+          }
+      });
+    
+      document.addEventListener("input", event => 
+      {
+          if (event.target.closest?.(".goat-music-volume")) 
+          {
+              queueMicrotask(translateMusicControlLabels);
+          }
+      });
+  }
+
+  if (document.readyState === "loading") 
+  {
+    document.addEventListener("DOMContentLoaded", init, { once: true });
+  } 
+  
+  else 
+  {
+    init();
+  }
+})();
