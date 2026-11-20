@@ -1,3 +1,98 @@
+/* ------------------ STYLE: LANGUAGES ------------------------ */
+
+.goat-language-picker,
+.gh-root .goat-language-picker 
+{
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    flex-shrink: 0 !important;
+}
+
+.goat-language-flag,
+.gh-root .goat-language-flag 
+{
+    display: none !important;
+}
+
+.goat-language-select,
+.gh-root .goat-language-select 
+{
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    display: block !important;
+    min-width: 150px !important;
+    max-width: none !important;
+    min-height: 43px !important;
+    margin: 0 !important;
+    padding: 10px 38px 10px 13px !important;
+    border: 1px solid #171816 !important;
+    border-radius: 7px !important;
+    background: #f1eee6 !important;
+    color: #171816 !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    letter-spacing: .01em !important;
+    line-height: 1.2 !important;
+    cursor: pointer !important;
+    box-shadow: none !important;
+    transition: border-color .16s ease, background-color .16s ease !important;
+}
+
+.goat-language-picker::after,
+.gh-root .goat-language-picker::after 
+{
+    content: "";
+    position: absolute;
+    right: 15px;
+    top: calc(50% - 4px);
+    width: 7px;
+    height: 7px;
+    border-right: 2px solid #171816;
+    border-bottom: 2px solid #171816;
+    transform: rotate(45deg);
+    pointer-events: none;
+}
+
+.goat-language-select:hover,
+.gh-root .goat-language-select:hover 
+{
+    border-color: #3456d8 !important;
+    background: #ffffff !important;
+}
+
+.goat-language-select:focus-visible,
+.gh-root .goat-language-select:focus-visible 
+{
+    outline: 3px solid #3456d8 !important;
+    outline-offset: 3px !important;
+}
+
+.goat-language-select option,
+.gh-root .goat-language-select option 
+{
+    background: #ffffff !important;
+    color: #171816 !important;
+}
+
+/* ------------------ STYLE: MUSIC PLAYER ------------------------ */
+
+.goat-music-control 
+{
+    position: fixed !important;
+    right: 20px !important;
+    bottom: 20px !important;
+    left: auto !important;
+    top: auto !important;
+}
+
 /* ------------------ STYLE SEZIONE: HOME ------------------------ */
 
 .gh-root
