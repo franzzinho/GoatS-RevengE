@@ -84,13 +84,239 @@
 
 /* ------------------ STYLE: MUSIC PLAYER ------------------------ */
 
-.goat-music-control 
+.navbar.goat-fm-inline 
 {
-    position: fixed !important;
-    right: 20px !important;
-    bottom: 20px !important;
-    left: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    column-gap: 16px !important;
+    row-gap: 10px !important;
+}
+
+.navbar.goat-fm-inline .goat-navbar-audio-slot 
+{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    flex: 0 1 308px !important;
+    width: 308px !important;
+    min-width: 210px !important;
+    max-width: 308px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+
+.navbar.goat-fm-inline .goat-navbar-audio-slot .goat-music-control,
+.gh-root .navbar.goat-fm-inline .goat-navbar-audio-slot .goat-music-control 
+{
+    position: relative !important;
+    inset: auto !important;
     top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: none !important;
+    z-index: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 9px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    min-height: 51px !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 6px 10px !important;
+    background: #111214 !important;
+    color: #f1eee6 !important;
+    border: 1px solid #313338 !important;
+    border-radius: 9px !important;
+    box-shadow: none !important;
+    text-align: left !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.navbar.goat-fm-inline .goat-music-mute 
+{
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 36px !important;
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    min-height: 36px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 1px solid #494b53 !important;
+    border-radius: 6px !important;
+    background: #24262b !important;
+    color: #f1eee6 !important;
+    box-shadow: none !important;
+    cursor: pointer !important;
+    font-size: 0 !important;
+    line-height: 1 !important;
+}
+
+.navbar.goat-fm-inline .goat-music-mute > * 
+{
+    display: none !important;
+}
+
+.navbar.goat-fm-inline .goat-music-mute::before 
+{
+    content: "♫";
+    display: block;
+    color: #f1eee6;
+    font-size: 22px;
+    line-height: 1;
+}
+
+.navbar.goat-fm-inline .goat-music-muted .goat-music-mute::before 
+{
+    content: "×";
+    color: #b7b9c1;
+    font-size: 24px;
+}
+
+.navbar.goat-fm-inline .goat-music-mute:hover
+{
+    background: #3456d8 !important;
+    border-color: #3456d8 !important;
+}
+
+.navbar.goat-fm-inline .goat-music-mute:focus-visible 
+{
+    outline: 2px solid #93a7ff !important;
+    outline-offset: 2px !important;
+}
+
+.navbar.goat-fm-inline .goat-music-label 
+{
+    display: block !important;
+    flex: 1 1 96px !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: none !important;
+    color: #f1eee6 !important;
+    font-size: 11px !important;
+    line-height: 1.35 !important;
+    font-weight: 700 !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+    text-shadow: none !important;
+}
+
+.navbar.goat-fm-inline .goat-music-label::before 
+{
+    content: "GOAT FM  /  NOW PLAYING" !important;
+    display: block !important;
+    margin: 0 0 3px !important;
+    color: #a9b9ff !important;
+    font-size: 9px !important;
+    font-weight: 850 !important;
+    line-height: 1.1 !important;
+    letter-spacing: .075em !important;
+}
+
+.navbar.goat-fm-inline .goat-music-control input[type="range"],
+.navbar.goat-fm-inline .goat-music-control .goat-music-volume 
+{
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    display: block !important;
+    flex: 0 0 65px !important;
+    width: 65px !important;
+    min-width: 65px !important;
+    max-width: 65px !important;
+    height: 4px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 30px !important;
+    background: #666971 !important;
+    box-shadow: none !important;
+    accent-color: #7490ff !important;
+    cursor: pointer !important;
+}
+
+.navbar.goat-fm-inline .goat-music-control input[type="range"]::-webkit-slider-thumb
+{
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    width: 13px !important;
+    height: 13px !important;
+    border-radius: 50% !important;
+    border: 2px solid #f1eee6 !important;
+    background: #3456d8 !important;
+    box-shadow: none !important;
+}
+
+.navbar.goat-fm-inline .goat-music-control input[type="range"]::-moz-range-thumb 
+{
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50% !important;
+    border: 2px solid #f1eee6 !important;
+    background: #3456d8 !important;
+}
+
+.navbar.goat-fm-inline .goat-music-control input[type="range"]:focus-visible 
+{
+    outline: 2px solid #93a7ff !important;
+    outline-offset: 6px !important;
+}
+
+@media (max-width: 1160px) 
+{
+    .navbar.goat-fm-inline .goat-navbar-audio-slot 
+    {
+        order: 50 !important;
+        flex: 1 0 100% !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        justify-content: flex-start !important;
+    }
+    
+    .navbar.goat-fm-inline .goat-navbar-audio-slot .goat-music-control 
+    {
+        width: min(330px, 100%) !important;
+    }
+    
+    .navbar.goat-fm-inline .goat-language-picker
+    {
+        margin-left: auto !important;
+    }
+}
+
+@media (max-width: 520px) 
+{
+    .navbar.goat-fm-inline .goat-navbar-audio-slot .goat-music-control 
+    {
+        width: 100% !important;
+        min-height: 48px !important;
+    }
+    
+    .navbar.goat-fm-inline .goat-music-label 
+    {
+        font-size: 10px !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) 
+{
+    .navbar.goat-fm-inline .goat-music-mute 
+    {
+        transition: none !important;
+    }
 }
 
 /* ------------------ STYLE SEZIONE: HOME ------------------------ */
@@ -2227,21 +2453,21 @@ body.goats-editorial-home
       visibility: visible;
     }
 
-/* LAYOUT: RESPONSIVE */
-@media (max-width: 768px)
-{
-    .about-showcase
+    /* LAYOUT: RESPONSIVE */
+    @media (max-width: 768px)
     {
-        padding: 10px 12px 0;
-    }
+        .about-showcase
+        {
+            padding: 10px 12px 0;
+        }
 
-    .neon-title.pink
-    {
-        font-size: 1.6rem;
-    }
+        .neon-title.pink
+        {
+            font-size: 1.6rem;
+        }
 
-    .carousel-container
-    {
-        width: 94vw;
+        .carousel-container
+        {
+            width: 94vw;
+        }
     }
-}
