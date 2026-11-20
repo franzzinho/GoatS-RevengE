@@ -252,7 +252,7 @@
 
 
             <!-- CARD: PROJECT -->
-            <a href="" class="gh-route">
+            <a href="SECTION/PROJECT_1.html" id="gh-projects-link" class="gh-route">
               
               <span class="gh-mono gh-count">04 / PROJECTS</span>
               
@@ -447,5 +447,25 @@
         </div>
       </footer>
     </div>
+
+
+    <!-- SCRIPT: APERTURA (multipla) DELLE PROJECT PAGES PROGETTI -->
+    <script>
+      
+      document.getElementById("gh-projects-link").addEventListener("click", function (event) 
+      {
+        if (event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) 
+        {
+            return;
+        }
+
+        const altrePagineProgetti = ["SECTION/PROJECT_2.html"];
+        
+        altrePagineProgetti.forEach(function (url) 
+        {
+          window.open(url, "_blank", "noopener,noreferrer");
+        });
+      });
+    </script>
   </body>
 </html>
