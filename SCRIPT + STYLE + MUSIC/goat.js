@@ -1412,3 +1412,97 @@ function clamp(value, min,max)
         init();
     }
 })();
+
+
+
+
+
+
+
+
+
+
+/* SCRIPT_1: GOAT FM */
+
+(() => 
+{
+  "use strict";
+
+  function insertPlayerIntoNavbar() 
+  {
+    const navbar = document.querySelector(".navbar");
+    const player = document.querySelector(".goat-music-control");
+
+    if (!navbar || !player)
+    {
+        return false;
+    }
+
+    let slot = navbar.querySelector(".goat-navbar-audio-slot");
+      
+    if (!slot) 
+    {
+      slot = document.createElement("div");
+      slot.className = "goat-navbar-audio-slot";
+      slot.setAttribute("role", "group");
+      slot.setAttribute("aria-label", "GOAT FM");
+    }
+
+      const languagePicker = navbar.querySelector(".goat-language-picker");
+      
+      if (languagePicker) 
+      {
+        navbar.insertBefore(slot, languagePicker);
+      } 
+          
+      else 
+      {
+        navbar.appendChild(slot);
+      }
+    }
+
+    if (player.parentElement !== slot)
+    {
+        slot.appendChild(player);
+    }
+    
+    navbar.classList.add("goat-fm-inline");
+    return true;
+  }
+
+  function start() 
+{
+    if (!document.body?.hasAttribute("data-music-src"))
+    {
+        return;
+    }
+    
+    if (insertPlayerIntoNavbar())
+    {
+        return;
+    }
+    
+    const watcher = new MutationObserver(() => 
+    {
+      if (insertPlayerIntoNavbar())
+      {
+          watcher.disconnect();
+      }
+    });
+    
+    watcher.observe(document.body, 
+    { 
+        childList: true, subtree: true
+    });
+}
+
+  if (document.readyState === "loading") 
+  {
+    document.addEventListener("DOMContentLoaded", start, { once: true });
+  } 
+  
+  else 
+  {
+    start();
+  }
+})();
