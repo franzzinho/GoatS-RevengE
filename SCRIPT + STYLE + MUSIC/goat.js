@@ -1459,19 +1459,18 @@ function clamp(value, min,max)
       {
         navbar.appendChild(slot);
       }
-    }
 
-    if (player.parentElement !== slot)
-    {
+      if (player.parentElement !== slot)
+      {
         slot.appendChild(player);
-    }
+      }
     
-    navbar.classList.add("goat-fm-inline");
-    return true;
+      navbar.classList.add("goat-fm-inline");
+      return true;
   }
 
   function start() 
-{
+  {
     if (!document.body?.hasAttribute("data-music-src"))
     {
         return;
