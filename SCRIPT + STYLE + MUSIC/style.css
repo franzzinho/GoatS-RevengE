@@ -264,7 +264,7 @@
 
 .navbar.goat-fm-inline .goat-music-label::before 
 {
-    content: "GOAT FM  /  NOW PLAYING" !important;
+    content: "GOAT FM" !important;
     display: block !important;
     color: #a9b9ff !important;
     margin-bottom: 3px !important;
