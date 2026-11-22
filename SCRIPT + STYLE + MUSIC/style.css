@@ -2995,3 +2995,92 @@ body:has(.stripe-return-page)
         transition: none;
     }
 }
+
+/* SELETTORE LINGUA */
+.stripe-return-page 
+{
+    position: relative;
+    padding-top: max(116px, 7vw) !important;
+}
+
+.stripe-return-language 
+{
+    position: absolute;
+    top: 27px;
+    right: clamp(18px, 4vw, 60px);
+    z-index: 20;
+    width: 188px;
+}
+
+.stripe-return-language::after 
+{
+    content: "";
+    position: absolute;
+    right: 17px;
+    top: calc(50% - 4px);
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid #F1EEE6;
+    border-bottom: 2px solid #F1EEE6;
+    transform: rotate(45deg);
+    pointer-events: none;
+}
+
+.stripe-return-language-select 
+{
+    display: block;
+    width: 100%;
+    min-height: 52px;
+    margin: 0;
+    padding: 12px 42px 12px 17px;
+    appearance: none;
+    -webkit-appearance: none;
+    border: 2px solid #171816;
+    border-radius: 9px;
+    background: #171816;
+    color: #F1EEE6;
+    box-shadow: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.stripe-return-language-select option 
+{
+    background: #171816;
+    color: #F1EEE6;
+}
+
+.stripe-return-language-select:hover 
+{
+    border-color: #3456D8;
+}
+
+.stripe-return-language-select:focus-visible 
+{
+    outline: 3px solid #3456D8;
+    outline-offset: 3px;
+}
+
+@media (max-width: 600px) 
+{
+    .stripe-return-page 
+    {
+        padding-top: 106px !important;
+    }
+
+    .stripe-return-language 
+    {
+        top: 18px;
+        right: 18px;
+        width: 165px;
+    }
+
+    .stripe-return-language-select 
+    {
+        min-height: 48px;
+        font-size: 13px;
+    }
+}
