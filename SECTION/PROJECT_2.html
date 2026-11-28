@@ -1,675 +1,1001 @@
 <!DOCTYPE html>
 
 <html lang="it">
-  
-<head>
-  
-  <meta charset="UTF-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Affiliate Manager: app Android e backend Windows per gestire offerte, bozze, programmazioni e pubblicazioni su canali Telegram.">
+<head>
+
+  <meta charset="UTF-8"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <meta name="description"
+    content="Affiliate Manager: app Android e backend Windows per gestire offerte, bozze, programmazioni e pubblicazioni su canali Telegram."
+    data-gh-content-en="Affiliate Manager: Android app and Windows backend for managing offers, drafts, publishing schedules and Telegram channel posts."/>
 
   <title>Affiliate Manager</title>
-  
-  <link rel="icon" type="image/png" href="../icona_sito.png?v=2">
-  
-  <link rel="stylesheet" href="../SCRIPT + STYLE + MUSIC/style.css">
 
-  <script src="../SCRIPT + STYLE + MUSIC/goat.js" defer> </script>
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <script src="../SCRIPT + STYLE + MUSIC/goat-site-translations.js" defer></script>
+  <link href="../icona_sito.png?v=2" rel="icon" type="image/png"/>
+
+  <link href="../SCRIPT + STYLE + MUSIC/style.css" rel="stylesheet"/>
+
+  <script defer="" src="../SCRIPT + STYLE + MUSIC/goat.js"></script>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"/>
 </head>
-  
 
-  <!-- MUSIC -->
+
+<!-- MUSIC -->
 <body
-    data-music-src="../SCRIPT + STYLE + MUSIC/milano_PRODUCT_2_audio.mp3"
-    data-music-volume="0.42"
-    data-music-title="BIA, Fivio Foreign, Sfera Ebbasta - Milano">
-
-  
-  <!-- NAVBAR -->
-<nav class="navbar">
-    <div class="logo">
-      <a href="../index.html">🐐 GoatS RevengE 🧠</a>
-      <span class="arrow">⬅️</span>
-    </div>
-</nav>
+  data-music-src="../SCRIPT + STYLE + MUSIC/milano_PRODUCT_2_audio.mp3"
+  data-music-volume="0.42"
+  data-music-title="BIA, Fivio Foreign, Sfera Ebbasta - Milano"
+  class="gcp-page gam-page">
 
 
-  <main class="product-page product-affiliate">
-    
-    <!-- HERO -->
-    <header class="product-hero">
+  <!-- "LOGO" GOATS REVENGE == NAV-BAR -->
+  <div class="gh-root gcp-shell">
+
+    <nav aria-label="Navigazione principale" data-gh-aria-en="Main navigation" class="navbar gcp-nav">
+
+      <a
+        aria-label="Torna alla Home"
+        class="gcp-brand"
+        data-gh-aria-en="Back to Home"
+        href="../index.html">
+
+        <span class="gcp-brand-mark">G/R</span>
+
+        <span class="gcp-brand-text">
+
+          GOATS REVENGE
+
+          <small data-en="THE WORLD OF FRANZZINHO" data-it="IL MONDO DI FRANZZINHO">IL MONDO DI FRANZZINHO</small>
+        </span>
+      </a>
       
-      <div class="product-hero-grid">
-        
-        <div class="product-hero-copy">
-          
-          <span class="product-kicker">GOATS SOFTWARE / ANDROID app + WINDOWS program</span>
-          
-          <h1>Affiliate <span>Manager</span></h1>
-          
-          <h2>Gestisci le offerte dal telefono. Organizza le pubblicazioni con il backend Windows.</h2>
-          
-          <p class="product-hero-description">
-            Un sistema composto da un'app Android e un programma backend per Windows.
-            Consente di creare e amministrare offerte, consultare bozze e pubblicazioni,
-            configurare canali Telegram e impostare automazioni e orari.
-          </p>
 
-          
-          <div class="product-meta">
-            
-            <span><i class="fa-brands fa-android" aria-hidden="true"></i> App Android</span>
-            
-            <span><i class="fa-brands fa-windows" aria-hidden="true"></i> Backend Windows</span>
-            
-            <span><i class="fa-brands fa-telegram" aria-hidden="true"></i> Canali Telegram</span>
-          </div>
+      <!-- SECTION NAV-BAR -->
+      <div class="gh-nav-right gcp-nav-right">
 
-          
-          <div class="product-hero-actions">
-            
-            <a class="product-btn product-btn-primary" href="#funzioni">
-              
-              <i class="fa-solid fa-list-check" aria-hidden="true"></i> Esplora le funzioni
-            </a>
-            
-            <a class="product-btn product-btn-secondary" href="#anteprime">
-              
-              <i class="fa-solid fa-images" aria-hidden="true"></i> Guarda le anteprime
-            </a>
-          </div>
-        </div>
+        <nav aria-label="Navigazione sezioni" class="gcp-nav-links" data-gh-aria-en="Section navigation">
 
-        
-        <!-- ANTEPRIME -->
-        <div class="affiliate-showcase" id="anteprime" aria-label="Anteprime di Affiliate Manager">
-        
-          <!-- ANTEPRIMA ANDROID -->
-          <div class="affiliate-preview affiliate-preview-android">
-          
-            <img
-              src="images/products/affiliate-manager/android.webp" alt="Schermata reale dell'app Affiliate Manager su Android">
-          </div>
+          <a data-en="FEATURES" data-it="FUNZIONI" href="#funzioni">FUNZIONI</a>
 
-          
-          <!-- ANTEPRIMA WINDOWS -->
-          <div class="affiliate-preview affiliate-preview-windows">
-            
-            <img
-              src="images/products/affiliate-manager/backend.webp"
-              alt="Schermata reale del backend Windows Affiliate Manager">
-          </div>
-        </div>
+          <a data-en="REQUIREMENTS" data-it="REQUISITI" href="#requisiti">REQUISITI</a>
 
-          <p class="affiliate-showcase-note">Due componenti, un unico flusso di gestione.
-          </p>
-        </div>
+          <a data-en="AVAILABILITY" data-it="DISPONIBILITÀ" href="#acquista">DISPONIBILITÀ</a>
+        </nav>
       </div>
-    </header>
+    </nav>
 
-    
-    <!-- KEY POINTS -->
-    <section class="product-facts" aria-label="Caratteristiche principali">
-      
-      <div> <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i> Crea e modifica</div>
-      
-      <div> <i class="fa-solid fa-box-archive" aria-hidden="true"></i> Bozze e pubblicate</div>
-      
-      <div> <i class="fa-regular fa-clock" aria-hidden="true"></i> Programmazione</div>
-      
-      <div> <i class="fa-solid fa-sliders" aria-hidden="true"></i> Regole e categorie</div>
-      
-      <div><i class="fa-brands fa-telegram" aria-hidden="true"></i> Canali Telegram</div>
-    </section>
 
-    
-    <!-- FUNZIONALITÀ -->
-    <section class="product-section" id="funzioni">
-      
-      <div class="product-section-heading">
-        
-        <span>CONTROLLO E AUTOMAZIONE</span>
-        
-        <h2>Le funzioni di Affiliate Manager</h2>
-        
-        <p>Dalla preparazione delle offerte alla gestione delle pubblicazioni.</p>
-      </div>
+    <!-- PRODUCT PAGE -->
+    <main class="gcp-product gam-product" id="inizio">
 
-      
-      <div class="product-features-grid">
-        
-        <article class="product-feature-card product-card">
-          
-          <div class="product-feature-icon"><i class="fa-solid fa-table-list" aria-hidden="true"></i>
-          </div>
-          
-          <h3>Offerte pubblicate e bozze</h3>
-          
-          <p>Visualizza le offerte già pubblicate e quelle ancora in stato di bozza.</p>
-        </article>
+      <!-- HERO -->
+      <header class="gcp-hero">
 
-        
-        <article class="product-feature-card product-card">
-          
-          <div class="product-feature-icon"><i class="fa-solid fa-file-pen" aria-hidden="true"></i>
-          </div>
-          
-          <h3>Gestione completa delle offerte</h3>
-          
-          <p>Crea nuove offerte, modifica i dati esistenti ed elimina quelle non più necessarie.</p>
-        </article>
+        <div class="gcp-hero-grid">
 
-        
-        <article class="product-feature-card product-card">
-          
-          <div class="product-feature-icon"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
-          </div>
-          
-          <h3>Orari di pubblicazione</h3>
-          
-          <p>Gestisci la pianificazione delle pubblicazioni destinate ai canali Telegram configurati.</p>
-        </article>
+          <!-- HERO COPY -->
+          <div class="gcp-hero-copy">
 
-        
-        <article class="product-feature-card product-card">
-          
-          <div class="product-feature-icon"><i class="fa-solid fa-filter-circle-dollar" aria-hidden="true">
-          </i>
-          </div>
-          
-          
-          <h3>Regole e categorie</h3>
-          
-          <p>Imposta categorie e criteri per la ricerca automatizzata delle offerte, secondo le integrazioni autorizzate disponibili.</p>
-        </article>
+            <span
+              class="gcp-kicker"
+              data-it="GOATS SOFTWARE / ANDROID app + WINDOWS program"
+              data-en="GOATS SOFTWARE / ANDROID APP + WINDOWS PROGRAM">
+              GOATS SOFTWARE / ANDROID app + WINDOWS program</span>
 
-        
-        <article class="product-feature-card product-card">
-          
-          <div class="product-feature-icon"><i class="fa-brands fa-telegram" aria-hidden="true">
-          </i>
-          </div>
-          
-          
-          <h3>Canali e bot Telegram</h3>
-          
-          <p>Configura gli identificativi dei canali e le impostazioni di collegamento con il bot di pubblicazione.
-          </p>
-        </article>
+            <h1>Affiliate<span>Manager</span></h1>
 
-        
-        <article class="product-feature-card product-card">
-          
-          <div class="product-feature-icon"><i class="fa-solid fa-network-wired" aria-hidden="true">
-          </i>
-          </div>
+            <h2
+              data-it="Gestisci le offerte dal telefono. Organizza le pubblicazioni con il backend Windows."
+              data-en="Manage offers from your phone. Organize publishing through the Windows backend.">
+              Gestisci le offerte dal telefono. Organizza le pubblicazioni con il backend Windows.</h2>
 
-          
-          <h3>Connessione al backend</h3>
-          
-          <p>Gestisci indirizzo IP, porta e bind address del servizio Windows per collegare app e backend.
-          </p>
-        </article>
-      </div>
-    </section>
+            <p
+              class="gcp-hero-description"
+              data-it="Un sistema composto da un&#x27;app Android e un programma backend per Windows. Consente di creare e 
+              amministrare offerte, consultare bozze e pubblicazioni, configurare canali Telegram e impostare automazioni e orari."
+              
+              data-en="A system consisting of an Android app and a Windows backend program. Create and manage offers, 
+              review drafts and published posts, configure Telegram channels, and set up automations and schedules.">
+              
+              Un sistema composto da un'app Android e un programma backend per Windows. Consente di creare e 
+              amministrare offerte, consultare bozze e pubblicazioni, configurare canali Telegram e impostare automazioni e orari.
+            </p>
 
-    
-    <!-- COME FUNZIONA -->
-    <section class="product-workflow">
-      
-      <div class="product-section-heading">
-        
-        <span>UN SISTEMA, DUE COMPONENTI</span>
-        
-        <h2>Come funziona</h2>
-        
-        <p>L'app Android è l'interfaccia di gestione; il backend Windows esegue i processi configurati.
-        </p>
-      </div>
-
-      
-      <!-- PRODUCT STEPS -->
-      <div class="product-steps">
-        
-        <div class="product-step product-card">
-          
-          <span>01</span><i class="fa-solid fa-computer" aria-hidden="true"></i>
-          
-          <h3>Avvia il backend</h3>
-          
-          <p>Configura ed esegui il servizio su un PC Windows.</p>
-        </div>
-
-        
-        <div class="product-step product-card">
-          
-          <span>02</span><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i>
-          
-          <h3>Collega Android</h3>
-          
-          <p>Imposta la connessione di rete tra smartphone e backend.
-          </p>
-        </div>
-
-        
-        <div class="product-step product-card">
-          
-          <span>03</span><i class="fa-solid fa-list-check" aria-hidden="true"></i>
-          
-          <h3>Definisci le regole</h3>
-          
-          <p>Gestisci offerte, categorie, canali e fasce di pubblicazione.
-          </p>
-        </div>
-
-        
-        <div class="product-step product-card">
-          
-          <span>04</span><i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-          
-          <h3>Monitora</h3>
-          
-          <p>Consulta bozze e offerte pubblicate dall'app Android.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    
-    <!-- PACKAGE -->
-    <section class="product-package-section">
-      
-      <div class="product-package-card product-card">
-        
-        <div class="product-package-header">
-
-          
-          <!-- PACKAGE CONTENT-->
-          <div>
             
-            <span>CONTENUTO DEL PACCHETTO</span>
+            <!-- QUICK META -->
+            <div class="gcp-meta">
+
+              <span>
+
+                <i class="fa-brands fa-android" aria-hidden="true"></i>
+
+                <span data-it="App Android" data-en="Android app">App Android</span>
+              </span>
+
+              <span>
+
+                <i class="fa-brands fa-windows" aria-hidden="true"></i>
+
+                <span data-it="Backend Windows" data-en="Windows backend">Backend Windows</span>
+              </span>
+
+              <span>
+
+                <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+
+                <span data-it="Canali Telegram" data-en="Telegram channels">Canali Telegram</span>
+              </span>
+            </div>
+
             
-            <h2>Cosa ricevi</h2>
-          </div>
-          
-          <i class="fa-solid fa-box-open" aria-hidden="true">
-          </i>
-        </div>
+            <!-- ACTIONS -->
+            <div class="gcp-hero-actions">
 
-        
-        <!-- PACKAGE GRID -->
-        <div class="product-package-grid">
-          
-          <div><i class="fa-solid fa-check" aria-hidden="true"></i> Applicazione Android</div>
-          
-          <div><i class="fa-solid fa-check" aria-hidden="true"></i> Programma backend Windows</div>
-          
-          <div><i class="fa-solid fa-check" aria-hidden="true"></i> Gestione offerte e bozze</div>
-          
-          <div><i class="fa-solid fa-check" aria-hidden="true"></i> Programmazione pubblicazioni</div>
-          
-          <div><i class="fa-solid fa-check" aria-hidden="true"></i> Configurazione regole e categorie</div>
-          
-          <div><i class="fa-solid fa-check" aria-hidden="true"></i> Impostazioni bot e canali</div>
-          
-          <div><i class="fa-solid fa-check" aria-hidden="true"></i> Impostazioni di rete</div>
-          
-          <div><i class="fa-solid fa-check" aria-hidden="true"></i> File di configurazione</div>
-          
-          <div><i class="fa-solid fa-check" aria-hidden="true"></i> Istruzioni d'installazione</div>
-          
-          <div><i class="fa-solid fa-check" aria-hidden="true"></i> Guida rapida</div>
-          
-          <div><i class="fa-solid fa-user" aria-hidden="true"></i> Licenza personale</div>
-          
-          <div><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Supporto di base
-          </div>
-        </div>
-      </div>
-    </section>
+              <a class="gcp-btn gcp-btn-primary" href="#funzioni">
 
-    
-    <!-- REQUISITI + SUPPORTO + ACCORDI -->
-    <section class="product-technical-section" id="requisiti">
-      
-      <div class="product-section-heading">
-        
-        <span>PRIMA DI INSTALLARE</span>
-        
-        <h2>Requisiti e informazioni</h2>
-        
-        <p>Un'app Android e un backend Windows hanno prerequisiti distinti.
-        </p>
-      </div>
+                <i class="fa-solid fa-list-check" aria-hidden="true"></i>
 
-      
-      <div class="product-accordion">
-        
-        <details class="product-detail product-card" open>
-          
-          <summary><span><i class="fa-brands fa-windows" aria-hidden="true"></i> Windows e Android</span><i class="fa-solid fa-plus" aria-hidden="true"></i></summary>
-          
-          <div class="product-detail-content">
-            
-            <div class="product-spec-grid">
-              
-              <div><strong>PC backend</strong><span>Windows 11 a 64 bit</span></div>
-              
-              <div><strong>Smartphone</strong><span>Android; versione minima da confermare</span></div>
-              
-              <div><strong>Processore</strong><span>Intel o AMD moderno, lato PC</span></div>
-              
-              <div><strong>RAM PC</strong><span>16 GB consigliati; specifiche finali da verificare</span></div>
-              
-              <div><strong>Rete</strong><span>Connettività tra app Android e backend Windows</span></div>
-              
-              <div><strong>Servizi esterni</strong><span>Telegram e accessi autorizzati ai servizi Amazon pertinenti</span>
-              </div>
+                <span data-it="Esplora le funzioni" data-en="Explore features">Esplora le funzioni</span>
+
+                <span aria-hidden="true">→</span>
+              </a>
+
+              <a class="gcp-btn gcp-btn-secondary" href="#anteprime">
+
+                <i class="fa-solid fa-images" aria-hidden="true"></i>
+
+                <span data-it="Guarda le anteprime" data-en="View previews">Guarda le anteprime</span>
+
+                <span aria-hidden="true">→</span>
+              </a>
             </div>
           </div>
-        </details>
 
-        
-        <details class="product-detail product-card">
           
-          <summary><span><i class="fa-solid fa-network-wired" aria-hidden="true"></i> Configurazione e sicurezza</span><i class="fa-solid fa-plus" aria-hidden="true"></i></summary>
-          
-          <div class="product-detail-content">
+          <!-- ANTEPRIME -->
+          <div
+            class="gcp-media-showcase gam-showcase"
+            id="anteprime"
+            aria-label="Anteprime di Affiliate Manager"
+            data-gh-aria-en="Affiliate Manager previews">
+
             
-            <p>Il backend deve essere raggiungibile dall'app Android tramite l'indirizzo e la porta configurati. 
-              Le impostazioni di bind address regolano le interfacce sulle quali il servizio resta in ascolto.</p>
-           
-            <p>Per pubblicare su un canale Telegram, il bot deve disporre delle autorizzazioni necessarie. 
-              <strong>Il token segreto del bot non è il suo ID:</strong> deve essere protetto e non pubblicato in NESSUNA piattaforma.</p>
-            
-            <p class="product-detail-note">Non esporre direttamente il backend su Internet senza autenticazione, 
-              protezione della connessione e misure adeguate di sicurezza.
+            <!-- ANTEPRIME DEL SOFTWARE -->
+            <div class="gam-preview-grid">
+
+              <!-- ANTEPRIMA ANDROID -->
+              <figure class="gam-preview gam-preview-android">
+
+                <img
+                  src=""
+                  alt="Schermata reale dell&#x27;app Affiliate Manager su Android"
+                  data-gh-alt-en="Actual screenshot of the Affiliate Manager Android app"
+                  loading="eager"
+                  decoding="async"/>
+
+                <figcaption class="gam-preview-caption">
+
+                  <span class="gam-preview-number" aria-hidden="true">01</span>
+
+                  <i class="fa-brands fa-android" aria-hidden="true"></i>
+
+                  <span data-it="App Android" data-en="Android app">App Android</span>
+                </figcaption>
+              </figure>
+
+              
+              <!-- ANTEPRIMA WINDOWS -->
+              <figure class="gam-preview gam-preview-windows">
+
+                <img
+                  src=""
+                  alt="Schermata reale del backend Windows Affiliate Manager"
+                  data-gh-alt-en="Actual screenshot of the Affiliate Manager Windows backend"
+                  loading="eager"
+                  decoding="async"/>
+
+                <figcaption class="gam-preview-caption">
+
+                  <span class="gam-preview-number" aria-hidden="true">02</span>
+
+                  <i class="fa-brands fa-windows" aria-hidden="true"></i>
+
+                  <span data-it="Backend Windows" data-en="Windows backend">Backend Windows</span>
+                </figcaption>
+              </figure>
+            </div>
+
+            <p
+              class="gcp-media-note"
+              data-it="Due componenti, un unico flusso di gestione."
+              data-en="Two components, one connected workflow.">
+              Due componenti, un unico flusso di gestione.
             </p>
           </div>
-        </details>
+        </div>
+      </header>
 
-        
-        <details class="product-detail product-card">
-          
-          <summary><span><i class="fa-solid fa-headset" aria-hidden="true"></i> Licenza, aggiornamenti e supporto</span><i class="fa-solid fa-plus" aria-hidden="true"></i></summary>
-         
-          <div class="product-detail-content">
-            
-            <p>Il pacchetto è destinato all'uso personale dell'acquirente, salvo diversa indicazione nella licenza.</p>
-            
-            <p>Sono previsti supporto di base per installazione e problemi di funzionamento e possibili aggiornamenti correttivi della versione acquistata.
-              Non sono promessi aggiornamenti gratuiti a vita, configurazioni individuali o assistenza illimitata.
-            </p>
-          </div>
-        </details>
-      </div>
-    </section>
 
-    
-    <!-- TRASPARENZA -->
-    <section class="product-warning-section">
-      
-      <div class="product-warning product-card">
-        
-        <div class="product-warning-icon"><i class="fa-solid fa-circle-info" aria-hidden="true"></i></div>
-        
+      <!-- KEY POINTS -->
+      <section class="gcp-facts" aria-label="Caratteristiche principali" data-gh-aria-en="Key features">
+
         <div>
-          
-          <span>INFORMAZIONE IMPORTANTE</span>
-          
-          <h2>Automazione e piattaforme di terze parti</h2>
-          
-          <p>Affiliate Manager è un software indipendente e non è presentato come prodotto ufficiale di Amazon o Telegram. 
-            La disponibilità di dati, funzioni di ricerca e pubblicazione dipende dai permessi, dalle integrazioni consentite e dalle regole dei servizi utilizzati. 
-            L'utente deve verificare che canali e attività di affiliazione siano autorizzati e comunicare chiaramente la natura promozionale dei link.
+
+          <i class="fa-solid fa-pen-to-square" aria-hidden="true"></i>
+
+          <span data-it="Crea e modifica" data-en="Create and edit">Crea e modifica</span>
+        </div>
+        <div>
+
+          <i class="fa-solid fa-box-archive" aria-hidden="true"></i>
+
+          <span data-it="Bozze e pubblicate" data-en="Drafts and published">Bozze e pubblicate</span>
+        </div>
+        <div>
+
+          <i class="fa-regular fa-clock" aria-hidden="true"></i>
+
+          <span data-it="Programmazione" data-en="Scheduling">Programmazione</span>
+        </div>
+        <div>
+
+          <i class="fa-solid fa-sliders" aria-hidden="true"></i>
+
+          <span data-it="Regole e categorie" data-en="Rules and categories">Regole e categorie</span>
+        </div>
+        <div>
+
+          <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+
+          <span data-it="Canali Telegram" data-en="Telegram channels">Canali Telegram</span>
+        </div>
+      </section>
+
+
+      <!-- FUNZIONALITÀ -->
+      <section class="gcp-section" id="funzioni">
+
+        <div class="gcp-section-heading">
+
+          <span data-it="CONTROLLO E AUTOMAZIONE" data-en="CONTROL AND AUTOMATION">CONTROLLO E AUTOMAZIONE</span>
+
+          <h2 data-it="Le funzioni di Affiliate Manager" data-en="Affiliate Manager features">Le funzioni di Affiliate Manager</h2>
+
+          <p
+            data-it="Dalla preparazione delle offerte alla gestione delle pubblicazioni."
+            data-en="From preparing offers to managing publishing.">
+            Dalla preparazione delle offerte alla gestione delle pubblicazioni.
           </p>
         </div>
-      </div>
-    </section>
 
-    
-    <!-- ACQUISTO -->
-    <section class="product-purchase-section" id="acquista">
-      
-      <div class="product-purchase product-card">
         
-        <div class="product-purchase-copy">
-          
-          <span class="product-purchase-kicker">AFFILIATE MANAGER</span>
+        <!-- FEATURES SECTION -->
+        <div class="gcp-features-grid">
 
-          <h2>Un punto di controllo per offerte e pubblicazioni.</h2>
+          <!-- 01 -->
+          <article class="gcp-feature-card">
+
+            <div class="gcp-feature-icon">
+
+              <i class="fa-solid fa-table-list" aria-hidden="true"></i>
+            </div>
+
+            <h3 data-it="Offerte pubblicate e bozze" data-en="Published offers and drafts">Offerte pubblicate e bozze</h3>
+
+            <p
+              data-it="Visualizza le offerte già pubblicate e quelle ancora in stato di bozza."
+              data-en="Browse offers that have already been published and those still in draft.">
+              Visualizza le offerte già pubblicate e quelle ancora in stato di bozza.
+            </p>
+          </article>
+
           
-          <p>Pacchetto digitale con app Android, backend Windows e istruzioni.</p>
+          <!-- 02 -->
+          <article class="gcp-feature-card">
+
+            <div class="gcp-feature-icon">
+
+              <i class="fa-solid fa-file-pen" aria-hidden="true"></i>
+            </div>
+
+            <h3 data-it="Gestione completa delle offerte" data-en="Full offer management">Gestione completa delle offerte</h3>
+
+            <p
+              data-it="Crea nuove offerte, modifica i dati esistenti ed elimina quelle non più necessarie."
+              data-en="Create new offers, edit existing information, and delete offers you no longer need.">
+              Crea nuove offerte, modifica i dati esistenti ed elimina quelle non più necessarie.
+            </p>
+          </article>
+
           
+          <!-- 03 -->
+          <article class="gcp-feature-card">
+
+            <div class="gcp-feature-icon">
+
+              <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+            </div>
+
+            <h3 data-it="Orari di pubblicazione" data-en="Publishing schedules">Orari di pubblicazione</h3>
+
+            <p
+              data-it="Gestisci la pianificazione delle pubblicazioni destinate ai canali Telegram configurati."
+              data-en="Manage publishing schedules for the configured Telegram channels.">
+              Gestisci la pianificazione delle pubblicazioni destinate ai canali Telegram configurati.
+            </p>
+          </article>
+
           
-          <div class="product-purchase-points">
-            
-            <span><i class="fa-solid fa-check" aria-hidden="true"></i> App Android</span>
-            
-            <span><i class="fa-solid fa-check" aria-hidden="true"></i> Backend Windows</span>
-            
-            <span><i class="fa-solid fa-check" aria-hidden="true"></i> Guida inclusa</span>
-            
-            <span><i class="fa-solid fa-check" aria-hidden="true"></i> Licenza personale</span>
+          <!-- 04 -->
+          <article class="gcp-feature-card">
+
+            <div class="gcp-feature-icon">
+
+              <i class="fa-solid fa-filter-circle-dollar" aria-hidden="true"></i>
+            </div>
+
+            <h3 data-it="Regole e categorie" data-en="Rules and categories">Regole e categorie</h3>
+
+            <p
+              data-it="Imposta categorie e criteri per la ricerca automatizzata delle offerte, secondo le integrazioni autorizzate disponibili."
+              data-en="Set categories and criteria for automated offer searches, subject to available authorized integrations.">
+              Imposta categorie e criteri per la ricerca automatizzata delle offerte, secondo le integrazioni autorizzate disponibili.
+            </p>
+          </article>
+
+          
+          <!-- 05 -->
+          <article class="gcp-feature-card">
+
+            <div class="gcp-feature-icon">
+
+              <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+            </div>
+
+            <h3 data-it="Canali e bot Telegram" data-en="Telegram channels and bots">Canali e bot Telegram</h3>
+
+            <p
+              data-it="Configura gli identificativi dei canali e le impostazioni di collegamento con il bot di pubblicazione."
+              data-en="Configure channel identifiers and connection settings for the publishing bot.">
+              Configura gli identificativi dei canali e le impostazioni di collegamento con il bot di pubblicazione.
+            </p>
+          </article>
+
+          
+          <!-- 06 -->
+          <article class="gcp-feature-card">
+
+            <div class="gcp-feature-icon">
+
+              <i class="fa-solid fa-network-wired" aria-hidden="true"></i>
+            </div>
+
+            <h3 data-it="Connessione al backend" data-en="Backend connection">Connessione al backend</h3>
+
+            <p
+              data-it="Gestisci indirizzo IP, porta e bind address del servizio Windows per collegare app e backend."
+              data-en="Manage the IP address, port and bind address of the Windows service to connect the app to its backend.">
+              Gestisci indirizzo IP, porta e bind address del servizio Windows per collegare app e backend.
+            </p>
+          </article>
+        </div>
+      </section>
+
+
+      <!-- COME FUNZIONA -->
+      <section class="gcp-workflow">
+
+        <div class="gcp-section-heading">
+
+          <span data-it="UN SISTEMA, DUE COMPONENTI" data-en="ONE SYSTEM, TWO COMPONENTS">UN SISTEMA, DUE COMPONENTI</span>
+
+          <h2 data-it="Come funziona" data-en="How it works">Come funziona</h2>
+
+          <p
+            data-it="L&#x27;app Android è l&#x27;interfaccia di gestione; il backend Windows esegue i processi configurati."
+            data-en="The Android app provides the management interface; the Windows backend runs the configured processes.">
+            L'app Android è l'interfaccia di gestione; il backend Windows esegue i processi configurati.
+          </p>
+        </div>
+
+        
+        <!-- PRODUCT STEPS -->
+        <div class="gcp-steps">
+
+          
+          <!-- 01 -->
+          <div class="gcp-step">
+
+            <span>01</span>
+
+            <i class="fa-solid fa-computer" aria-hidden="true"></i>
+
+            <h3 data-it="Avvia il backend" data-en="Start the backend">Avvia il backend</h3>
+
+            <p data-it="Configura ed esegui il servizio su un PC Windows." data-en="Configure and run the service on a Windows PC.">Configura ed esegui il servizio su un PC Windows.</p>
+          </div>
+
+          
+          <!-- 02 -->
+          <div class="gcp-step">
+
+            <span>02</span>
+
+            <i class="fa-solid fa-mobile-screen" aria-hidden="true"></i>
+
+            <h3 data-it="Collega Android" data-en="Connect Android">Collega Android</h3>
+
+            <p
+              data-it="Imposta la connessione di rete tra smartphone e backend."
+              data-en="Set up the network connection between your phone and the backend.">
+              Imposta la connessione di rete tra smartphone e backend.
+            </p>
+          </div>
+
+          
+          <!-- 03 -->
+          <div class="gcp-step">
+
+            <span>03</span>
+
+            <i class="fa-solid fa-list-check" aria-hidden="true"></i>
+
+            <h3 data-it="Definisci le regole" data-en="Set your rules">Definisci le regole</h3>
+
+            <p
+              data-it="Gestisci offerte, categorie, canali e fasce di pubblicazione."
+              data-en="Manage offers, categories, channels and publishing time windows.">
+              Gestisci offerte, categorie, canali e fasce di pubblicazione.
+            </p>
+          </div>
+
+          
+          <!-- 04 -->
+          <div class="gcp-step">
+
+            <span>04</span>
+
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+
+            <h3 data-it="Monitora" data-en="Monitor">Monitora</h3>
+
+            <p
+              data-it="Consulta bozze e offerte pubblicate dall&#x27;app Android."
+              data-en="Review drafts and published offers from the Android app.">
+              Consulta bozze e offerte pubblicate dall'app Android.
+            </p>
           </div>
         </div>
+      </section>
 
-        
-        <div class="product-price-box affiliate-availability">
-          
-          <span class="product-price-label">DISPONIBILITÀ</span>
-          
-          <strong class="affiliate-price-pending">Prezzo da definire</strong>
-          
-          <a class="affiliate-info-link" href="mailto:franzzinho@gmail.com?subject=Informazioni%20Affiliate%20Manager">
+
+      <!-- PACKAGE -->
+      <section class="gcp-package-section">
+
+        <div class="gcp-package-card">
+
+          <div class="gcp-package-header">
+
             
-            <i class="fa-solid fa-envelope" aria-hidden="true"></i> Richiedi informazioni
-          </a>
+            <!-- PACKAGE CONTENT -->
+            <div>
+
+              <span data-it="CONTENUTO DEL PACCHETTO" data-en="PACKAGE CONTENTS">CONTENUTO DEL PACCHETTO</span>
+
+              <h2 data-it="Cosa ricevi" data-en="What you get">Cosa ricevi</h2>
+            </div>
+
+            <i class="fa-solid fa-box-open" aria-hidden="true"></i>
+          </div>
+
           
-          <small>Non viene effettuato alcun pagamento da questa pagina.</small>
+          <!-- PACKAGE GRID -->
+          <div class="gcp-package-grid">
+
+            <div>
+
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+
+              <span data-it="Applicazione Android" data-en="Android application">Applicazione Android</span>
+            </div>
+
+            
+            <div>
+
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+
+              <span data-it="Programma backend Windows" data-en="Windows backend program">Programma backend Windows</span>
+            </div>
+
+            
+            <div>
+
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+
+              <span data-it="Gestione offerte e bozze" data-en="Offer and draft management">Gestione offerte e bozze</span>
+            </div>
+
+            
+            <div>
+
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+
+              <span data-it="Programmazione pubblicazioni" data-en="Publishing scheduler">Programmazione pubblicazioni</span>
+            </div>
+
+            
+            <div>
+
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+
+              <span data-it="Configurazione regole e categorie" data-en="Rules and category settings">Configurazione regole e categorie</span>
+            </div>
+
+            
+            <div>
+
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+
+              <span data-it="Impostazioni bot e canali" data-en="Bot and channel settings">Impostazioni bot e canali</span>
+            </div>
+
+            
+            <div>
+
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+
+              <span data-it="Impostazioni di rete" data-en="Network settings">Impostazioni di rete</span>
+            </div>
+
+            
+            <div>
+
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+
+              <span data-it="File di configurazione" data-en="Configuration files">File di configurazione</span>
+            </div>
+
+            
+            <div>
+
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+
+              <span data-it="Istruzioni d&#x27;installazione" data-en="Installation instructions">Istruzioni d'installazione</span>
+            </div>
+
+            
+            <div>
+
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+
+              <span data-it="Guida rapida" data-en="Quick-start guide">Guida rapida</span>
+            </div>
+
+            
+            <div>
+
+              <i class="fa-solid fa-user" aria-hidden="true"></i>
+
+              <span data-it="Licenza personale" data-en="Personal license">Licenza personale</span>
+            </div>
+
+            
+            <div>
+
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+
+              <span data-it="Supporto di base" data-en="Basic support">Supporto di base</span>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
 
 
-  <!-- FOOTER. -->
-<footer class="goats-footer">
+      <!-- REQUISITI + SUPPORTO + ACCORDI -->
+      <section class="gcp-technical-section" id="requisiti">
 
-  <div class="goats-footer-glow"></div>
+        <div class="gcp-section-heading">
 
-  <div class="goats-footer-inner">
+          <span data-it="PRIMA DI INSTALLARE" data-en="BEFORE INSTALLING">PRIMA DI INSTALLARE</span>
 
-    <div class="footer-brand">
-      
-      <span class="footer-badge">
-        💦 THE GOAT VERSE 💦
-      </span>
+          <h2 data-it="Requisiti e informazioni" data-en="Requirements and details">Requisiti e informazioni</h2>
 
-      <h2>
-        🐐 GoatS RevengE 🧠
-      </h2>
+          <p
+            data-it="Un&#x27;app Android e un backend Windows hanno prerequisiti distinti."
+            data-en="An Android app and a Windows backend have different requirements.">
+            Un'app Android e un backend Windows hanno prerequisiti distinti.
+          </p>
+        </div>
 
-      <p>
-        L'universo di Franzzinho tra: Video, Streaming, Social e Gaming.
-      </p>
+        
+        <!-- ACCORDION -->
+        <div class="gcp-accordion">
 
-      <div class="footer-status">
-        <span class="status-dot"></span>
-        GOATS REVENGE IS ALIVE
-      </div>
-    </div>
+          <details class="gcp-detail" open="">
 
-    <!-- LINEA RGB -->
-    <div class="footer-rgb-line"></div>
+            <summary>
 
-    <!-- SOCIAL -->
-    <div class="footer-social-section">
+              <span>
 
-      <span class="footer-small-title">
-        🌐 CONNECT WITH THE GOAT 🌐
-      </span>
+                <i class="fa-brands fa-windows" aria-hidden="true"></i>
 
-      
-      <div class="footer-socials">
-        <a
-          href="https://www.instagram.com/franzzinho.real/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="footer-social social-instagram"
-          aria-label="Instagram">
+                <span data-it="Windows e Android" data-en="Windows and Android">Windows e Android</span>
+              </span>
+
+              <i class="fa-solid fa-plus" aria-hidden="true"></i>
+            </summary>
+
+            
+            <div class="gcp-detail-content">
+
+              <div class="gcp-spec-grid">
+
+                <div>
+
+                  <strong data-it="PC backend" data-en="Backend PC">PC backend</strong>
+
+                  <span data-it="Windows 11 a 64 bit" data-en="Windows 11, 64-bit">Windows 11 a 64 bit</span>
+                </div>
+
+                
+                <div>
+
+                  <strong data-it="Smartphone" data-en="Smartphone">Smartphone</strong>
+
+                  <span data-it="Android; versione minima da confermare" data-en="Android; minimum version to be confirmed">Android; versione minima da confermare</span>
+                </div>
+
+                
+                <div>
+
+                  <strong data-it="Processore" data-en="Processor">Processore</strong>
+
+                  <span data-it="Intel o AMD moderno, lato PC" data-en="Modern Intel or AMD CPU on the PC">Intel o AMD moderno, lato PC</span>
+                </div>
+
+                
+                <div>
+
+                  <strong data-it="RAM PC" data-en="PC RAM">RAM PC</strong>
+
+                  <span
+                    data-it="16 GB consigliati; specifiche finali da verificare"
+                    data-en="16 GB recommended; final specifications to be verified">
+                    16 GB consigliati; specifiche finali da verificare
+                  </span>
+                </div>
+
+                
+                <div>
+
+                  <strong data-it="Rete" data-en="Network">Rete</strong>
+
+                  <span
+                    data-it="Connettività tra app Android e backend Windows"
+                    data-en="Network connectivity between the Android app and the Windows backend">
+                    Connettività tra app Android e backend Windows
+                  </span>
+                </div>
+
+                
+                <div>
+
+                  <strong data-it="Servizi esterni" data-en="External services">Servizi esterni</strong>
+
+                  <span
+                    data-it="Telegram e accessi autorizzati ai servizi Amazon pertinenti"
+                    data-en="Telegram and authorized access to the relevant Amazon services">
+                    Telegram e accessi autorizzati ai servizi Amazon pertinenti
+                  </span>
+                </div>
+              </div>
+            </div>
+          </details>
+
+
+          <!-- DETAILS -->
+          <details class="gcp-detail">
+
+            <summary>
+
+              <span>
+
+                <i class="fa-solid fa-network-wired" aria-hidden="true"></i>
+
+                <span data-it="Configurazione e sicurezza" data-en="Configuration and security">Configurazione e sicurezza</span>
+              </span>
+
+              <i class="fa-solid fa-plus" aria-hidden="true"></i>
+            </summary>
+
+            
+            <!-- DETAIL CONTENT -->
+            <div class="gcp-detail-content">
+
+              <p
+                data-it="Il backend deve essere raggiungibile dall&#x27;app Android tramite l&#x27;indirizzo e la porta configurati. 
+                Le impostazioni di bind address regolano le interfacce sulle quali il servizio resta in ascolto."
+                
+                data-en="The Android app must be able to reach the backend at the configured address and port. 
+                Bind-address settings determine which network interfaces the service listens on.">
+
+                Il backend deve essere raggiungibile dall'app Android tramite l'indirizzo e la porta configurati. 
+                Le impostazioni di bind address regolano le interfacce sulle quali il servizio resta in ascolto.
+              </p>
+
+              <p>
+                <span
+                  data-it="Per pubblicare su un canale Telegram, il bot deve disporre delle autorizzazioni necessarie."
+                  data-en="To publish in a Telegram channel, the bot needs the appropriate permissions.">
+                  Per pubblicare su un canale Telegram, il bot deve disporre delle autorizzazioni necessarie.
+                </span>
+
+                <strong
+                  data-it="Il token segreto del bot non è il suo ID:"
+                  data-en="The bot&#x27;s secret token is not the same as its ID:">
+                  Il token segreto del bot non è il suo ID:
+                </strong>
+
+                <span
+                  data-it="deve essere protetto e non pubblicato in NESSUNA piattaforma."
+                  data-en="it must be protected and never published on ANY platform.">
+                  deve essere protetto e non pubblicato in NESSUNA piattaforma.
+                </span>
+              </p>
+
+              <p
+                class="gcp-detail-note"
+                data-it="Non esporre direttamente il backend su Internet senza autenticazione, protezione della connessione e misure adeguate di sicurezza."
+                data-en="Do not expose the backend directly to the Internet without authentication, connection protection and appropriate security safeguards.">
+                Non esporre direttamente il backend su Internet senza autenticazione, protezione della connessione e misure adeguate di sicurezza.
+              </p>
+            </div>
+          </details>
+
           
-          <i class="fa-brands fa-instagram"></i>
+          <details class="gcp-detail">
 
-          <span>
-            Instagram
-          </span>
-        </a>
+            <summary>
 
+              <span>
+
+                <i class="fa-solid fa-headset" aria-hidden="true"></i>
+
+                <span data-it="Licenza, aggiornamenti e supporto" data-en="License, updates and support">Licenza, aggiornamenti e supporto</span>
+              </span>
+
+              <i class="fa-solid fa-plus" aria-hidden="true"></i>
+            </summary>
+
+            
+            <div class="gcp-detail-content">
+
+              <p
+                data-it="Il pacchetto è destinato all&#x27;uso personale dell&#x27;acquirente, salvo diversa indicazione nella licenza."
+                data-en="The package is intended for the purchaser&#x27;s personal use unless the license states otherwise.">
+                Il pacchetto è destinato all'uso personale dell'acquirente, salvo diversa indicazione nella licenza.
+              </p>
+
+              <p
+                data-it="Sono previsti supporto di base per installazione e problemi di funzionamento e possibili aggiornamenti correttivi della versione acquistata. 
+                Non sono promessi aggiornamenti gratuiti a vita, configurazioni individuali o assistenza illimitata."
+                
+                data-en="Basic support covers installation and operational issues, and corrective updates for the purchased version may be supplied. 
+                Free lifetime updates, individual configurations and unlimited support are not promised.">
+                
+                Sono previsti supporto di base per installazione e problemi di funzionamento e possibili aggiornamenti correttivi della versione acquistata. 
+                Non sono promessi aggiornamenti gratuiti a vita, configurazioni individuali o assistenza illimitata.
+              </p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+
+      <!-- TRASPARENZA -->
+      <section class="gcp-warning-section">
+
+        <div class="gcp-warning">
+
+          <div class="gcp-warning-icon">
+
+            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+          </div>
+
+          
+          <div>
+
+            <span data-it="INFORMAZIONE IMPORTANTE" data-en="IMPORTANT INFORMATION">INFORMAZIONE IMPORTANTE</span>
+
+            <h2 data-it="Automazione e piattaforme di terze parti" data-en="Automation and third-party platforms">Automazione e piattaforme di terze parti</h2>
+
+            <p
+              data-it="Affiliate Manager è un software indipendente e non è presentato come prodotto ufficiale di Amazon o Telegram. 
+              La disponibilità di dati, funzioni di ricerca e pubblicazione dipende dai permessi, dalle integrazioni consentite e dalle regole dei servizi utilizzati. L&#x27;utente deve verificare che canali e attività di affiliazione siano autorizzati e comunicare chiaramente la natura promozionale dei link."
+              
+              data-en="Affiliate Manager is independent software and is not presented as an official Amazon or Telegram product. 
+              Data availability, search and publishing features depend on permissions, approved integrations and the rules of the services used. Users must verify that their channels and affiliate activities are authorized and clearly disclose the promotional nature of affiliate links.">
+
+              Affiliate Manager è un software indipendente e non è presentato come prodotto ufficiale di Amazon o Telegram. 
+              La disponibilità di dati, funzioni di ricerca e pubblicazione dipende dai permessi, dalle integrazioni consentite e dalle regole dei servizi utilizzati. L'utente deve verificare che canali e attività di affiliazione siano autorizzati e comunicare chiaramente la natura promozionale dei link.
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ACQUISTO -->
+      <section class="gcp-purchase-section" id="acquista">
+
+        <div class="gcp-purchase">
+
+          <div class="gcp-purchase-copy">
+
+            <span class="gcp-purchase-kicker">AFFILIATE MANAGER</span>
+
+            <h2 data-it="Un punto di controllo per offerte e pubblicazioni." data-en="A control center for offers and publishing.">Un punto di controllo per offerte e pubblicazioni.</h2>
+
+            <p
+              data-it="Pacchetto digitale con app Android, backend Windows e istruzioni."
+              data-en="A digital package comprising the Android app, Windows backend and instructions.">
+              Pacchetto digitale con app Android, backend Windows e istruzioni.
+            </p>
+
+            
+            <div class="gcp-purchase-points">
+
+              <span>
+
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+
+                <span data-it="App Android" data-en="Android app">App Android</span>
+              </span>
+
+              <span>
+
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+
+                <span data-it="Backend Windows" data-en="Windows backend">Backend Windows</span>
+              </span>
+              
+              <span>
+
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+
+                <span data-it="Guida inclusa" data-en="Guide included">Guida inclusa</span>
+              </span>
+
+              <span>
+
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+
+                <span data-it="Licenza personale" data-en="Personal license">Licenza personale</span>
+              </span>
+            </div>
+          </div>
+
+          
+          <!-- DISPONIBILITÀ -->
+          <div class="gcp-price-box gam-availability">
+
+            <span class="gcp-price-label" data-it="DISPONIBILITÀ" data-en="AVAILABILITY">DISPONIBILITÀ</span>
+
+            <strong class="gam-price-pending" data-it="Prezzo da definire" data-en="Price to be determined">Prezzo da definire</strong>
+
+            <a class="gcp-buy-button gam-info-link" href="mailto:franzzinho@gmail.com?subject=Informazioni%20Affiliate%20Manager">
+
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+
+              <span data-it="Richiedi informazioni" data-en="Request information">Richiedi informazioni</span>
+
+              <span aria-hidden="true">↗</span>
+            </a>
+
+            <small data-it="Non viene effettuato alcun pagamento da questa pagina." data-en="No payment is taken on this page.">Non viene effettuato alcun pagamento da questa pagina.</small>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+
+    <!-- FOOTER -->
+      <footer class="gh-editorial-footer" id="contatti">
         
-        <a
-          href="https://tiktok.com/@franzzinho.real"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="footer-social social-tiktok"
-          aria-label="TikTok">
+        <div class="gh-wide gh-footer-opening">
+          
+          <span class="gh-mono gh-footer-kicker" data-it="005 / L'ULTIMA PAROLA? MAI." data-en="005 / THE LAST WORD? NEVER.">
+            
+            005 / L'ULTIMA PAROLA? MAI.</span>
 
-          <i class="fa-brands fa-tiktok"></i>
+          
+          <!-- HERO FOOTER -->
+          <div class="gh-footer-hero">
+            
+            <h2 class="gh-display gh-footer-headline">
+              
+              <span data-it="NON È" data-en="IT'S NOT">NON È</span><br><span data-it="FINITA" data-en="OVER">FINITA</span><br><span data-it="QUI" data-en="YET">QUI</span></h2>
 
-          <span>
-            TikTok
-          </span>
-        </a>
+            
+            <!-- FOOTER EMAIL-->
+            <div class="gh-footer-side">
+              
+              <p data-it="La pagina finisce. La conversazione no. Se hai qualcosa da dire o proporre, sai dove trovarmi." data-en="The page ends. The conversation doesn't. If you've got something to say or to propose, you know where to find me.">
+                
+                La pagina finisce. La conversazione no. Se hai qualcosa da dire o proporre, sai dove trovarmi.</p>
 
-        
-        <a
-          href="https://youtube.com/@franzzinho?si=cJiskLlGq_kUUDew"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="footer-social social-youtube"
-          aria-label="YouTube">
+              <a class="gh-footer-contact" href="mailto:franzzinho@gmail.com">
+                
+                <span data-it="SCRIVIMI" data-en="GET IN TOUCH">SCRIVIMI</span>
+                
+                <span class="gh-arr">↗</span>
+              </a>
+            </div>
+          </div>
 
-          <i class="fa-brands fa-youtube"></i>
+          
+          <!-- FOOTER SOCILA LINK -->
+          <nav class="gh-footer-social-bar" aria-label="Social Franzzinho">
+            
+            <a href="https://www.instagram.com/franzzinho.real/" target="_blank" rel="noopener noreferrer">INSTAGRAM <span aria-hidden="true">↗</span></a>
 
-          <span>
-            YouTube
-          </span>
-        </a>
+            <a href="https://tiktok.com/@franzzinho.real" target="_blank" rel="noopener noreferrer">TIKTOK <span aria-hidden="true">↗</span></a>
 
-        
-        <a
-          href="https://www.twitch.tv/franzzinho_GT"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="footer-social social-twitch"
-          aria-label="Twitch">
+            <a href="https://youtube.com/@franzzinho?si=cJiskLlGq_kUUDew" target="_blank" rel="noopener noreferrer">YOUTUBE <span aria-hidden="true">↗</span></a>
 
-          <i class="fa-brands fa-twitch"></i>
+            <a href="https://www.twitch.tv/franzzinho_GT" target="_blank" rel="noopener noreferrer">TWITCH <span aria-hidden="true">↗</span></a>
 
-          <span>
-            Twitch
-          </span>
-        </a>
+            <a href="https://discord.gg/YNyzuTKSu8" target="_blank" rel="noopener noreferrer">DISCORD <span aria-hidden="true">↗</span></a>
 
-        
-        <a
-          href="https://discord.gg/YNyzuTKSu8"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="footer-social social-discord"
-          aria-label="Discord">
+            <a href="https://lnk.bio/franzzinho" target="_blank" rel="noopener noreferrer">FOLLOWPAGE <span aria-hidden="true">↗</span></a>
+          </nav>
+        </div>
 
-          <i class="fa-brands fa-discord"></i>
+      
+        <!-- FINAL FOOTER -->
+        <div class="gh-footer-finale">
+          
+          <div class="gh-wide">
+            
+            <div class="gh-footer-finale-top">
+              
+              <a href="#inizio" class="gh-footer-back">
+                
+                <span data-it="TORNA ALL'INIZIO" data-en="BACK TO THE TOP">TORNA ALL'INIZIO</span>
+                
+                <span aria-hidden="true">↑</span>
+              </a>
+            </div>
 
-          <span>
-            Discord
-          </span>
-        </a>
+            
+            <!-- FOOTER WATER MARK-->
+            <div class="gh-footer-wordmark" aria-label="GoatS RevengE">
+              
+              <span>GOATS</span><span>REVENGE</span></div>
 
-        
-        <a
-          href="https://lnk.bio/franzzinho"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="footer-social social-follow"
-          aria-label="Followpage">
+            <div class="gh-footer-bottom">
+              
+              <span class="gh-mono">© 2026 FRANZZINHO / GOATS REVENGE</span>
 
-          <i class="fa-solid fa-link"></i>
+              
+              <!-- LEGAL DOC -->
+              <nav class="gh-footer-legal" aria-label="Documenti legali">
+                
+                <a href="../TERMS/TERMINI.html" data-it="TERMINI" data-en="TERMS">TERMINI</a>
 
-          <span>
-            Followpage
-          </span>
-        </a>
-      </div>
-    </div>
+                <a href="../TERMS/PRIVACY.html" data-it="PRIVACY" data-en="PRIVACY">PRIVACY</a>
 
-    <!-- SEPARATORE -->
-    <div class="footer-divider"></div>
+                <a href="../TERMS/COOKIE.html" data-it="COOKIE" data-en="COOKIE">COOKIE</a>
 
-    <!-- PARTE FINALE -->
-    <div class="footer-bottom">
-
-      <!-- COPYRIGHT -->
-      <div class="footer-copyright">
-
-        <span>
-          © 2026 •
-        </span>
-
-        <strong>
-          GoatS RevengE
-        </strong>
-
-        <span>
-          • Franzzinho
-        </span>
-      </div>
-
-      <!-- TERMINI - COOKIE -->
-      <div class="footer-legal">
-
-        <a
-          href="../TERMS/TERMINI.html"
-          target="_blank"
-          rel="noopener noreferrer">
-          Termini
-        </a>
-
-        <span>•</span>
-
-        <a
-          href="../TERMS/PRIVACY.html"
-          target="_blank"
-          rel="noopener noreferrer">
-          Privacy
-        </a>
-
-        <span>•</span>
-
-        <a
-          href="../TERMS/COOKIE.html"
-          target="_blank"
-          rel="noopener noreferrer">
-          Cookie
-        </a>
-      </div>
-
-      <!-- BACK TO TOP -->
-      <a
-        href="#"
-        class="footer-top-btn"
-        aria-label="Torna in alto">
-
-        <i class="fa-solid fa-arrow-up"></i>
-      </a>
-    </div>
+                <a href="../TERMS/CONDIZIONI_VENDITA.html" data-it="CONDIZIONI VENDITA" data-en="TERMS OF SALE">CONDIZIONI VENDITA</a>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </footer>
   </div>
-</footer>
-</p>
 </body>
 </html>
