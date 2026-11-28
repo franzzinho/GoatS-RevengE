@@ -3222,10 +3222,8 @@ body.gcp-page::before, body.gcp-page::after
 /* NAVBAR */
 .gcp-page .navbar.gcp-nav
 {
-    position: sticky !important;
-    top: 0;
-    left: auto;
-    right: auto;
+    position: relative !important;
+    inset: auto !important;
     z-index: 1000;
     display: flex;
     align-items: center;
@@ -3520,12 +3518,12 @@ body.gcp-page::before, body.gcp-page::after
     aspect-ratio: 16 / 10; 
 }
 
-.gcp-page .gcp-media-grid 
-{ 
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    gap: 12px; 
-    margin-top: 12px; 
+.gcp-page .gcp-media-grid
+{
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    margin-top: 12px;
 }
 
 .gcp-page .gcp-media-card 
