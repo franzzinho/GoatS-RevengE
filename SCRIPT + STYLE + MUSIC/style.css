@@ -3085,7 +3085,7 @@ body:has(.stripe-return-page)
     }
 }
 
-/* ------------------ STYLE SEZIONE: PROJECT 1 ------------------------ */
+/* ------------------ STYLE SEZIONE: PROJECT 1 (GOAT CLIP - BOT) ------------------------ */
 
 /* PALETTE E RESET LOCALE */
 body.gcp-page
@@ -4804,5 +4804,296 @@ body.gcp-page::before, body.gcp-page::after
         scroll-behavior: auto !important;
         transition: none !important; 
         animation: none !important; 
+    }
+}
+
+/* ------------------ STYLE SEZIONE: PROJECT 2 (AFFILIATE MANAGER) ------------------ */
+
+/* NAVBAR */
+.gam-page .navbar.gcp-nav
+{
+    position: relative !important;
+    inset: auto !important;
+}
+
+.gam-page .navbar.gcp-nav .goat-navbar-audio-slot
+{
+    order: 2;
+    min-width: 0;
+    max-width: 100%;
+}
+
+.gam-page .gcp-brand-mark
+{
+    white-space: nowrap;
+    font-weight: 900;
+}
+
+.gam-page .gcp-nav-links
+{
+    flex-wrap: wrap;
+}
+
+/* HERO */
+.gam-page .gcp-hero h1
+{
+    font-size: clamp(2.9rem, 5.65vw, 6.5rem);
+    line-height: 0.9;
+    letter-spacing: -0.035em;
+    overflow-wrap: normal;
+}
+
+.gam-page .gcp-hero h1 > span
+{
+    font-size: 0.88em;
+    letter-spacing: -0.035em;
+    margin-top: 12px;
+}
+
+.gam-page .gcp-kicker
+{
+    font-size: 0.72rem;
+}
+
+.gam-page .gcp-kicker::before
+{
+    flex-shrink: 0;
+}
+
+/* ANTEPRIME ANDROID E WINDOWS */
+.gam-page .gam-showcase
+{
+    align-self: center;
+    min-width: 0;
+    padding: 14px;
+}
+
+.gam-page .gam-preview-grid
+{
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    align-items: stretch;
+    gap: 12px;
+}
+
+.gam-page .gam-preview
+{
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+    min-width: 0;
+    min-height: 0;
+    margin: 0;
+    overflow: hidden;
+    background: #30332E;
+    border: 1px solid #666963;
+}
+
+.gam-page .gam-preview img
+{
+    display: block;
+    width: 100%;
+    height: clamp(240px, 24vw, 365px);
+    min-width: 0;
+    padding: 12px;
+    object-fit: contain;
+    object-position: center;
+    background: #292C28;
+    color: #E1E2DA;
+    font: 700 0.76rem/1.5 Arial, Helvetica, sans-serif;
+}
+
+.gam-page .gam-preview-caption
+{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 9px;
+    min-height: 64px;
+    padding: 12px;
+    border-top: 1px solid #666963;
+    background: var(--gcp-ink);
+    color: var(--gcp-paper);
+    font-size: 0.75rem;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.gam-page .gam-preview-caption i,
+.gam-page .gam-preview-number
+{
+    color: #B7C5FF;
+}
+
+.gam-page .gam-preview-number
+{
+    font: 700 0.72rem/1 Consolas, "Courier New", monospace;
+}
+
+.gam-page .gcp-media-note
+{
+    line-height: 1.6;
+}
+
+/* WORKFLOW */
+.gam-page .gcp-workflow .gcp-section-heading p
+{
+    color: #F0F2FF;
+}
+
+/* SPECIFICHE */
+.gam-page .gcp-spec-grid > div > span
+{
+    overflow-wrap: anywhere;
+}
+
+.gam-page .gcp-detail > summary > span
+{
+    min-width: 0;
+}
+
+.gam-page .gcp-detail > summary > i
+{
+    flex-shrink: 0;
+}
+
+/* DISPONIBILITÀ E RICHIESTA INFORMAZIONI */
+.gam-page .gcp-purchase-kicker
+{
+    display: block;
+    margin-bottom: 20px;
+    color: #B7C5FF;
+    font: 700 0.76rem/1.45 Consolas, "Courier New", monospace;
+    letter-spacing: 0.12em;
+}
+
+.gam-page .gcp-purchase h2
+{
+    font-size: clamp(2.6rem, 4.65vw, 5rem);
+    overflow-wrap: break-word;
+}
+
+.gam-page .gcp-price-label
+{
+    display: block;
+    margin-bottom: 20px;
+    color: var(--gcp-blue);
+    font: 700 0.77rem/1.45 Consolas, "Courier New", monospace;
+    letter-spacing: 0.12em;
+}
+
+.gam-page .gam-price-pending
+{
+    display: block;
+    color: var(--gcp-ink);
+    font: 900 clamp(2.2rem, 3.8vw, 4rem)/1.02 Impact, "Arial Narrow", "Arial Black", sans-serif;
+    text-transform: uppercase;
+    overflow-wrap: break-word;
+}
+
+.gam-page .gam-info-link
+{
+    justify-content: flex-start;
+    gap: 12px;
+}
+
+.gam-page .gam-info-link > span:last-child
+{
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.gam-page .gam-availability > small
+{
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid var(--gcp-line);
+    line-height: 1.55;
+}
+
+/* TABLET */
+@media (max-width: 950px)
+{
+    .gam-page .gcp-hero h1
+    {
+        font-size: clamp(3.2rem, 10.5vw, 6.5rem);
+    }
+
+    .gam-page .gam-preview img
+    {
+        height: clamp(250px, 42vw, 380px);
+    }
+}
+
+/* SMARTPHONE */
+@media (max-width: 600px)
+{
+    .gam-page .gcp-hero h1
+    {
+        font-size: clamp(2.7rem, 11vw, 4rem);
+        overflow-wrap: break-word;
+    }
+
+    .gam-page .gam-showcase
+    {
+        padding: 8px;
+    }
+
+    .gam-page .gam-preview-grid
+    {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    .gam-page .gam-preview-android img
+    {
+        height: 300px;
+    }
+
+    .gam-page .gam-preview-windows img
+    {
+        height: clamp(170px, 53vw, 260px);
+    }
+
+    .gam-page .gam-preview-caption
+    {
+        min-height: 46px;
+    }
+
+    .gam-page .gcp-purchase h2
+    {
+        font-size: clamp(2.5rem, 9.5vw, 3.6rem);
+    }
+
+    .gam-page .gam-info-link
+    {
+        flex-wrap: nowrap;
+    }
+}
+
+@media (max-width: 360px)
+{
+    .gam-page .gcp-spec-grid
+    {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 950px)
+{
+    .gam-page .gcp-purchase
+    {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .gam-page .gcp-purchase-copy,
+    .gam-page .gam-availability
+    {
+        min-width: 0;
+    }
+
+    .gam-page .gam-info-link > span
+    {
+        min-width: 0;
+        overflow-wrap: anywhere;
     }
 }
